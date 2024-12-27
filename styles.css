@@ -1,61 +1,36 @@
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body Styles */
+/* Reset some default browser styles */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #000000; /* Pure black background */
-    color: #ffffff; /* White text for contrast */
     margin: 0;
     padding: 0;
+    background-color: #000000; /* Black background */
+    color: #ffffff; /* White text */
+    font-family: Arial, sans-serif;
 }
 
-/* Header */
+/* Styling for the menu icon */
+.menu-icon {
+    position: absolute; /* Allows free placement */
+    left: 10px; /* Move it all the way to the left */
+    top: 10px; /* Adjust vertical position */
+    font-size: 30px; /* Makes the menu larger */
+    color: white; /* White icon */
+    cursor: pointer; /* Changes cursor to indicate it's clickable */
+    z-index: 100; /* Ensures it stays above other elements */
+}
+
+/* Example content styling */
 header {
-    background: #111111; /* Slightly lighter black for contrast */
-    color: #ffffff;
-    padding: 1rem 0;
     text-align: center;
+    margin-top: 50px;
 }
 
-/* Links */
-a {
-    color: #1e90ff; /* Bright blue links */
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* Main Content */
 main {
-    padding: 2rem;
     text-align: center;
+    margin-top: 20px;
 }
 
-main h1 {
-    font-size: 2.5rem;
-    color: #ffffff; /* White headings */
-}
-
-main p {
-    font-size: 1.2rem;
-    color: #cccccc; /* Light gray text */
-}
-
-/* Footer */
 footer {
-    background: #111111; /* Slightly lighter black for footer */
-    color: #ffffff;
     text-align: center;
-    padding: 1rem 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    margin-top: 50px;
+    font-size: 14px;
 }
