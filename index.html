@@ -3,28 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Simple Website</title>
+    <title>Cool Website</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <h1>Cool Design Website</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <main>
-        <section class="welcome">
-            <h1>Welcome to My Website</h1>
-            <p>This is a simple website designed for practice. You can customize it as you like!</p>
+        <section id="hero">
+            <h2>Welcome to Your Cool Website</h2>
+            <p>Design. Build. Inspire.</p>
+            <a href="#features" class="btn">Get Started</a>
+        </section>
+        <section id="features">
+            <div class="container">
+                <h2>Features</h2>
+                <div class="card-container">
+                    <div class="card">
+                        <h3>Fast</h3>
+                        <p>Experience blazing fast load times.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Responsive</h3>
+                        <p>Looks great on any device.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Customizable</h3>
+                        <p>Make it your own with ease.</p>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 My Simple Website. All rights reserved.</p>
+        <p>&copy; 2024 Cool Design Website. All rights reserved.</p>
     </footer>
 </body>
 </html>
