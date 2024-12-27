@@ -1,36 +1,11 @@
-/* Reset some default browser styles */
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #000000; /* Black background */
-    color: #ffffff; /* White text */
-    font-family: Arial, sans-serif;
-}
-
 /* Styling for the menu icon */
 .menu-icon {
     position: absolute; /* Allows free placement */
     left: 10px; /* Move it all the way to the left */
     top: 10px; /* Adjust vertical position */
-    font-size: 30px; /* Makes the menu larger */
+    font-size: 50px; /* Makes the menu much larger */
     color: white; /* White icon */
     cursor: pointer; /* Changes cursor to indicate it's clickable */
     z-index: 100; /* Ensures it stays above other elements */
-}
-
-/* Example content styling */
-header {
-    text-align: center;
-    margin-top: 50px;
-}
-
-main {
-    text-align: center;
-    margin-top: 20px;
-}
-
-footer {
-    text-align: center;
-    margin-top: 50px;
-    font-size: 14px;
+    line-height: 1; /* Ensures the lines are spaced tightly */
 }
