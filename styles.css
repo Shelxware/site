@@ -1,47 +1,9 @@
-/* General reset */
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #000000; /* Black background */
-    color: #ffffff; /* White text */
-    font-family: Arial, sans-serif;
-}
-
-/* Styling for the menu icon */
-.menu-icon {
-    position: absolute;
-    left: 10px;
-    top: 10px;
-    font-size: 60px;
-    color: white;
-    cursor: pointer;
-    z-index: 100;
-    line-height: 1;
-}
-
-/* Example content styling */
-header {
-    text-align: center;
-    margin-top: 100px;
-}
-
-main {
-    text-align: center;
-    margin-top: 20px;
-}
-
-footer {
-    text-align: center;
-    margin-top: 50px;
-    font-size: 14px;
-}
-
 /* Styling for social links */
 .socials {
     display: flex;
     justify-content: center;
     gap: 20px;
-    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 .social-link {
