@@ -1,1 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header .logo {
+            font-size: 1.5em;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .hero {
+            background: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .hero h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .hero p {
+            margin: 15px 0;
+            font-size: 1.2em;
+        }
+        .hero .cta {
+            display: inline-block;
+            background: #fff;
+            color: #007bff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .main-content {
+            padding: 20px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .features {
+            display: flex;
+            gap: 20px;
+        }
+        .feature {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .contact {
+            background: #f8f9fa;
+            padding: 20px;
+        }
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
 
+<header>
+    <div class="logo">My Website</div>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Welcome to My Website</h1>
+    <p>Your one-stop solution for amazing services.</p>
+    <a href="#" class="cta">Get Started</a>
+</section>
+
+<div class="main-content">
+    <section class="section about">
+        <h2>About Us</h2>
+        <p>We are dedicated to providing top-notch services to our clients.</p>
+    </section>
+
+    <section class="section features">
+        <div class="feature">
+            <h3>Feature 1</h3>
+            <p>Detail about feature 1.</p>
+        </div>
+        <div class="feature">
+            <h3>Feature 2</h3>
+            <p>Detail about feature 2.</p>
+        </div>
+        <div class="feature">
+            <h3>Feature 3</h3>
+            <p>Detail about feature 3.</p>
+        </div>
+    </section>
+
+    <section class="section contact">
+        <h2>Contact Us</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2024 My Website. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
