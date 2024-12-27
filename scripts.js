@@ -1,8 +1,10 @@
-// Select the menu icon and menu
-const menuIcon = document.getElementById('menu-icon');
-const menu = document.getElementById('menu');
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
 
-// Toggle the menu on click
-menuIcon.addEventListener('click', () => {
-    menu.classList.toggle('visible');
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
 });
