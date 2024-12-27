@@ -9,16 +9,16 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #000; /* Black background */
-    color: #fff; /* White text for contrast */
+    background-color: #000000; /* Pure black background */
+    color: #ffffff; /* White text for contrast */
     margin: 0;
     padding: 0;
 }
 
 /* Header */
 header {
-    background: #111; /* Dark gray for the header */
-    color: #fff; /* White text */
+    background: #111111; /* Slightly lighter black for contrast */
+    color: #ffffff;
     padding: 1rem 0;
     text-align: center;
 }
@@ -33,27 +33,6 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Navigation */
-.nav-toggle {
-    cursor: pointer;
-    font-size: 1.5rem;
-    color: #fff; /* White toggle icon */
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.nav-links li {
-    margin: 0 1rem;
-}
-
-.nav-links a {
-    color: #fff; /* White links */
-}
-
 /* Main Content */
 main {
     padding: 2rem;
@@ -62,18 +41,18 @@ main {
 
 main h1 {
     font-size: 2.5rem;
-    color: #fff;
+    color: #ffffff; /* White headings */
 }
 
 main p {
     font-size: 1.2rem;
-    color: #ddd; /* Light gray text */
+    color: #cccccc; /* Light gray text */
 }
 
 /* Footer */
 footer {
-    background: #111; /* Dark gray footer */
-    color: #fff;
+    background: #111111; /* Slightly lighter black for footer */
+    color: #ffffff;
     text-align: center;
     padding: 1rem 0;
     position: fixed;
