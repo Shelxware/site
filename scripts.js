@@ -1,7 +1,8 @@
-// Add interactivity to the menu icon
-document.querySelector('.menu-icon').addEventListener('click', () => {
-    alert('Menu clicked!'); // Replace with your menu toggle functionality
-});
+// Select the menu icon and menu
+const menuIcon = document.getElementById('menu-icon');
+const menu = document.getElementById('menu');
 
-// Update footer year dynamically
-document.getElementById('year').textContent = new Date().getFullYear();
+// Toggle the menu on click
+menuIcon.addEventListener('click', () => {
+    menu.classList.toggle('visible');
+});
