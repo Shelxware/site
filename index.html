@@ -1,77 +1,1628 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text Copier</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            box-sizing: border-box;
-            text-align: center;
-            background-color: #f4f4f4;
-        }
-        .container {
-            max-width: 500px;
-            margin: 50px auto;
-            padding: 20px;
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .text-display {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            font-size: 1em;
-            background: #f9f9f9;
-        }
-        button {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1em;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-        .message {
-            margin-top: 20px;
-            font-size: 0.9em;
-            color: green;
-        }
-    </style>
-</head>
-<body>
-
+<body oncopy="return true">
+<header class="sticky-top">
 <div class="container">
-    <h1>Text Copier</h1>
-    <div id="textToCopy" class="text-display">script.</div>
-    <button onclick="copyToClipboard()">Copy to Clipboard</button>
-    <p id="copyMessage" class="message" style="display: none;">Text copied to clipboard!</p>
+<nav class="navbar navbar-expand-xl navbar-dark">
+<div class="container-fluid">
+<a class="navbar-brand fs-4 fw-bold text-white" href="/">GEEKY BLOX</a>
+<button aria-controls="hamburger" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#hamburger" data-bs-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="hamburger">
+<div class="navbar-nav flex-row">
+<a class="nav-link me-2" href="/" style="color:#ADD8E6;">Home</a>
+<a class="nav-link me-2 active" href="/search/label/Tools">Tools</a>
+<a class="nav-link me-2 active" href="/search/label/Script">Script</a>
+<a class="nav-link me-2 active" href="/p/about-me_11.html">About Me</a>
+<!-- dropdown wd -->
+<!-- end -->
 </div>
+<div class="navbar-nav ms-md-auto">
+<form action="/search" class="d-flex me-1 my-1">
+<div class="input-group">
+<input aria-label="Search" class="form-control search" name="q" placeholder="Search for tools, scripts, and more." required="required" style="background-color:#22272E; border-color:rgb(81,90,98); color:#ADBAC7;" type="search">
+<button aria-label="Search for articles" class="btn btn-outline-secondary" data-bs-placement="bottom" data-bs-toggle="tooltip" title="" type="submit" data-bs-original-title="Search articles">
+<svg class="bi bi-search" fill="white" height="17" viewBox="0 0 17 17" width="17" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
+</svg>
+</button>
+</div>
+</form>
+</div>
+<div class="navbar-nav flex-row flex-wrap ms-md-auto">
+<!--YT-->
+<a class="btn btn-outline-danger yt-red me-1 my-1" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://www.youtube.com/@geekyblox5278" role="button" target="_blank" title="" data-bs-original-title="YouTube">
+<svg class="bi bi-youtube" fill="currentColor" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"></path>
+</svg>
+</a>
+<!--IG-->
+<a class="btn btn-outline-danger ig-orange me-1 my-1" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://www.instagram.com/geekyblox/" role="button" target="_blank" title="" data-bs-original-title="Instagram">
+<svg class="bi bi-instagram" fill="currentColor" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path>
+</svg>
+</a>
+<!-- DISCORD -->
+<a class="btn btn-outline-primary discord-blue me-1 my-1" data-bs-original-title="Discord" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://discord.com/invite/VNUMemjs" role="button" style="border-color: #7289DA; color: #7289DA;" target="_blank" title="">
+<svg class="bi bi-discord" fill="#7289DA" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.235.524-3.257 1.011a.041.041 0 0 0-.021.018C.533 6.225-.32 9.49.099 12.709a.052.052 0 0 0 .02.035c1.37 1.006 2.685 1.611 4.043 2.013a.05.05 0 0 0 .056-.019c.31-.42.583-.863.818-1.329a.05.05 0 0 0-.027-.067c-.448-.169-.87-.379-1.272-.633a.05.05 0 0 1-.005-.084c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.664 1.192 5.554 1.192 8.216 0a.05.05 0 0 1 .053.006c.08.066.164.132.248.196a.05.05 0 0 1-.004.084 7.978 7.978 0 0 1-1.273.632.05.05 0 0 0-.026.068c.24.465.513.909.817 1.329a.05.05 0 0 0 .056.02c1.358-.403 2.673-1.007 4.042-2.013a.052.052 0 0 0 .021-.035c.5-3.301-.808-6.566-3.418-9.784a.034.034 0 0 0-.02-.019zM5.656 10.954c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.733 1.438 1.613 0 .888-.637 1.612-1.438 1.612zm4.688 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.733 1.438 1.613 0 .888-.631 1.612-1.438 1.612z"></path>
+</svg>
+</a>
+<!--Twitter-->
+<a class="btn btn-outline-secondary twitter-blue me-1 my-1" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://x.com/GeekyBloxYt" role="button" target="_blank" title="" data-bs-original-title="Twitter">
+<svg class="bi bi-twitter" fill="currentColor" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+<path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"></path>
+</svg>
+</a>
+<!--GitHub-->
+<a class="btn btn-outline-dark GitHub-white me-1 my-1" data-bs-placement="bottom" data-bs-toggle="tooltip" href="https://github.com/greekBack" role="button" target="_blank" title="" data-bs-original-title="GitHub">
+<svg class="bi bi-github" fill="currentColor" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+<path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+</svg>
+</a>
+</div>
+</div>
+</div>
+</nav>
+</div>
+</header>
+<!-- Recent Posts TEXT -->
+<section class="hero" id="home">
+<div class="hero-content">
+<h1>Geeky Blox</h1>
+<p id="typewriter">Explore the best Roblox scripts, tools, and content!</p>
+</div>
+</section>
+<!-- hero section -->
+<div class="container">
+<!-- For the main index/archive pages -->
+<!-- Only show hero section on main pages, not on label pages -->
+&gt;  
+<!-- Header for Recent Posts section -->
+<div class="recent-posts-header">
+<i class="fas fa-clock"></i>
+<h2>Recent Posts</h2>
+</div>
+<div class="row mt-4">
+<div class="col-lg-8">
+<div class="section" id="BlogPost0"><div class="widget Blog" data-version="1" id="Blog0">
+<main class="blog-posts hfeed">
+<div class="post-outer">
+<style>
+            .blog-posts {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -12px;
+            }
+            .blog-posts > *:not(.post-outer) {
+            width: 100%;
+            margin: 0 12px 24px;
+            }
+            .post-outer {
+            width: calc(50% - 24px) !important;
+            margin: 0 12px 24px !important;
+            float: none !important;
+            }
+            .card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border-radius: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            }
+            .card-img-container {
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            height: 200px;
+            position: relative;
+            }
+            .card-img-top {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            transition: transform 0.3s ease;
+            }
+            .card-img-top:hover {
+            transform: scale(1.05);
+            }
+            .card-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 16px;
+            gap: 8px;
+            }
+            .card-title {
+            font-size: 1.25rem !important;
+            line-height: 1.4 !important;
+            height: 2.8em;
+            margin: 0 !important;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            }
+            .card-subtitle {
+            font-size: 0.875rem !important;
+            color: #6c757d !important;
+            margin: 0 !important;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            }
+            .post-labels {
+            margin-bottom: 5px;
+            display: flex;
+            gap: 4px;
+            flex-wrap: wrap;
+            }
+            .badge {
+            display: inline-block;
+            padding: 8px 25px;
+            font-size: 0.75rem;
+            text-decoration: none;
+            margin: 0;
+            background-color: #fff;
+            color: black;
+            border-radius: 25px;
+            }
+            .badge:hover {
+            background-color: #e9ecef;
+            }
+            .item-snippet {
+            flex: 1;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: rgb(205, 217, 229);
+            height: 4.8em;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            margin: 0;
+            }
+            .btn.btn-outline-primary {
+            margin-top: auto;
+            padding: 8px 16px;
+            font-size: 0.95rem;
+            height: 40px;
+            }
+            .status-msg-wrap {
+            width: 100%;
+            margin: 0 12px 24px;
+            }
+            .status-msg-body {
+            width: 100%;
+            }
 
-<script>
-    function copyToClipboard() {
-        const textToCopy = document.getElementById('textToCopy').textContent;
-        const message = document.getElementById('copyMessage');
+            .ms-2 {
+            margin-left: 0rem!important;
+            }
 
-        navigator.clipboard.writeText(textToCopy).then(() => {
-            message.style.display = 'block';
-            setTimeout(() => {
-                message.style.display = 'none';
-            }, 2000);
-        }).catch(err => {
-            alert('Failed to copy text: ' + err);
-        });
+            @media (max-width: 768px) {
+            .post-outer {
+            width: calc(100% - 24px) !important;
+            }
+
+            }
+        </style>
+<script> // <![CDATA[
+            function filterAndTruncateContent() {
+                // Handle grid post labels
+                document.querySelectorAll('.grid-post-labels').forEach(labelContainer => {
+                    const labels = labelContainer.querySelectorAll('a');
+                    labels.forEach(label => {
+                        const text = label.textContent.trim();
+                        if (text !== 'Script' && text !== 'Tools') {
+                            label.style.display = 'none';
+                        }
+                    });
+                });
+
+                // Truncate descriptions
+                document.querySelectorAll('.item-snippet').forEach(snippet => {
+                    const text = snippet.textContent;
+                    if (text.length > 80) {
+                        snippet.textContent = text.substring(0, 80) + '...';
+                    }
+                });
+            }
+            
+            // Run after page load
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', filterAndTruncateContent);
+            } else {
+                filterAndTruncateContent();
+            }// ]]>
+        </script>
+<div class="card h-100">
+<article>
+<div class="card-img-container">
+<img alt=" Christmas Update Murder Mystery 2 Script - (No Key)" class="card-img-top" loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg6kjDe4EhfrU2w2TAJ9L87zqaCks3CccWFqX5KvdqRnEl3Eoaciu1_HBPCbgmOegy2pmkDn82KI2Y64TkM8uYRVEZ0Xp8TnfpkcnfOI6ZY9Nnw1rNoG4RLbiUYOks-1_QWOGTCN7Nf4RIfVZtYVwS3CEFYjA239Ab8NsnXb9NNV_zl9EqqhmbOGfR7_Vo/w664-h372/Untitled.jpg">
+</div>
+<div class="card-body">
+<div class="post-labels grid-post-labels">
+<a class="badge" href="https://www.geekyblox.com/search/label/Christmas%20Update%20Murder%20Mystery%202" rel="tag" style="display: none;">
+Christmas Update Murder Mystery 2
+</a>
+<a class="badge" href="https://www.geekyblox.com/search/label/mm2%20script" rel="tag" style="display: none;">
+mm2 script
+</a>
+<a class="badge" href="https://www.geekyblox.com/search/label/murder%20mystery%202%20script" rel="tag" style="display: none;">
+murder mystery 2 script
+</a>
+<a class="badge" href="https://www.geekyblox.com/search/label/Script" rel="tag">
+Script
+</a>
+</div>
+<header>
+<h1 class="card-title fs-3 fw-bold">
+ Christmas Update Murder Mystery 2 Script - (No Key)
+</h1>
+<h6 class="card-subtitle text-muted my-2">
+<i class="far fa-calendar-alt me-1"></i>
+December 21, 2024
+</h6>
+</header>
+<div class="item-snippet">
+Christmas Update Murder Mystery 2 script with awesome features! This script, ca...</div>
+<a class="btn btn-outline-primary stretched-link d-grid mt-3" href="https://www.geekyblox.com/2024/12/christmas-update-murder-mystery-2.html">
+<span class="d-flex justify-content-center align-items-center"> Read
+                                newest post &nbsp; <i class="fas fa-book-reader ms-2"></i>
+</span>
+</a>
+</div>
+</article>
+</div>
+</div>
+<div class="post-outer">
+<style>
+            .blog-posts {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -12px;
+            }
+            .blog-posts > *:not(.post-outer) {
+            width: 100%;
+            margin: 0 12px 24px;
+            }
+            .post-outer {
+            width: calc(50% - 24px) !important;
+            margin: 0 12px 24px !important;
+            float: none !important;
+            }
+            .card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border-radius: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            }
+            .card-img-container {
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            height: 200px;
+            position: relative;
+            }
+            .card-img-top {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            transition: transform 0.3s ease;
+            }
+            .card-img-top:hover {
+            transform: scale(1.05);
+            }
+            .card-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 16px;
+            gap: 8px;
+            }
+            .card-title {
+            font-size: 1.25rem !important;
+            line-height: 1.4 !important;
+            height: 2.8em;
+            margin: 0 !important;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            }
+            .card-subtitle {
+            font-size: 0.875rem !important;
+            color: #6c757d !important;
+            margin: 0 !important;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            }
+            .post-labels {
+            margin-bottom: 5px;
+            display: flex;
+            gap: 4px;
+            flex-wrap: wrap;
+            }
+            .badge {
+            display: inline-block;
+            padding: 8px 25px;
+            font-size: 0.75rem;
+            text-decoration: none;
+            margin: 0;
+            background-color: #fff;
+            color: black;
+            border-radius: 25px;
+            }
+            .badge:hover {
+            background-color: #e9ecef;
+            }
+            .item-snippet {
+            flex: 1;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: rgb(205, 217, 229);
+            height: 4.8em;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            margin: 0;
+            }
+            .btn.btn-outline-primary {
+            margin-top: auto;
+            padding: 8px 16px;
+            font-size: 0.95rem;
+            height: 40px;
+            }
+            .status-msg-wrap {
+            width: 100%;
+            margin: 0 12px 24px;
+            }
+            .status-msg-body {
+            width: 100%;
+            }
+
+            .ms-2 {
+            margin-left: 0rem!important;
+            }
+
+            @media (max-width: 768px) {
+            .post-outer {
+            width: calc(100% - 24px) !important;
+            }
+
+            }
+        </style>
+<script> // <![CDATA[
+            function filterAndTruncateContent() {
+                // Handle grid post labels
+                document.querySelectorAll('.grid-post-labels').forEach(labelContainer => {
+                    const labels = labelContainer.querySelectorAll('a');
+                    labels.forEach(label => {
+                        const text = label.textContent.trim();
+                        if (text !== 'Script' && text !== 'Tools') {
+                            label.style.display = 'none';
+                        }
+                    });
+                });
+
+                // Truncate descriptions
+                document.querySelectorAll('.item-snippet').forEach(snippet => {
+                    const text = snippet.textContent;
+                    if (text.length > 80) {
+                        snippet.textContent = text.substring(0, 80) + '...';
+                    }
+                });
+            }
+            
+            // Run after page load
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', filterAndTruncateContent);
+            } else {
+                filterAndTruncateContent();
+            }// ]]>
+        </script>
+<div class="card h-100">
+<article>
+<div class="card-img-container">
+<img alt="Dragon Update 24 Blox Fruits Scripts for Mobile and PC" class="card-img-top" loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEidwHXnQ3ZpAylEfevLZJOZiizYIcXtc2qExd1yOyjAZYJ_GTFuIIVCAGBVG9I8hsGjtzpP-RXvhg1Dsbgw0ZDmDxrqJuFIoEtHa6QI-vL5D8UsG5TicE33L4OuLBAr_NlKEaae8P13NQ-UhVLccJiHI4W0bQIQhRtysnJorrUbKhGX2YHIsjyyCkP5IQc/w663-h373/Untitled(1).jpg">
+</div>
+<div class="card-body">
+<div class="post-labels grid-post-labels">
+<a class="badge" href="https://www.geekyblox.com/search/label/best%20blox%20fruits%20script" rel="tag" style="display: none;">
+best blox fruits script
+</a>
+<a class="badge" href="https://www.geekyblox.com/search/label/Blox%20Fruits" rel="tag" style="display: none;">
+Blox Fruits
+</a>
+<a class="badge" href="https://www.geekyblox.com/search/label/Dragon%20Update%2024%20Blox%20Fruits%20Scripts" rel="tag" style="display: none;">
+Dragon Update 24 Blox Fruits Scripts
+</a>
+<a class="badge" href="https://www.geekyblox.com/search/label/New%20Blox%20Fruits%20Script%20Update" rel="tag" style="display: none;">
+New Blox Fruits Script Update
+</a>
+<a class="badge" href="https://www.geekyblox.com/search/label/Script" rel="tag">
+Script
+</a>
+</div>
+<header>
+<h1 class="card-title fs-3 fw-bold">
+Dragon Update 24 Blox Fruits Scripts for Mobile and PC
+</h1>
+<h6 class="card-subtitle text-muted my-2">
+<i class="far fa-calendar-alt me-1"></i>
+December 16, 2024
+</h6>
+</header>
+<div class="item-snippet">
+What is Blox Fruits? Blox Fruits is a popular Roblox game inspired by One Piece...</div>
+<a class="btn btn-outline-primary stretched-link d-grid mt-3" href="https://www.geekyblox.com/2024/12/update-24-blox-fruits-script.html">
+<span class="d-flex justify-content-center align-items-center"> Read
+                                newest post &nbsp; <i class="fas fa-book-reader ms-2"></i>
+</span>
+</a>
+</div>
+</article>
+</div>
+</div>
+<div class="post-outer">
+<style>
+            .blog-posts {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -12px;
+            }
+            .blog-posts > *:not(.post-outer) {
+            width: 100%;
+            margin: 0 12px 24px;
+            }
+            .post-outer {
+            width: calc(50% - 24px) !important;
+            margin: 0 12px 24px !important;
+            float: none !important;
+            }
+            .card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border-radius: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            }
+            .card-img-container {
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            height: 200px;
+            position: relative;
+            }
+            .card-img-top {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            transition: transform 0.3s ease;
+            }
+            .card-img-top:hover {
+            transform: scale(1.05);
+            }
+            .card-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 16px;
+            gap: 8px;
+            }
+            .card-title {
+            font-size: 1.25rem !important;
+            line-height: 1.4 !important;
+            height: 2.8em;
+            margin: 0 !important;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            }
+            .card-subtitle {
+            font-size: 0.875rem !important;
+            color: #6c757d !important;
+            margin: 0 !important;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            }
+            .post-labels {
+            margin-bottom: 5px;
+            display: flex;
+            gap: 4px;
+            flex-wrap: wrap;
+            }
+            .badge {
+            display: inline-block;
+            padding: 8px 25px;
+            font-size: 0.75rem;
+            text-decoration: none;
+            margin: 0;
+            background-color: #fff;
+            color: black;
+            border-radius: 25px;
+            }
+            .badge:hover {
+            background-color: #e9ecef;
+            }
+            .item-snippet {
+            flex: 1;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: rgb(205, 217, 229);
+            height: 4.8em;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            margin: 0;
+            }
+            .btn.btn-outline-primary {
+            margin-top: auto;
+            padding: 8px 16px;
+            font-size: 0.95rem;
+            height: 40px;
+            }
+            .status-msg-wrap {
+            width: 100%;
+            margin: 0 12px 24px;
+            }
+            .status-msg-body {
+            width: 100%;
+            }
+
+            .ms-2 {
+            margin-left: 0rem!important;
+            }
+
+            @media (max-width: 768px) {
+            .post-outer {
+            width: calc(100% - 24px) !important;
+            }
+
+            }
+        </style>
+<script> // <![CDATA[
+            function filterAndTruncateContent() {
+                // Handle grid post labels
+                document.querySelectorAll('.grid-post-labels').forEach(labelContainer => {
+                    const labels = labelContainer.querySelectorAll('a');
+                    labels.forEach(label => {
+                        const text = label.textContent.trim();
+                        if (text !== 'Script' && text !== 'Tools') {
+                            label.style.display = 'none';
+                        }
+                    });
+                });
+
+                // Truncate descriptions
+                document.querySelectorAll('.item-snippet').forEach(snippet => {
+                    const text = snippet.textContent;
+                    if (text.length > 80) {
+                        snippet.textContent = text.substring(0, 80) + '...';
+                    }
+                });
+            }
+            
+            // Run after page load
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', filterAndTruncateContent);
+            } else {
+                filterAndTruncateContent();
+            }// ]]>
+        </script>
+<div class="card h-100">
+<article>
+<div class="card-img-container">
+<img alt="[🐲DRAGON] Blox Fruits Script | Mobile Auto Farm, Dragon Fruit &amp; Level Up" class="card-img-top" loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg4bRGXGMsgkYmig65UJspdASLqocr61yOuITKNybk2wTcRNOK-KJNWjh4fWWJh_fww_5Mdq2-Kq56btTgvjZBB2tcNGcZ7nNOgQTrLqJwBeNzzVljatLr6qmrSQNOfaH9WnLYSC_arb4rYe6elL7-1aA3rEKnsQ9jPGDePpS-YYM9KaBRHa29AvDbviTY/w641-h361/Dragon%20update%20blox%20fruits%20script.jpg">
+</div>
+<div class="card-body">
+<div class="post-labels grid-post-labels">
+<a class="badge" href="https://www.geekyblox.com/search/label/best%20blox%20fruits%20script" rel="tag" style="display: none;">
+best blox fruits script
+</a>
+<a class="badge" href="https://www.geekyblox.com/search/label/Blox%20Fruits" rel="tag" style="display: none;">
+Blox Fruits
+</a>
+<a class="badge" href="https://www.geekyblox.com/search/label/Blox%20Fruits%20Script" rel="tag" style="display: none;">
+Blox Fruits Script
+</a>
+<a class="badge" href="https://www.geekyblox.com/search/label/New%20Blox%20Fruits%20Script%20Update" rel="tag" style="display: none;">
+New Blox Fruits Script Update
+</a>
+<a class="badge" href="https://www.geekyblox.com/search/label/Script" rel="tag">
+Script
+</a>
+</div>
+<header>
+<h1 class="card-title fs-3 fw-bold">
+[🐲DRAGON] Blox Fruits Script | Mobile Auto Farm, Dragon Fruit &amp; Level Up
+</h1>
+<h6 class="card-subtitle text-muted my-2">
+<i class="far fa-calendar-alt me-1"></i>
+December 15, 2024
+</h6>
+</header>
+<div class="item-snippet">
+New DRAGON update Blox Fruits Scripts for mobile and PC called Hoho Hub and Spe...</div>
+<a class="btn btn-outline-primary stretched-link d-grid mt-3" href="https://www.geekyblox.com/2024/12/%20dragon-update-blox-fruits.html">
+<span class="d-flex justify-content-center align-items-center"> Read
+                                newest post &nbsp; <i class="fas fa-book-reader ms-2"></i>
+</span>
+</a>
+</div>
+</article>
+</div>
+</div>
+<div class="post-outer">
+<style>
+            .blog-posts {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -12px;
+            }
+            .blog-posts > *:not(.post-outer) {
+            width: 100%;
+            margin: 0 12px 24px;
+            }
+            .post-outer {
+            width: calc(50% - 24px) !important;
+            margin: 0 12px 24px !important;
+            float: none !important;
+            }
+            .card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border-radius: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            }
+            .card-img-container {
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            height: 200px;
+            position: relative;
+            }
+            .card-img-top {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            transition: transform 0.3s ease;
+            }
+            .card-img-top:hover {
+            transform: scale(1.05);
+            }
+            .card-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 16px;
+            gap: 8px;
+            }
+            .card-title {
+            font-size: 1.25rem !important;
+            line-height: 1.4 !important;
+            height: 2.8em;
+            margin: 0 !important;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            }
+            .card-subtitle {
+            font-size: 0.875rem !important;
+            color: #6c757d !important;
+            margin: 0 !important;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            }
+            .post-labels {
+            margin-bottom: 5px;
+            display: flex;
+            gap: 4px;
+            flex-wrap: wrap;
+            }
+            .badge {
+            display: inline-block;
+            padding: 8px 25px;
+            font-size: 0.75rem;
+            text-decoration: none;
+            margin: 0;
+            background-color: #fff;
+            color: black;
+            border-radius: 25px;
+            }
+            .badge:hover {
+            background-color: #e9ecef;
+            }
+            .item-snippet {
+            flex: 1;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: rgb(205, 217, 229);
+            height: 4.8em;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            margin: 0;
+            }
+            .btn.btn-outline-primary {
+            margin-top: auto;
+            padding: 8px 16px;
+            font-size: 0.95rem;
+            height: 40px;
+            }
+            .status-msg-wrap {
+            width: 100%;
+            margin: 0 12px 24px;
+            }
+            .status-msg-body {
+            width: 100%;
+            }
+
+            .ms-2 {
+            margin-left: 0rem!important;
+            }
+
+            @media (max-width: 768px) {
+            .post-outer {
+            width: calc(100% - 24px) !important;
+            }
+
+            }
+        </style>
+<script> // <![CDATA[
+            function filterAndTruncateContent() {
+                // Handle grid post labels
+                document.querySelectorAll('.grid-post-labels').forEach(labelContainer => {
+                    const labels = labelContainer.querySelectorAll('a');
+                    labels.forEach(label => {
+                        const text = label.textContent.trim();
+                        if (text !== 'Script' && text !== 'Tools') {
+                            label.style.display = 'none';
+                        }
+                    });
+                });
+
+                // Truncate descriptions
+                document.querySelectorAll('.item-snippet').forEach(snippet => {
+                    const text = snippet.textContent;
+                    if (text.length > 80) {
+                        snippet.textContent = text.substring(0, 80) + '...';
+                    }
+                });
+            }
+            
+            // Run after page load
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', filterAndTruncateContent);
+            } else {
+                filterAndTruncateContent();
+            }// ]]>
+        </script>
+<div class="card h-100">
+<article>
+<div class="card-img-container">
+<img alt="Ultimate Blox Fruits Script for Mobile &amp; PC | Auto Farm, Race V4, Devil Fruit &amp; More | No Key Required" class="card-img-top" loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjRAKKPmmlh5UCkAaYtGJ3Fj31rJmzaUVNb-DC4KTF79r6zuhzqcgkplupmWYYmQoXa98jGIey1Jr1DOythgo-gUM4N4VUDAIUH-aSZGrsxl3GIWIsDwf6pJ_LMpUTKRbFPCWIcqP2Qzu-4ronfTmyKtkNZFEEB0ls3eeHgidMnbj_5K7UO9N9RkO2mXaM/w637-h359/why.jpg">
+</div>
+<div class="card-body">
+<div class="post-labels grid-post-labels">
+<a class="badge" href="https://www.geekyblox.com/search/label/best%20blox%20fruits%20script" rel="tag" style="display: none;">
+best blox fruits script
+</a>
+<a class="badge" href="https://www.geekyblox.com/search/label/Blox%20Fruits" rel="tag" style="display: none;">
+Blox Fruits
+</a>
+<a class="badge" href="https://www.geekyblox.com/search/label/Blox%20Fruits%20Script" rel="tag" style="display: none;">
+Blox Fruits Script
+</a>
+<a class="badge" href="https://www.geekyblox.com/search/label/Dragon%20Update%2024%20Blox%20Fruits%20Scripts" rel="tag" style="display: none;">
+Dragon Update 24 Blox Fruits Scripts
+</a>
+<a class="badge" href="https://www.geekyblox.com/search/label/New%20Blox%20Fruits%20Script%20Update" rel="tag" style="display: none;">
+New Blox Fruits Script Update
+</a>
+<a class="badge" href="https://www.geekyblox.com/search/label/Script" rel="tag">
+Script
+</a>
+</div>
+<header>
+<h1 class="card-title fs-3 fw-bold">
+Ultimate Blox Fruits Script for Mobile &amp; PC | Auto Farm, Race V4, Devil Fruit &amp; More | No Key Required
+</h1>
+<h6 class="card-subtitle text-muted my-2">
+<i class="far fa-calendar-alt me-1"></i>
+December 06, 2024
+</h6>
+</header>
+<div class="item-snippet">
+The best Blox Fruits script for PC and mobile comes with many useful features t...</div>
+<a class="btn btn-outline-primary stretched-link d-grid mt-3" href="https://www.geekyblox.com/2024/12/Best-Blox-Fruits-Script-2024.html">
+<span class="d-flex justify-content-center align-items-center"> Read
+                                newest post &nbsp; <i class="fas fa-book-reader ms-2"></i>
+</span>
+</a>
+</div>
+</article>
+</div>
+</div>
+<div class="post-outer">
+<style>
+            .blog-posts {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -12px;
+            }
+            .blog-posts > *:not(.post-outer) {
+            width: 100%;
+            margin: 0 12px 24px;
+            }
+            .post-outer {
+            width: calc(50% - 24px) !important;
+            margin: 0 12px 24px !important;
+            float: none !important;
+            }
+            .card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border-radius: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            }
+            .card-img-container {
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            height: 200px;
+            position: relative;
+            }
+            .card-img-top {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            transition: transform 0.3s ease;
+            }
+            .card-img-top:hover {
+            transform: scale(1.05);
+            }
+            .card-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 16px;
+            gap: 8px;
+            }
+            .card-title {
+            font-size: 1.25rem !important;
+            line-height: 1.4 !important;
+            height: 2.8em;
+            margin: 0 !important;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            }
+            .card-subtitle {
+            font-size: 0.875rem !important;
+            color: #6c757d !important;
+            margin: 0 !important;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            }
+            .post-labels {
+            margin-bottom: 5px;
+            display: flex;
+            gap: 4px;
+            flex-wrap: wrap;
+            }
+            .badge {
+            display: inline-block;
+            padding: 8px 25px;
+            font-size: 0.75rem;
+            text-decoration: none;
+            margin: 0;
+            background-color: #fff;
+            color: black;
+            border-radius: 25px;
+            }
+            .badge:hover {
+            background-color: #e9ecef;
+            }
+            .item-snippet {
+            flex: 1;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: rgb(205, 217, 229);
+            height: 4.8em;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            margin: 0;
+            }
+            .btn.btn-outline-primary {
+            margin-top: auto;
+            padding: 8px 16px;
+            font-size: 0.95rem;
+            height: 40px;
+            }
+            .status-msg-wrap {
+            width: 100%;
+            margin: 0 12px 24px;
+            }
+            .status-msg-body {
+            width: 100%;
+            }
+
+            .ms-2 {
+            margin-left: 0rem!important;
+            }
+
+            @media (max-width: 768px) {
+            .post-outer {
+            width: calc(100% - 24px) !important;
+            }
+
+            }
+        </style>
+<script> // <![CDATA[
+            function filterAndTruncateContent() {
+                // Handle grid post labels
+                document.querySelectorAll('.grid-post-labels').forEach(labelContainer => {
+                    const labels = labelContainer.querySelectorAll('a');
+                    labels.forEach(label => {
+                        const text = label.textContent.trim();
+                        if (text !== 'Script' && text !== 'Tools') {
+                            label.style.display = 'none';
+                        }
+                    });
+                });
+
+                // Truncate descriptions
+                document.querySelectorAll('.item-snippet').forEach(snippet => {
+                    const text = snippet.textContent;
+                    if (text.length > 80) {
+                        snippet.textContent = text.substring(0, 80) + '...';
+                    }
+                });
+            }
+            
+            // Run after page load
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', filterAndTruncateContent);
+            } else {
+                filterAndTruncateContent();
+            }// ]]>
+        </script>
+<div class="card h-100">
+<article>
+<div class="card-img-container">
+<img alt="Fisch Script GUI | Quick Auto Fisch Farming, Auto Sell &amp; More (No Key)" class="card-img-top" loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjxELd0TawiKtw_tKRN5F6Woo2uMAwgDyrBbk7wxHE-iajbj0PMFRIRpzdSZxCACo3GCjMYXZMUYYBFlSXDa7BDCHMCl2LKWHn4ABZ_0UrfxOAvaE_Kn7HOuZ1kXU7-FuDOqP0k0jLHlQPa4pOJWjMe8i7szSgdvSrb2lzG2f1RkifoQ0qotly3TgAejOU/w461-h259/3041755048_16732694052_1731173288905(3).jpg">
+</div>
+<div class="card-body">
+<div class="post-labels grid-post-labels">
+<a class="badge" href="https://www.geekyblox.com/search/label/fisch" rel="tag" style="display: none;">
+fisch
+</a>
+<a class="badge" href="https://www.geekyblox.com/search/label/fisch%20mobile%20script" rel="tag" style="display: none;">
+fisch mobile script
+</a>
+<a class="badge" href="https://www.geekyblox.com/search/label/fisch%20script%202024" rel="tag" style="display: none;">
+fisch script 2024
+</a>
+<a class="badge" href="https://www.geekyblox.com/search/label/Fisch%20script%20no%20key" rel="tag" style="display: none;">
+Fisch script no key
+</a>
+<a class="badge" href="https://www.geekyblox.com/search/label/Script" rel="tag">
+Script
+</a>
+</div>
+<header>
+<h1 class="card-title fs-3 fw-bold">
+Fisch Script GUI | Quick Auto Fisch Farming, Auto Sell &amp; More (No Key)
+</h1>
+<h6 class="card-subtitle text-muted my-2">
+<i class="far fa-calendar-alt me-1"></i>
+November 30, 2024
+</h6>
+</header>
+<div class="item-snippet">
+Hidden Hub, Speed Hub X, and Mercury Hub are top Fisch Script GUIs with amazing...</div>
+<a class="btn btn-outline-primary stretched-link d-grid mt-3" href="https://www.geekyblox.com/2024/11/Latest-Fisch-Script.html">
+<span class="d-flex justify-content-center align-items-center"> Read
+                                newest post &nbsp; <i class="fas fa-book-reader ms-2"></i>
+</span>
+</a>
+</div>
+</article>
+</div>
+</div>
+<div class="post-outer">
+<style>
+            .blog-posts {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -12px;
+            }
+            .blog-posts > *:not(.post-outer) {
+            width: 100%;
+            margin: 0 12px 24px;
+            }
+            .post-outer {
+            width: calc(50% - 24px) !important;
+            margin: 0 12px 24px !important;
+            float: none !important;
+            }
+            .card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border-radius: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            }
+            .card-img-container {
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            height: 200px;
+            position: relative;
+            }
+            .card-img-top {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            transition: transform 0.3s ease;
+            }
+            .card-img-top:hover {
+            transform: scale(1.05);
+            }
+            .card-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 16px;
+            gap: 8px;
+            }
+            .card-title {
+            font-size: 1.25rem !important;
+            line-height: 1.4 !important;
+            height: 2.8em;
+            margin: 0 !important;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            }
+            .card-subtitle {
+            font-size: 0.875rem !important;
+            color: #6c757d !important;
+            margin: 0 !important;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            }
+            .post-labels {
+            margin-bottom: 5px;
+            display: flex;
+            gap: 4px;
+            flex-wrap: wrap;
+            }
+            .badge {
+            display: inline-block;
+            padding: 8px 25px;
+            font-size: 0.75rem;
+            text-decoration: none;
+            margin: 0;
+            background-color: #fff;
+            color: black;
+            border-radius: 25px;
+            }
+            .badge:hover {
+            background-color: #e9ecef;
+            }
+            .item-snippet {
+            flex: 1;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: rgb(205, 217, 229);
+            height: 4.8em;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            margin: 0;
+            }
+            .btn.btn-outline-primary {
+            margin-top: auto;
+            padding: 8px 16px;
+            font-size: 0.95rem;
+            height: 40px;
+            }
+            .status-msg-wrap {
+            width: 100%;
+            margin: 0 12px 24px;
+            }
+            .status-msg-body {
+            width: 100%;
+            }
+
+            .ms-2 {
+            margin-left: 0rem!important;
+            }
+
+            @media (max-width: 768px) {
+            .post-outer {
+            width: calc(100% - 24px) !important;
+            }
+
+            }
+        </style>
+<script> // <![CDATA[
+            function filterAndTruncateContent() {
+                // Handle grid post labels
+                document.querySelectorAll('.grid-post-labels').forEach(labelContainer => {
+                    const labels = labelContainer.querySelectorAll('a');
+                    labels.forEach(label => {
+                        const text = label.textContent.trim();
+                        if (text !== 'Script' && text !== 'Tools') {
+                            label.style.display = 'none';
+                        }
+                    });
+                });
+
+                // Truncate descriptions
+                document.querySelectorAll('.item-snippet').forEach(snippet => {
+                    const text = snippet.textContent;
+                    if (text.length > 80) {
+                        snippet.textContent = text.substring(0, 80) + '...';
+                    }
+                });
+            }
+            
+            // Run after page load
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', filterAndTruncateContent);
+            } else {
+                filterAndTruncateContent();
+            }// ]]>
+        </script>
+<div class="card h-100">
+<article>
+<div class="card-img-container">
+<img alt="New Update: Fisch Script | Best Auto-Farm Fish, Auto-Sell, Shake &amp; More | Mobile &amp; PC" class="card-img-top" loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhkDeUYcSoLQsKhzHJA1lDkU589X8V26u548z-X7zZSC-SaE3dmgflNeRc08vj2s7RYQi83947Fu-rpVgOHe0Y1ecyRq6H3J0m7A9JKUKriLrg8_YR5HhwFLReQOkO_-eG_bV-kuD60SuiPnx4JpDUQq8Z0VOjKywIX8FHrVCKaHNzCS0Wb2ahHCcRTkHE/w637-h358/fisch.jpg">
+</div>
+<div class="card-body">
+<div class="post-labels grid-post-labels">
+<a class="badge" href="https://www.geekyblox.com/search/label/fisch" rel="tag" style="display: none;">
+fisch
+</a>
+<a class="badge" href="https://www.geekyblox.com/search/label/fisch%20mobile%20script" rel="tag" style="display: none;">
+fisch mobile script
+</a>
+<a class="badge" href="https://www.geekyblox.com/search/label/New%20Fisch%20Script" rel="tag" style="display: none;">
+New Fisch Script
+</a>
+<a class="badge" href="https://www.geekyblox.com/search/label/roblox%20fisch%20script" rel="tag" style="display: none;">
+roblox fisch script
+</a>
+<a class="badge" href="https://www.geekyblox.com/search/label/Script" rel="tag">
+Script
+</a>
+</div>
+<header>
+<h1 class="card-title fs-3 fw-bold">
+New Update: Fisch Script | Best Auto-Farm Fish, Auto-Sell, Shake &amp; More | Mobile &amp; PC
+</h1>
+<h6 class="card-subtitle text-muted my-2">
+<i class="far fa-calendar-alt me-1"></i>
+November 23, 2024
+</h6>
+</header>
+<div class="item-snippet">
+Fisch has received another new update! If you’re looking for a great Fisch scri...</div>
+<a class="btn btn-outline-primary stretched-link d-grid mt-3" href="https://www.geekyblox.com/2024/11/New-Update-Fisch-Script%20.html">
+<span class="d-flex justify-content-center align-items-center"> Read
+                                newest post &nbsp; <i class="fas fa-book-reader ms-2"></i>
+</span>
+</a>
+</div>
+</article>
+</div>
+</div>
+</main>
+<div class="blog-pager" id="blog-pager">
+<span id="blog-pager-newer-link">
+<a aria-label="Go to next Previous" class="pager-button disabled-button" role="button">
+<i class="fas fa-ban button-icon"></i>
+<span>Previous</span>
+</a>
+</span>
+<a aria-label="Go to home page" class="home-button" href="https://www.geekyblox.com/" role="button">
+<i class="fas fa-home button-icon"></i>
+<span>Home</span>
+</a>
+<span id="blog-pager-older-link">
+<a aria-label="Go to older posts" class="pager-button older-post" href="https://www.geekyblox.com/search?updated-max=2024-11-23T07:35:00-08:00&amp;max-results=6" role="button">
+<span>Older Posts</span>
+<i class="fas fa-arrow-right button-icon"></i>
+</a>
+</span>
+</div>
+</div></div>
+<div class="section" id="BlogPost1"><div class="widget PopularPosts" data-version="1" id="PopularPosts1">
+<div class="popular-posts-container">
+<div class="popular-posts-header">
+<i class="fas fa-fire"></i>
+<h3>Popular Posts</h3>
+</div>
+<div class="widget-content popular-posts">
+<div class="popular-post-item">
+<div class="post-thumbnail">
+<img alt="New Redz Hub Blox Fruits Script | No Key, No Lag, Many Features &amp; Latest Update" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg_BUB1gCQNc90NAr0TSgGoi9-i9xH0YZ8inFxxX4GiW5GktzdmzKeCOjgJFYGg7XtdQt30HnCyDUT2BRBSUKKHquOeS859R12gowBnYSQJwSgyyCA_d-PR_5kLSMqXtywPttMvd77LkizMpdMm_rjdKO3bMcLcAAR11tPLIQKQazPqHP7abY-2nh1jb-k/s72-w561-c-h315/Screenshot%202024-09-15%20013430.jpg">
+<div class="rank-container">
+<div class="rank-number">#1</div>
+<i class="fas fa-star post-icon"></i>
+</div>
+</div>
+<div class="post-content">
+<h4 class="post-title">New Redz Hub Blox Fruits Script | No Key, No Lag, Many Features &amp; Latest Update</h4>
+<div class="post-snippet">The Redz Hub Blox Fruits script has just released a new update with some really useful features. This script includes things like Auto Farm,...</div>
+<div class="post-meta">
+<a class="read-more-btn" href="https://www.geekyblox.com/2024/11/Redz-Hub-Blox-Fruits.html">
+                    Read popular post this month
+                    <i class="fas fa-arrow-right"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="popular-post-item">
+<div class="post-thumbnail">
+<img alt="Ultimate Blox Fruits Script for Mobile &amp; PC | Auto Farm, Race V4, Devil Fruit &amp; More | No Key Required" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjRAKKPmmlh5UCkAaYtGJ3Fj31rJmzaUVNb-DC4KTF79r6zuhzqcgkplupmWYYmQoXa98jGIey1Jr1DOythgo-gUM4N4VUDAIUH-aSZGrsxl3GIWIsDwf6pJ_LMpUTKRbFPCWIcqP2Qzu-4ronfTmyKtkNZFEEB0ls3eeHgidMnbj_5K7UO9N9RkO2mXaM/s72-w637-c-h359/why.jpg">
+<div class="rank-container">
+<div class="rank-number">#2</div>
+<i class="fas fa-star post-icon"></i>
+</div>
+</div>
+<div class="post-content">
+<h4 class="post-title">Ultimate Blox Fruits Script for Mobile &amp; PC | Auto Farm, Race V4, Devil Fruit &amp; More | No Key Required</h4>
+<div class="post-snippet">The best Blox Fruits script for PC and mobile comes with many useful features to help you grind efficiently. You won't need to spend 24 ...</div>
+<div class="post-meta">
+<a class="read-more-btn" href="https://www.geekyblox.com/2024/12/Best-Blox-Fruits-Script-2024.html">
+                    Read popular post this month
+                    <i class="fas fa-arrow-right"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="popular-post-item">
+<div class="post-thumbnail">
+<img alt="[🐲DRAGON] Blox Fruits Script | Mobile Auto Farm, Dragon Fruit &amp; Level Up" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg4bRGXGMsgkYmig65UJspdASLqocr61yOuITKNybk2wTcRNOK-KJNWjh4fWWJh_fww_5Mdq2-Kq56btTgvjZBB2tcNGcZ7nNOgQTrLqJwBeNzzVljatLr6qmrSQNOfaH9WnLYSC_arb4rYe6elL7-1aA3rEKnsQ9jPGDePpS-YYM9KaBRHa29AvDbviTY/s72-w641-c-h361/Dragon%20update%20blox%20fruits%20script.jpg">
+<div class="rank-container">
+<div class="rank-number">#3</div>
+<i class="fas fa-star post-icon"></i>
+</div>
+</div>
+<div class="post-content">
+<h4 class="post-title">[🐲DRAGON] Blox Fruits Script | Mobile Auto Farm, Dragon Fruit &amp; Level Up</h4>
+<div class="post-snippet">New DRAGON update Blox Fruits Scripts for mobile and PC called Hoho Hub and Speed Hub X. These scripts have lots of useful features that wil...</div>
+<div class="post-meta">
+<a class="read-more-btn" href="https://www.geekyblox.com/2024/12/%20dragon-update-blox-fruits.html">
+                    Read popular post this month
+                    <i class="fas fa-arrow-right"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="popular-post-item">
+<div class="post-thumbnail">
+<img alt=" Christmas Update Murder Mystery 2 Script - (No Key)" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg6kjDe4EhfrU2w2TAJ9L87zqaCks3CccWFqX5KvdqRnEl3Eoaciu1_HBPCbgmOegy2pmkDn82KI2Y64TkM8uYRVEZ0Xp8TnfpkcnfOI6ZY9Nnw1rNoG4RLbiUYOks-1_QWOGTCN7Nf4RIfVZtYVwS3CEFYjA239Ab8NsnXb9NNV_zl9EqqhmbOGfR7_Vo/s72-w664-c-h372/Untitled.jpg">
+<div class="rank-container">
+<div class="rank-number">#4</div>
+<i class="fas fa-star post-icon"></i>
+</div>
+</div>
+<div class="post-content">
+<h4 class="post-title"> Christmas Update Murder Mystery 2 Script - (No Key)</h4>
+<div class="post-snippet">Christmas Update Murder Mystery 2 script with awesome features! This script, called XHub, is 100% safe, trusted, and keyless. It’s perfect f...</div>
+<div class="post-meta">
+<a class="read-more-btn" href="https://www.geekyblox.com/2024/12/christmas-update-murder-mystery-2.html">
+                    Read popular post this month
+                    <i class="fas fa-arrow-right"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="popular-post-item">
+<div class="post-thumbnail">
+<img alt="Dragon Update 24 Blox Fruits Scripts for Mobile and PC" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEidwHXnQ3ZpAylEfevLZJOZiizYIcXtc2qExd1yOyjAZYJ_GTFuIIVCAGBVG9I8hsGjtzpP-RXvhg1Dsbgw0ZDmDxrqJuFIoEtHa6QI-vL5D8UsG5TicE33L4OuLBAr_NlKEaae8P13NQ-UhVLccJiHI4W0bQIQhRtysnJorrUbKhGX2YHIsjyyCkP5IQc/s72-w663-c-h373/Untitled(1).jpg">
+<div class="rank-container">
+<div class="rank-number">#5</div>
+<i class="fas fa-star post-icon"></i>
+</div>
+</div>
+<div class="post-content">
+<h4 class="post-title">Dragon Update 24 Blox Fruits Scripts for Mobile and PC</h4>
+<div class="post-snippet">What is Blox Fruits? Blox Fruits is a popular Roblox game inspired by One Piece . In this game, you explore, fight, and level up using power...</div>
+<div class="post-meta">
+<a class="read-more-btn" href="https://www.geekyblox.com/2024/12/update-24-blox-fruits-script.html">
+                    Read popular post this month
+                    <i class="fas fa-arrow-right"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="popular-post-item">
+<div class="post-thumbnail">
+<img alt="Delta Executor Mobile: New Update" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhBkWAFhvnarQpy0Ln591Iq1b0TttuSJOn21WyryhgcS7GKlMTNjcs2JN4OMzZ1pagTnb6WbowJfW8CEjVpSkG8Ovrrq2D0NRwt180c4mODQuGlE-I0hMwIhLiJOb4t8W64zwKA5wse0UmEDgKVrMR1CKxHNpLkezNISJBYb28mEi-2JonEcUFY27gkFJc/s72-w677-c-h381/Delta%20mobile.jpg">
+<div class="rank-container">
+<div class="rank-number">#6</div>
+<i class="fas fa-star post-icon"></i>
+</div>
+</div>
+<div class="post-content">
+<h4 class="post-title">Delta Executor Mobile: New Update</h4>
+<div class="post-snippet">Delta Executor Mobile Latest Official Version Released Delta Executor  Mobile's new update  and the latest version  have been released. ...</div>
+<div class="post-meta">
+<a class="read-more-btn" href="https://www.geekyblox.com/2024/09/Delta-Executor.html">
+                    Read popular post this month
+                    <i class="fas fa-arrow-right"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="popular-post-item">
+<div class="post-thumbnail">
+<img alt="Fisch Script GUI | Quick Auto Fisch Farming, Auto Sell &amp; More (No Key)" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjxELd0TawiKtw_tKRN5F6Woo2uMAwgDyrBbk7wxHE-iajbj0PMFRIRpzdSZxCACo3GCjMYXZMUYYBFlSXDa7BDCHMCl2LKWHn4ABZ_0UrfxOAvaE_Kn7HOuZ1kXU7-FuDOqP0k0jLHlQPa4pOJWjMe8i7szSgdvSrb2lzG2f1RkifoQ0qotly3TgAejOU/s72-w461-c-h259/3041755048_16732694052_1731173288905(3).jpg">
+<div class="rank-container">
+<div class="rank-number">#7</div>
+<i class="fas fa-star post-icon"></i>
+</div>
+</div>
+<div class="post-content">
+<h4 class="post-title">Fisch Script GUI | Quick Auto Fisch Farming, Auto Sell &amp; More (No Key)</h4>
+<div class="post-snippet">Hidden Hub, Speed Hub X, and Mercury Hub are top Fisch Script GUIs with amazing features and smooth performance. Hidden Hub and Speed Hub X ...</div>
+<div class="post-meta">
+<a class="read-more-btn" href="https://www.geekyblox.com/2024/11/Latest-Fisch-Script.html">
+                    Read popular post this month
+                    <i class="fas fa-arrow-right"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="popular-post-item">
+<div class="post-thumbnail">
+<img alt="[🤿] Fisch Script | Fish Auto-Farm, Auto-Sell &amp; More - No Key" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhf4QWPnxGsERIW8yuYAyM3zIzntiKqdj_t45qdeObjL4KBgDhmPimb-GbCuNIsUyGEjAwHusgD8Q4XZWT84nMzRlWFVYbrRAi05ZIz_VDKfmNfG01BulmE0mQWVj8FApTCXplC8o3L4D8s6gxOL5pu7ClbaUkUQeidftmBAwcLPioO7g9l18GT9DACtAE/s72-w599-c-h336/2nd.jpg">
+<div class="rank-container">
+<div class="rank-number">#8</div>
+<i class="fas fa-star post-icon"></i>
+</div>
+</div>
+<div class="post-content">
+<h4 class="post-title">[🤿] Fisch Script | Fish Auto-Farm, Auto-Sell &amp; More - No Key</h4>
+<div class="post-snippet">   [🤿] New Best Fisch Script | Mobile &amp; PC | No Key Required New Fisch Script &nbsp;with many good and useful features like&nbsp; Auto Farm Fish ...</div>
+<div class="post-meta">
+<a class="read-more-btn" href="https://www.geekyblox.com/2024/10/New-Fisch-Script.html">
+                    Read popular post this month
+                    <i class="fas fa-arrow-right"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="popular-post-item">
+<div class="post-thumbnail">
+<img alt="OP Murder Mystery 2 Script Mobile" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgOp6W9gbD-mZJE5dph2KUi2-Hv1cbl7st81lxTUX02ahugrAJ2v0LAPr97d1q4wxpcUdMH28kpZluswMtWij6ic489WhCOraeguyj5ulnhPuTxmf2-16eRB8-YhdTwY1PYTxuA9o9TS_zXED_EIiT4by9BT59kwkuowZrP687ScBmK9of-CHIG3LjjThE/s72-w677-c-h381/script.jpg">
+<div class="rank-container">
+<div class="rank-number">#9</div>
+<i class="fas fa-star post-icon"></i>
+</div>
+</div>
+<div class="post-content">
+<h4 class="post-title">OP Murder Mystery 2 Script Mobile</h4>
+<div class="post-snippet">   Script Roblox Murder Mystery 2 Mobile and PC | MM2 NEW Murder Mystery 2 Script for Mobile and PC, called Overdrive H! This script is free...</div>
+<div class="post-meta">
+<a class="read-more-btn" href="https://www.geekyblox.com/2024/10/OP-MM2-SCRIPT.html">
+                    Read popular post this month
+                    <i class="fas fa-arrow-right"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="popular-post-item">
+<div class="post-thumbnail">
+<img alt="New Update: Fisch Script | Best Auto-Farm Fish, Auto-Sell, Shake &amp; More | Mobile &amp; PC" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhkDeUYcSoLQsKhzHJA1lDkU589X8V26u548z-X7zZSC-SaE3dmgflNeRc08vj2s7RYQi83947Fu-rpVgOHe0Y1ecyRq6H3J0m7A9JKUKriLrg8_YR5HhwFLReQOkO_-eG_bV-kuD60SuiPnx4JpDUQq8Z0VOjKywIX8FHrVCKaHNzCS0Wb2ahHCcRTkHE/s72-w637-c-h358/fisch.jpg">
+<div class="rank-container">
+<div class="rank-number">#10</div>
+<i class="fas fa-star post-icon"></i>
+</div>
+</div>
+<div class="post-content">
+<h4 class="post-title">New Update: Fisch Script | Best Auto-Farm Fish, Auto-Sell, Shake &amp; More | Mobile &amp; PC</h4>
+<div class="post-snippet">Fisch has received another new update! If you’re looking for a great Fisch script, don’t worry! I’ve got awesome Fisch scripts with many use...</div>
+<div class="post-meta">
+<a class="read-more-btn" href="https://www.geekyblox.com/2024/11/New-Update-Fisch-Script%20.html">
+                    Read popular post this month
+                    <i class="fas fa-arrow-right"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div>
+</div>
+<aside class="col-lg-4">
+<div class="position-sticky" style="top:5.5rem;">
+<div class="card p-4 mb-4">
+<div class="info-text">
+<i class="fas fa-check-circle"></i><h4 class="fw-bold">About</h4>
+</div>
+<p class="mb-2">Hello! Get awesome scripts and tools, #1 and 100% trusted!</p>
+<div class="section" id="ViewsCount"><div class="widget Stats" data-version="1" id="Stats0">
+<hr>
+<div class="views-count">
+<i class="fas fa-eye"></i>
+<h4 class="fw-bold">View Counts</h4>
+</div>
+<div class="widget-content" style="color:#03C755;">
+<div id="Stats0_content" style="">
+<span class="counter-wrapper text-counter-wrapper" id="Stats0_totalCount">885,451</span>
+</div>
+</div>
+<hr>
+</div></div>
+<!-- wd followers -->
+<!-- end -->
+</div>
+</div>
+</aside>
+</div>
+</div>
+<footer class="text-muted py-3 mt-4 border-top">
+<div class="container">
+<p class="text-center">
+         © 2024 All rights reserved
+        
+      </p>
+</div>
+</footer>
+<script crossorigin="anonymous" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script async="async">
+  // <![CDATA[
+    // Initialize tooltips
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+
+    function hideEmptyAlert() {
+        const emptyAlert = document.querySelector('h4.alert.alert-warning');
+        if (emptyAlert && emptyAlert.textContent.trim() === '') {
+            emptyAlert.style.display = 'none';
+        }
     }
+
+    // Run when DOM is loaded
+    document.addEventListener('DOMContentLoaded', hideEmptyAlert);
+
+    // Also run when Blogger's pagination occurs
+    if (typeof window._WidgetManager !== 'undefined') {
+        window._WidgetManager.addPostBodyListener(hideEmptyAlert);
+    }
+
+    // This will run every time the DOM loads or when new buttons are added
+    function initializeShineEffects() {
+      const buttons = document.querySelectorAll('.myButton');
+      const totalDuration = 8; // Total animation duration in seconds
+      
+      buttons.forEach(button => {
+        // Create a random delay between 0 and the total animation duration
+        const randomDelay = -(Math.random() * totalDuration) + 's';
+        button.style.setProperty('--shine-delay', randomDelay);
+      });
+    }
+
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', initializeShineEffects);
+
+    // hero section code here 
+const slogans = [
+    "Explore the best Roblox scripts, tools, and content!",
+    "100% trusted and safe",
+    "Subscribe to the Geeky Blox YouTube channel",
+    "Remember to like the videos and share them with your friends!"
+];
+
+const typewriter = document.getElementById('typewriter');
+let slogan_index = 0;
+let isDeleting = false;
+let charIndex = 0;
+const typingSpeed = 100;
+const deletingSpeed = 50;
+const pauseBeforeDelete = 2000;
+const pauseBeforeNextSlogan = 500;
+
+function typeWrite() {
+    const currentSlogan = slogans[slogan_index];
+    
+    if (isDeleting) {
+        typewriter.textContent = currentSlogan.substring(0, charIndex - 1);
+        charIndex--;
+        
+        if (charIndex === 0) {
+            isDeleting = false;
+            slogan_index = (slogan_index + 1) % slogans.length;
+            setTimeout(typeWrite, pauseBeforeNextSlogan);
+            return;
+        }
+        
+        setTimeout(typeWrite, deletingSpeed);
+    } else {
+        typewriter.textContent = currentSlogan.substring(0, charIndex + 1);
+        charIndex++;
+        
+        if (charIndex === currentSlogan.length) {
+            isDeleting = true;
+            setTimeout(typeWrite, pauseBeforeDelete);
+            return;
+        }
+        
+        setTimeout(typeWrite, typingSpeed);
+    }
+}
+
+window.addEventListener('load', () => {
+    typeWrite();
+});
+
+
+  // ]]>
+</script>
+
+<script type="text/javascript" src="https://www.blogger.com/static/v1/widgets/745881458-widgets.js"></script>
+<script type="text/javascript">
+window['__wavt'] = 'AOuZoY7g9aH25Bj4uXbWcaIks3bYQkUlyA:1735336125780';_WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d9199095950636163520','//www.geekyblox.com/','9199095950636163520');
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'blogId': '9199095950636163520', 'title': 'GEEKY BLOX', 'url': 'https://www.geekyblox.com/', 'canonicalUrl': 'https://www.geekyblox.com/', 'homepageUrl': 'https://www.geekyblox.com/', 'searchUrl': 'https://www.geekyblox.com/search', 'canonicalHomepageUrl': 'https://www.geekyblox.com/', 'blogspotFaviconUrl': 'https://www.geekyblox.com/favicon.ico', 'bloggerUrl': 'https://www.blogger.com', 'hasCustomDomain': true, 'httpsEnabled': true, 'enabledCommentProfileImages': true, 'gPlusViewType': 'FILTERED_POSTMOD', 'adultContent': false, 'analyticsAccountNumber': '', 'encoding': 'UTF-8', 'locale': 'en', 'localeUnderscoreDelimited': 'en', 'languageDirection': 'ltr', 'isPrivate': false, 'isMobile': false, 'isMobileRequest': false, 'mobileClass': '', 'isPrivateBlog': false, 'isDynamicViewsAvailable': true, 'feedLinks': '\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22GEEKY BLOX - Atom\x22 href\x3d\x22https://www.geekyblox.com/feeds/posts/default\x22 /\x3e\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/rss+xml\x22 title\x3d\x22GEEKY BLOX - RSS\x22 href\x3d\x22https://www.geekyblox.com/feeds/posts/default?alt\x3drss\x22 /\x3e\n\x3clink rel\x3d\x22service.post\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22GEEKY BLOX - Atom\x22 href\x3d\x22https://www.blogger.com/feeds/9199095950636163520/posts/default\x22 /\x3e\n', 'meTag': '\x3clink rel\x3d\x22me\x22 href\x3d\x22https://www.blogger.com/profile/00584955897225000017\x22 /\x3e\n', 'adsenseHostId': 'ca-host-pub-1556223355139109', 'adsenseHasAds': false, 'adsenseAutoAds': false, 'boqCommentIframeForm': true, 'loginRedirectParam': '', 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/361ce9cf7a112c52', 'plusOneApiSrc': 'https://apis.google.com/js/platform.js', 'disableGComments': true, 'interstitialAccepted': false, 'sharing': {'platforms': [{'name': 'Get link', 'key': 'link', 'shareMessage': 'Get link', 'target': ''}, {'name': 'Facebook', 'key': 'facebook', 'shareMessage': 'Share to Facebook', 'target': 'facebook'}, {'name': 'BlogThis!', 'key': 'blogThis', 'shareMessage': 'BlogThis!', 'target': 'blog'}, {'name': 'X', 'key': 'twitter', 'shareMessage': 'Share to X', 'target': 'twitter'}, {'name': 'Pinterest', 'key': 'pinterest', 'shareMessage': 'Share to Pinterest', 'target': 'pinterest'}, {'name': 'Email', 'key': 'email', 'shareMessage': 'Email', 'target': 'email'}], 'disableGooglePlus': true, 'googlePlusShareButtonWidth': 0, 'googlePlusBootstrap': '\x3cscript type\x3d\x22text/javascript\x22\x3ewindow.___gcfg \x3d {\x27lang\x27: \x27en\x27};\x3c/script\x3e'}, 'hasCustomJumpLinkMessage': true, 'jumpLinkMessage': 'Read More', 'pageType': 'index', 'pageName': '', 'pageTitle': 'GEEKY BLOX', 'metaDescription': 'Geeky Blox is your trusted source for Roblox Executor Mobile, Roblox Scripts, executor news, and helpful tips and tricks, all 100% safe and reliable.'}}, {'name': 'features', 'data': {}}, {'name': 'messages', 'data': {'edit': 'Edit', 'linkCopiedToClipboard': 'Link copied to clipboard!', 'ok': 'Ok', 'postLink': 'Post Link'}}, {'name': 'template', 'data': {'name': 'custom', 'localizedName': 'Custom', 'isResponsive': false, 'isAlternateRendering': false, 'isCustom': true}}, {'name': 'view', 'data': {'classic': {'name': 'classic', 'url': '?view\x3dclassic'}, 'flipcard': {'name': 'flipcard', 'url': '?view\x3dflipcard'}, 'magazine': {'name': 'magazine', 'url': '?view\x3dmagazine'}, 'mosaic': {'name': 'mosaic', 'url': '?view\x3dmosaic'}, 'sidebar': {'name': 'sidebar', 'url': '?view\x3dsidebar'}, 'snapshot': {'name': 'snapshot', 'url': '?view\x3dsnapshot'}, 'timeslide': {'name': 'timeslide', 'url': '?view\x3dtimeslide'}, 'isMobile': false, 'title': 'GEEKY BLOX', 'description': 'Geeky Blox is your trusted source for Roblox Executor Mobile, Roblox Scripts, executor news, and helpful tips and tricks, all 100% safe and reliable.', 'url': 'https://www.geekyblox.com/', 'type': 'feed', 'isSingleItem': false, 'isMultipleItems': true, 'isError': false, 'isPage': false, 'isPost': false, 'isHomepage': true, 'isArchive': false, 'isLabelSearch': false}}]);
+_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog0', 'BlogPost0', document.getElementById('Blog0'), {'cmtInteractionsEnabled': false, 'lightboxEnabled': true, 'lightboxModuleUrl': 'https://www.blogger.com/static/v1/jsbin/3846405171-lbx.js', 'lightboxCssUrl': 'https://www.blogger.com/static/v1/v-css/1964470060-lightbox_bundle.css'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_PopularPostsView', new _WidgetInfo('PopularPosts1', 'BlogPost1', document.getElementById('PopularPosts1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_StatsView', new _WidgetInfo('Stats0', 'ViewsCount', document.getElementById('Stats0'), {'title': '\u7e3d\u7db2\u9801\u700f\u89bd\u91cf', 'showGraphicalCounter': false, 'showAnimatedCounter': false, 'showSparkline': false, 'statsUrl': '//www.geekyblox.com/b/stats?style\x3dBLACK_TRANSPARENT\x26timeRange\x3dALL_TIME\x26token\x3dAPq4FmAv0MPLF9B0nxEr5IihrgUwRZ12tQVW2LTVqrMz0VcYiYddcuOyoWaT4pP7gX05mcGuREdNk16i024OAi0BMu8kdA1TNQ'}, 'displayModeFull'));
 </script>
 
 </body>
-</html>
