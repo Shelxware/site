@@ -1,6 +1,46 @@
-.social-link img {
-    width: 40px; /* Slightly larger for better visibility */
-    height: 40px;
-    margin-right: 10px;
-    object-fit: contain; /* Ensures the entire logo fits */
+/* Hamburger menu styling */
+.menu-icon {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    font-size: 40px; /* Larger size */
+    cursor: pointer;
+    z-index: 1000;
+    color: white;
+}
+
+/* Navigation menu */
+nav {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Initially hidden off-screen */
+    width: 250px;
+    height: 100%;
+    background-color: #111;
+    color: white;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    transition: transform 0.4s ease; /* Smooth animation */
+    transform: translateX(-100%);
+}
+
+nav.visible {
+    transform: translateX(0); /* Slide in */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 20px 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
 }
