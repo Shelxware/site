@@ -68,7 +68,19 @@
             height: 4px;
             background-color: #fff;
             margin: 4px 0;
-            transition: transform 0.3s;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+
+        .menu-toggle.active div:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .menu-toggle.active div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active div:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
         }
 
         /* Overlay styling */
@@ -196,7 +208,9 @@
     <script>
         function toggleMenu() {
             const menu = document.getElementById('menu');
+            const toggle = document.querySelector('.menu-toggle');
             menu.classList.toggle('active');
+            toggle.classList.toggle('active');
         }
     </script>
 </body>
