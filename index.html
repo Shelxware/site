@@ -104,12 +104,14 @@
             text-align: center;
             background-color: rgba(135, 206, 235, 0.9);
             border-radius: 10px;
-            transition: transform 0.3s, background-color 0.3s;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.6);
+            transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
         }
 
         .menu-overlay a:hover {
             transform: scale(1.1);
             background-color: rgba(100, 149, 237, 0.9);
+            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.9);
         }
 
         /* Hero section */
@@ -119,23 +121,23 @@
             flex: 1;
         }
 
-        .text-box {
+        .hero .text-box {
             background: rgba(0, 0, 0, 0.8);
             border: 2px solid #fff;
             border-radius: 10px;
             padding: 20px;
             max-width: 600px;
-            margin: 20px auto;
+            margin: 0 auto 20px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         }
 
-        .text-box h2 {
+        .hero .text-box h2 {
             font-size: 2em;
             margin-bottom: 10px;
             text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
         }
 
-        .text-box p {
+        .hero .text-box p {
             font-size: 1.2em;
             color: #ccc;
         }
@@ -143,12 +145,14 @@
         .image-box {
             width: 300px;
             height: 200px;
-            margin: 20px auto;
             background-image: url('https://tr.rbxcdn.com/180DAY-02bfbef1eb7ba3124b87bb8fc95201af/768/432/Image/Webp/noFilter');
             background-size: cover;
+            background-repeat: no-repeat;
             background-position: center;
             border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 255, 0.5);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            margin: 20px auto 0 50px; /* Adjust left margin for positioning */
+            border: 3px solid rgba(0, 0, 255, 0.5); /* Blue gradient effect */
         }
 
         /* Footer styling */
@@ -189,12 +193,10 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <!-- First Box -->
         <div class="text-box">
             <h2>"Don't go broke trying to look rich."</h2>
             <p>sub to my yt</p>
         </div>
-        <!-- New Box Underneath -->
         <div class="image-box"></div>
     </section>
 
