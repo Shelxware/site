@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GlobalExploiter</title>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&family=Open+Sans:wght@800&display=swap" rel="stylesheet">
     <style>
         /* General styling */
         body {
@@ -18,8 +18,9 @@
             min-height: 100vh;
         }
 
-        /* Background blur with new image */
-        .background-blur {
+        /* Background image */
+        body::before {
+            content: '';
             position: fixed;
             top: 0;
             left: 0;
@@ -29,7 +30,6 @@
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
-            filter: blur(5px);
             z-index: -1;
         }
 
@@ -46,75 +46,11 @@
             margin: 0;
             padding-left: 20px;
             font-size: 2.5em;
-            font-family: 'Open Sans', sans-serif; /* Open Sans 800 */
+            font-family: 'Open Sans', sans-serif;
             font-weight: 800;
             text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
             flex: 1;
             text-align: center;
-        }
-
-        /* Hamburger menu styling */
-        .menu-toggle {
-            position: absolute;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-            flex-direction: column;
-            cursor: pointer;
-            z-index: 10;
-        }
-
-        .menu-toggle div {
-            width: 30px;
-            height: 4px;
-            background-color: #fff;
-            margin: 4px 0;
-            transition: transform 0.3s;
-        }
-
-        /* Overlay styling */
-        .menu-overlay {
-            position: fixed;
-            top: 0;
-            left: -100%;
-            height: 100%;
-            width: 300px;
-            background-color: rgba(0, 0, 0, 0.85);
-            box-shadow: 2px 0 6px rgba(0, 0, 0, 0.5);
-            padding: 60px 20px 20px;
-            transition: left 0.3s ease-in-out;
-            z-index: 5;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .menu-overlay.active {
-            left: 0;
-        }
-
-        /* Button styling with glow and thicker font */
-        .menu-overlay a {
-            display: block;
-            color: white;
-            text-decoration: none;
-            font-family: 'Fredoka', sans-serif;
-            font-weight: 700;
-            font-size: 1.5em;
-            margin: 20px 0;
-            padding: 10px;
-            text-align: center;
-            background-color: rgba(135, 206, 235, 0.9);
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.6);
-            transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
-        }
-
-        .menu-overlay a:hover {
-            transform: scale(1.1);
-            background-color: rgba(100, 149, 237, 0.9);
-            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.9);
         }
 
         /* Hero section */
@@ -122,6 +58,7 @@
             text-align: center;
             padding: 50px 20px;
             flex: 1;
+            position: relative;
         }
 
         .hero .text-box {
@@ -130,8 +67,10 @@
             border-radius: 10px;
             padding: 20px;
             max-width: 600px;
-            margin: 0 auto 30px;
+            margin: 0 auto;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            position: relative;
+            top: -50px; /* Move it up */
         }
 
         .hero .text-box h2 {
@@ -143,6 +82,26 @@
         .hero .text-box p {
             font-size: 1.2em;
             color: #ccc;
+        }
+
+        /* Image box */
+        .image-box {
+            width: 300px;
+            height: 200px;
+            margin: 20px auto;
+            border-radius: 10px;
+            background-image: url('https://tr.rbxcdn.com/180DAY-02bfbef1eb7ba3124b87bb8fc95201af/768/432/Image/Webp/noFilter');
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 0 20px rgba(0, 0, 255, 0.5);
+            border: 2px solid rgba(0, 0, 255, 0.8);
+            cursor: pointer;
+            position: relative;
+            left: -30%; /* Position to the left */
+        }
+
+        .image-box:hover {
+            box-shadow: 0 0 30px rgba(0, 0, 255, 0.8);
         }
 
         /* Footer styling */
@@ -158,63 +117,10 @@
     </style>
 </head>
 <body>
-    <!-- Background -->
-    <div class="background-blur"></div>
-
     <!-- Header -->
     <header>
-        <div class="menu-toggle" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
         <h1>Global Exploiter</h1>
     </header>
-<div class="clickable-box" onclick="alert('Box clicked!')">
-    Click Me
-</div>
-
-<style>
-    .clickable-box {
-        background-image: linear-gradient(
-                rgba(0, 0, 255, 0.5),
-                rgba(0, 0, 255, 0.5)
-            ),
-            url('https://tr.rbxcdn.com/180DAY-02bfbef1eb7ba3124b87bb8fc95201af/768/432/Image/Webp/noFilter');
-        background-size: cover;
-        background-position: center;
-        border: 3px solid #0000ff;
-        border-radius: 10px;
-        padding: 20px;
-        width: 300px;
-        height: 150px;
-        text-align: center;
-        color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.2em;
-        font-weight: bold;
-        box-shadow: 0 0 20px #0000ff;
-        cursor: pointer;
-        transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .clickable-box:hover {
-        transform: scale(1.1);
-        box-shadow: 0 0 30px #0000ff;
-    }
-</style>
-
-    <!-- Menu Overlay -->
-    <nav class="menu-overlay" id="menu">
-        <div>
-            <a href="#home">Home</a>
-            <a href="Scripts.html">Scripts</a>
-            <a href="#executors">Executors</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
@@ -222,19 +128,12 @@
             <h2>"Don't go broke trying to look rich."</h2>
             <p>sub to my yt</p>
         </div>
+        <div class="image-box" onclick="window.location.href='https://example.com';"></div>
     </section>
 
     <!-- Footer -->
     <footer>
         <p>© 2024 GlobalExploiter. All rights reserved.</p>
     </footer>
-
-    <!-- JavaScript -->
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById('menu');
-            menu.classList.toggle('active');
-        }
-    </script>
 </body>
 </html>
