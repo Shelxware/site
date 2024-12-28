@@ -171,6 +171,43 @@
             box-shadow: 0 6px 15px rgba(255, 255, 255, 0.8);
         }
 
+        /* New box with image and button */
+        .image-box {
+            width: 80%;
+            margin: 20px auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            text-align: center;
+            border-radius: 15px;
+            position: relative;
+            filter: blur(5px);
+        }
+
+        .image-box img {
+            width: 80%;
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+        }
+
+        .copy-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background-color: #00bcd4;
+            border: none;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .copy-button:hover {
+            background-color: #0097a7;
+            transform: scale(1.1);
+        }
+
         /* Footer styling */
         footer {
             text-align: center;
@@ -229,7 +266,11 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <!-- No text box here anymore -->
+        <!-- New image box with blur effect -->
+        <div class="image-box">
+            <img src="https://media.discordapp.net/attachments/1237163573894053888/1322659186370154607/2F2C2865-7B60-43F0-B2D6-9BC7AF38E716.jpg?ex=6771addb&is=67705c5b&hm=e4b0bc70dbca0031d964cdcb17ffcdeadadaf9c598ac6dac214c3b7149d45e7e&=&width=1071&height=602" alt="Script Image">
+            <button class="copy-button" onclick="copyScript()">Copy Script</button>
+        </div>
     </section>
 
     <!-- Footer -->
@@ -246,12 +287,15 @@
             toggle.classList.toggle('active');
         }
 
-        // Dark mode toggle
-        document.body.addEventListener('click', function(e) {
-            if (e.target.id === 'darkModeToggle') {
-                document.body.classList.toggle('dark-mode');
-            }
-        });
+        // Copy script function
+        function copyScript() {
+            const scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Burdenerd/VertexHub/refs/heads/main/Offical'))()";
+            navigator.clipboard.writeText(scriptText).then(() => {
+                alert("Script copied to clipboard!");
+            }).catch(err => {
+                console.error('Failed to copy:', err);
+            });
+        }
     </script>
 </body>
 </html>
