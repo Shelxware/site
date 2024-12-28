@@ -24,7 +24,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('https://media.discordapp.net/attachments/1296169780155256884/1322355000231596052/global-exploiter-discord-abnner.png?ex=67709290&is=676f4110&hm=0c8c86b3eae6bfe344ca2d982f9d4b181f8b2ff8f5f370be9831d7ab456a55f5&=&width=1071&height=602');
+            background-image: url('https://media.discordapp.net/attachments/1296169780155256884/1322355000231596052/global-exploiter-discord-abnner.png');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -46,7 +46,7 @@
             text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff; /* White glow effect */
         }
 
-        /* Navigation button */
+        /* Home Button */
         .home-button {
             position: absolute;
             top: 50%;
@@ -107,23 +107,25 @@
             flex: 1; /* Makes this section take up remaining space */
         }
 
-        .hero h2, .hero p {
-            margin: 0;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.6);
+        .hero .text-box {
+            background: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+            border: 2px solid #fff; /* White border */
             border-radius: 10px;
-            display: inline-block;
-            text-align: center;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero .text-box h2, .hero .text-box p {
+            margin: 0;
             text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff; /* White glow effect */
         }
 
-        .hero h2 {
-            font-size: 2em;
-            margin-bottom: 10px;
-        }
-
-        .hero p {
+        .hero .text-box p {
+            margin-top: 10px;
             font-size: 1.2em;
+            color: #ccc; /* Light gray text */
         }
 
         /* Footer styling */
@@ -144,7 +146,7 @@
 
     <!-- Social Links at the Top -->
     <div class="social-container">
-        <a href="https://youtube.com/@globalexploitor?si=ULxJfeU0MbH6DNhy" target="_blank">
+        <a href="https://youtube.com/@globalexploitor" target="_blank">
             <img src="https://media.discordapp.net/attachments/1240110101809987606/1322350909803597874/IMG_1325.png" alt="YouTube">
         </a>
         <a href="https://discord.gg/Hk9h8vnZ7w" target="_blank">
@@ -163,8 +165,10 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <h2>"Don't go broke trying to look rich."</h2>
-        <p>I really hope you enjoy my website I did not work hard on it chatgpt did lel</p>
+        <div class="text-box">
+            <h2>"Don't go broke trying to look rich."</h2>
+            <p>I really hope you enjoy my website I did not work hard on it chatgpt did lel</p>
+        </div>
     </section>
 
     <!-- Footer -->
