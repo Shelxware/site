@@ -6,20 +6,7 @@
     <title>GlobalExploiter</title>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap" rel="stylesheet">
     <style>
-        /* General styling */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            color: #ffffff;
-            overflow-x: hidden;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            background-color: #1a1a1a;
-            transition: background-color 0.3s ease;
-        }
-
+        /* Notification box styling */
         .notification-box {
             position: fixed;
             top: -100px;
@@ -56,8 +43,6 @@
         .close-notification:hover {
             background-color: darkred;
         }
-
-        /* Existing styles... */
     </style>
 </head>
 <body>
@@ -67,10 +52,8 @@
         <button class="close-notification" onclick="closeNotification()">Close</button>
     </div>
 
-    <!-- Background -->
+    <!-- Existing website content -->
     <div class="background-blur"></div>
-
-    <!-- Header -->
     <header>
         <div class="menu-toggle" onclick="toggleMenu()">
             <div></div>
@@ -79,8 +62,6 @@
         </div>
         <h1>Global Exploiter</h1>
     </header>
-
-    <!-- Menu Overlay -->
     <nav class="menu-overlay" id="menu">
         <div>
             <a href="#home">Home</a>
@@ -88,20 +69,15 @@
             <a href="#executors">Executors</a>
             <a href="#contact">Contact</a>
         </div>
-        <!-- Social Icons -->
         <div class="social-icons">
             <a href="https://youtube.com/@globalexploitor?si=ULxJfeU0MbH6DNhy" target="_blank">
-                <img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" 
-                     alt="YouTube">
+                <img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" alt="YouTube">
             </a>
             <a href="https://discord.gg/Hk9h8vnZ7w" target="_blank">
-                <img src="https://sm.ign.com/ign_nordic/guide/w/what-is-di/what-is-discord-what-is-stream-attenuation_nq1q.jpg" 
-                     alt="Discord">
+                <img src="https://sm.ign.com/ign_nordic/guide/w/what-is-di/what-is-discord-what-is-stream-attenuation_nq1q.jpg" alt="Discord">
             </a>
         </div>
     </nav>
-
-    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="text-box">
             <h2>"Don't go broke trying to look rich."</h2>
@@ -109,8 +85,6 @@
             <a href="Scripts.html" class="view-scripts-btn">View Scripts</a>
         </div>
     </section>
-
-    <!-- Footer -->
     <footer>
         <p>© 2024 GlobalExploiter. All rights reserved.</p>
     </footer>
