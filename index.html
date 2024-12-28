@@ -227,22 +227,30 @@
             filter: blur(5px) brightness(50%);
         }
 
-        /* View Scripts box */
-        .view-scripts-box {
+        /* View Scripts Button */
+        .view-scripts-button {
             width: 250px;  /* Thinner width */
             height: 50px;  /* Reduced height */
-            background-color: rgba(0, 0, 0, 0.8);
-            color: #fff;
-            padding: 10px;  /* Reduced padding */
-            text-align: center;
+            background-color: cyan; /* Cyan background */
+            color: black; /* Black text */
             font-size: 1.2em;
             font-weight: 700;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+            text-align: center;
+            line-height: 50px; /* Vertically center the text */
+            border-radius: 10px;
+            border: 3px solid black; /* Black border */
+            box-shadow: 0 0 20px white; /* White glow */
             position: absolute; /* Centered position */
             top: 50%;  /* Center vertically */
             left: 50%; /* Center horizontally */
             transform: translate(-50%, -50%); /* Adjust the position to truly center it */
-            z-index: 10;
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .view-scripts-button:hover {
+            background-color: rgba(0, 255, 255, 0.9); /* Slightly darker cyan on hover */
+            box-shadow: 0 0 30px white; /* Increased white glow on hover */
         }
     </style>
 </head>
@@ -281,8 +289,8 @@
         </div>
     </nav>
 
-    <!-- View Scripts Box -->
-    <div class="view-scripts-box">
+    <!-- View Scripts Button -->
+    <div class="view-scripts-button" onclick="window.location.href='Scripts.html'">
         View Scripts
     </div>
 
