@@ -108,7 +108,7 @@
             left: 0;
         }
 
-        /* Button styling */
+        /* Styled menu buttons */
         .menu-overlay a {
             display: block;
             color: white;
@@ -117,12 +117,18 @@
             font-weight: 700;
             font-size: 1.5em;
             margin: 20px 0;
+            padding: 10px;
             text-align: center;
+            background-color: rgba(135, 206, 235, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.6);
+            transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
         }
 
         .menu-overlay a:hover {
             transform: scale(1.1);
-            color: #ffeb3b;
+            background-color: rgba(100, 149, 237, 0.9);
+            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.9);
         }
 
         /* Social icon container */
