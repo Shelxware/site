@@ -79,6 +79,44 @@
             border-radius: 2px;
         }
 
+        /* Search box styling */
+        .search-box {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 8px 15px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-box input {
+            border: none;
+            padding: 5px;
+            font-size: 1em;
+            border-radius: 10px;
+            outline: none;
+            background-color: transparent;
+            color: #333;
+            margin-right: 10px;
+        }
+
+        .search-box button {
+            border: none;
+            background: #00bcd4;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .search-box button:hover {
+            background-color: #0097a7;
+        }
+
         /* Overlay styling */
         .menu-overlay {
             position: fixed;
@@ -173,7 +211,6 @@
             max-height: 500px; /* Limiting height to 500px */
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
-            filter: blur(2px); /* Applying slight blur to the image */
         }
 
         .copy-button {
@@ -227,6 +264,11 @@
             <div></div>
         </div>
         <h1>Global Exploiter</h1>
+        <!-- Search Box -->
+        <div class="search-box">
+            <input type="text" placeholder="Search...">
+            <button>Search</button>
+        </div>
     </header>
 
     <!-- Menu Overlay -->
@@ -252,7 +294,7 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <!-- New image box with blur effect -->
+        <!-- New image box without blur effect -->
         <div class="image-box">
             <img src="https://media.discordapp.net/attachments/1237163573894053888/1322659186370154607/2F2C2865-7B60-43F0-B2D6-9BC7AF38E716.jpg?ex=6771addb&is=67705c5b&hm=e4b0bc70dbca0031d964cdcb17ffcdeadadaf9c598ac6dac214c3b7149d45e7e&=&width=1071&height=602" alt="Script Image">
             <button class="copy-button" onclick="copyScript()">Copy Script</button>
