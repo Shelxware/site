@@ -5,21 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GlobalExploiter</title>
     <style>
+        /* General styling */
         body {
-            background: linear-gradient(135deg, #1a1a1a 0%, #333333 100%);
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #ffffff;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Background blur */
+        .background-blur {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background-image: url('https://media.discordapp.net/attachments/1296169780155256884/1322355000231596052/global-exploiter-discord-abnner.png?ex=67709290&is=676f4110&hm=0c8c86b3eae6bfe344ca2d982f9d4b181f8b2ff8f5f370be9831d7ab456a55f5&=&width=1071&height=602');
             background-size: cover;
             background-repeat: no-repeat;
-            color: #ffffff;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
+            background-position: center;
+            filter: blur(5px); /* Adjust the blur intensity */
+            z-index: -1; /* Ensure the background stays behind everything */
         }
 
+        /* Header and Navigation */
         header {
             padding: 20px;
             text-align: center;
             background: rgba(0, 0, 0, 0.8);
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
 
         header h1 {
@@ -28,7 +46,6 @@
         }
 
         nav {
-            text-align: center;
             margin: 20px 0;
         }
 
@@ -44,6 +61,40 @@
             color: #1e90ff;
         }
 
+        /* Social links at the top */
+        .social-container {
+            text-align: center;
+            padding: 10px 0;
+            background: rgba(0, 0, 0, 0.9);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .social-container a {
+            text-decoration: none;
+            margin: 0 10px;
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            background-color: #fff;
+            border-radius: 50%;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .social-container a:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-container a img {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+        }
+
+        /* Hero section */
         .hero {
             text-align: center;
             padding: 50px 20px;
@@ -76,44 +127,33 @@
             background-color: #555555;
         }
 
+        /* Footer styling */
         footer {
             padding: 20px;
             text-align: center;
             background: rgba(0, 0, 0, 0.9);
             margin-top: 40px;
         }
-
-        .social-container {
-            margin: 20px 0;
-        }
-
-        .social-container a {
-            text-decoration: none;
-            margin: 0 10px;
-            display: inline-block;
-            width: 50px;
-            height: 50px;
-            line-height: 50px;
-            background-color: #fff;
-            border-radius: 50%;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .social-container a:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .social-container a img {
-            width: 24px;
-            height: 24px;
-            vertical-align: middle;
-        }
     </style>
 </head>
 <body>
+    <!-- Background -->
+    <div class="background-blur"></div>
+
+    <!-- Social Links at the Top -->
+    <div class="social-container">
+        <a href="https://youtube.com/@globalexploitor?si=ULxJfeU0MbH6DNhy" target="_blank">
+            <img src="https://media.discordapp.net/attachments/1240110101809987606/1322350909803597874/IMG_1325.png?ex=67708ec0&is=676f3d40&hm=bf6547c0ae9784b7cafae499803a0e0d71ff6fc4c1c77904a82c6d3bd22e98f5&=&width=602&height=602" alt="YouTube">
+        </a>
+        <a href="https://discord.gg/Hk9h8vnZ7w" target="_blank">
+            <img src="https://media.discordapp.net/attachments/1240110101809987606/1322350909350608908/IMG_1329.png?ex=67708ec0&is=676f3d40&hm=c8407e48ecf2e955b4b0628dc0f37b9c550d87399d5ed992e1d7d5d08e02d219&=&width=716&height=543" alt="Discord">
+        </a>
+        <a href="https://www.roblox.com/users/5259163256/profile" target="_blank">
+            <img src="https://media.discordapp.net/attachments/1240110101809987606/1322350909564653608/IMG_1327.png?ex=67708ec0&is=676f3d40&hm=65509162258066b4d13bbbcb77a1b6f787d252c5da0cc56b02b6a9b307013979&=&width=500&height=500" alt="Roblox">
+        </a>
+    </div>
+
+    <!-- Header -->
     <header>
         <h1>Welcome to GlobalExploiter</h1>
         <nav>
@@ -124,39 +164,33 @@
         </nav>
     </header>
 
+    <!-- Hero Section -->
     <section id="home" class="hero">
         <h2>Discover a World of Possibilities</h2>
         <p>Your ultimate platform for innovative experiences and limitless creativity. Join our community today!</p>
         <a href="#about" class="btn">Learn More</a>
     </section>
 
+    <!-- About Section -->
     <section id="about">
         <h2>About GlobalExploiter</h2>
         <p>GlobalExploiter is your gateway to creativity and technology. We bring innovative solutions and vibrant experiences to life.</p>
     </section>
 
+    <!-- Features Section -->
     <section id="features">
         <h2>Features</h2>
         <p>Explore features designed to empower users and foster creativity in every corner of the globe.</p>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact">
         <h2>Contact Us</h2>
         <p>We'd love to hear from you! Reach out for support, suggestions, or inquiries.</p>
     </section>
 
+    <!-- Footer -->
     <footer>
-        <div class="social-container">
-            <a href="https://youtube.com/@globalexploitor?si=ULxJfeU0MbH6DNhy" target="_blank">
-                <img src="https://media.discordapp.net/attachments/1240110101809987606/1322350909803597874/IMG_1325.png?ex=67708ec0&is=676f3d40&hm=bf6547c0ae9784b7cafae499803a0e0d71ff6fc4c1c77904a82c6d3bd22e98f5&=&width=602&height=602" alt="YouTube">
-            </a>
-            <a href="https://discord.gg/Hk9h8vnZ7w" target="_blank">
-                <img src="https://media.discordapp.net/attachments/1240110101809987606/1322350909350608908/IMG_1329.png?ex=67708ec0&is=676f3d40&hm=c8407e48ecf2e955b4b0628dc0f37b9c550d87399d5ed992e1d7d5d08e02d219&=&width=716&height=543" alt="Discord">
-            </a>
-            <a href="https://www.roblox.com/users/5259163256/profile" target="_blank">
-                <img src="https://media.discordapp.net/attachments/1240110101809987606/1322350909564653608/IMG_1327.png?ex=67708ec0&is=676f3d40&hm=65509162258066b4d13bbbcb77a1b6f787d252c5da0cc56b02b6a9b307013979&=&width=500&height=500" alt="Roblox">
-            </a>
-        </div>
         <p>© 2024 GlobalExploiter. All rights reserved.</p>
     </footer>
 </body>
