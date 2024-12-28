@@ -34,10 +34,8 @@
 
         /* Header styling */
         header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
+            padding: 20px;
+            text-align: center;
             background: rgba(0, 0, 0, 0.8);
         }
 
@@ -49,6 +47,7 @@
 
         /* Social links and Home button container */
         .social-container {
+            position: relative; /* For absolute positioning of the button */
             text-align: center;
             padding: 10px 0;
             background: rgba(0, 0, 0, 0.9);
@@ -82,6 +81,10 @@
 
         /* Home button styling */
         .home-button {
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
             background-color: #ff6b6b;
             color: white;
             border: none;
@@ -141,8 +144,9 @@
     <!-- Background -->
     <div class="background-blur"></div>
 
-    <!-- Social Links -->
+    <!-- Social Links and Home Button -->
     <div class="social-container">
+        <button class="home-button" onclick="scrollToTop()">Home</button>
         <a href="https://youtube.com/@globalexploitor?si=ULxJfeU0MbH6DNhy" target="_blank">
             <img src="https://e7.pngegg.com/pngimages/208/269/png-clipart-youtube-play-button-computer-icons-youtube-youtube-logo-angle-rectangle-thumbnail.png" alt="YouTube">
         </a>
@@ -154,7 +158,6 @@
     <!-- Header -->
     <header>
         <h1>Global Exploiter</h1>
-        <button class="home-button" onclick="scrollToTop()">Home</button>
     </header>
 
     <!-- Hero Section -->
