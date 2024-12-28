@@ -12,9 +12,6 @@
             font-family: Arial, sans-serif;
             color: #ffffff;
             overflow-x: hidden;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
         }
 
         /* Background blur */
@@ -35,132 +32,89 @@
         /* Header styling */
         header {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             padding: 20px;
             background: rgba(0, 0, 0, 0.8);
-            position: relative;
         }
 
         header h1 {
             margin: 0;
-            font-size: 2.5em;
-            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
-            flex: 1;
-            text-align: center;
+            font-size: 1.5em;
+            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff;
         }
 
-        /* Button container */
-        .button-container {
-            display: flex;
-            gap: 10px; /* Space between buttons */
-            position: absolute;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        .button {
-            background-color: #87CEEB; /* Light blue */
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 1em;
+        /* Hamburger menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 20px;
             cursor: pointer;
-            transition: background-color 0.3s, box-shadow 0.3s;
-            box-shadow: 0 0 10px white; /* White glow */
         }
 
-        .button:hover {
-            background-color: #6495ED; /* Slightly darker blue on hover */
+        .hamburger div {
+            height: 4px;
+            background-color: #ffffff;
+            border-radius: 2px;
+            transition: transform 0.3s;
         }
 
-        /* Responsive design for smaller screens */
-        @media (max-width: 600px) {
-            .button-container {
-                flex-direction: column;
-                left: 10px;
-                top: auto;
-                bottom: 10px;
-                transform: translateY(0);
-            }
-
-            .button {
-                width: 100%;
-                text-align: center;
-            }
+        /* Sidebar menu */
+        .menu {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+            overflow-y: auto;
+            transition: left 0.3s;
+            padding: 20px;
         }
 
-        /* Social links at the top */
-        .social-container {
-            text-align: center;
-            padding: 10px 0;
-            background: rgba(0, 0, 0, 0.9);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-        }
-
-        .social-container a {
+        .menu a, .menu button {
+            display: block;
             text-decoration: none;
-            margin: 0 10px;
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            line-height: 40px;
-            background-color: #fff;
-            border-radius: 50%;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .social-container a:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .social-container a img {
-            width: 24px;
-            height: 24px;
-            vertical-align: middle;
-        }
-
-        /* Hero section */
-        .hero {
-            text-align: center;
-            padding: 50px 20px;
-            flex: 1;
-        }
-
-        .hero .text-box {
-            background: rgba(0, 0, 0, 0.8);
-            border: 2px solid #fff;
-            border-radius: 10px;
-            padding: 20px;
-            max-width: 600px;
-            margin: 0 auto;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        .hero .text-box h2 {
-            font-size: 2em;
+            color: white;
+            padding: 10px;
             margin-bottom: 10px;
-            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
+            border-radius: 5px;
+            text-align: left;
+            font-size: 1em;
+            background-color: #87CEEB; /* Light blue */
         }
 
-        .hero .text-box p {
-            font-size: 1.2em;
-            color: #ccc;
+        .menu a:hover, .menu button:hover {
+            background-color: #6495ED; /* Darker blue */
         }
 
-        /* Footer styling */
-        footer {
-            text-align: center;
-            background: rgba(0, 0, 0, 0.9);
-            padding: 20px;
+        .menu.open {
+            left: 0;
         }
 
-        footer p {
-            margin: 0;
+        /* Social container */
+        .social-container {
+            display: none; /* Hidden by default, included in menu on mobile */
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .social-container {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            header nav {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -168,27 +122,26 @@
     <!-- Background -->
     <div class="background-blur"></div>
 
-    <!-- Social Links at the Top -->
-    <div class="social-container">
-        <a href="https://youtube.com/@globalexploitor?si=ULxJfeU0MbH6DNhy" target="_blank">
-            <img src="https://e7.pngegg.com/pngimages/208/269/png-clipart-youtube-play-button-computer-icons-youtube-youtube-logo-angle-rectangle-thumbnail.png" alt="YouTube">
-        </a>
-        <a href="https://discord.gg/Hk9h8vnZ7w" target="_blank">
-            <img src="https://static.vecteezy.com/system/resources/previews/018/930/718/non_2x/discord-logo-discord-icon-transparent-free-png.png" alt="Discord">
-        </a>
-    </div>
-
     <!-- Header -->
     <header>
-        <div class="button-container">
-            <button class="button" onclick="scrollToTop()">Home</button>
-            <button class="button" onclick="scrollToScripts()">Scripts</button>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
         <h1>Global Exploiter</h1>
     </header>
 
+    <!-- Sidebar menu -->
+    <div class="menu" id="menu">
+        <button onclick="scrollToTop()">Home</button>
+        <button onclick="scrollToScripts()">Scripts</button>
+        <a href="https://youtube.com/@globalexploitor?si=ULxJfeU0MbH6DNhy" target="_blank">YouTube</a>
+        <a href="https://discord.gg/Hk9h8vnZ7w" target="_blank">Discord</a>
+    </div>
+
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <section class="hero">
         <div class="text-box">
             <h2>"Don't go broke trying to look rich."</h2>
             <p>sub to my yt</p>
@@ -200,10 +153,14 @@
         <p>© 2024 GlobalExploiter. All rights reserved.</p>
     </footer>
 
-    <!-- JavaScript -->
     <script>
+        function toggleMenu() {
+            const menu = document.getElementById("menu");
+            menu.classList.toggle("open");
+        }
+
         function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            window.scrollTo({ top: 0, behavior: "smooth" });
         }
 
         function scrollToScripts() {
