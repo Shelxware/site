@@ -68,19 +68,23 @@
             height: 4px;
             background-color: #fff;
             margin: 4px 0;
-            transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth animation */
+            transition: transform 0.3s ease, opacity 0.3s ease;
         }
 
         .menu-toggle.active div:nth-child(1) {
-            transform: translateY(8px) rotate(45deg); /* Top bar rotates */
+            transform: translateY(8px) rotate(45deg);
         }
 
         .menu-toggle.active div:nth-child(2) {
-            opacity: 0; /* Middle bar disappears */
+            opacity: 0;
         }
 
         .menu-toggle.active div:nth-child(3) {
-            transform: translateY(-8px) rotate(-45deg); /* Bottom bar rotates */
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        .menu-toggle.active div {
+            border-radius: 2px;
         }
 
         /* Overlay styling */
@@ -93,7 +97,7 @@
             background-color: rgba(0, 0, 0, 0.85);
             box-shadow: 2px 0 6px rgba(0, 0, 0, 0.5);
             padding: 60px 20px 20px;
-            transition: left 0.4s ease-in-out; /* Smooth slide-in/out */
+            transition: left 0.4s ease-in-out;
             z-index: 5;
             display: flex;
             flex-direction: column;
@@ -101,10 +105,27 @@
         }
 
         .menu-overlay.active {
-            left: 0; /* Brings the menu into view */
+            left: 0;
         }
 
-        /* Social icons container in the middle */
+        /* Button styling */
+        .menu-overlay a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 700;
+            font-size: 1.5em;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .menu-overlay a:hover {
+            transform: scale(1.1);
+            color: #ffeb3b;
+        }
+
+        /* Social icon container */
         .social-icons {
             display: flex;
             justify-content: center;
@@ -129,20 +150,47 @@
         }
 
         .social-icons a:hover {
-            transform: scale(1.1); /* Zoom on hover */
-            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.8); /* Glow effect */
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.8);
         }
 
-        /* Menu overlay links */
-        .menu-overlay a {
-            display: block;
-            color: white;
-            text-decoration: none;
-            font-family: 'Fredoka', sans-serif;
-            font-weight: 700;
-            font-size: 1.5em;
-            margin: 20px 0;
+        /* Hero section */
+        .hero {
             text-align: center;
+            padding: 50px 20px;
+            flex: 1;
+        }
+
+        .hero .text-box {
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid #fff;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 600px;
+            margin: 20px auto;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero .text-box h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
+        }
+
+        .hero .text-box p {
+            font-size: 1.2em;
+            color: #ccc;
+        }
+
+        /* Footer styling */
+        footer {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+        }
+
+        footer p {
+            margin: 0;
         }
     </style>
 </head>
@@ -168,7 +216,7 @@
             <a href="#executors">Executors</a>
             <a href="#contact">Contact</a>
         </div>
-        <!-- Social icons in the middle -->
+        <!-- Social Icons -->
         <div class="social-icons">
             <a href="https://youtube.com/@globalexploitor?si=ULxJfeU0MbH6DNhy" target="_blank">
                 <img src="https://media.discordapp.net/attachments/1240110101809987606/1322350909803597874/IMG_1328.png" 
@@ -185,6 +233,7 @@
     <section id="home" class="hero">
         <div class="text-box">
             <h2>"Don't go broke trying to look rich."</h2>
+            <p>sub to my yt</p>
         </div>
     </section>
 
