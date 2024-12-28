@@ -124,21 +124,6 @@
             left: 0;
         }
 
-        /* Close button in the menu */
-        .close-menu {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 30px;
-            color: white;
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
-
-        .close-menu:hover {
-            color: #ff6f61;
-        }
-
         /* Styled menu buttons */
         .menu-overlay a {
             display: block;
@@ -171,8 +156,6 @@
             left: 50%;
             transform: translateX(-50%);
             margin: 0;
-            flex-direction: column;
-            align-items: center;
         }
 
         .social-icons a {
@@ -195,14 +178,6 @@
         .social-icons a:hover {
             transform: scale(1.1);
             box-shadow: 0 6px 15px rgba(255, 255, 255, 0.8);
-        }
-
-        .social-icons .label {
-            color: white;
-            margin-top: 10px;
-            font-size: 1em;
-            font-weight: bold;
-            text-align: center;
         }
 
         /* Hero section */
@@ -298,7 +273,6 @@
 
     <!-- Menu Overlay -->
     <nav class="menu-overlay" id="menu">
-        <span class="close-menu" onclick="closeMenu()">×</span>
         <div>
             <a href="#home">Home</a>
             <a href="Scripts.html">Scripts</a>
@@ -310,12 +284,10 @@
             <a href="https://youtube.com/@globalexploitor?si=ULxJfeU0MbH6DNhy" target="_blank">
                 <img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" 
                      alt="YouTube">
-                <span class="label">YouTube</span>
             </a>
             <a href="https://discord.gg/Hk9h8vnZ7w" target="_blank">
                 <img src="https://sm.ign.com/ign_nordic/guide/w/what-is-di/what-is-discord-what-is-stream-attenuation_nq1q.jpg" 
                      alt="Discord">
-                <span class="label">Discord</span>
             </a>
         </div>
     </nav>
@@ -343,11 +315,6 @@
             const toggle = document.querySelector('.menu-toggle');
             menu.classList.toggle('active');
             toggle.classList.toggle('active');
-        }
-
-        function closeMenu() {
-            const menu = document.getElementById('menu');
-            menu.classList.remove('active');
         }
 
         // Scroll-to-Top function
