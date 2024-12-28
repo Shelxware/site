@@ -235,6 +235,7 @@
             color: black; /* Black text */
             font-size: 1.2em;
             font-weight: 700;
+            font-family: 'Fredoka', sans-serif; /* Same font as menu */
             text-align: center;
             line-height: 50px; /* Vertically center the text */
             border-radius: 10px;
@@ -245,12 +246,15 @@
             left: 50%; /* Center horizontally */
             transform: translate(-50%, -50%); /* Adjust the position to truly center it */
             cursor: pointer;
-            transition: background-color 0.3s, box-shadow 0.3s;
+            transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s ease;
+            opacity: 0;
+            animation: fadeIn 1s forwards; /* Fade effect */
         }
 
         .view-scripts-button:hover {
             background-color: rgba(0, 255, 255, 0.9); /* Slightly darker cyan on hover */
             box-shadow: 0 0 30px white; /* Increased white glow on hover */
+            transform: scale(1.1); /* Slight scaling on hover */
         }
     </style>
 </head>
