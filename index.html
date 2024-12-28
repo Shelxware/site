@@ -13,8 +13,8 @@
             color: #ffffff;
             overflow-x: hidden;
             display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+            flex-direction: column; /* Makes content stack vertically */
+            min-height: 100vh; /* Ensures the body takes up the full viewport height */
         }
 
         /* Background blur */
@@ -28,8 +28,8 @@
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
-            filter: blur(5px);
-            z-index: -1;
+            filter: blur(5px); /* Adjust the blur intensity */
+            z-index: -1; /* Ensure the background stays behind everything */
         }
 
         /* Header styling */
@@ -37,34 +37,12 @@
             padding: 20px;
             text-align: center;
             background: rgba(0, 0, 0, 0.8);
-            position: relative;
         }
 
         header h1 {
             margin: 0;
             font-size: 2.5em;
-            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
-        }
-
-        /* Home button */
-        .home-button {
-            position: absolute;
-            top: 50%;
-            left: 20px;
-            transform: translateY(-50%);
-            background-color: #ff6b6b;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 1em;
-            cursor: pointer;
-            transition: background-color 0.3s, box-shadow 0.3s;
-        }
-
-        .home-button:hover {
-            background-color: #e74c3c;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff; /* White glow effect */
         }
 
         /* Social links at the top */
@@ -104,12 +82,12 @@
         .hero {
             text-align: center;
             padding: 50px 20px;
-            flex: 1;
+            flex: 1; /* Makes this section take up remaining space */
         }
 
         .hero .text-box {
-            background: rgba(0, 0, 0, 0.8);
-            border: 2px solid #fff;
+            background: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+            border: 2px solid #fff; /* White border */
             border-radius: 10px;
             padding: 20px;
             max-width: 600px;
@@ -120,12 +98,12 @@
         .hero .text-box h2 {
             font-size: 2em;
             margin-bottom: 10px;
-            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
+            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff; /* White glow effect */
         }
 
         .hero .text-box p {
             font-size: 1.2em;
-            color: #ccc;
+            color: #ccc; /* Light gray text */
         }
 
         /* Footer styling */
@@ -147,19 +125,15 @@
     <!-- Social Links at the Top -->
     <div class="social-container">
         <a href="https://youtube.com/@globalexploitor?si=ULxJfeU0MbH6DNhy" target="_blank">
-            <img src="https://media.discordapp.net/attachments/1240110101809987606/1322350909803597874/IMG_1325.png" alt="YouTube">
+            <img src="https://e7.pngegg.com/pngimages/208/269/png-clipart-youtube-play-button-computer-icons-youtube-youtube-logo-angle-rectangle-thumbnail.png" alt="YouTube">
         </a>
         <a href="https://discord.gg/Hk9h8vnZ7w" target="_blank">
-            <img src="https://media.discordapp.net/attachments/1240110101809987606/1322350909350608908/IMG_1329.png" alt="Discord">
-        </a>
-        <a href="https://www.roblox.com/users/5259163256/profile" target="_blank">
-            <img src="https://media.discordapp.net/attachments/1240110101809987606/1322350909564653608/IMG_1327.png" alt="Roblox">
+            <img src="https://static.vecteezy.com/system/resources/previews/018/930/718/non_2x/discord-logo-discord-icon-transparent-free-png.png" alt="Discord">
         </a>
     </div>
 
     <!-- Header -->
     <header>
-        <button class="home-button" onclick="scrollToTop()">Home</button>
         <h1>Global Exploiter</h1>
     </header>
 
@@ -175,11 +149,5 @@
     <footer>
         <p>© 2024 GlobalExploiter. All rights reserved.</p>
     </footer>
-
-    <script>
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-    </script>
 </body>
 </html>
