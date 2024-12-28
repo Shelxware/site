@@ -43,9 +43,9 @@
         /* Centered Hi box */
         .hi-box {
             position: fixed;
-            top: 50%;
+            top: -100px; /* Start above the screen */
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translateX(-50%);
             background-color: rgba(0, 0, 0, 0.8);
             color: white;
             padding: 20px 30px;
@@ -54,6 +54,8 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
             display: none;
             z-index: 10;
+            opacity: 0; /* Start invisible */
+            transition: top 1s ease-out, opacity 1s ease-out;
         }
 
         /* Close button styling */
@@ -68,7 +70,6 @@
             margin-top: 10px;
         }
 
-        /* Button hover effect */
         .close-btn:hover {
             background-color: darkred;
         }
@@ -350,18 +351,20 @@
 
         function closeHiBox() {
             const hiBox = document.getElementById('hiBox');
-            hiBox.style.transform = 'translate(-50%, -200%)';
+            hiBox.style.top = '-100px'; // Move the box back up
+            hiBox.style.opacity = '0'; // Fade out
             setTimeout(function() {
-                hiBox.style.display = 'none';
-            }, 500); // Delay to allow the animation to complete
+                hiBox.style.display = 'none'; // Hide after animation
+            }, 1000); // Delay to match the animation duration
         }
 
-        // Show Hi box on load
+        // Show Hi box on load with fall animation
         window.onload = function() {
             const hiBox = document.getElementById('hiBox');
             hiBox.style.display = 'block';
             setTimeout(function() {
-                hiBox.style.transform = 'translate(-50%, -50%)';
+                hiBox.style.top = '50%'; // Fall to the middle
+                hiBox.style.opacity = '1'; // Fade in
             }, 10);
         }
     </script>
