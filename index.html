@@ -17,28 +17,13 @@
             flex-direction: column;
             min-height: 100vh;
             background-color: #1a1a1a; /* Default dark background */
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, filter 1s ease-out; /* Transition for blur */
+            filter: blur(10px); /* Initial blur for entire screen */
         }
 
         /* Smooth scrolling */
         html {
             scroll-behavior: smooth;
-        }
-
-        /* Background blur */
-        .background-blur {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('https://media.discordapp.net/attachments/1296169780155256884/1322355000231596052/global-exploiter-discord-abnner.png?ex=67709290&is=676f4110&hm=0c8c86b3eae6bfe344ca2d982f9d4b181f8b2ff8f5f370be9831d7ab456a55f5&=&width=1071&height=602');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            filter: blur(10px);
-            z-index: -1;
-            transition: filter 1s ease-out; /* Transition for blur removal */
         }
 
         /* Centered Hi box */
@@ -56,8 +41,8 @@
             display: none;
             z-index: 10;
             opacity: 0; /* Start invisible */
-            transition: top 1s ease-out, opacity 1s ease-out; /* Added transition for blur */
-            font-family: 'Fredoka', sans-serif; /* Same font as the menu */
+            transition: top 1s ease-out, opacity 1s ease-out;
+            font-family: 'Fredoka', sans-serif;
         }
 
         /* Close button styling */
@@ -92,7 +77,7 @@
             text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
             flex: 1;
             text-align: center;
-            font-family: 'Fredoka', sans-serif; /* Same font as the menu */
+            font-family: 'Fredoka', sans-serif;
         }
 
         /* Hamburger menu styling */
@@ -180,7 +165,7 @@
             display: flex;
             justify-content: center;
             position: absolute;
-            top: 600px; /* Updated to 600px */
+            top: 600px;
             left: 50%;
             transform: translateX(-50%);
             margin: 0;
@@ -188,8 +173,8 @@
 
         .social-icons a {
             display: inline-block;
-            width: 30px; /* Reduced size to 30px */
-            height: 30px; /* Reduced size to 30px */
+            width: 30px;
+            height: 30px;
             margin: 0 10px;
             border-radius: 50%;
             overflow: hidden;
@@ -283,15 +268,12 @@
             background-color: #121212;
         }
 
-        .dark-mode .background-blur {
+        .dark-mode body {
             filter: blur(5px) brightness(50%);
         }
     </style>
 </head>
 <body>
-    <!-- Background -->
-    <div class="background-blur"></div>
-
     <!-- Hi Box -->
     <div class="hi-box" id="hiBox">
         <p>This website is still under development, also please subscribe to my YouTube, thanks</p>
@@ -354,24 +336,21 @@
 
         function closeHiBox() {
             const hiBox = document.getElementById('hiBox');
-            const blur = document.querySelector('.background-blur');
             hiBox.style.top = '-150px'; // Move the box back up
             hiBox.style.opacity = '0'; // Fade out
             setTimeout(function() {
                 hiBox.style.display = 'none'; // Hide after animation
             }, 1000); // Delay to match the animation duration
-            blur.style.filter = 'blur(0)'; // Clear background blur
+            document.body.style.filter = 'blur(0)'; // Clear screen blur
         }
 
         // Show Hi box on load with fall animation
         window.onload = function() {
             const hiBox = document.getElementById('hiBox');
-            const blur = document.querySelector('.background-blur');
-            hiBox.style.display = 'block';
             setTimeout(function() {
+                hiBox.style.display = 'block';
                 hiBox.style.top = '50%'; // Fall to the middle
                 hiBox.style.opacity = '1'; // Fade in
-                blur.style.filter = 'blur(10px)'; // Apply initial blur effect
             }, 10);
         }
     </script>
