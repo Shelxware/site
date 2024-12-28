@@ -12,6 +12,9 @@
             font-family: Arial, sans-serif;
             color: #ffffff;
             overflow-x: hidden;
+            display: flex;
+            flex-direction: column; /* Makes content stack vertically */
+            min-height: 100vh; /* Ensures the body takes up the full viewport height */
         }
 
         /* Background blur */
@@ -21,12 +24,12 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('https://media.discordapp.net/attachments/1296169780155256884/1322355000231596052/global-exploiter-discord-abnner.png');
+            background-image: url('https://media.discordapp.net/attachments/1296169780155256884/1322355000231596052/global-exploiter-discord-abnner.png?ex=67709290&is=676f4110&hm=0c8c86b3eae6bfe344ca2d982f9d4b181f8b2ff8f5f370be9831d7ab456a55f5&=&width=1071&height=602');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
-            filter: blur(5px);
-            z-index: -1;
+            filter: blur(5px); /* Adjust the blur intensity */
+            z-index: -1; /* Ensure the background stays behind everything */
         }
 
         /* Header styling */
@@ -34,15 +37,37 @@
             padding: 20px;
             text-align: center;
             background: rgba(0, 0, 0, 0.8);
+            position: relative;
         }
 
         header h1 {
             margin: 0;
             font-size: 2.5em;
-            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
+            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff; /* White glow effect */
         }
 
-        /* Social links */
+        /* Navigation button */
+        .home-button {
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+            background-color: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .home-button:hover {
+            background-color: #e74c3c;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Social links at the top */
         .social-container {
             text-align: center;
             padding: 10px 0;
@@ -60,38 +85,42 @@
             background-color: #fff;
             border-radius: 50%;
             text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .social-container a:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
         }
 
         .social-container a img {
             width: 24px;
             height: 24px;
+            vertical-align: middle;
         }
 
         /* Hero section */
         .hero {
             text-align: center;
             padding: 50px 20px;
+            flex: 1; /* Makes this section take up remaining space */
         }
 
-        .hero .text-box {
-            background: rgba(0, 0, 0, 0.8);
-            border: 2px solid #fff;
-            border-radius: 10px;
-            padding: 20px;
-            max-width: 600px;
-            margin: 0 auto;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        .hero h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff; /* White glow effect */
         }
 
-        .hero .text-box h2, .hero .text-box p {
-            margin: 0;
-            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
-        }
-
-        .hero .text-box p {
-            margin-top: 10px;
+        .hero p {
             font-size: 1.2em;
-            color: #ccc;
+            max-width: 600px;
+            margin: 0 auto 20px;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
 
         /* Footer styling */
@@ -107,33 +136,43 @@
     </style>
 </head>
 <body>
+    <!-- Background -->
     <div class="background-blur"></div>
 
+    <!-- Social Links at the Top -->
     <div class="social-container">
-        <a href="https://youtube.com/@globalexploitor" target="_blank">
-            <img src="https://media.discordapp.net/attachments/1240110101809987606/1322350909803597874/IMG_1325.png" alt="YouTube">
+        <a href="https://youtube.com/@globalexploitor?si=ULxJfeU0MbH6DNhy" target="_blank">
+            <img src="https://media.discordapp.net/attachments/1240110101809987606/1322350909803597874/IMG_1325.png?ex=67708ec0&is=676f3d40&hm=bf6547c0ae9784b7cafae499803a0e0d71ff6fc4c1c77904a82c6d3bd22e98f5&=&width=602&height=602" alt="YouTube">
         </a>
         <a href="https://discord.gg/Hk9h8vnZ7w" target="_blank">
-            <img src="https://media.discordapp.net/attachments/1240110101809987606/1322350909350608908/IMG_1329.png" alt="Discord">
+            <img src="https://media.discordapp.net/attachments/1240110101809987606/1322350909350608908/IMG_1329.png?ex=67708ec0&is=676f3d40&hm=c8407e48ecf2e955b4b0628dc0f37b9c550d87399d5ed992e1d7d5d08e02d219&=&width=716&height=543" alt="Discord">
         </a>
         <a href="https://www.roblox.com/users/5259163256/profile" target="_blank">
-            <img src="https://media.discordapp.net/attachments/1240110101809987606/1322350909564653608/IMG_1327.png" alt="Roblox">
+            <img src="https://media.discordapp.net/attachments/1240110101809987606/1322350909564653608/IMG_1327.png?ex=67708ec0&is=676f3d40&hm=65509162258066b4d13bbbcb77a1b6f787d252c5da0cc56b02b6a9b307013979&=&width=500&height=500" alt="Roblox">
         </a>
     </div>
 
+    <!-- Header -->
     <header>
         <h1>Global Exploiter</h1>
+        <button class="home-button" onclick="scrollToTop()">Home</button>
     </header>
 
-    <section class="hero">
-        <div class="text-box">
-            <h2>"Don't go broke trying to look rich."</h2>
-            <p>I really hope you enjoy my website I did not work hard on it chatgpt did lel</p>
-        </div>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h2>"Don't go broke trying to look rich."</h2>
+        <p>I really hope you enjoy my website I did not work hard on it chatgpt did lel</p>
     </section>
 
+    <!-- Footer -->
     <footer>
         <p>© 2024 GlobalExploiter. All rights reserved.</p>
     </footer>
+
+    <script>
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
