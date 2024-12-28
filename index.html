@@ -50,11 +50,17 @@
             text-align: center;
         }
 
-        /* Button styling */
+        /* Button container */
+        .button-container {
+            display: flex;
+            gap: 10px; /* Space between buttons */
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
         .button {
-            position: relative;
-            display: inline-block;
-            margin-right: 10px; /* Space between buttons */
             background-color: #87CEEB; /* Light blue */
             color: white;
             padding: 10px 20px;
@@ -67,6 +73,22 @@
 
         .button:hover {
             background-color: #6495ED; /* Slightly darker blue on hover */
+        }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 600px) {
+            .button-container {
+                flex-direction: column;
+                left: 10px;
+                top: auto;
+                bottom: 10px;
+                transform: translateY(0);
+            }
+
+            .button {
+                width: 100%;
+                text-align: center;
+            }
         }
 
         /* Social links at the top */
