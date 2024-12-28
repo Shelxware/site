@@ -3,18 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GlobalExploiter</title>
+    <title>GlobalExploiter - Scripts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap" rel="stylesheet">
     <style>
         /* General styling */
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Fredoka', Arial, sans-serif;
+            font-family: Arial, sans-serif;
             color: #ffffff;
             overflow-x: hidden;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            background-color: #1a1a1a;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
         }
 
         /* Background blur */
@@ -24,7 +32,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('https://media.discordapp.net/attachments/1296169780155256884/1322355000231596052/global-exploiter-discord-abnner.png');
+            background-image: url('https://media.discordapp.net/attachments/1296169780155256884/1322355000231596052/global-exploiter-discord-abnner.png?ex=67709290&is=676f4110&hm=0c8c86b3eae6bfe344ca2d982f9d4b181f8b2ff8f5f370be9831d7ab456a55f5&=&width=1071&height=602');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -67,10 +75,26 @@
             height: 4px;
             background-color: #fff;
             margin: 4px 0;
-            transition: transform 0.3s;
+            transition: transform 0.3s ease, opacity 0.3s ease;
         }
 
-        /* Animation for menu overlay */
+        .menu-toggle.active div:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .menu-toggle.active div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active div:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        .menu-toggle.active div {
+            border-radius: 2px;
+        }
+
+        /* Overlay styling */
         .menu-overlay {
             position: fixed;
             top: 0;
@@ -80,7 +104,7 @@
             background-color: rgba(0, 0, 0, 0.85);
             box-shadow: 2px 0 6px rgba(0, 0, 0, 0.5);
             padding: 60px 20px 20px;
-            transition: left 0.5s ease-in-out;
+            transition: left 0.4s ease-in-out;
             z-index: 5;
             display: flex;
             flex-direction: column;
@@ -91,32 +115,28 @@
             left: 0;
         }
 
+        /* Styled menu buttons */
         .menu-overlay a {
             display: block;
             color: white;
             text-decoration: none;
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 700;
             font-size: 1.5em;
             margin: 20px 0;
             padding: 10px;
             text-align: center;
             background-color: rgba(135, 206, 235, 0.9);
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.6);
+            transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
         }
 
-        .menu-overlay.active a {
-            opacity: 1;
-            transform: translateY(0);
+        .menu-overlay a:hover {
+            transform: scale(1.1);
+            background-color: rgba(100, 149, 237, 0.9);
+            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.9);
         }
-
-        /* Menu items appear with delay */
-        .menu-overlay a:nth-child(1) { transition-delay: 0.2s; }
-        .menu-overlay a:nth-child(2) { transition-delay: 0.4s; }
-        .menu-overlay a:nth-child(3) { transition-delay: 0.6s; }
-        .menu-overlay a:nth-child(4) { transition-delay: 0.8s; }
 
         /* Hero section */
         .hero {
@@ -131,8 +151,16 @@
             border-radius: 10px;
             padding: 20px;
             max-width: 600px;
-            margin: 0 auto;
+            margin: 20px auto;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        /* Fade-in effect for text-box */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .hero .text-box h2 {
@@ -156,6 +184,15 @@
         footer p {
             margin: 0;
         }
+
+        /* Dark mode styling */
+        .dark-mode {
+            background-color: #121212;
+        }
+
+        .dark-mode .background-blur {
+            filter: blur(5px) brightness(50%);
+        }
     </style>
 </head>
 <body>
@@ -175,18 +212,29 @@
     <!-- Menu Overlay -->
     <nav class="menu-overlay" id="menu">
         <div>
-            <a href="#home">Home</a>
+            <a href="https://globalexploiter.xyz">Home</a>
             <a href="#scripts">Scripts</a>
             <a href="#executors">Executors</a>
             <a href="#contact">Contact</a>
         </div>
+        <!-- Social Icons -->
+        <div class="social-icons">
+            <a href="https://youtube.com/@globalexploitor?si=ULxJfeU0MbH6DNhy" target="_blank">
+                <img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" 
+                     alt="YouTube">
+            </a>
+            <a href="https://discord.gg/Hk9h8vnZ7w" target="_blank">
+                <img src="https://sm.ign.com/ign_nordic/guide/w/what-is-di/what-is-discord-what-is-stream-attenuation_nq1q.jpg" 
+                     alt="Discord">
+            </a>
+        </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <section id="scripts" class="hero">
         <div class="text-box">
-            <h2>"Don't go broke trying to look rich."</h2>
-            <p>sub to my yt</p>
+            <h2>"Find the best scripts for your needs."</h2>
+            <p>Explore the world of global exploits!</p>
         </div>
     </section>
 
@@ -199,8 +247,17 @@
     <script>
         function toggleMenu() {
             const menu = document.getElementById('menu');
+            const toggle = document.querySelector('.menu-toggle');
             menu.classList.toggle('active');
+            toggle.classList.toggle('active');
         }
+
+        // Dark mode toggle
+        document.body.addEventListener('click', function(e) {
+            if (e.target.id === 'darkModeToggle') {
+                document.body.classList.toggle('dark-mode');
+            }
+        });
     </script>
 </body>
 </html>
