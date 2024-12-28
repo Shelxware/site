@@ -40,54 +40,218 @@
             z-index: -1;
         }
 
-        /* Notification box styling */
-        .notification-box {
+        /* Header styling */
+        header {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            position: relative;
+        }
+
+        header h1 {
+            margin: 0;
+            padding-left: 20px;
+            font-size: 2.5em;
+            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
+            flex: 1;
+            text-align: center;
+        }
+
+        /* Hamburger menu styling */
+        .menu-toggle {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .menu-toggle div {
+            width: 30px;
+            height: 4px;
+            background-color: #fff;
+            margin: 4px 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .menu-toggle.active div:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .menu-toggle.active div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active div:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        .menu-toggle.active div {
+            border-radius: 2px;
+        }
+
+        /* Overlay styling */
+        .menu-overlay {
             position: fixed;
-            top: -100px;
+            top: 0;
+            left: -100%;
+            height: 100%;
+            width: 300px;
+            background-color: rgba(0, 0, 0, 0.85);
+            box-shadow: 2px 0 6px rgba(0, 0, 0, 0.5);
+            padding: 60px 20px 20px;
+            transition: left 0.4s ease-in-out;
+            z-index: 5;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .menu-overlay.active {
+            left: 0;
+        }
+
+        /* Styled menu buttons */
+        .menu-overlay a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 700;
+            font-size: 1.5em;
+            margin: 20px 0;
+            padding: 10px;
+            text-align: center;
+            background-color: rgba(135, 206, 235, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.6);
+            transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .menu-overlay a:hover {
+            transform: scale(1.1);
+            background-color: rgba(100, 149, 237, 0.9);
+            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.9);
+        }
+
+        /* Social icon container */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            top: 600px; /* Updated to 600px */
             left: 50%;
             transform: translateX(-50%);
-            background-color: rgba(0, 0, 0, 0.9);
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
+            margin: 0;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            width: 30px; /* Reduced size to 30px */
+            height: 30px; /* Reduced size to 30px */
+            margin: 0 10px;
+            border-radius: 50%;
+            overflow: hidden;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .social-icons a img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.8);
+        }
+
+        /* Hero section */
+        .hero {
             text-align: center;
-            z-index: 100;
-            transition: top 0.5s ease;
-            font-family: 'Fredoka', sans-serif;
+            padding: 50px 20px;
+            flex: 1;
+        }
+
+        .hero .text-box {
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid #fff;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 600px;
+            margin: 20px auto;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        /* Fade-in effect for text-box */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .hero .text-box h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
+        }
+
+        .hero .text-box p {
             font-size: 1.2em;
+            color: #ccc;
         }
 
-        .notification-box.visible {
-            top: 20px;
-        }
-
-        .close-notification {
-            display: block;
-            margin-top: 10px;
-            padding: 5px 10px;
-            background-color: red;
+        /* Button styling */
+        .view-scripts-btn {
+            margin-top: 20px;
+            padding: 15px 25px;
+            background-color: cyan;
             color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 0.9em;
+            font-size: 1.2em;
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 700;
+            border: 2px solid #000;
+            border-radius: 10px;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: background-color 0.3s, box-shadow 0.3s;
         }
 
-        .close-notification:hover {
-            background-color: darkred;
+        .view-scripts-btn:hover {
+            background-color: #00bcd4;
+            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.8);
         }
 
-        /* Other styles from your original code remain unchanged */
+        /* Footer styling */
+        footer {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Dark mode styling */
+        .dark-mode {
+            background-color: #121212;
+        }
+
+        .dark-mode .background-blur {
+            filter: blur(5px) brightness(50%);
+        }
     </style>
 </head>
 <body>
-    <!-- Notification Box -->
-    <div id="notification" class="notification-box">
-        This website isn't 100% complete. Please notify me if you encounter any errors or bugs via Discord. Thanks!
-        <button class="close-notification" onclick="closeNotification()">Close</button>
-    </div>
-
     <!-- Background -->
     <div class="background-blur"></div>
 
@@ -109,12 +273,15 @@
             <a href="#executors">Executors</a>
             <a href="#contact">Contact</a>
         </div>
+        <!-- Social Icons -->
         <div class="social-icons">
             <a href="https://youtube.com/@globalexploitor?si=ULxJfeU0MbH6DNhy" target="_blank">
-                <img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" alt="YouTube">
+                <img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" 
+                     alt="YouTube">
             </a>
             <a href="https://discord.gg/Hk9h8vnZ7w" target="_blank">
-                <img src="https://sm.ign.com/ign_nordic/guide/w/what-is-di/what-is-discord-what-is-stream-attenuation_nq1q.jpg" alt="Discord">
+                <img src="https://sm.ign.com/ign_nordic/guide/w/what-is-di/what-is-discord-what-is-stream-attenuation_nq1q.jpg" 
+                     alt="Discord">
             </a>
         </div>
     </nav>
@@ -142,17 +309,12 @@
             toggle.classList.toggle('active');
         }
 
-        // Show notification box on page load
-        window.addEventListener('load', function() {
-            const notification = document.getElementById('notification');
-            notification.classList.add('visible');
+        // Dark mode toggle
+        document.body.addEventListener('click', function(e) {
+            if (e.target.id === 'darkModeToggle') {
+                document.body.classList.toggle('dark-mode');
+            }
         });
-
-        // Close notification box
-        function closeNotification() {
-            const notification = document.getElementById('notification');
-            notification.classList.remove('visible');
-        }
     </script>
 </body>
 </html>
