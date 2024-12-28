@@ -124,6 +124,21 @@
             left: 0;
         }
 
+        /* Close button in the menu */
+        .close-menu {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-menu:hover {
+            color: #ff6f61;
+        }
+
         /* Styled menu buttons */
         .menu-overlay a {
             display: block;
@@ -156,6 +171,8 @@
             left: 50%;
             transform: translateX(-50%);
             margin: 0;
+            flex-direction: column;
+            align-items: center;
         }
 
         .social-icons a {
@@ -166,7 +183,6 @@
             border-radius: 50%;
             overflow: hidden;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            position: relative;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
@@ -181,25 +197,12 @@
             box-shadow: 0 6px 15px rgba(255, 255, 255, 0.8);
         }
 
-        .tooltip {
-            visibility: hidden;
-            position: absolute;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #333;
-            color: #fff;
+        .social-icons .label {
+            color: white;
+            margin-top: 10px;
+            font-size: 1em;
+            font-weight: bold;
             text-align: center;
-            border-radius: 5px;
-            padding: 5px 10px;
-            font-size: 14px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .social-icons a:hover .tooltip {
-            visibility: visible;
-            opacity: 1;
         }
 
         /* Hero section */
@@ -295,6 +298,7 @@
 
     <!-- Menu Overlay -->
     <nav class="menu-overlay" id="menu">
+        <span class="close-menu" onclick="closeMenu()">×</span>
         <div>
             <a href="#home">Home</a>
             <a href="Scripts.html">Scripts</a>
@@ -304,12 +308,14 @@
         <!-- Social Icons -->
         <div class="social-icons">
             <a href="https://youtube.com/@globalexploitor?si=ULxJfeU0MbH6DNhy" target="_blank">
-                <img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" alt="YouTube">
-                <span class="tooltip">YouTube</span>
+                <img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" 
+                     alt="YouTube">
+                <span class="label">YouTube</span>
             </a>
             <a href="https://discord.gg/Hk9h8vnZ7w" target="_blank">
-                <img src="https://sm.ign.com/ign_nordic/guide/w/what-is-di/what-is-discord-what-is-stream-attenuation_nq1q.jpg" alt="Discord">
-                <span class="tooltip">Discord</span>
+                <img src="https://sm.ign.com/ign_nordic/guide/w/what-is-di/what-is-discord-what-is-stream-attenuation_nq1q.jpg" 
+                     alt="Discord">
+                <span class="label">Discord</span>
             </a>
         </div>
     </nav>
@@ -337,6 +343,11 @@
             const toggle = document.querySelector('.menu-toggle');
             menu.classList.toggle('active');
             toggle.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.remove('active');
         }
 
         // Scroll-to-Top function
