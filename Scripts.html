@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GlobalExploiter - Scripts</title>
+    <title>GlobalExploiter</title>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap" rel="stylesheet">
     <style>
         /* General styling */
@@ -16,7 +16,7 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            background-color: #1a1a1a;
+            background-color: #1a1a1a; /* Default dark background */
             transition: background-color 0.3s ease;
         }
 
@@ -138,6 +138,39 @@
             box-shadow: 0 6px 15px rgba(255, 255, 255, 0.9);
         }
 
+        /* Social icon container */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            top: 650px; /* Adjusted to 650px */
+            left: 50%;
+            transform: translateX(-50%);
+            margin: 0;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            width: 40px; /* Adjusted size to 40px */
+            height: 40px; /* Adjusted size to 40px */
+            margin: 0 10px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .social-icons a img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.8);
+        }
+
         /* Hero section */
         .hero {
             text-align: center;
@@ -212,8 +245,8 @@
     <!-- Menu Overlay -->
     <nav class="menu-overlay" id="menu">
         <div>
-            <a href="https://globalexploiter.xyz">Home</a>
-            <a href="#scripts">Scripts</a>
+            <a href="#home" onclick="window.location.href='https://globalexploiter.xyz';">Home</a>
+            <a href="Scripts.html">Scripts</a>
             <a href="#executors">Executors</a>
             <a href="#contact">Contact</a>
         </div>
@@ -231,10 +264,10 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="scripts" class="hero">
+    <section id="home" class="hero">
         <div class="text-box">
-            <h2>"Find the best scripts for your needs."</h2>
-            <p>Explore the world of global exploits!</p>
+            <h2>"Don't go broke trying to look rich."</h2>
+            <p>sub to my yt</p>
         </div>
     </section>
 
