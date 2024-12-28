@@ -16,7 +16,7 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            background: linear-gradient(to bottom right, #2c3e50, #4a6fa5); /* Added gradient background */
+            background: linear-gradient(to bottom right, #2c3e50, #4a6fa5);
             transition: background-color 0.3s ease;
         }
 
@@ -157,7 +157,7 @@
             display: flex;
             justify-content: center;
             position: absolute;
-            top: 600px; /* Moved social icons to 600px */
+            top: 600px;
             left: 50%;
             transform: translateX(-50%);
             margin: 0;
@@ -165,8 +165,8 @@
 
         .social-icons a {
             display: inline-block;
-            width: 40px; /* Adjusted size to 40px */
-            height: 40px; /* Adjusted size to 40px */
+            width: 40px;
+            height: 40px;
             margin: 0 10px;
             border-radius: 50%;
             overflow: hidden;
@@ -187,30 +187,19 @@
 
         /* New box with image and button */
         .image-box {
-            width: 60%; /* Reduced to 60% width */
+            width: 60%;
             margin: 20px auto;
             background-color: rgba(0, 0, 0, 0.8);
             padding: 20px;
             text-align: center;
             border-radius: 15px;
             position: relative;
-            opacity: 0; /* Start as invisible */
-            animation: fadeIn 1s forwards; /* Add fade-in animation */
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
         }
 
         .image-box img {
             width: 100%;
-            height: auto; /* Adjusted to auto */
-            max-height: 500px; /* Limiting height to 500px */
+            height: auto;
+            max-height: 500px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
         }
@@ -232,26 +221,6 @@
             background-color: #0097a7;
             transform: scale(1.1);
         }
-
-        /* Footer styling */
-        footer {
-            text-align: center;
-            background: rgba(0, 0, 0, 0.9);
-            padding: 20px;
-        }
-
-        footer p {
-            margin: 0;
-        }
-
-        /* Dark mode styling */
-        .dark-mode {
-            background-color: #121212;
-        }
-
-        .dark-mode .background-blur {
-            filter: blur(5px) brightness(50%);
-        }
     </style>
 </head>
 <body>
@@ -265,9 +234,7 @@
             <div></div>
             <div></div>
         </div>
-        <!-- Keeping space where "Global Exploiter" was -->
-        <div style="flex: 1; height: 50px;"></div> <!-- This keeps the same black space -->
-        <!-- Search Box -->
+        <div style="flex: 1; height: 50px;"></div>
         <div class="search-box">
             <input type="text" placeholder="Search...">
             <button>Search</button>
@@ -282,32 +249,23 @@
             <a href="#executors">Executors</a>
             <a href="#contact">Contact</a>
         </div>
-        <!-- Social Icons -->
         <div class="social-icons">
             <a href="https://youtube.com/@globalexploitor?si=ULxJfeU0MbH6DNhy" target="_blank">
-                <img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" 
-                     alt="YouTube">
+                <img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" alt="YouTube">
             </a>
-            <a href="https://discord.gg/Hk9h8vnZ7w" target="_blank">
-                <img src="https://sm.ign.com/ign_nordic/guide/w/what-is-di/what-is-discord-what-is-stream-attenuation_nq1q.jpg" 
-                     alt="Discord">
+            <a href="#" target="_blank">
+                <img src="https://media.discordapp.net/attachments/1235374443413635115/1322689452358897774/IMG_1329.png?ex=6771ca0b&is=6770788b&hm=6b59ecbe24b7b01f2ff17c5b56e4844515d5e2ed29a2121ea7fbb6bdeeda3499&=&width=716&height=543" alt="Discord">
             </a>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <!-- New image box without blur effect -->
         <div class="image-box">
             <img src="https://media.discordapp.net/attachments/1237163573894053888/1322659186370154607/2F2C2865-7B60-43F0-B2D6-9BC7AF38E716.jpg?ex=6771addb&is=67705c5b&hm=e4b0bc70dbca0031d964cdcb17ffcdeadadaf9c598ac6dac214c3b7149d45e7e&=&width=1071&height=602" alt="Script Image">
             <button class="copy-button" onclick="copyScript()">Copy Script</button>
         </div>
     </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>© 2024 GlobalExploiter. All rights reserved.</p>
-    </footer>
 
     <!-- JavaScript -->
     <script>
@@ -318,7 +276,6 @@
             toggle.classList.toggle('active');
         }
 
-        // Copy script function
         function copyScript() {
             const scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Burdenerd/VertexHub/refs/heads/main/Offical'))()";
             navigator.clipboard.writeText(scriptText).then(() => {
@@ -326,7 +283,7 @@
                 button.textContent = "Copied!";
                 setTimeout(() => {
                     button.textContent = "Copy Script";
-                }, 2000); // Reset after 2 seconds
+                }, 2000);
             }).catch(err => {
                 console.error('Failed to copy:', err);
             });
