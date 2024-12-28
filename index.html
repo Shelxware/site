@@ -13,8 +13,8 @@
             color: #ffffff;
             overflow-x: hidden;
             display: flex;
-            flex-direction: column; /* Makes content stack vertically */
-            min-height: 100vh; /* Ensures the body takes up the full viewport height */
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         /* Background blur */
@@ -28,8 +28,8 @@
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
-            filter: blur(5px); /* Adjust the blur intensity */
-            z-index: -1; /* Ensure the background stays behind everything */
+            filter: blur(5px);
+            z-index: -1;
         }
 
         /* Header styling */
@@ -42,15 +42,19 @@
         header h1 {
             margin: 0;
             font-size: 2.5em;
-            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff; /* White glow effect */
+            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
         }
 
-        /* Social links at the top */
+        /* Social links and Home button container */
         .social-container {
             text-align: center;
             padding: 10px 0;
             background: rgba(0, 0, 0, 0.9);
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
         }
 
         .social-container a {
@@ -78,51 +82,8 @@
             vertical-align: middle;
         }
 
-        /* Hero section */
-        .hero {
-            text-align: center;
-            padding: 50px 20px;
-            flex: 1; /* Makes this section take up remaining space */
-        }
-
-        .hero .text-box {
-            background: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
-            border: 2px solid #fff; /* White border */
-            border-radius: 10px;
-            padding: 20px;
-            max-width: 600px;
-            margin: 0 auto;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        .hero .text-box h2 {
-            font-size: 2em;
-            margin-bottom: 10px;
-            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff; /* White glow effect */
-        }
-
-        .hero .text-box p {
-            font-size: 1.2em;
-            color: #ccc; /* Light gray text */
-        }
-
-        /* Footer styling */
-        footer {
-            text-align: center;
-            background: rgba(0, 0, 0, 0.9);
-            padding: 20px;
-        }
-
-        footer p {
-            margin: 0;
-        }
-
-        /* CSS for Styling the Home Button */
+        /* Home button styling */
         .home-button {
-            position: absolute;
-            top: 50%;
-            left: 20px;
-            transform: translateY(-50%);
             background-color: #ff6b6b;
             color: white;
             border: none;
@@ -137,30 +98,62 @@
             background-color: #ff4a4a;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
         }
+
+        /* Hero section */
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            flex: 1;
+        }
+
+        .hero .text-box {
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid #fff;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero .text-box h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
+        }
+
+        .hero .text-box p {
+            font-size: 1.2em;
+            color: #ccc;
+        }
+
+        /* Footer styling */
+        footer {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+        }
+
+        footer p {
+            margin: 0;
+        }
     </style>
 </head>
 <body>
     <!-- Background -->
     <div class="background-blur"></div>
 
-    <!-- Home Button -->
-    <button class="home-button" onclick="scrollToTop()">Home</button>
-
-    <!-- JavaScript Function -->
-    <script>
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-    </script>
-
-    <!-- Social Links at the Top -->
+    <!-- Social Links and Home Button -->
     <div class="social-container">
-        <a href="https://youtube.com/@globalexploitor?si=ULxJfeU0MbH6DNhy" target="_blank">
-            <img src="https://e7.pngegg.com/pngimages/208/269/png-clipart-youtube-play-button-computer-icons-youtube-youtube-logo-angle-rectangle-thumbnail.png" alt="YouTube">
-        </a>
-        <a href="https://discord.gg/Hk9h8vnZ7w" target="_blank">
-            <img src="https://static.vecteezy.com/system/resources/previews/018/930/718/non_2x/discord-logo-discord-icon-transparent-free-png.png" alt="Discord">
-        </a>
+        <button class="home-button" onclick="scrollToTop()">Home</button>
+        <div>
+            <a href="https://youtube.com/@globalexploitor?si=ULxJfeU0MbH6DNhy" target="_blank">
+                <img src="https://e7.pngegg.com/pngimages/208/269/png-clipart-youtube-play-button-computer-icons-youtube-youtube-logo-angle-rectangle-thumbnail.png" alt="YouTube">
+            </a>
+            <a href="https://discord.gg/Hk9h8vnZ7w" target="_blank">
+                <img src="https://static.vecteezy.com/system/resources/previews/018/930/718/non_2x/discord-logo-discord-icon-transparent-free-png.png" alt="Discord">
+            </a>
+        </div>
     </div>
 
     <!-- Header -->
@@ -180,5 +173,12 @@
     <footer>
         <p>© 2024 GlobalExploiter. All rights reserved.</p>
     </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
