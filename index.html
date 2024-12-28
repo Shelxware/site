@@ -1,24 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GlobalExploiter</title>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&family=Open+Sans:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap" rel="stylesheet">
     <style>
         /* General styling */
         body {
-@@ -18,8 +18,9 @@
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #ffffff;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
             min-height: 100vh;
         }
 
-        /* Background blur with new image */
+        /* Background blur */
         .background-blur {
-        /* Background image */
-        body::before {
-            content: '';
             position: fixed;
             top: 0;
             left: 0;
-@@ -29,7 +30,6 @@
+            width: 100%;
+            height: 100%;
+            background-image: url('https://media.discordapp.net/attachments/1296169780155256884/1322355000231596052/global-exploiter-discord-abnner.png?ex=67709290&is=676f4110&hm=0c8c86b3eae6bfe344ca2d982f9d4b181f8b2ff8f5f370be9831d7ab456a55f5&=&width=1071&height=602');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -26,13 +33,19 @@
             z-index: -1;
         }
 
-@@ -46,82 +46,19 @@
+        /* Header styling */
+        header {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            position: relative;
+        }
+
+        header h1 {
             margin: 0;
             padding-left: 20px;
             font-size: 2.5em;
-            font-family: 'Open Sans', sans-serif; /* Open Sans 800 */
-            font-family: 'Open Sans', sans-serif;
-            font-weight: 800;
             text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
             flex: 1;
             text-align: center;
@@ -49,6 +62,7 @@
             cursor: pointer;
             z-index: 10;
         }
+
         .menu-toggle div {
             width: 30px;
             height: 4px;
@@ -56,6 +70,7 @@
             margin: 4px 0;
             transition: transform 0.3s;
         }
+
         /* Overlay styling */
         .menu-overlay {
             position: fixed;
@@ -72,82 +87,78 @@
             flex-direction: column;
             justify-content: space-between;
         }
+
         .menu-overlay.active {
             left: 0;
         }
+
         /* Button styling with glow and thicker font */
         .menu-overlay a {
             display: block;
             color: white;
             text-decoration: none;
             font-family: 'Fredoka', sans-serif;
-            font-weight: 700;
+            font-weight: 700; /* Thicker font */
             font-size: 1.5em;
             margin: 20px 0;
             padding: 10px;
             text-align: center;
             background-color: rgba(135, 206, 235, 0.9);
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.6);
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.6); /* White glow */
             transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
         }
+
         .menu-overlay a:hover {
             transform: scale(1.1);
             background-color: rgba(100, 149, 237, 0.9);
-            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.9);
+            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.9); /* Enhanced glow on hover */
         }
+
         /* Hero section */
         .hero {
             text-align: center;
             padding: 50px 20px;
             flex: 1;
-            position: relative;
         }
 
         .hero .text-box {
-@@ -130,8 +67,10 @@
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid #fff;
             border-radius: 10px;
             padding: 20px;
             max-width: 600px;
-            margin: 0 auto 30px;
             margin: 0 auto;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            position: relative;
-            top: -50px; /* Move it up */
         }
 
         .hero .text-box h2 {
-@@ -145,6 +84,26 @@
+            font-size: 2em;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
+        }
+
+        .hero .text-box p {
+            font-size: 1.2em;
             color: #ccc;
         }
 
-        /* Image box */
-        .image-box {
-            width: 300px;
-            height: 200px;
-            margin: 20px auto;
-            border-radius: 10px;
-            background-image: url('https://tr.rbxcdn.com/180DAY-02bfbef1eb7ba3124b87bb8fc95201af/768/432/Image/Webp/noFilter');
-            background-size: cover;
-            background-position: center;
-            box-shadow: 0 0 20px rgba(0, 0, 255, 0.5);
-            border: 2px solid rgba(0, 0, 255, 0.8);
-            cursor: pointer;
-            position: relative;
-            left: -30%; /* Position to the left */
-        }
-        .image-box:hover {
-            box-shadow: 0 0 30px rgba(0, 0, 255, 0.8);
-        }
         /* Footer styling */
         footer {
             text-align: center;
-@@ -158,83 +117,23 @@
+            background: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+        }
+
+        footer p {
+            margin: 0;
+        }
     </style>
 </head>
 <body>
     <!-- Background -->
     <div class="background-blur"></div>
+
     <!-- Header -->
     <header>
         <div class="menu-toggle" onclick="toggleMenu()">
@@ -157,39 +168,7 @@
         </div>
         <h1>Global Exploiter</h1>
     </header>
-<div class="clickable-box" onclick="alert('Box clicked!')">
-    Click Me
-</div>
-<style>
-    .clickable-box {
-        background-image: linear-gradient(
-                rgba(0, 0, 255, 0.5),
-                rgba(0, 0, 255, 0.5)
-            ),
-            url('https://tr.rbxcdn.com/180DAY-02bfbef1eb7ba3124b87bb8fc95201af/768/432/Image/Webp/noFilter');
-        background-size: cover;
-        background-position: center;
-        border: 3px solid #0000ff;
-        border-radius: 10px;
-        padding: 20px;
-        width: 300px;
-        height: 150px;
-        text-align: center;
-        color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.2em;
-        font-weight: bold;
-        box-shadow: 0 0 20px #0000ff;
-        cursor: pointer;
-        transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .clickable-box:hover {
-        transform: scale(1.1);
-        box-shadow: 0 0 30px #0000ff;
-    }
-</style>
+
     <!-- Menu Overlay -->
     <nav class="menu-overlay" id="menu">
         <div>
@@ -206,13 +185,13 @@
             <h2>"Don't go broke trying to look rich."</h2>
             <p>sub to my yt</p>
         </div>
-        <div class="image-box" onclick="window.location.href='https://example.com';"></div>
     </section>
 
     <!-- Footer -->
     <footer>
         <p>© 2024 GlobalExploiter. All rights reserved.</p>
     </footer>
+
     <!-- JavaScript -->
     <script>
         function toggleMenu() {
@@ -221,3 +200,4 @@
         }
     </script>
 </body>
+</html>
