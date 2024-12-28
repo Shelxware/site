@@ -16,7 +16,7 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            background-color: #1a1a1a; /* Default dark background */
+            background: linear-gradient(to bottom right, #2c3e50, #4a6fa5); /* Added gradient background */
             transition: background-color 0.3s ease;
         }
 
@@ -255,7 +255,7 @@
         <!-- New image box with blur effect -->
         <div class="image-box">
             <img src="https://media.discordapp.net/attachments/1237163573894053888/1322659186370154607/2F2C2865-7B60-43F0-B2D6-9BC7AF38E716.jpg?ex=6771addb&is=67705c5b&hm=e4b0bc70dbca0031d964cdcb17ffcdeadadaf9c598ac6dac214c3b7149d45e7e&=&width=1071&height=602" alt="Script Image">
-            <button class="copy-button" id="copyBtn" onclick="copyScript()">Copy Script</button>
+            <button class="copy-button" onclick="copyScript()">Copy Script</button>
         </div>
     </section>
 
@@ -277,11 +277,11 @@
         function copyScript() {
             const scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Burdenerd/VertexHub/refs/heads/main/Offical'))()";
             navigator.clipboard.writeText(scriptText).then(() => {
-                const button = document.getElementById('copyBtn');
+                const button = document.querySelector('.copy-button');
                 button.textContent = "Copied!";
                 setTimeout(() => {
-                    button.textContent = "Copy Script"; // Reset text after 2 seconds
-                }, 2000);
+                    button.textContent = "Copy Script";
+                }, 2000); // Reset after 2 seconds
             }).catch(err => {
                 console.error('Failed to copy:', err);
             });
