@@ -21,7 +21,7 @@
             filter: blur(10px); /* Initial blur for entire screen */
         }
 
-        /* Exclude the hi-box from the blur */
+        /* Exclude the hi-box from the blur by using position fixed and a higher z-index */
         .hi-box {
             position: fixed;
             top: -150px; /* Start above the screen */
