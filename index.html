@@ -35,7 +35,7 @@
         /* Header styling */
         header {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             padding: 20px;
             background: rgba(0, 0, 0, 0.8);
@@ -46,26 +46,18 @@
             margin: 0;
             font-size: 2.5em;
             text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
-        }
-
-        /* Hamburger menu */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-        }
-
-        .hamburger div {
-            width: 25px;
-            height: 3px;
-            background-color: white;
+            flex: 1;
+            text-align: center;
         }
 
         /* Button container */
         .button-container {
             display: flex;
-            gap: 10px;
+            gap: 10px; /* Space between buttons */
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
         }
 
         .button {
@@ -83,27 +75,92 @@
             background-color: #6495ED; /* Slightly darker blue on hover */
         }
 
-        /* Responsive styles */
+        /* Responsive design for smaller screens */
         @media (max-width: 600px) {
             .button-container {
-                display: none;
                 flex-direction: column;
-                position: absolute;
-                top: 60px;
                 left: 10px;
-                background: rgba(0, 0, 0, 0.9);
-                border-radius: 5px;
-                padding: 10px;
-                z-index: 1;
+                top: auto;
+                bottom: 10px;
+                transform: translateY(0);
             }
 
-            .button-container.show {
-                display: flex;
+            .button {
+                width: 100%;
+                text-align: center;
             }
+        }
 
-            .hamburger {
-                display: flex;
-            }
+        /* Social links at the top */
+        .social-container {
+            text-align: center;
+            padding: 10px 0;
+            background: rgba(0, 0, 0, 0.9);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .social-container a {
+            text-decoration: none;
+            margin: 0 10px;
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            background-color: #fff;
+            border-radius: 50%;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .social-container a:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-container a img {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+        }
+
+        /* Hero section */
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            flex: 1;
+        }
+
+        .hero .text-box {
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid #fff;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero .text-box h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
+        }
+
+        .hero .text-box p {
+            font-size: 1.2em;
+            color: #ccc;
+        }
+
+        /* Footer styling */
+        footer {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+        }
+
+        footer p {
+            margin: 0;
         }
     </style>
 </head>
@@ -111,18 +168,23 @@
     <!-- Background -->
     <div class="background-blur"></div>
 
+    <!-- Social Links at the Top -->
+    <div class="social-container">
+        <a href="https://youtube.com/@globalexploitor?si=ULxJfeU0MbH6DNhy" target="_blank">
+            <img src="https://e7.pngegg.com/pngimages/208/269/png-clipart-youtube-play-button-computer-icons-youtube-youtube-logo-angle-rectangle-thumbnail.png" alt="YouTube">
+        </a>
+        <a href="https://discord.gg/Hk9h8vnZ7w" target="_blank">
+            <img src="https://static.vecteezy.com/system/resources/previews/018/930/718/non_2x/discord-logo-discord-icon-transparent-free-png.png" alt="Discord">
+        </a>
+    </div>
+
     <!-- Header -->
     <header>
-        <div class="hamburger" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <h1>Global Exploiter</h1>
         <div class="button-container">
             <button class="button" onclick="scrollToTop()">Home</button>
             <button class="button" onclick="scrollToScripts()">Scripts</button>
         </div>
+        <h1>Global Exploiter</h1>
     </header>
 
     <!-- Hero Section -->
@@ -146,11 +208,6 @@
 
         function scrollToScripts() {
             alert("The Scripts section is coming soon!"); // Placeholder for "Scripts" functionality
-        }
-
-        function toggleMenu() {
-            const menu = document.querySelector('.button-container');
-            menu.classList.toggle('show');
         }
     </script>
 </body>
