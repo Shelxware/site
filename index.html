@@ -85,22 +85,25 @@
             flex: 1; /* Makes this section take up remaining space */
         }
 
-        .hero h2 {
+        .hero .text-box {
+            background: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+            border: 2px solid #fff; /* White border */
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero .text-box h2 {
             font-size: 2em;
             margin-bottom: 10px;
             text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff; /* White glow effect */
         }
 
-        .hero p {
+        .hero .text-box p {
             font-size: 1.2em;
-            max-width: 600px;
-            margin: 0 auto 20px;
-        }
-
-        .hero .chatgpt-credit {
-            color: #000; /* Black text */
-            text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #ffffff; /* Glowing white effect */
-            font-size: 1em;
+            color: #ccc; /* Light gray text */
         }
 
         /* Footer styling */
@@ -139,8 +142,10 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <h2>"Don't go broke trying to look rich."</h2>
-        <p class="chatgpt-credit">I really hope you enjoy my website I did not work hard on it chatgpt did lel</p>
+        <div class="text-box">
+            <h2>"Don't go broke trying to look rich."</h2>
+            <p>I really hope you enjoy my website I did not work hard on it chatgpt did lel</p>
+        </div>
     </section>
 
     <!-- Footer -->
