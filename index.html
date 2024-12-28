@@ -17,19 +17,38 @@
             flex-direction: column;
             min-height: 100vh;
             background-color: #1a1a1a; /* Default dark background */
-            transition: background-color 0.3s ease, filter 1s ease-out; /* Transition for blur */
-            filter: blur(10px); /* Initial blur for entire screen */
+            transition: background-color 0.3s ease;
         }
 
-        /* Exclude the hi-box from the blur by using position fixed and a higher z-index */
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Background blur */
+        .background-blur {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://media.discordapp.net/attachments/1296169780155256884/1322355000231596052/global-exploiter-discord-abnner.png?ex=67709290&is=676f4110&hm=0c8c86b3eae6bfe344ca2d982f9d4b181f8b2ff8f5f370be9831d7ab456a55f5&=&width=1071&height=602');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            filter: blur(5px);
+            z-index: -1;
+        }
+
+        /* Centered Hi box */
         .hi-box {
             position: fixed;
-            top: -150px; /* Start above the screen */
+            top: -100px; /* Start above the screen */
             left: 50%;
             transform: translateX(-50%);
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: red; /* Set to red */
             color: white;
-            padding: 30px 50px; /* Bigger padding */
+            padding: 20px 30px;
             border-radius: 10px;
             text-align: center;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
@@ -37,7 +56,7 @@
             z-index: 10;
             opacity: 0; /* Start invisible */
             transition: top 1s ease-out, opacity 1s ease-out;
-            font-family: 'Fredoka', sans-serif;
+            font-family: 'Fredoka', sans-serif; /* Same font as the menu */
         }
 
         /* Close button styling */
@@ -48,8 +67,8 @@
             padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 1.2em;
-            margin-top: 15px;
+            font-size: 1em;
+            margin-top: 10px;
         }
 
         .close-btn:hover {
@@ -72,7 +91,7 @@
             text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
             flex: 1;
             text-align: center;
-            font-family: 'Fredoka', sans-serif;
+            font-family: 'Fredoka', sans-serif; /* Same font as the menu */
         }
 
         /* Hamburger menu styling */
@@ -160,7 +179,7 @@
             display: flex;
             justify-content: center;
             position: absolute;
-            top: 600px;
+            top: 600px; /* Updated to 600px */
             left: 50%;
             transform: translateX(-50%);
             margin: 0;
@@ -168,8 +187,8 @@
 
         .social-icons a {
             display: inline-block;
-            width: 30px;
-            height: 30px;
+            width: 30px; /* Reduced size to 30px */
+            height: 30px; /* Reduced size to 30px */
             margin: 0 10px;
             border-radius: 50%;
             overflow: hidden;
@@ -263,12 +282,15 @@
             background-color: #121212;
         }
 
-        .dark-mode body {
+        .dark-mode .background-blur {
             filter: blur(5px) brightness(50%);
         }
     </style>
 </head>
 <body>
+    <!-- Background -->
+    <div class="background-blur"></div>
+
     <!-- Hi Box -->
     <div class="hi-box" id="hiBox">
         <p>This website is still under development, also please subscribe to my YouTube, thanks</p>
@@ -331,22 +353,20 @@
 
         function closeHiBox() {
             const hiBox = document.getElementById('hiBox');
-            hiBox.style.top = '-150px'; // Move the box back up
+            hiBox.style.top = '-100px'; // Move the box back up
             hiBox.style.opacity = '0'; // Fade out
             setTimeout(function() {
                 hiBox.style.display = 'none'; // Hide after animation
             }, 1000); // Delay to match the animation duration
-            document.body.style.filter = 'blur(0)'; // Unblur the screen when the box closes
         }
 
         // Show Hi box on load with fall animation
         window.onload = function() {
             const hiBox = document.getElementById('hiBox');
+            hiBox.style.display = 'block';
             setTimeout(function() {
-                hiBox.style.display = 'block';
                 hiBox.style.top = '50%'; // Fall to the middle
                 hiBox.style.opacity = '1'; // Fade in
-                document.body.style.filter = 'blur(0)'; // Unblur the body when box appears
             }, 10);
         }
     </script>
