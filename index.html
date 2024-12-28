@@ -38,6 +38,7 @@
             background-position: center;
             filter: blur(5px);
             z-index: -1;
+            transition: filter 1s ease-out; /* Transition for blur removal */
         }
 
         /* Centered Hi box */
@@ -46,7 +47,7 @@
             top: -100px; /* Start above the screen */
             left: 50%;
             transform: translateX(-50%);
-            background-color: red; /* Set to red */
+            background-color: rgba(0, 0, 0, 0.8);
             color: white;
             padding: 20px 30px;
             border-radius: 10px;
@@ -355,6 +356,7 @@
             const hiBox = document.getElementById('hiBox');
             hiBox.style.top = '-100px'; // Move the box back up
             hiBox.style.opacity = '0'; // Fade out
+            document.querySelector('.background-blur').style.filter = 'blur(0)'; // Clear blur
             setTimeout(function() {
                 hiBox.style.display = 'none'; // Hide after animation
             }, 1000); // Delay to match the animation duration
@@ -363,10 +365,12 @@
         // Show Hi box on load with fall animation
         window.onload = function() {
             const hiBox = document.getElementById('hiBox');
+            const blur = document.querySelector('.background-blur');
             hiBox.style.display = 'block';
             setTimeout(function() {
                 hiBox.style.top = '50%'; // Fall to the middle
                 hiBox.style.opacity = '1'; // Fade in
+                blur.style.filter = 'blur(5px)'; // Apply blur effect
             }, 10);
         }
     </script>
