@@ -249,6 +249,37 @@
         .dark-mode .background-blur {
             filter: blur(5px) brightness(50%);
         }
+
+        /* New box for "hi" */
+        .hi-box {
+            display: block;
+            width: 150px;
+            height: 50px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            text-align: center;
+            line-height: 50px;
+            font-size: 1.2em;
+            border-radius: 10px;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 10;
+            opacity: 0;
+            animation: showHiBox 2s forwards;
+        }
+
+        /* Animation for "hi" box */
+        @keyframes showHiBox {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body>
@@ -264,6 +295,9 @@
         </div>
         <h1>Global Exploiter</h1>
     </header>
+
+    <!-- New "Hi" box -->
+    <div class="hi-box">Hi</div>
 
     <!-- Menu Overlay -->
     <nav class="menu-overlay" id="menu">
