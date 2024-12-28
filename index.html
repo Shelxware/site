@@ -107,25 +107,43 @@
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.8);
         }
 
-        /* Social links container */
-        .social-container {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 30px;
+        /* Hero section */
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            flex: 1;
         }
 
-        .social-container img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s, box-shadow 0.3s;
+        .hero .text-box {
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid #fff;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         }
 
-        .social-container img:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.8);
+        .hero .text-box h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
+        }
+
+        .hero .text-box p {
+            font-size: 1.2em;
+            color: #ccc;
+        }
+
+        /* Footer styling */
+        footer {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+        }
+
+        footer p {
+            margin: 0;
         }
     </style>
 </head>
@@ -148,19 +166,20 @@
         <a href="#home">Home</a>
         <a href="#scripts">Scripts</a>
         <a href="#contact">Contact</a>
-        <!-- Social Links -->
-        <div class="social-container">
-            <a href="https://youtube.com/@globalexploitor?si=ULxJfeU0MbH6DNhy" target="_blank">
-                <img src="https://media.discordapp.net/attachments/1240110101809987606/1322350909803597874/IMG_1325.png" alt="YouTube">
-            </a>
-            <a href="https://discord.gg/Hk9h8vnZ7w" target="_blank">
-                <img src="https://media.discordapp.net/attachments/1240110101809987606/1322350909350608908/IMG_1329.png" alt="Discord">
-            </a>
-            <a href="https://www.roblox.com/users/5259163256/profile" target="_blank">
-                <img src="https://media.discordapp.net/attachments/1240110101809987606/1322350909564653608/IMG_1327.png" alt="Roblox">
-            </a>
-        </div>
     </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="text-box">
+            <h2>"Don't go broke trying to look rich."</h2>
+            <p>sub to my yt</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 GlobalExploiter. All rights reserved.</p>
+    </footer>
 
     <!-- JavaScript -->
     <script>
