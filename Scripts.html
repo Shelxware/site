@@ -25,21 +25,6 @@
             scroll-behavior: smooth;
         }
 
-        /* Background blur */
-        .background-blur {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('https://media.discordapp.net/attachments/1296169780155256884/1322355000231596052/global-exploiter-discord-abnner.png?ex=67709290&is=676f4110&hm=0c8c86b3eae6bfe344ca2d982f9d4b181f8b2ff8f5f370be9831d7ab456a55f5&=&width=1071&height=602');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            filter: blur(5px);
-            z-index: -1;
-        }
-
         /* Header styling */
         header {
             display: flex;
@@ -173,10 +158,10 @@
 
         /* New box with image and button */
         .image-box {
-            width: 60%; /* Reduced to 60% width */
+            width: 50%; /* Reduced width to 50% */
             margin: 20px auto;
             background-color: rgba(0, 0, 0, 0.8);
-            padding: 20px;
+            padding: 15px; /* Reduced padding */
             text-align: center;
             border-radius: 15px;
             position: relative;
@@ -185,15 +170,16 @@
         .image-box img {
             width: 100%;
             height: auto; /* Adjusted to auto */
-            max-height: 500px; /* Limiting height to 500px */
+            max-height: 350px; /* Limiting height to 350px */
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+            filter: blur(2px); /* Applying slight blur to the image */
         }
 
         .copy-button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 1.2em;
+            margin-top: 15px;
+            padding: 8px 15px;
+            font-size: 1.1em;
             background-color: #00bcd4;
             border: none;
             color: white;
