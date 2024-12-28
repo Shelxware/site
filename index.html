@@ -170,6 +170,41 @@
         </div>
         <h1>Global Exploiter</h1>
     </header>
+<div class="clickable-box" onclick="alert('Box clicked!')">
+    Click Me
+</div>
+
+<style>
+    .clickable-box {
+        background-image: linear-gradient(
+                rgba(0, 0, 255, 0.5),
+                rgba(0, 0, 255, 0.5)
+            ),
+            url('https://tr.rbxcdn.com/180DAY-02bfbef1eb7ba3124b87bb8fc95201af/768/432/Image/Webp/noFilter');
+        background-size: cover;
+        background-position: center;
+        border: 3px solid #0000ff;
+        border-radius: 10px;
+        padding: 20px;
+        width: 300px;
+        height: 150px;
+        text-align: center;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2em;
+        font-weight: bold;
+        box-shadow: 0 0 20px #0000ff;
+        cursor: pointer;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .clickable-box:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 30px #0000ff;
+    }
+</style>
 
     <!-- Menu Overlay -->
     <nav class="menu-overlay" id="menu">
