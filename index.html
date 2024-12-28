@@ -44,20 +44,21 @@
         /* Centered Hi box */
         .hi-box {
             position: fixed;
-            top: -100px; /* Start above the screen */
+            top: -150px; /* Start above the screen */
             left: 50%;
             transform: translateX(-50%);
             background-color: rgba(0, 0, 0, 0.8);
             color: white;
-            padding: 20px 30px;
+            padding: 30px 50px; /* Bigger padding */
             border-radius: 10px;
             text-align: center;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
             display: none;
             z-index: 10;
             opacity: 0; /* Start invisible */
-            transition: top 1s ease-out, opacity 1s ease-out;
+            transition: top 1s ease-out, opacity 1s ease-out, filter 1s ease-out; /* Added transition for blur */
             font-family: 'Fredoka', sans-serif; /* Same font as the menu */
+            filter: blur(5px); /* Initial blur on the box */
         }
 
         /* Close button styling */
@@ -68,8 +69,8 @@
             padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 1em;
-            margin-top: 10px;
+            font-size: 1.2em;
+            margin-top: 15px;
         }
 
         .close-btn:hover {
@@ -354,9 +355,10 @@
 
         function closeHiBox() {
             const hiBox = document.getElementById('hiBox');
-            hiBox.style.top = '-100px'; // Move the box back up
+            hiBox.style.top = '-150px'; // Move the box back up
             hiBox.style.opacity = '0'; // Fade out
-            document.querySelector('.background-blur').style.filter = 'blur(0)'; // Clear blur
+            hiBox.style.filter = 'blur(0)'; // Remove blur from box
+            document.querySelector('.background-blur').style.filter = 'blur(0)'; // Clear background blur
             setTimeout(function() {
                 hiBox.style.display = 'none'; // Hide after animation
             }, 1000); // Delay to match the animation duration
@@ -370,7 +372,8 @@
             setTimeout(function() {
                 hiBox.style.top = '50%'; // Fall to the middle
                 hiBox.style.opacity = '1'; // Fade in
-                blur.style.filter = 'blur(5px)'; // Apply blur effect
+                blur.style.filter = 'blur(5px)'; // Apply blur effect to background
+                hiBox.style.filter = 'blur(5px)'; // Apply blur effect to the box itself
             }, 10);
         }
     </script>
