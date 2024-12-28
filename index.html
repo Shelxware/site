@@ -34,23 +34,23 @@
 
         /* Header styling */
         header {
-            padding: 20px;
-            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
             background: rgba(0, 0, 0, 0.8);
-            position: relative; /* Allows positioning of the Home button */
+            position: relative;
         }
 
         header h1 {
             margin: 0;
-            font-size: 2.5em;
+            font-size: 2em;
             text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff; /* White glow effect */
+            flex: 1; /* Allows the title to grow and take space */
+            text-align: center;
         }
 
         .home-button {
-            position: absolute;
-            top: 50%;
-            left: 20px;
-            transform: translateY(-50%);
             background-color: #ff6b6b;
             color: white;
             border: none;
@@ -136,6 +136,24 @@
 
         footer p {
             margin: 0;
+        }
+
+        /* Media Query for Mobile Screens */
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+            }
+
+            .home-button {
+                margin-bottom: 10px;
+                position: static; /* Stacks above the title on smaller screens */
+                transform: none;
+            }
+
+            header h1 {
+                text-align: center;
+                font-size: 1.8em; /* Slightly smaller font size */
+            }
         }
     </style>
 </head>
