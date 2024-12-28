@@ -1,3 +1,4 @@
+/* General styles */
 body {
     background: linear-gradient(135deg, #1a1a1a 0%, #333333 100%);
     background-image: url('https://media.discordapp.net/attachments/1296169780155256884/1322355000231596052/global-exploiter-discord-abnner.png?ex=67709290&is=676f4110&hm=0c8c86b3eae6bfe344ca2d982f9d4b181f8b2ff8f5f370be9831d7ab456a55f5&=&width=1071&height=602');
@@ -9,34 +10,89 @@ body {
     padding: 0;
 }
 
-.social-box {
+/* Top bar styles */
+.top-bar {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 15px;
-    background: rgba(0, 0, 0, 0.8);
-    padding: 10px;
-    border-radius: 10px;
-    margin: 20px auto;
-    width: fit-content;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.9);
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-.social-box a img {
+.social-links {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icon {
+    display: inline-block;
     width: 30px;
     height: 30px;
+    background-size: cover;
     transition: transform 0.3s;
 }
 
-.social-box a img:hover {
-    transform: scale(1.2);
+.social-icon:hover {
+    transform: scale(1.1);
 }
 
-header {
-    padding: 20px;
+.social-icon.youtube {
+    background-image: url('https://media.discordapp.net/attachments/1240110101809987606/1322350909803597874/IMG_1325.png?ex=67708ec0&is=676f3d40&hm=bf6547c0ae9784b7cafae499803a0e0d71ff6fc4c1c77904a82c6d3bd22e98f5&=&width=602&height=602');
+}
+
+.social-icon.discord {
+    background-image: url('https://media.discordapp.net/attachments/1240110101809987606/1322350909350608908/IMG_1329.png?ex=67708ec0&is=676f3d40&hm=c8407e48ecf2e955b4b0628dc0f37b9c550d87399d5ed992e1d7d5d08e02d219&=&width=716&height=543');
+}
+
+.social-icon.roblox {
+    background-image: url('https://media.discordapp.net/attachments/1240110101809987606/1322350909564653608/IMG_1327.png?ex=67708ec0&is=676f3d40&hm=65509162258066b4d13bbbcb77a1b6f787d252c5da0cc56b02b6a9b307013979&=&width=500&height=500');
+}
+
+.main-nav {
+    display: flex;
+    gap: 20px;
+}
+
+.main-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: #ff5722;
+}
+
+/* Hero section styles */
+.hero {
     text-align: center;
-    background: rgba(0, 0, 0, 0.8);
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
     margin-bottom: 20px;
 }
 
-/* Other styles remain unchanged */
+.hero .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #ff5722;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.hero .btn:hover {
+    background: #e64a19;
+}
