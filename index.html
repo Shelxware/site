@@ -16,7 +16,7 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            background-color: #1a1a1a; /* Default dark background */
+            background-color: #1a1a1a;
             transition: background-color 0.3s ease;
         }
 
@@ -25,7 +25,7 @@
             scroll-behavior: smooth;
         }
 
-        /* Background blur */
+        /* Background with Parallax Effect */
         .background-blur {
             position: fixed;
             top: 0;
@@ -36,7 +36,6 @@
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
-            filter: blur(5px);
             z-index: -1;
         }
 
@@ -58,13 +57,6 @@
             text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
             flex: 1;
             text-align: center;
-        }
-
-        /* Sticky Navigation */
-        .sticky-header {
-            position: sticky;
-            top: 0;
-            z-index: 5;
         }
 
         /* Hamburger menu styling */
@@ -147,75 +139,6 @@
             box-shadow: 0 6px 15px rgba(255, 255, 255, 0.9);
         }
 
-        /* Social icon container */
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            position: absolute;
-            top: 650px;
-            left: 50%;
-            transform: translateX(-50%);
-            margin: 0;
-        }
-
-        .social-icons a {
-            display: inline-block;
-            width: 30px;
-            height: 30px;
-            margin: 0 10px;
-            border-radius: 50%;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .social-icons a img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .social-icons a:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.8);
-        }
-
-        /* Hero section */
-        .hero {
-            text-align: center;
-            padding: 50px 20px;
-            flex: 1;
-        }
-
-        .hero .text-box {
-            background: rgba(0, 0, 0, 0.8);
-            border: 2px solid #fff;
-            border-radius: 10px;
-            padding: 20px;
-            max-width: 600px;
-            margin: 20px auto;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            opacity: 0;
-            animation: fadeIn 1s forwards;
-        }
-
-        /* Fade-in effect for text-box */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .hero .text-box h2 {
-            font-size: 2em;
-            margin-bottom: 10px;
-            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
-        }
-
-        .hero .text-box p {
-            font-size: 1.2em;
-            color: #ccc;
-        }
-
         /* Scroll-to-Top Button */
         .scroll-top {
             position: fixed;
@@ -232,29 +155,45 @@
         }
 
         .scroll-top:hover {
-            background-color: rgba(0, 0, 0, 0.9);
-            transform: scale(1.1);
+            background-color: rgba(0, 0, 0, 0.8);
         }
 
-        footer {
+        /* Animated Fade In */
+        .fade-in {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+        }
+
+        /* Tooltip styling */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip .tooltip-text {
+            visibility: hidden;
+            background-color: #555;
+            color: #fff;
             text-align: center;
-            background: rgba(0, 0, 0, 0.9);
-            padding: 20px;
+            border-radius: 5px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 100%; /* Position above the element */
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
         }
 
-        footer p {
-            margin: 0;
+        .tooltip:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
         }
-
-        /* Dark mode styling */
-        .dark-mode {
-            background-color: #121212;
-        }
-
-        .dark-mode .background-blur {
-            filter: blur(5px) brightness(50%);
-        }
-
     </style>
 </head>
 <body>
@@ -262,7 +201,7 @@
     <div class="background-blur"></div>
 
     <!-- Header -->
-    <header class="sticky-header">
+    <header>
         <div class="menu-toggle" onclick="toggleMenu()">
             <div></div>
             <div></div>
@@ -281,20 +220,20 @@
         </div>
         <!-- Social Icons -->
         <div class="social-icons">
-            <a href="https://youtube.com/@globalexploitor?si=ULxJfeU0MbH6DNhy" target="_blank">
-                <img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" 
-                     alt="YouTube">
+            <a href="https://youtube.com/@globalexploitor?si=ULxJfeU0MbH6DNhy" target="_blank" class="tooltip">
+                <img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" alt="YouTube">
+                <span class="tooltip-text">YouTube</span>
             </a>
-            <a href="https://discord.gg/Hk9h8vnZ7w" target="_blank">
-                <img src="https://sm.ign.com/ign_nordic/guide/w/what-is-di/what-is-discord-what-is-stream-attenuation_nq1q.jpg" 
-                     alt="Discord">
+            <a href="https://discord.gg/Hk9h8vnZ7w" target="_blank" class="tooltip">
+                <img src="https://sm.ign.com/ign_nordic/guide/w/what-is-di/what-is-discord-what-is-stream-attenuation_nq1q.jpg" alt="Discord">
+                <span class="tooltip-text">Discord</span>
             </a>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="text-box">
+        <div class="text-box fade-in" id="hero-box">
             <h2>"Don't go broke trying to look rich."</h2>
             <p>sub to my yt</p>
         </div>
@@ -332,6 +271,15 @@
         function scrollToTop() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
+
+        // Fade In on Scroll
+        window.addEventListener('scroll', () => {
+            const heroBox = document.getElementById('hero-box');
+            const rect = heroBox.getBoundingClientRect();
+            if (rect.top < window.innerHeight) {
+                heroBox.classList.add('visible');
+            }
+        });
     </script>
 </body>
 </html>
