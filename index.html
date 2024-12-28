@@ -3,17 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Exploiter</title>
+    <title>GlobalExploiter</title>
     <style>
-        /* General Styling */
+        /* General styling */
         body {
             margin: 0;
+            padding: 0;
             font-family: Arial, sans-serif;
-            background-color: #111;
-            color: #fff;
+            color: #ffffff;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
-        /* Background Blur */
+        /* Background blur */
         .background-blur {
             position: fixed;
             top: 0;
@@ -28,128 +32,125 @@
             z-index: -1;
         }
 
-        /* Header */
+        /* Header styling */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 20px;
+            padding: 20px;
             background: rgba(0, 0, 0, 0.8);
+            position: relative;
         }
 
         header h1 {
             margin: 0;
-            font-size: 1.5em;
-            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff;
+            font-size: 2.5em;
+            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
         }
 
-        /* Hamburger Menu Icon */
+        /* Hamburger menu */
         .hamburger {
             display: none;
             flex-direction: column;
-            justify-content: space-between;
-            width: 30px;
-            height: 20px;
+            gap: 5px;
             cursor: pointer;
         }
 
         .hamburger div {
+            width: 25px;
             height: 3px;
             background-color: white;
-            border-radius: 2px;
         }
 
-        /* Sidebar Menu */
-        .menu {
-            position: fixed;
-            top: 0;
-            left: -250px;
-            width: 250px;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.95);
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            transition: left 0.3s;
-            z-index: 1000;
+        /* Button container */
+        .button-container {
+            display: flex;
+            gap: 10px;
         }
 
-        .menu.open {
-            left: 0;
-        }
-
-        .menu a, .menu button {
-            display: block;
-            text-decoration: none;
+        .button {
+            background-color: #87CEEB; /* Light blue */
             color: white;
-            padding: 10px;
-            margin-bottom: 10px;
+            padding: 10px 20px;
             border-radius: 5px;
             font-size: 1em;
-            background-color: #87CEEB; /* Light blue */
-            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            box-shadow: 0 0 10px white; /* White glow */
         }
 
-        .menu a:hover, .menu button:hover {
-            background-color: #6495ED; /* Darker blue */
+        .button:hover {
+            background-color: #6495ED; /* Slightly darker blue on hover */
         }
 
-        /* Responsive Styling */
-        @media (max-width: 768px) {
-            .hamburger {
+        /* Responsive styles */
+        @media (max-width: 600px) {
+            .button-container {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 10px;
+                background: rgba(0, 0, 0, 0.9);
+                border-radius: 5px;
+                padding: 10px;
+                z-index: 1;
+            }
+
+            .button-container.show {
                 display: flex;
             }
 
-            .menu a, .menu button {
-                font-size: 1.2em;
+            .hamburger {
+                display: flex;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Background Blur -->
+    <!-- Background -->
     <div class="background-blur"></div>
 
     <!-- Header -->
     <header>
-        <h1>Global Exploiter</h1>
         <div class="hamburger" onclick="toggleMenu()">
             <div></div>
             <div></div>
             <div></div>
         </div>
+        <h1>Global Exploiter</h1>
+        <div class="button-container">
+            <button class="button" onclick="scrollToTop()">Home</button>
+            <button class="button" onclick="scrollToScripts()">Scripts</button>
+        </div>
     </header>
 
-    <!-- Sidebar Menu -->
-    <div class="menu" id="menu">
-        <button onclick="scrollToTop()">Home</button>
-        <button onclick="scrollToScripts()">Scripts</button>
-        <a href="https://youtube.com/@globalexploitor" target="_blank">YouTube</a>
-        <a href="https://discord.gg/Hk9h8vnZ7w" target="_blank">Discord</a>
-    </div>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="text-box">
+            <h2>"Don't go broke trying to look rich."</h2>
+            <p>sub to my yt</p>
+        </div>
+    </section>
 
-    <!-- Main Content -->
-    <main>
-        <section class="hero">
-            <div class="text-box">
-                <h2>"Don't go broke trying to look rich."</h2>
-                <p>sub to my yt</p>
-            </div>
-        </section>
-    </main>
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 GlobalExploiter. All rights reserved.</p>
+    </footer>
 
     <!-- JavaScript -->
     <script>
-        function toggleMenu() {
-            const menu = document.getElementById("menu");
-            menu.classList.toggle("open");
-        }
-
         function scrollToTop() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function scrollToScripts() {
             alert("The Scripts section is coming soon!"); // Placeholder for "Scripts" functionality
+        }
+
+        function toggleMenu() {
+            const menu = document.querySelector('.button-container');
+            menu.classList.toggle('show');
         }
     </script>
 </body>
