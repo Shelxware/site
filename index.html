@@ -35,8 +35,8 @@
         /* Header styling */
         header {
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: center;
             padding: 20px;
             background: rgba(0, 0, 0, 0.8);
             position: relative;
@@ -48,119 +48,49 @@
             text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
         }
 
-        /* Hamburger menu */
+        /* Hamburger menu styling */
         .hamburger {
+            position: absolute;
+            left: 20px;
             cursor: pointer;
-            width: 30px;
-            height: 25px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            width: 30px;
+            height: 20px;
         }
 
-        .hamburger div {
-            background-color: white;
-            height: 4px;
+        .hamburger span {
+            display: block;
+            height: 3px;
+            background: white;
             border-radius: 2px;
         }
 
-        /* Dropdown menu */
+        /* Menu styling */
         .menu {
             display: none;
-            flex-direction: column;
             position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: rgba(0, 0, 0, 0.9);
-            width: 100%;
-            padding: 10px 0;
+            top: 60px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.9);
+            border: 1px solid #ffffff;
+            border-radius: 5px;
+            padding: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-            z-index: 10;
         }
 
         .menu a {
+            display: block;
             text-decoration: none;
             color: white;
-            padding: 10px 20px;
-            display: block;
-            text-align: center;
-            transition: background-color 0.3s;
+            padding: 10px;
+            font-size: 1em;
+            transition: background 0.3s;
         }
 
         .menu a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-
-        /* Social links at the top */
-        .social-container {
-            text-align: center;
-            padding: 10px 0;
-            background: rgba(0, 0, 0, 0.9);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-        }
-
-        .social-container a {
-            text-decoration: none;
-            margin: 0 10px;
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            line-height: 40px;
-            background-color: #fff;
-            border-radius: 50%;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .social-container a:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .social-container a img {
-            width: 24px;
-            height: 24px;
-            vertical-align: middle;
-        }
-
-        /* Hero section */
-        .hero {
-            text-align: center;
-            padding: 50px 20px;
-            flex: 1;
-        }
-
-        .hero .text-box {
-            background: rgba(0, 0, 0, 0.8);
-            border: 2px solid #fff;
-            border-radius: 10px;
-            padding: 20px;
-            max-width: 600px;
-            margin: 0 auto;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        .hero .text-box h2 {
-            font-size: 2em;
-            margin-bottom: 10px;
-            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
-        }
-
-        .hero .text-box p {
-            font-size: 1.2em;
-            color: #ccc;
-        }
-
-        /* Footer styling */
-        footer {
-            text-align: center;
-            background: rgba(0, 0, 0, 0.9);
-            padding: 20px;
-        }
-
-        footer p {
-            margin: 0;
+            background: #444;
         }
     </style>
 </head>
@@ -168,24 +98,14 @@
     <!-- Background -->
     <div class="background-blur"></div>
 
-    <!-- Social Links at the Top -->
-    <div class="social-container">
-        <a href="https://youtube.com/@globalexploitor?si=ULxJfeU0MbH6DNhy" target="_blank">
-            <img src="https://e7.pngegg.com/pngimages/208/269/png-clipart-youtube-play-button-computer-icons-youtube-youtube-logo-angle-rectangle-thumbnail.png" alt="YouTube">
-        </a>
-        <a href="https://discord.gg/Hk9h8vnZ7w" target="_blank">
-            <img src="https://static.vecteezy.com/system/resources/previews/018/930/718/non_2x/discord-logo-discord-icon-transparent-free-png.png" alt="Discord">
-        </a>
-    </div>
-
     <!-- Header -->
     <header>
-        <h1>Global Exploiter</h1>
         <div class="hamburger" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
+        <h1>Global Exploiter</h1>
         <div class="menu" id="menu">
             <a href="#home" onclick="scrollToTop()">Home</a>
             <a href="#scripts" onclick="scrollToScripts()">Scripts</a>
@@ -217,7 +137,11 @@
 
         function toggleMenu() {
             const menu = document.getElementById('menu');
-            menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+            if (menu.style.display === 'block') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'block';
+            }
         }
     </script>
 </body>
