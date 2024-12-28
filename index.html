@@ -111,29 +111,33 @@
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.8);
         }
 
-        /* Buttons at the bottom of the menu */
-        .menu-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
+        /* Buttons for Discord and YouTube */
+        .social-buttons {
             margin-top: auto;
-            padding-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 40px; /* Increased spacing from bottom */
         }
 
-        .menu-buttons button {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            border: none;
-            background: rgba(135, 206, 235, 0.9);
+        .social-buttons a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            margin: 5px 20px;
+            padding: 10px;
+            text-align: center;
+            background-color: rgba(255, 99, 71, 0.9);
+            border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.3s;
+            transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
         }
 
-        .menu-buttons button:hover {
-            background: rgba(100, 149, 237, 0.9);
-            transform: scale(1.1);
+        .social-buttons a:hover {
+            transform: scale(1.05);
+            background-color: rgba(255, 69, 0, 0.9);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.8);
         }
 
         /* Hero section */
@@ -196,18 +200,10 @@
             <a href="#home">Home</a>
             <a href="#scripts">Scripts</a>
             <a href="#contact">Contact</a>
-            
-
-
-
-
-
-<a href="https://discord.gg/Hk9h8vnZ7w" target="_blank">Discord</a>
-            <a href="https://youtube.com/@globalexploitor?si=ULxJfeU0MbH6DNhy" target="_blank">YouTube</a>
         </div>
-        <div class="menu-buttons">
-            <button onclick="alert('Button 1 clicked!')"></button>
-            <button onclick="alert('Button 2 clicked!')"></button>
+        <div class="social-buttons">
+            <a href="https://discord.gg/Hk9h8vnZ7w" target="_blank">Discord</a>
+            <a href="https://youtube.com/@globalexploitor?si=ULxJfeU0MbH6DNhy" target="_blank">YouTube</a>
         </div>
     </nav>
 
