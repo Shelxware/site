@@ -83,10 +83,6 @@
             transform: translateY(-8px) rotate(-45deg); /* Bottom bar rotates */
         }
 
-        .menu-toggle.active div {
-            border-radius: 2px; /* Rounds edges for the "X" */
-        }
-
         /* Overlay styling */
         .menu-overlay {
             position: fixed;
@@ -108,40 +104,17 @@
             left: 0; /* Brings the menu into view */
         }
 
-        /* Button styling with glow and thicker font */
-        .menu-overlay a {
-            display: block;
-            color: white;
-            text-decoration: none;
-            font-family: 'Fredoka', sans-serif;
-            font-weight: 700; /* Thicker font */
-            font-size: 1.5em;
-            margin: 20px 0;
-            padding: 10px;
-            text-align: center;
-            background-color: rgba(135, 206, 235, 0.9);
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.6); /* White glow */
-            transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
-        }
-
-        .menu-overlay a:hover {
-            transform: scale(1.1); /* Slight zoom on hover */
-            background-color: rgba(100, 149, 237, 0.9);
-            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.9); /* Enhanced glow on hover */
-        }
-
-        /* Social icon container */
+        /* Social icons container in the middle */
         .social-icons {
             display: flex;
             justify-content: center;
-            margin-top: auto; /* Push to bottom */
+            margin: 20px 0;
         }
 
         .social-icons a {
             display: inline-block;
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             margin: 0 10px;
             border-radius: 50%;
             overflow: hidden;
@@ -160,43 +133,16 @@
             box-shadow: 0 6px 15px rgba(255, 255, 255, 0.8); /* Glow effect */
         }
 
-        /* Hero section */
-        .hero {
+        /* Menu overlay links */
+        .menu-overlay a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 700;
+            font-size: 1.5em;
+            margin: 20px 0;
             text-align: center;
-            padding: 50px 20px;
-            flex: 1;
-        }
-
-        .hero .text-box {
-            background: rgba(0, 0, 0, 0.8);
-            border: 2px solid #fff;
-            border-radius: 10px;
-            padding: 20px;
-            max-width: 600px;
-            margin: 20px auto;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        .hero .text-box h2 {
-            font-size: 2em;
-            margin-bottom: 10px;
-            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
-        }
-
-        .hero .text-box p {
-            font-size: 1.2em;
-            color: #ccc;
-        }
-
-        /* Footer styling */
-        footer {
-            text-align: center;
-            background: rgba(0, 0, 0, 0.9);
-            padding: 20px;
-        }
-
-        footer p {
-            margin: 0;
         }
     </style>
 </head>
@@ -222,6 +168,7 @@
             <a href="#executors">Executors</a>
             <a href="#contact">Contact</a>
         </div>
+        <!-- Social icons in the middle -->
         <div class="social-icons">
             <a href="https://youtube.com/@globalexploitor?si=ULxJfeU0MbH6DNhy" target="_blank">
                 <img src="https://media.discordapp.net/attachments/1240110101809987606/1322350909803597874/IMG_1328.png" 
@@ -238,7 +185,6 @@
     <section id="home" class="hero">
         <div class="text-box">
             <h2>"Don't go broke trying to look rich."</h2>
-            <p>sub to my yt</p>
         </div>
     </section>
 
