@@ -94,59 +94,55 @@
             left: 0;
         }
 
+        /* Button styling with glow and thicker font */
+        .menu-overlay a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 700;
+            font-size: 1.5em;
+            margin: 20px 0;
+            padding: 10px;
+            text-align: center;
+            background-color: rgba(135, 206, 235, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.6);
+            transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .menu-overlay a:hover {
+            transform: scale(1.1);
+            background-color: rgba(100, 149, 237, 0.9);
+            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.9);
+        }
+
         /* Hero section */
         .hero {
             text-align: center;
             padding: 50px 20px;
             flex: 1;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
         }
 
-        .clickable-box {
-            background-image: url('https://tr.rbxcdn.com/180DAY-02bfbef1eb7ba3124b87bb8fc95201af/768/432/Image/Webp/noFilter');
-            background-size: cover;
-            background-position: center;
-            border: 3px solid #0000ff;
-            border-radius: 10px;
-            padding: 20px;
-            width: 300px;
-            height: 150px;
-            text-align: center;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2em;
-            font-weight: bold;
-            box-shadow: 0 0 20px #0000ff;
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .clickable-box:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 30px #0000ff;
-        }
-
-        .text-box {
+        .hero .text-box {
             background: rgba(0, 0, 0, 0.8);
             border: 2px solid #fff;
             border-radius: 10px;
             padding: 20px;
-            max-width: 300px;
-            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 30px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            color: #ccc;
-            font-family: Arial, sans-serif;
         }
 
-        .text-box h2 {
-            font-size: 1.5em;
+        .hero .text-box h2 {
+            font-size: 2em;
             margin-bottom: 10px;
-            color: #fff;
             text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
+        }
+
+        .hero .text-box p {
+            font-size: 1.2em;
+            color: #ccc;
         }
 
         /* Footer styling */
@@ -160,3 +156,50 @@
             margin: 0;
         }
     </style>
+</head>
+<body>
+    <!-- Background -->
+    <div class="background-blur"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <h1>Global Exploiter</h1>
+    </header>
+
+    <!-- Menu Overlay -->
+    <nav class="menu-overlay" id="menu">
+        <div>
+            <a href="#home">Home</a>
+            <a href="Scripts.html">Scripts</a>
+            <a href="#executors">Executors</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="text-box">
+            <h2>"Don't go broke trying to look rich."</h2>
+            <p>sub to my yt</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 GlobalExploiter. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
