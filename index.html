@@ -35,7 +35,7 @@
         /* Header styling */
         header {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             padding: 20px;
             background: rgba(0, 0, 0, 0.8);
@@ -46,49 +46,49 @@
             margin: 0;
             font-size: 2.5em;
             text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
-            flex: 1;
-            text-align: center;
         }
 
-        /* Button container */
-        .button-container {
+        /* Hamburger menu */
+        .hamburger {
+            cursor: pointer;
+            width: 30px;
+            height: 25px;
             display: flex;
-            gap: 10px; /* Space between buttons */
-            position: absolute;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        .button {
-            background-color: #87CEEB; /* Light blue */
+        .hamburger div {
+            background-color: white;
+            height: 4px;
+            border-radius: 2px;
+        }
+
+        /* Dropdown menu */
+        .menu {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.9);
+            width: 100%;
+            padding: 10px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+        }
+
+        .menu a {
+            text-decoration: none;
             color: white;
             padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 1em;
-            cursor: pointer;
-            transition: background-color 0.3s, box-shadow 0.3s;
-            box-shadow: 0 0 10px white; /* White glow */
+            display: block;
+            text-align: center;
+            transition: background-color 0.3s;
         }
 
-        .button:hover {
-            background-color: #6495ED; /* Slightly darker blue on hover */
-        }
-
-        /* Responsive design for smaller screens */
-        @media (max-width: 600px) {
-            .button-container {
-                flex-direction: column;
-                left: 10px;
-                top: auto;
-                bottom: 10px;
-                transform: translateY(0);
-            }
-
-            .button {
-                width: 100%;
-                text-align: center;
-            }
+        .menu a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
         }
 
         /* Social links at the top */
@@ -180,11 +180,16 @@
 
     <!-- Header -->
     <header>
-        <div class="button-container">
-            <button class="button" onclick="scrollToTop()">Home</button>
-            <button class="button" onclick="scrollToScripts()">Scripts</button>
-        </div>
         <h1>Global Exploiter</h1>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="menu" id="menu">
+            <a href="#home" onclick="scrollToTop()">Home</a>
+            <a href="#scripts" onclick="scrollToScripts()">Scripts</a>
+        </div>
     </header>
 
     <!-- Hero Section -->
@@ -208,6 +213,11 @@
 
         function scrollToScripts() {
             alert("The Scripts section is coming soon!"); // Placeholder for "Scripts" functionality
+        }
+
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
         }
     </script>
 </body>
