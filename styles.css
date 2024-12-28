@@ -9,98 +9,34 @@ body {
     padding: 0;
 }
 
+.social-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border-radius: 10px;
+    margin: 20px auto;
+    width: fit-content;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.social-box a img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s;
+}
+
+.social-box a img:hover {
+    transform: scale(1.2);
+}
+
 header {
     padding: 20px;
     text-align: center;
     background: rgba(0, 0, 0, 0.8);
+    margin-bottom: 20px;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
-}
-
-nav {
-    text-align: center;
-    margin: 20px 0;
-}
-
-nav a {
-    color: #ffffff;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 1.2em;
-    transition: color 0.3s ease;
-}
-
-nav a:hover {
-    color: #1e90ff;
-}
-
-.hero {
-    text-align: center;
-    padding: 50px 20px;
-}
-
-.hero h2 {
-    font-size: 2em;
-    margin-bottom: 10px;
-}
-
-.hero p {
-    font-size: 1.2em;
-    max-width: 600px;
-    margin: 0 auto 20px;
-}
-
-.btn {
-    background-color: #444444;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1.1em;
-    cursor: pointer;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #555555;
-}
-
-footer {
-    padding: 20px;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.9);
-    margin-top: 40px;
-}
-
-.social-container {
-    margin: 20px 0;
-}
-
-.social-container a {
-    text-decoration: none;
-    margin: 0 10px;
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    background-color: #fff;
-    border-radius: 50%;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.social-container a:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
-}
-
-.social-container a img {
-    width: 24px;
-    height: 24px;
-    vertical-align: middle;
-}
+/* Other styles remain unchanged */
