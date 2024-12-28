@@ -35,8 +35,8 @@
         /* Header styling */
         header {
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             padding: 20px;
             background: rgba(0, 0, 0, 0.8);
             position: relative;
@@ -46,51 +46,55 @@
             margin: 0;
             font-size: 2.5em;
             text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
+            flex: 1;
+            text-align: center;
         }
 
         /* Hamburger menu styling */
-        .hamburger {
+        .menu-toggle {
             position: absolute;
-            left: 20px;
-            cursor: pointer;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .menu-toggle div {
             width: 30px;
-            height: 20px;
+            height: 4px;
+            background-color: #fff;
+            margin: 4px 0;
+            transition: transform 0.3s;
         }
 
-        .hamburger span {
-            display: block;
-            height: 3px;
-            background: white;
-            border-radius: 2px;
-        }
-
-        /* Menu styling */
         .menu {
             display: none;
             position: absolute;
-            top: 60px;
-            left: 20px;
-            background: rgba(0, 0, 0, 0.9);
-            border: 1px solid #ffffff;
+            top: 70px;
+            right: 20px;
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 10px 20px;
             border-radius: 5px;
-            padding: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
         }
 
         .menu a {
             display: block;
-            text-decoration: none;
             color: white;
-            padding: 10px;
-            font-size: 1em;
-            transition: background 0.3s;
+            text-decoration: none;
+            padding: 10px 0;
+            transition: color 0.3s;
         }
 
         .menu a:hover {
-            background: #444;
+            color: #87CEEB;
+        }
+
+        .menu.active {
+            display: block;
         }
     </style>
 </head>
@@ -100,16 +104,16 @@
 
     <!-- Header -->
     <header>
-        <div class="hamburger" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
         <h1>Global Exploiter</h1>
-        <div class="menu" id="menu">
-            <a href="#home" onclick="scrollToTop()">Home</a>
-            <a href="#scripts" onclick="scrollToScripts()">Scripts</a>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
+        <nav class="menu">
+            <a href="#home">Home</a>
+            <a href="#scripts">Scripts</a>
+        </nav>
     </header>
 
     <!-- Hero Section -->
@@ -127,21 +131,9 @@
 
     <!-- JavaScript -->
     <script>
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        function scrollToScripts() {
-            alert("The Scripts section is coming soon!"); // Placeholder for "Scripts" functionality
-        }
-
         function toggleMenu() {
-            const menu = document.getElementById('menu');
-            if (menu.style.display === 'block') {
-                menu.style.display = 'none';
-            } else {
-                menu.style.display = 'block';
-            }
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('active');
         }
     </script>
 </body>
