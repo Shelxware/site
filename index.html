@@ -135,13 +135,17 @@
         .social-icons {
             display: flex;
             justify-content: center;
-            margin: -40px 0 20px 0; /* Increased margin-top to push icons up further */
+            position: absolute;
+            top: 120px; /* Positioning the icons below the menu button */
+            left: 50%;
+            transform: translateX(-50%);
+            margin: 0;
         }
 
         .social-icons a {
             display: inline-block;
-            width: 35px;  /* Reduced size */
-            height: 35px; /* Reduced size */
+            width: 35px;  /* Smaller size */
+            height: 35px; /* Smaller size */
             margin: 0 10px;
             border-radius: 50%;
             overflow: hidden;
