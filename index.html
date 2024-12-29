@@ -193,6 +193,7 @@
             animation: fadeIn 1s forwards;
             position: relative;
             min-height: 150px; /* Ensures the box maintains its size even when empty */
+            padding-bottom: 50px; /* Prevents overlap with text below */
         }
 
         /* Fade-in effect for text-box */
@@ -202,13 +203,13 @@
         }
 
         .hero .text-box h2 {
-            font-size: 2.5em; /* Adjusted font size */
+            font-size: 2.5em; /* Increased font size */
             margin-bottom: 10px;
             text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
         }
 
         .hero .text-box p {
-            font-size: 1.5em; /* Adjusted font size */
+            font-size: 1.2em;
             color: cyan; /* Cyan text color */
             position: absolute; /* Ensures it stays in place */
             bottom: 20px; /* Positions it at the bottom of the box */
@@ -221,7 +222,7 @@
         /* Button styling */
         .view-scripts-btn {
             position: absolute;
-            top: 200px; /* Updated to 340px */
+            top: 340px; /* Updated to 340px */
             left: 50%;
             transform: translateX(-50%);
             padding: 15px 25px;
@@ -262,6 +263,22 @@
 
         .dark-mode .background-blur {
             filter: blur(5px) brightness(50%);
+        }
+
+        /* Adjust text size on mobile */
+        @media (max-width: 768px) {
+            .hero .text-box h2 {
+                font-size: 2em; /* Slightly reduced for mobile */
+            }
+
+            .hero .text-box p {
+                font-size: 1em; /* Adjust font size to fit mobile screens */
+                bottom: 10px; /* Slightly adjusted position for better fit */
+            }
+
+            .view-scripts-btn {
+                top: 270px; /* Adjust the button position for mobile */
+            }
         }
     </style>
 </head>
@@ -332,7 +349,7 @@
 
         // Typewriter effect
         const quotes = [
-            "Subscribe to Global Exploiter",
+            "Subscribe to Global Exploitor",
             "Share my videos with your friends!",
             "100% Safe and secure scripts!",
             "Dont Go Broke Trying To Look Rich",
