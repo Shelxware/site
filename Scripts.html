@@ -200,9 +200,9 @@
             box-shadow: 0 6px 15px rgba(255, 255, 255, 0.8);
         }
 
-        /* New box with image and button */
+        /* New box with image, text, and button */
         .image-box {
-            width: 60%; /* Default for mobile users */
+            width: 60%;
             margin: 20px auto;
             background-color: rgba(0, 0, 0, 0.8);
             padding: 20px;
@@ -222,8 +222,6 @@
         .copy-button {
             margin-top: 20px;
             padding: 10px 20px;
-            font-family: 'Fredoka', sans-serif;
-            font-weight: 700; /* Use Fredoka One weight (700 is the default) */
             font-size: 1.2em;
             background-color: #00bcd4;
             border: none;
@@ -232,6 +230,8 @@
             cursor: pointer;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
             transition: background-color 0.3s, transform 0.3s;
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 700;
         }
 
         .copy-button:hover {
@@ -239,12 +239,16 @@
             transform: scale(1.1);
         }
 
-        /* Media query for larger screens (e.g., desktops) */
-        @media (min-width: 768px) {
-            .image-box {
-                width: 40%; /* Reduce width for PCs */
-            }
+        /* Heading styling inside the box */
+        .image-box h2 {
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 700;
+            font-size: 2.5em;
+            color: #ffffff;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
         }
+
     </style>
 </head>
 <body>
@@ -286,6 +290,7 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="image-box">
+            <h2>Vertex Hub</h2>
             <img src="https://media.discordapp.net/attachments/1237163573894053888/1322659186370154607/2F2C2865-7B60-43F0-B2D6-9BC7AF38E716.jpg?ex=6771addb&is=67705c5b&hm=e4b0bc70dbca0031d964cdcb17ffcdeadadaf9c598ac6dac214c3b7149d45e7e&=&width=1071&height=602" alt="Script Image">
             <button class="copy-button" onclick="copyScript()">Copy Script</button>
         </div>
