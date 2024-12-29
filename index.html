@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GlobalExploiter</title>
-    <!-- Favicon -->
-    <link rel="icon" type="image/jpeg" href="https://media.discordapp.net/attachments/1296169780155256884/1321516127662116956/best-i-can-do.jpg?ex=677179cd&is=6770284d&hm=8247194597191c24bfeb6261a996d5c909f78d60ec00383125f59a265e5b5576&=&width=602&height=602">
+    <link rel="icon" type="image/jpeg" href="https://media.discordapp.net/attachments/1296169780155256884/1321516127662116956/best-i-can-do.jpg">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap" rel="stylesheet">
     <style>
-        /* General styling */
+        /* General Styling */
         body {
             margin: 0;
             padding: 0;
@@ -18,23 +17,22 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            background-color: #1a1a1a; /* Default dark background */
+            background-color: #1a1a1a;
             transition: background-color 0.3s ease;
         }
 
-        /* Smooth scrolling */
         html {
             scroll-behavior: smooth;
         }
 
-        /* Background blur */
+        /* Background Blur */
         .background-blur {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('https://media.discordapp.net/attachments/1296169780155256884/1322355000231596052/global-exploiter-discord-abnner.png?ex=67709290&is=676f4110&hm=0c8c86b3eae6bfe344ca2d982f9d4b181f8b2ff8f5f370be9831d7ab456a55f5&=&width=1071&height=602');
+            background-image: url('https://media.discordapp.net/attachments/1296169780155256884/1322355000231596052/global-exploiter-discord-abnner.png');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -42,7 +40,7 @@
             z-index: -1;
         }
 
-        /* Header styling */
+        /* Header */
         header {
             display: flex;
             align-items: center;
@@ -60,7 +58,7 @@
             text-align: center;
         }
 
-        /* Hamburger menu styling */
+        /* Menu */
         .menu-toggle {
             position: absolute;
             left: 20px;
@@ -92,11 +90,7 @@
             transform: translateY(-8px) rotate(-45deg);
         }
 
-        .menu-toggle.active div {
-            border-radius: 2px;
-        }
-
-        /* Overlay styling */
+        /* Menu Overlay */
         .menu-overlay {
             position: fixed;
             top: 0;
@@ -110,16 +104,13 @@
             z-index: 5;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
         }
 
         .menu-overlay.active {
             left: 0;
         }
 
-        /* Styled menu buttons */
         .menu-overlay a {
-            display: block;
             color: white;
             text-decoration: none;
             font-family: 'Fredoka', sans-serif;
@@ -134,27 +125,17 @@
             transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
         }
 
-        .menu-overlay a:hover {
-            transform: scale(1.1);
-            background-color: rgba(100, 149, 237, 0.9);
-            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.9);
-        }
-
-        /* Social icon container */
+        /* Social Icons */
         .social-icons {
             display: flex;
             justify-content: center;
-            position: absolute;
-            top: 600px;
-            left: 50%;
-            transform: translateX(-50%);
-            margin: 0;
+            margin-top: 20px;
         }
 
         .social-icons a {
             display: inline-block;
-            width: 30px;
-            height: 30px;
+            width: 40px;
+            height: 40px;
             margin: 0 10px;
             border-radius: 50%;
             overflow: hidden;
@@ -168,32 +149,10 @@
             object-fit: cover;
         }
 
-        .social-icons a:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.8);
-        }
-
-        /* Hero section */
-        .hero {
-            text-align: center;
-            padding: 50px 20px;
-            flex: 1;
-        }
-
-        .hero .text-box {
-            background: rgba(0, 0, 0, 0.8);
-            border: 2px solid #fff;
-            border-radius: 10px;
-            padding: 20px;
-            max-width: 600px;
-            margin: 20px auto;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        }
-
+        /* Typing Effect */
         #typing-effect {
             font-size: 2em;
             margin-bottom: 10px;
-            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
             white-space: nowrap;
             overflow: hidden;
             border-right: 2px solid #fff;
@@ -206,12 +165,12 @@
             }
         }
 
-        .hero .text-box p {
-            font-size: 1.2em;
-            color: #ccc;
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            flex: 1;
         }
 
-        /* Button styling */
         .view-scripts-btn {
             margin-top: 20px;
             padding: 15px 25px;
@@ -228,29 +187,11 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
             transition: background-color 0.3s, box-shadow 0.3s;
         }
-
-        .view-scripts-btn:hover {
-            background-color: #00bcd4;
-            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.8);
-        }
-
-        /* Footer styling */
-        footer {
-            text-align: center;
-            background: rgba(0, 0, 0, 0.9);
-            padding: 20px;
-        }
-
-        footer p {
-            margin: 0;
-        }
     </style>
 </head>
 <body>
-    <!-- Background -->
     <div class="background-blur"></div>
 
-    <!-- Header -->
     <header>
         <div class="menu-toggle" onclick="toggleMenu()">
             <div></div>
@@ -260,60 +201,40 @@
         <h1>Global Exploiter</h1>
     </header>
 
-    <!-- Menu Overlay -->
     <nav class="menu-overlay" id="menu">
-        <div>
-            <a href="#home">Home</a>
-            <a href="Scripts.html">Scripts</a>
-            <a href="#executors">Executors</a>
-            <a href="#contact">Contact</a>
-        </div>
-        <!-- Social Icons -->
-        <div class="social-icons">
-            <a href="https://youtube.com/@globalexploitor?si=ULxJfeU0MbH6DNhy" target="_blank">
-                <img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" 
-                     alt="YouTube">
-            </a>
-            <a href="https://discord.gg/Hk9h8vnZ7w" target="_blank">
-                <img src="https://media.discordapp.net/attachments/1235374443413635115/1322719710835638313/IMG_1348.png" 
-                     alt="Discord">
-            </a>
-        </div>
+        <a href="#home">Home</a>
+        <a href="Scripts.html">Scripts</a>
+        <a href="#executors">Executors</a>
+        <a href="#contact">Contact</a>
     </nav>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="text-box">
-            <h2 id="typing-effect"></h2>
-            <p>sub to my yt</p>
-            <a href="Scripts.html" class="view-scripts-btn">View Scripts</a>
-        </div>
+        <h2 id="typing-effect"></h2>
+        <a href="Scripts.html" class="view-scripts-btn">View Scripts</a>
     </section>
 
-    <!-- Footer -->
     <footer>
         <p>© 2024 GlobalExploiter. All rights reserved.</p>
     </footer>
 
-    <!-- JavaScript -->
     <script>
-        function toggleMenu() {
-            const menu = document.getElementById('menu');
-            const menuToggle = document.querySelector('.menu-toggle');
-            menu.classList.toggle('active');
-            menuToggle.classList.toggle('active');
-        }
-
         const text = "Don't go broke trying to look rich.";
         let index = 0;
 
         function typeEffect() {
             const typingElement = document.getElementById('typing-effect');
             if (index < text.length) {
-                typingElement.innerHTML += text.charAt(index);
+                typingElement.innerHTML = "l" + text.substring(0, index + 1);
                 index++;
                 setTimeout(typeEffect, 100);
             }
+        }
+
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            const toggle = document.querySelector('.menu-toggle');
+            menu.classList.toggle('active');
+            toggle.classList.toggle('active');
         }
 
         document.addEventListener('DOMContentLoaded', typeEffect);
