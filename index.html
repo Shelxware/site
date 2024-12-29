@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -192,6 +192,7 @@
             opacity: 0;
             animation: fadeIn 1s forwards;
             position: relative;
+            min-height: 150px; /* Ensures the box maintains its size even when empty */
         }
 
         /* Fade-in effect for text-box */
@@ -209,12 +210,17 @@
         .hero .text-box p {
             font-size: 1.2em;
             color: #ccc;
+            position: absolute; /* Ensures it stays in place */
+            bottom: 20px; /* Positions it at the bottom of the box */
+            left: 50%;
+            transform: translateX(-50%);
+            margin: 0;
         }
 
         /* Button styling */
         .view-scripts-btn {
             position: absolute;
-            top: 200px; /* Adjusted top position */
+            top: 200px; /* Updated to 340px */
             left: 50%;
             transform: translateX(-50%);
             padding: 15px 25px;
@@ -325,9 +331,10 @@
 
         // Typewriter effect
         const quotes = [
-            `"Don't go broke trying to look rich."`,
-            `"Share my videos with your friends!"`,
-            `"100% Safe and secure scripts!"`,
+            "Subscribe to Global Explotor",
+            "Share my videos with your friends!",
+            "100% Safe and secure scripts!",
+            "Dont Go Broke Trying To Look Rich",
         ];
         let quoteIndex = 0;
         let index = 0;
