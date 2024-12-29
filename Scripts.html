@@ -17,7 +17,13 @@
             flex-direction: column;
             min-height: 100vh;
             background: linear-gradient(to bottom right, #2c3e50, #4a6fa5);
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, opacity 1s ease-in-out; /* Added opacity transition */
+            opacity: 0; /* Initially set opacity to 0 */
+        }
+
+        /* Fade in effect on page load */
+        window.onload = function() {
+            document.body.style.opacity = 1; /* Set opacity to 1 after loading */
         }
 
         /* Smooth scrolling */
@@ -287,6 +293,10 @@
             }).catch(err => {
                 console.error('Failed to copy:', err);
             });
+        }
+
+        window.onload = function() {
+            document.body.style.opacity = 1; /* Ensure fade-in on load */
         }
     </script>
 </body>
