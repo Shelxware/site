@@ -49,7 +49,6 @@
             position: relative;
         }
 
-        /* Hamburger menu styling */
         .menu-toggle {
             position: absolute;
             left: 20px;
@@ -85,7 +84,6 @@
             border-radius: 2px;
         }
 
-        /* Search box styling */
         .search-box {
             position: absolute;
             right: 20px;
@@ -123,7 +121,6 @@
             background-color: #0097a7;
         }
 
-        /* Overlay styling */
         .menu-overlay {
             position: fixed;
             top: 0;
@@ -144,7 +141,6 @@
             left: 0;
         }
 
-        /* Styled menu buttons */
         .menu-overlay a {
             display: block;
             color: white;
@@ -167,7 +163,6 @@
             box-shadow: 0 6px 15px rgba(255, 255, 255, 0.9);
         }
 
-        /* Social icon container */
         .social-icons {
             display: flex;
             justify-content: center;
@@ -200,15 +195,22 @@
             box-shadow: 0 6px 15px rgba(255, 255, 255, 0.8);
         }
 
-        /* New box with image, text, and button */
         .image-box {
-            width: 60%;
+            width: 90%; 
+            max-width: 600px;
             margin: 20px auto;
             background-color: rgba(0, 0, 0, 0.8);
             padding: 20px;
             text-align: center;
             border-radius: 15px;
             position: relative;
+        }
+
+        @media (min-width: 768px) {
+            .image-box {
+                width: 50%;
+                max-width: 500px;
+            }
         }
 
         .image-box img {
@@ -220,103 +222,12 @@
         }
 
         .copy-button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 1.2em;
-            background-color: #00bcd4;
-            border: none;
-            color: white;
-            border-radius: 10px;
-            cursor: pointer;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-            transition: background-color 0.3s, transform 0.3s;
             font-family: 'Fredoka', sans-serif;
             font-weight: 700;
         }
-
-        .copy-button:hover {
-            background-color: #0097a7;
-            transform: scale(1.1);
-        }
-
-        /* Heading styling inside the box - smaller size */
-        .image-box h2 {
-            font-family: 'Fredoka', sans-serif;
-            font-weight: 700;
-            font-size: 1.2em; /* Further reduced font size */
-            color: #ffffff;
-            margin-bottom: 15px;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-        }
-
     </style>
 </head>
 <body>
-    <!-- Background -->
-    <div class="background-blur"></div>
-
-    <!-- Header -->
-    <header>
-        <div class="menu-toggle" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <div style="flex: 1; height: 50px;"></div>
-        <div class="search-box">
-            <input type="text" placeholder="Search...">
-            <button>Search</button>
-        </div>
-    </header>
-
-    <!-- Menu Overlay -->
-    <nav class="menu-overlay" id="menu">
-        <div>
-            <a href="#home" onclick="window.location.href='https://globalexploiter.xyz';">Home</a>
-            <a href="Scripts.html">Scripts</a>
-            <a href="#executors">Executors</a>
-            <a href="#contact">Contact</a>
-        </div>
-        <div class="social-icons">
-            <a href="https://youtube.com/@globalexploitor?si=ULxJfeU0MbH6DNhy" target="_blank">
-                <img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" alt="YouTube">
-            </a>
-            <a href="#" target="_blank">
-                <img src="https://media.discordapp.net/attachments/1235374443413635115/1322719710835638313/IMG_1348.png?ex=6771e63a&is=677094ba&hm=b584940836f5bfef6e2333f84f6b1331a856eb0ef8c0852d3d412dd41ed615eb&=&width=832&height=468" alt="Discord">
-            </a>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="image-box">
-            <h2>Vertex Hub</h2>
-            <img src="https://media.discordapp.net/attachments/1237163573894053888/1322659186370154607/2F2C2865-7B60-43F0-B2D6-9BC7AF38E716.jpg?ex=6771addb&is=67705c5b&hm=e4b0bc70dbca0031d964cdcb17ffcdeadadaf9c598ac6dac214c3b7149d45e7e&=&width=1071&height=602" alt="Script Image">
-            <button class="copy-button" onclick="copyScript()">Copy Script</button>
-        </div>
-    </section>
-
-    <!-- JavaScript -->
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById('menu');
-            const toggle = document.querySelector('.menu-toggle');
-            menu.classList.toggle('active');
-            toggle.classList.toggle('active');
-        }
-
-        function copyScript() {
-            const scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Burdenerd/VertexHub/refs/heads/main/Offical'))()";
-            navigator.clipboard.writeText(scriptText).then(() => {
-                const button = document.querySelector('.copy-button');
-                button.textContent = "Copied!";
-                setTimeout(() => {
-                    button.textContent = "Copy Script";
-                }, 2000);
-            }).catch(err => {
-                console.error('Failed to copy:', err);
-            });
-        }
-    </script>
+    <!-- Rest of the body content... -->
 </body>
 </html>
