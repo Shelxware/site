@@ -312,14 +312,17 @@
         }
 
         // Typing and Deleting effect
-        let quoteText = "Subscribe to the Global Exploiter Youtube Channel.";
+        let phrases = [
+            "Subscribe to the Global Exploiter Youtube Channel.",
+            "Share my videos with your friends!"
+        ];
+        let currentPhraseIndex = 0;
         let index = 0;
         const quoteElement = document.getElementById('quote');
-        let isFirstCycle = true;
 
         function typeWriter() {
-            if (index < quoteText.length) {
-                quoteElement.innerHTML += quoteText.charAt(index);
+            if (index < phrases[currentPhraseIndex].length) {
+                quoteElement.innerHTML += phrases[currentPhraseIndex].charAt(index);
                 index++;
                 setTimeout(typeWriter, 100);
             } else {
@@ -333,11 +336,8 @@
                 quoteElement.innerHTML = currentText.slice(0, -1); // Remove last character
                 setTimeout(deleteText, 50);
             } else {
-                if (isFirstCycle) {
-                    // Change text after first cycle
-                    quoteText = "Share my videos with your friends!";
-                    isFirstCycle = false;
-                }
+                // Move to the next phrase
+                currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
                 index = 0;
                 setTimeout(typeWriter, 500); // Restart typing after deletion
             }
