@@ -311,17 +311,11 @@
             toggle.classList.toggle('active');
         }
 
-        // Dark mode toggle
-        document.body.addEventListener('click', function(e) {
-            if (e.target.id === 'darkModeToggle') {
-                document.body.classList.toggle('dark-mode');
-            }
-        });
-
         // Typing and Deleting effect
-        const quoteText = "Subscribe to the Global Exploiter Youtube Channel.";
+        let quoteText = "Subscribe to the Global Exploiter Youtube Channel.";
         let index = 0;
         const quoteElement = document.getElementById('quote');
+        let isFirstCycle = true;
 
         function typeWriter() {
             if (index < quoteText.length) {
@@ -339,6 +333,11 @@
                 quoteElement.innerHTML = currentText.slice(0, -1); // Remove last character
                 setTimeout(deleteText, 50);
             } else {
+                if (isFirstCycle) {
+                    // Change text after first cycle
+                    quoteText = "Share my videos with your friends!";
+                    isFirstCycle = false;
+                }
                 index = 0;
                 setTimeout(typeWriter, 500); // Restart typing after deletion
             }
