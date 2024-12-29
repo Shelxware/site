@@ -16,7 +16,7 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            background-color: #1a1a1a; /* Default dark background */
+            background-color: black; /* Black background */
             transition: background-color 0.3s ease;
         }
 
@@ -46,9 +46,9 @@
             top: -100px; /* Start above the screen */
             left: 50%;
             transform: translateX(-50%);
-            background-color: white; /* Set to white */
-            color: black; /* Set text color to black */
-            padding: 20px 30px;
+            background-color: black; /* Set background to black */
+            color: white; /* Set text color to white */
+            padding: 30px 40px;
             border-radius: 10px;
             text-align: center;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
@@ -58,12 +58,13 @@
             transition: top 1s ease-out, opacity 1s ease-out;
             font-family: 'Fredoka', sans-serif; /* Same font as the menu */
             text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff; /* White glow */
+            font-size: 1.5em; /* Increased text size */
         }
 
         /* Close button styling */
         .close-btn {
-            background-color: black;  /* Changed to black */
-            color: white;
+            background-color: white;  /* Changed to white */
+            color: black;
             border: none;
             padding: 10px 20px;
             border-radius: 5px;
@@ -73,7 +74,7 @@
         }
 
         .close-btn:hover {
-            background-color: #333;  /* Darker shade for hover effect */
+            background-color: #ccc;  /* Light gray for hover effect */
         }
 
         /* Header styling */
