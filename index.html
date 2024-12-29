@@ -251,7 +251,6 @@
         .dark-mode .background-blur {
             filter: blur(5px) brightness(50%);
         }
-
     </style>
 </head>
 <body>
@@ -319,8 +318,8 @@
             }
         });
 
-        // Typewriter effect with delete effect
-        const quoteText = `"Subscribe to the Global Exploiter Youtube Channel."`;
+        // Typing and Deleting effect
+        const quoteText = "Subscribe to the Global Exploiter Youtube Channel.";
         let index = 0;
         const quoteElement = document.getElementById('quote');
 
@@ -330,17 +329,18 @@
                 index++;
                 setTimeout(typeWriter, 100);
             } else {
-                setTimeout(deleteText, 3000);  // Wait for 3 seconds before starting delete effect
+                setTimeout(deleteText, 3000); // Delete after 3 seconds
             }
         }
 
         function deleteText() {
-            let quoteContent = quoteElement.innerHTML;
-            quoteElement.innerHTML = quoteContent.slice(0, -1);
-            if (quoteContent.length > 0) {
-                setTimeout(deleteText, 100);
+            const currentText = quoteElement.innerHTML;
+            if (currentText.length > 0) {
+                quoteElement.innerHTML = currentText.slice(0, -1); // Remove last character
+                setTimeout(deleteText, 50);
             } else {
-                setTimeout(typeWriter, 1000); // Restart typing after deleting
+                index = 0;
+                setTimeout(typeWriter, 500); // Restart typing after deletion
             }
         }
 
