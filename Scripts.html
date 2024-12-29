@@ -22,8 +22,8 @@
             min-height: 100vh;
             background: linear-gradient(to bottom right, #2c3e50, #4a6fa5);
             transition: background-color 0.3s ease;
-            opacity: 0; /* Initially set to invisible */
-            animation: fadeIn 1s forwards; /* Apply fade-in animation */
+            opacity: 0;
+            animation: fadeIn 1s forwards;
         }
 
         @keyframes fadeIn {
@@ -35,78 +35,167 @@
             }
         }
 
-        .image-box {
-            width: 60%; /* Default width for mobile devices */
-            margin: 20px auto;
-            background-color: rgba(0, 0, 0, 0.8);
+        /* Header styling */
+        header {
+            display: flex;
+            align-items: center;
             padding: 20px;
-            text-align: center;
-            border-radius: 15px;
+            background: rgba(0, 0, 0, 0.8);
             position: relative;
         }
 
-        @media (min-width: 768px) {
-            .image-box {
-                width: 40%; /* Smaller width for PC screens */
-            }
+        /* Hamburger menu */
+        .menu-toggle {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-toggle div {
+            width: 30px;
+            height: 4px;
+            background-color: #fff;
+            margin: 4px 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .menu-toggle.active div:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .menu-toggle.active div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active div:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        /* Overlay menu */
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            height: 100%;
+            width: 300px;
+            background-color: rgba(0, 0, 0, 0.85);
+            padding: 60px 20px;
+            transition: left 0.4s ease-in-out;
+        }
+
+        .menu-overlay.active {
+            left: 0;
+        }
+
+        .menu-overlay a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 700;
+            font-size: 1.5em;
+            margin: 20px 0;
+            padding: 10px;
+            text-align: center;
+            background-color: rgba(135, 206, 235, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.6);
+        }
+
+        .menu-overlay a:hover {
+            background-color: rgba(100, 149, 237, 0.9);
+            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.9);
+        }
+
+        /* Box with script */
+        .image-box {
+            width: 70%;
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
         }
 
         .image-box img {
             width: 100%;
-            height: auto;
-            max-height: 500px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
-        }
-
-        .copy-button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 1.2em;
-            background-color: #00bcd4;
-            border: none;
-            color: white;
-            border-radius: 10px;
-            cursor: pointer;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-            transition: background-color 0.3s, transform 0.3s;
-            font-family: 'Fredoka', sans-serif;
-            font-weight: 700;
-        }
-
-        .copy-button:hover {
-            background-color: #0097a7;
-            transform: scale(1.1);
+            border-radius: 8px;
         }
 
         .image-box h2 {
             font-family: 'Fredoka', sans-serif;
             font-weight: 700;
-            font-size: 1.2em;
             color: #ffffff;
-            margin-bottom: 15px;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            font-size: 1.4em;
+            margin: 10px 0;
+        }
+
+        .copy-button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 1em;
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 700;
+            background-color: #00bcd4;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .copy-button:hover {
+            background-color: #0097a7;
         }
     </style>
 </head>
 <body>
+    <!-- Header -->
+    <header>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="search-box">
+            <input type="text" placeholder="Search...">
+            <button>Search</button>
+        </div>
+    </header>
+
+    <!-- Menu Overlay -->
+    <nav class="menu-overlay" id="menu">
+        <a href="#home">Home</a>
+        <a href="Scripts.html">Scripts</a>
+        <a href="#executors">Executors</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Script Box -->
     <div class="image-box">
         <h2>Vertex Hub</h2>
-        <img src="https://media.discordapp.net/attachments/1237163573894053888/1322659186370154607/2F2C2865-7B60-43F0-B2D6-9BC7AF38E716.jpg?ex=6771addb&is=67705c5b&hm=e4b0bc70dbca0031d964cdcb17ffcdeadadaf9c598ac6dac214c3b7149d45e7e&=&width=1071&height=602" alt="Script Image">
+        <img src="https://via.placeholder.com/500" alt="Script Image">
         <button class="copy-button" onclick="copyScript()">Copy Script</button>
     </div>
 
     <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('active');
+            document.querySelector('.menu-toggle').classList.toggle('active');
+        }
+
         function copyScript() {
-            const scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Burdenerd/VertexHub/refs/heads/main/Offical'))()";
+            const scriptText = "loadstring(game:HttpGet('https://example.com/script'))()";
             navigator.clipboard.writeText(scriptText).then(() => {
-                const button = document.querySelector('.copy-button');
-                button.textContent = "Copied!";
-                setTimeout(() => {
-                    button.textContent = "Copy Script";
-                }, 2000);
-            }).catch(err => {
-                console.error('Failed to copy:', err);
+                alert('Script copied to clipboard!');
+            }).catch(() => {
+                alert('Failed to copy script.');
             });
         }
     </script>
