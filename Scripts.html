@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap" rel="stylesheet">
     
     <!-- Favicon -->
-    <link rel="icon" href="https://media.discordapp.net/attachments/1296169780155256884/1321516127662116956/best-i-can-do.jpg?ex=677179cd&is=6770284d&hm=8247194597191c24bfeb6261a996d5c909f78d60ec00383125f59a265e5b5576&=&width=602&height=602" type="image/jpg">
+    <link rel="icon" href="https://media.discordapp.net/attachments/1296169780155256884/1321516127662116956/best-i-can-do.jpg" type="image/jpg">
     
     <style>
         /* General styling */
@@ -21,18 +21,13 @@
             flex-direction: column;
             min-height: 100vh;
             background: linear-gradient(to bottom right, #2c3e50, #4a6fa5);
-            transition: background-color 0.3s ease;
-            opacity: 0;
+            opacity: 0; /* Initially invisible */
             animation: fadeIn 1s forwards;
         }
 
         @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
+            0% { opacity: 0; }
+            100% { opacity: 1; }
         }
 
         /* Header styling */
@@ -44,38 +39,15 @@
             position: relative;
         }
 
-        /* Hamburger menu */
         .menu-toggle {
             position: absolute;
             left: 20px;
             top: 50%;
             transform: translateY(-50%);
-            display: flex;
-            flex-direction: column;
             cursor: pointer;
         }
 
-        .menu-toggle div {
-            width: 30px;
-            height: 4px;
-            background-color: #fff;
-            margin: 4px 0;
-            transition: transform 0.3s ease, opacity 0.3s ease;
-        }
-
-        .menu-toggle.active div:nth-child(1) {
-            transform: translateY(8px) rotate(45deg);
-        }
-
-        .menu-toggle.active div:nth-child(2) {
-            opacity: 0;
-        }
-
-        .menu-toggle.active div:nth-child(3) {
-            transform: translateY(-8px) rotate(-45deg);
-        }
-
-        /* Overlay menu */
+        /* Menu overlay */
         .menu-overlay {
             position: fixed;
             top: 0;
@@ -83,8 +55,8 @@
             height: 100%;
             width: 300px;
             background-color: rgba(0, 0, 0, 0.85);
-            padding: 60px 20px;
             transition: left 0.4s ease-in-out;
+            z-index: 10;
         }
 
         .menu-overlay.active {
@@ -95,107 +67,80 @@
             display: block;
             color: white;
             text-decoration: none;
-            font-family: 'Fredoka', sans-serif;
-            font-weight: 700;
             font-size: 1.5em;
             margin: 20px 0;
-            padding: 10px;
             text-align: center;
-            background-color: rgba(135, 206, 235, 0.9);
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.6);
         }
 
-        .menu-overlay a:hover {
-            background-color: rgba(100, 149, 237, 0.9);
-            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.9);
-        }
-
-        /* Box with script */
+        /* Box styling */
         .image-box {
-            width: 70%;
-            max-width: 600px;
+            width: 60%;
             margin: 20px auto;
             background-color: rgba(0, 0, 0, 0.8);
-            padding: 15px;
+            padding: 20px;
             text-align: center;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            position: relative;
+        }
+
+        @media (min-width: 768px) {
+            .image-box {
+                width: 40%;
+                padding: 15px;
+            }
         }
 
         .image-box img {
             width: 100%;
-            border-radius: 8px;
-        }
-
-        .image-box h2 {
-            font-family: 'Fredoka', sans-serif;
-            font-weight: 700;
-            color: #ffffff;
-            font-size: 1.4em;
-            margin: 10px 0;
+            border-radius: 10px;
         }
 
         .copy-button {
-            margin-top: 10px;
+            margin-top: 20px;
             padding: 10px 20px;
-            font-size: 1em;
-            font-family: 'Fredoka', sans-serif;
-            font-weight: 700;
+            font-size: 1.2em;
             background-color: #00bcd4;
             border: none;
             color: white;
-            border-radius: 5px;
+            border-radius: 10px;
             cursor: pointer;
-        }
-
-        .copy-button:hover {
-            background-color: #0097a7;
         }
     </style>
 </head>
 <body>
     <!-- Header -->
     <header>
-        <div class="menu-toggle" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <div class="search-box">
-            <input type="text" placeholder="Search...">
-            <button>Search</button>
-        </div>
+        <div class="menu-toggle" onclick="toggleMenu()">Menu</div>
     </header>
 
-    <!-- Menu Overlay -->
-    <nav class="menu-overlay" id="menu">
+    <!-- Menu overlay -->
+    <div class="menu-overlay" id="menu">
         <a href="#home">Home</a>
         <a href="Scripts.html">Scripts</a>
         <a href="#executors">Executors</a>
         <a href="#contact">Contact</a>
-    </nav>
+    </div>
 
-    <!-- Script Box -->
+    <!-- Main section -->
     <div class="image-box">
         <h2>Vertex Hub</h2>
         <img src="https://via.placeholder.com/500" alt="Script Image">
         <button class="copy-button" onclick="copyScript()">Copy Script</button>
     </div>
 
+    <!-- JavaScript -->
     <script>
         function toggleMenu() {
             const menu = document.getElementById('menu');
             menu.classList.toggle('active');
-            document.querySelector('.menu-toggle').classList.toggle('active');
         }
 
         function copyScript() {
             const scriptText = "loadstring(game:HttpGet('https://example.com/script'))()";
             navigator.clipboard.writeText(scriptText).then(() => {
-                alert('Script copied to clipboard!');
-            }).catch(() => {
-                alert('Failed to copy script.');
+                alert('Script copied!');
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
             });
         }
     </script>
