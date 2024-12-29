@@ -202,7 +202,7 @@
 
         /* New box with image and button */
         .image-box {
-            width: 60%;
+            width: 60%; /* Default for mobile users */
             margin: 20px auto;
             background-color: rgba(0, 0, 0, 0.8);
             padding: 20px;
@@ -223,7 +223,6 @@
             margin-top: 20px;
             padding: 10px 20px;
             font-size: 1.2em;
-            font-family: 'Fredoka', sans-serif; /* Apply Fredoka font */
             background-color: #00bcd4;
             border: none;
             color: white;
@@ -236,6 +235,13 @@
         .copy-button:hover {
             background-color: #0097a7;
             transform: scale(1.1);
+        }
+
+        /* Media query for larger screens (e.g., desktops) */
+        @media (min-width: 768px) {
+            .image-box {
+                width: 40%; /* Reduce width for PCs */
+            }
         }
     </style>
 </head>
