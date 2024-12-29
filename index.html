@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -53,11 +53,12 @@
 
         header h1 {
             margin: 0;
-            padding-left: 20px;
             font-size: 2.5em;
             text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
             flex: 1;
             text-align: center;
+            position: relative;
+            left: 10px; /* Slightly move to the right */
         }
 
         /* Hamburger menu styling */
@@ -209,12 +210,13 @@
 
         .hero .text-box p {
             font-size: 1.2em;
-            color: #ccc;
-            position: absolute; /* Ensures it stays in place */
-            bottom: 20px; /* Positions it at the bottom of the box */
+            color: #00ffff; /* Cyan text color */
+            position: absolute;
+            bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
             margin: 0;
+            text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff; /* Cyan glow */
         }
 
         /* Button styling */
@@ -341,29 +343,22 @@
         const quoteElement = document.getElementById('quote');
 
         function typeWriter() {
-            if (index < quotes[quoteIndex].length) {
-                quoteElement.innerHTML += quotes[quoteIndex].charAt(index);
+            const currentQuote = quotes[quoteIndex];
+            if (index < currentQuote.length) {
+                quoteElement.innerHTML += currentQuote.charAt(index);
                 index++;
                 setTimeout(typeWriter, 100);
             } else {
-                setTimeout(deleteText, 2000);
+                setTimeout(() => {
+                    quoteElement.innerHTML = "";
+                    quoteIndex = (quoteIndex + 1) % quotes.length;
+                    index = 0;
+                    typeWriter();
+                }, 3000);
             }
         }
 
-        function deleteText() {
-            if (index > 0) {
-                quoteElement.innerHTML = quotes[quoteIndex].substring(0, index - 1);
-                index--;
-                setTimeout(deleteText, 50);
-            } else {
-                quoteIndex = (quoteIndex + 1) % quotes.length;
-                setTimeout(typeWriter, 1000);
-            }
-        }
-
-        window.onload = function() {
-            typeWriter();
-        };
+        typeWriter();
     </script>
 </body>
 </html>
