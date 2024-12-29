@@ -319,8 +319,8 @@
             }
         });
 
-        // Typewriter effect
-        const quoteText = `"Don't go broke trying to look rich."`;
+        // Typewriter effect with delete effect
+        const quoteText = `"Subscribe to the Global Exploiter Youtube Channel."`;
         let index = 0;
         const quoteElement = document.getElementById('quote');
 
@@ -329,6 +329,18 @@
                 quoteElement.innerHTML += quoteText.charAt(index);
                 index++;
                 setTimeout(typeWriter, 100);
+            } else {
+                setTimeout(deleteText, 3000);  // Wait for 3 seconds before starting delete effect
+            }
+        }
+
+        function deleteText() {
+            let quoteContent = quoteElement.innerHTML;
+            quoteElement.innerHTML = quoteContent.slice(0, -1);
+            if (quoteContent.length > 0) {
+                setTimeout(deleteText, 100);
+            } else {
+                setTimeout(typeWriter, 1000); // Restart typing after deleting
             }
         }
 
