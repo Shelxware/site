@@ -53,7 +53,7 @@
 
         header h1 {
             margin: 0;
-            padding-left: 40px; /* Adjusted padding-left to move the text to the right */
+            padding-left: 20px;
             font-size: 2.5em;
             text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
             flex: 1;
@@ -193,6 +193,7 @@
             animation: fadeIn 1s forwards;
             position: relative;
             min-height: 150px; /* Ensures the box maintains its size even when empty */
+            padding-bottom: 50px; /* Prevents overlap with text below */
         }
 
         /* Fade-in effect for text-box */
@@ -221,7 +222,7 @@
         /* Button styling */
         .view-scripts-btn {
             position: absolute;
-            top: 200px; /* Updated to 340px */
+            top: 340px; /* Updated to 340px */
             left: 50%;
             transform: translateX(-50%);
             padding: 15px 25px;
@@ -262,6 +263,22 @@
 
         .dark-mode .background-blur {
             filter: blur(5px) brightness(50%);
+        }
+
+        /* Adjust text size on mobile */
+        @media (max-width: 768px) {
+            .hero .text-box h2 {
+                font-size: 1.5em;
+            }
+
+            .hero .text-box p {
+                font-size: 1em; /* Adjust font size to fit mobile screens */
+                bottom: 10px; /* Slightly adjusted position for better fit */
+            }
+
+            .view-scripts-btn {
+                top: 270px; /* Adjust the button position for mobile */
+            }
         }
     </style>
 </head>
@@ -304,7 +321,7 @@
     <section id="home" class="hero">
         <div class="text-box">
             <h2 id="quote"></h2>
-            <p>Subscribe To Global Exploitor On Youtube!</p>
+            <p>Subscribe To Global Exploiter On Youtube!</p>
             <a href="Scripts.html" class="view-scripts-btn">View Scripts</a>
         </div>
     </section>
