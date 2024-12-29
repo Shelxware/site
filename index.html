@@ -245,7 +245,7 @@
             color: #ccc;
         }
 
-        /* Button styling */
+        /* Button styling with black outline */
         .view-scripts-btn {
             margin-top: 20px;
             padding: 15px 25px;
@@ -254,18 +254,19 @@
             font-size: 1.2em;
             font-family: 'Fredoka', sans-serif;
             font-weight: 700;
-            border: 2px solid #000;
+            border: 2px solid black; /* Black outline added */
             border-radius: 10px;
             text-decoration: none;
             display: inline-block;
             text-align: center;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            transition: background-color 0.3s, box-shadow 0.3s;
+            transition: background-color 0.3s, box-shadow 0.3s, border 0.3s;
         }
 
         .view-scripts-btn:hover {
             background-color: #00bcd4;
             box-shadow: 0 6px 15px rgba(255, 255, 255, 0.8);
+            border: 2px solid #00bcd4; /* Outline color changes to match the hover color */
         }
 
         /* Footer styling */
