@@ -220,7 +220,7 @@
         /* Button styling */
         .view-scripts-btn {
             position: absolute;
-            top: 200px; /* Updated to 340px */
+            top: 340px; /* Updated to 340px */
             left: 50%;
             transform: translateX(-50%);
             padding: 15px 25px;
@@ -235,12 +235,14 @@
             display: inline-block;
             text-align: center;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            transition: background-color 0.3s, box-shadow 0.3s;
+            transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
         }
 
+        /* Updated hover styling for the View Scripts button */
         .view-scripts-btn:hover {
             background-color: #00bcd4;
             box-shadow: 0 6px 15px rgba(255, 255, 255, 0.8);
+            transform: scale(1.1); /* Added hover animation */
         }
 
         /* Footer styling */
