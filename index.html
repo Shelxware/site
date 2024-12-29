@@ -191,6 +191,7 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
             opacity: 0;
             animation: fadeIn 1s forwards;
+            position: relative;
         }
 
         /* Fade-in effect for text-box */
@@ -213,7 +214,7 @@
         /* Button styling */
         .view-scripts-btn {
             position: absolute;
-            bottom: 0;
+            top: 400px; /* Adjusted top position */
             left: 50%;
             transform: translateX(-50%);
             padding: 15px 25px;
@@ -297,8 +298,8 @@
         <div class="text-box">
             <h2 id="quote"></h2>
             <p>sub to my yt</p>
+            <a href="Scripts.html" class="view-scripts-btn">View Scripts</a>
         </div>
-        <a href="Scripts.html" class="view-scripts-btn">View Scripts</a>
     </section>
 
     <!-- Footer -->
@@ -315,40 +316,47 @@
             toggle.classList.toggle('active');
         }
 
-        // Typing and Deleting effect
-        let phrases = [
-            "Subscribe to the Global Exploiter Youtube Channel.",
-            "Share my videos with your friends!",
-            "100% Safe and secure scripts!"
+        // Dark mode toggle
+        document.body.addEventListener('click', function(e) {
+            if (e.target.id === 'darkModeToggle') {
+                document.body.classList.toggle('dark-mode');
+            }
+        });
+
+        // Typewriter effect
+        const quotes = [
+            `"Don't go broke trying to look rich."`,
+            `"Share my videos with your friends!"`,
+            `"100% Safe and secure scripts!"`,
         ];
-        let currentPhraseIndex = 0;
+        let quoteIndex = 0;
         let index = 0;
         const quoteElement = document.getElementById('quote');
 
         function typeWriter() {
-            if (index < phrases[currentPhraseIndex].length) {
-                quoteElement.innerHTML += phrases[currentPhraseIndex].charAt(index);
+            if (index < quotes[quoteIndex].length) {
+                quoteElement.innerHTML += quotes[quoteIndex].charAt(index);
                 index++;
                 setTimeout(typeWriter, 100);
             } else {
-                setTimeout(deleteText, 3000); // Delete after 3 seconds
+                setTimeout(deleteText, 2000);
             }
         }
 
         function deleteText() {
-            const currentText = quoteElement.innerHTML;
-            if (currentText.length > 0) {
-                quoteElement.innerHTML = currentText.slice(0, -1); // Remove last character
+            if (index > 0) {
+                quoteElement.innerHTML = quotes[quoteIndex].substring(0, index - 1);
+                index--;
                 setTimeout(deleteText, 50);
             } else {
-                // Move to the next phrase
-                currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
-                index = 0;
-                setTimeout(typeWriter, 500); // Restart typing after deletion
+                quoteIndex = (quoteIndex + 1) % quotes.length;
+                setTimeout(typeWriter, 1000);
             }
         }
 
-        window.onload = typeWriter;
+        window.onload = function() {
+            typeWriter();
+        };
     </script>
 </body>
 </html>
