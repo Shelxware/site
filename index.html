@@ -58,7 +58,6 @@
             text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
             flex: 1;
             text-align: center;
-            transform: translateX(-10px); /* Adjusted for better centering on phones */
         }
 
         /* Hamburger menu styling */
@@ -216,7 +215,6 @@
             left: 50%;
             transform: translateX(-50%);
             margin: 0;
-            text-shadow: 0 0 10px cyan; /* Added cyan glow effect */
         }
 
         /* Button styling */
@@ -346,4 +344,26 @@
             if (index < quotes[quoteIndex].length) {
                 quoteElement.innerHTML += quotes[quoteIndex].charAt(index);
                 index++;
-                setTimeout(typeWriter, 
+                setTimeout(typeWriter, 100);
+            } else {
+                setTimeout(deleteText, 2000);
+            }
+        }
+
+        function deleteText() {
+            if (index > 0) {
+                quoteElement.innerHTML = quotes[quoteIndex].substring(0, index - 1);
+                index--;
+                setTimeout(deleteText, 50);
+            } else {
+                quoteIndex = (quoteIndex + 1) % quotes.length;
+                setTimeout(typeWriter, 1000);
+            }
+        }
+
+        window.onload = function() {
+            typeWriter();
+        };
+    </script>
+</body>
+</html>
