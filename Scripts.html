@@ -100,6 +100,8 @@
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 10;
+            opacity: 1; /* Initially visible */
+            transition: opacity 0.3s ease; /* Add fade-out transition */
         }
 
         /* Search box styling */
@@ -288,7 +290,7 @@
             <div></div>
         </div>
         <!-- "Scripts" header on the black bar -->
-        <div class="scripts-header">Scripts</div>
+        <div class="scripts-header" id="scripts-header">Scripts</div>
         <div class="search-box">
             <input type="text" placeholder="Search...">
             <button>Search</button>
@@ -327,8 +329,16 @@
         function toggleMenu() {
             const menu = document.getElementById('menu');
             const toggle = document.querySelector('.menu-toggle');
+            const scriptsHeader = document.getElementById('scripts-header');
             menu.classList.toggle('active');
             toggle.classList.toggle('active');
+            
+            // Toggle the fade effect for "Scripts" header
+            if (menu.classList.contains('active')) {
+                scriptsHeader.style.opacity = '0'; // Fade out
+            } else {
+                scriptsHeader.style.opacity = '1'; // Fade in
+            }
         }
 
         function copyScript() {
