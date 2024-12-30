@@ -18,7 +18,7 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            background-color: transparent; /* Removed black background */
+            background-color: #1a1a1a; /* Default dark background */
             transition: background-color 0.3s ease;
         }
 
@@ -70,17 +70,13 @@
             flex-direction: column;
             cursor: pointer;
             z-index: 10;
-            border-radius: 10px; /* Rounded corners for the entire hamburger */
-            padding: 5px; /* Space around the hamburger icon */
-            background-color: rgba(0, 0, 0, 0.5); /* Optional background for the menu container */
         }
 
         .menu-toggle div {
             width: 30px;
             height: 4px;
-            background-color: #fff;
+            background-color: #fff; /* Set the hamburger lines to white */
             margin: 4px 0;
-            border-radius: 2px; /* Rounded edges for the individual bars */
             transition: transform 0.3s ease, opacity 0.3s ease;
         }
 
@@ -384,11 +380,13 @@
                 setTimeout(deleteText, 50);
             } else {
                 quoteIndex = (quoteIndex + 1) % quotes.length;
-                setTimeout(typeWriter, 500);
+                setTimeout(typeWriter, 1000);
             }
         }
 
-        typeWriter();
+        window.onload = function() {
+            typeWriter();
+        };
     </script>
 </body>
 </html>
