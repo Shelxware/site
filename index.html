@@ -8,7 +8,7 @@
     <link rel="icon" type="image/jpeg" href="https://media.discordapp.net/attachments/1296169780155256884/1321516127662116956/best-i-can-do.jpg?ex=677179cd&is=6770284d&hm=8247194597191c24bfeb6261a996d5c909f78d60ec00383125f59a265e5b5576&=&width=602&height=602">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap" rel="stylesheet">
     <style>
-        /* General styling */
+        /* Updated background */
         body {
             margin: 0;
             padding: 0;
@@ -18,8 +18,19 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            background-color: #1a1a1a; /* Default dark background */
+            background: linear-gradient(to bottom right, #1e2a47, #4f6d8c); /* Updated background gradient */
             transition: background-color 0.3s ease;
+            opacity: 0; /* Initially set to invisible */
+            animation: fadeIn 1s forwards; /* Apply fade-in animation */
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
         }
 
         /* Smooth scrolling */
@@ -237,156 +248,68 @@
             display: inline-block;
             text-align: center;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            transition: background-color 0.3s, box-shadow 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
         }
 
         .view-scripts-btn:hover {
-            background-color: #00bcd4;
-            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.8);
+            transform: scale(1.1);
+            background-color: #00b3b3;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
         }
 
         /* Footer styling */
         footer {
-            text-align: center;
-            background: rgba(0, 0, 0, 0.9);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
             padding: 20px;
-        }
-
-        footer p {
-            margin: 0;
-        }
-
-        /* Dark mode styling */
-        .dark-mode {
-            background-color: #121212;
-        }
-
-        .dark-mode .background-blur {
-            filter: blur(5px) brightness(50%);
-        }
-
-        /* Adjust text size on mobile */
-        @media (max-width: 768px) {
-            .hero .text-box h2 {
-                font-size: 2em; /* Slightly reduced for mobile */
-            }
-
-            .hero .text-box p {
-                font-size: 1em; /* Adjust font size to fit mobile screens */
-                bottom: 10px; /* Slightly adjusted position for better fit */
-            }
-
-            .view-scripts-btn {
-                top: 270px; /* Adjust the button position for mobile */
-            }
-
-            /* Move header text to the right on mobile */
-            header h1 {
-                padding-left: 40px; /* Adjust the padding to move the text to the right */
-            }
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <!-- Background -->
+
     <div class="background-blur"></div>
 
-    <!-- Header -->
     <header>
+        <h1>GlobalExploiter</h1>
         <div class="menu-toggle" onclick="toggleMenu()">
             <div></div>
             <div></div>
             <div></div>
         </div>
-        <h1>Global Exploiter</h1>
     </header>
 
-    <!-- Menu Overlay -->
-    <nav class="menu-overlay" id="menu">
-        <div>
-            <a href="#home">Home</a>
-            <a href="Scripts.html">Scripts</a>
-            <a href="Executor.html">Executors</a>
-            <a href="#contact">Contact</a>
-        </div>
-        <!-- Social Icons -->
-        <div class="social-icons">
-            <a href="https://youtube.com/@globalexploitor?si=ULxJfeU0MbH6DNhy" target="_blank">
-                <img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" 
-                     alt="YouTube">
-            </a>
-            <a href="https://discord.gg/Hk9h8vnZ7w" target="_blank">
-                <img src="https://media.discordapp.net/attachments/1235374443413635115/1322719710835638313/IMG_1348.png?ex=6771e63a&is=677094ba&hm=b584940836f5bfef6e2333f84f6b1331a856eb0ef8c0852d3d412dd41ed615eb&=&width=832&height=468" 
-                     alt="Discord">
-            </a>
-        </div>
-    </nav>
+    <div class="menu-overlay">
+        <a href="#">Home</a>
+        <a href="#">Scripts</a>
+        <a href="#">Executor</a>
+    </div>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
+    <div class="hero">
         <div class="text-box">
-            <h2 id="quote"></h2>
-            <p>Subscribe To Global Exploiter On Youtube!</p>
-            <a href="Scripts.html" class="view-scripts-btn">View Scripts</a>
+            <h2>Welcome to GlobalExploiter</h2>
+            <p>Explore the best scripts and exploits!</p>
         </div>
-    </section>
+        <a href="#scripts" class="view-scripts-btn">View Scripts</a>
+    </div>
 
-    <!-- Footer -->
+    <div class="social-icons">
+        <a href="#"><img src="https://media.discordapp.net/attachments/1296169780155256884/1322361283628426250/discord-logo.png" alt="Discord"></a>
+        <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/YouTube_icon_%282013-2017%29.png" alt="YouTube"></a>
+    </div>
+
     <footer>
-        <p>© 2024 GlobalExploiter. All rights reserved.</p>
+        <p>sub to my yt</p>
     </footer>
 
-    <!-- JavaScript -->
     <script>
         function toggleMenu() {
-            const menu = document.getElementById('menu');
-            const toggle = document.querySelector('.menu-toggle');
-            menu.classList.toggle('active');
-            toggle.classList.toggle('active');
+            const menuToggle = document.querySelector('.menu-toggle');
+            const menuOverlay = document.querySelector('.menu-overlay');
+            menuToggle.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
         }
-
-        // Dark mode toggle
-        document.body.addEventListener('click', function(e) {
-            if (e.target.id === 'darkModeToggle') {
-                document.body.classList.toggle('dark-mode');
-            }
-        });
-
-        // Typewriter effect
-        const quotes = [
-            "Subscribe to Global Exploitor",
-            "Share my videos with your friends!",
-            "100% Safe and secure scripts!",
-            "Dont Go Broke Trying To Look Rich",
-        ];
-        let quoteIndex = 0;
-        let index = 0;
-        const quoteElement = document.getElementById('quote');
-
-        function typeWriter() {
-            if (index < quotes[quoteIndex].length) {
-                quoteElement.innerHTML += quotes[quoteIndex].charAt(index);
-                index++;
-                setTimeout(typeWriter, 100);
-            } else {
-                setTimeout(deleteText, 2000);
-            }
-        }
-
-        function deleteText() {
-            if (index > 0) {
-                quoteElement.innerHTML = quotes[quoteIndex].substring(0, index - 1);
-                index--;
-                setTimeout(deleteText, 50);
-            } else {
-                quoteIndex = (quoteIndex + 1) % quotes.length;
-                setTimeout(typeWriter, 1000);
-            }
-        }
-
-        window.onload = function() {
-            typeWriter();
-        };
     </script>
+
 </body>
 </html>
