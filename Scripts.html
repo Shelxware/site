@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,6 +59,9 @@
             flex-direction: column;
             cursor: pointer;
             z-index: 10;
+            border-radius: 10px; /* Add rounded corners */
+            padding: 5px; /* Adds space around the hamburger bars */
+            background-color: rgba(0, 0, 0, 0.5); /* Optional: adds background */
         }
 
         .menu-toggle div {
@@ -69,6 +70,7 @@
             background-color: #fff;
             margin: 4px 0;
             transition: transform 0.3s ease, opacity 0.3s ease;
+            border-radius: 2px; /* Rounds the edges of the bars */
         }
 
         .menu-toggle.active div:nth-child(1) {
