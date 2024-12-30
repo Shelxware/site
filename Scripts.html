@@ -264,7 +264,7 @@
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
         }
 
-        /* Mobile styles for the Scripts header */
+        /* Mobile styles for the hamburger menu */
         @media (max-width: 768px) {
             .scripts-header {
                 position: static;
@@ -275,6 +275,12 @@
             header {
                 flex-direction: column;
                 align-items: center;
+            }
+
+            .menu-toggle {
+                position: static;
+                margin-top: 10px; /* Moves the hamburger menu below the black bar */
+                transform: translateY(0); /* Remove vertical centering */
             }
 
             .search-box {
