@@ -45,7 +45,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 20px;
+            padding: 10px 20px;
             background: rgba(0, 0, 0, 0.8);
             position: relative;
         }
@@ -87,7 +87,7 @@
             border-radius: 5px;
         }
 
-        /* "Scripts" styling */
+        /* "Scripts" styling - Centered */
         .scripts-header {
             font-family: 'Fredoka', sans-serif;
             font-weight: 700;
@@ -96,6 +96,11 @@
             text-align: center;
             margin: 0;
             padding: 0;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%); /* Centering the text */
+            z-index: 10;
         }
 
         /* Search box styling */
@@ -278,7 +283,7 @@
             <div></div>
             <div></div>
         </div>
-        <!-- "Scripts" header on the left side of the black bar -->
+        <!-- "Scripts" header on the black bar -->
         <div class="scripts-header">Scripts</div>
         <div class="search-box">
             <input type="text" placeholder="Search...">
