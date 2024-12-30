@@ -72,13 +72,13 @@
             z-index: 10;
             border-radius: 10px; /* Rounded corners for the entire hamburger */
             padding: 5px; /* Space around the hamburger icon */
-            background-color: rgba(0, 0, 0, 0.5); /* Optional background for the menu container */
+            background-color: transparent; /* Transparent background for the hamburger */
         }
 
         .menu-toggle div {
             width: 30px;
             height: 4px;
-            background-color: #ffffff; /* Set the hamburger menu lines color to white */
+            background-color: #fff; /* White color for the lines */
             margin: 4px 0;
             border-radius: 2px; /* Rounded edges for the individual bars */
             transition: transform 0.3s ease, opacity 0.3s ease;
@@ -94,6 +94,10 @@
 
         .menu-toggle.active div:nth-child(3) {
             transform: translateY(-8px) rotate(-45deg);
+        }
+
+        .menu-toggle.active div {
+            border-radius: 2px;
         }
 
         /* Overlay styling */
