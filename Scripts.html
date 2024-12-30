@@ -275,6 +275,11 @@
             .image-box {
                 margin-top: 40px;
             }
+
+            /* Mobile-only menu fade effect */
+            .menu-overlay.active .scripts-header {
+                opacity: 0; /* Fade out on mobile */
+            }
         }
     </style>
 </head>
@@ -333,11 +338,13 @@
             menu.classList.toggle('active');
             toggle.classList.toggle('active');
             
-            // Toggle the fade effect for "Scripts" header
-            if (menu.classList.contains('active')) {
-                scriptsHeader.style.opacity = '0'; // Fade out
-            } else {
-                scriptsHeader.style.opacity = '1'; // Fade in
+            // Toggle the fade effect for "Scripts" header only on mobile
+            if (window.innerWidth <= 768) {
+                if (menu.classList.contains('active')) {
+                    scriptsHeader.style.opacity = '0'; // Fade out on mobile
+                } else {
+                    scriptsHeader.style.opacity = '1'; // Fade in on mobile
+                }
             }
         }
 
