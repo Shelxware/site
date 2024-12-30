@@ -308,78 +308,27 @@
             <a href="#home" onclick="window.location.href='https://globalexploiter.xyz';">Home</a>
             <a href="Scripts.html">Scripts</a>
             <a href="Executor.html">Executors</a>
-            <a href="#contact">Contact</a>
-        </div>
-        <div class="social-icons">
-            <a href="https://youtube.com/@globalexploitor?si=ULxJfeU0MbH6DNhy" target="_blank">
-                <img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" alt="YouTube">
-            </a>
-            <a href="#" target="_blank">
-                <img src="https://media.discordapp.net/attachments/1235374443413635115/1322719710835638313/IMG_1348.png?ex=6771e63a&is=677094ba&hm=b584940836f5bfef6e2333f84f6b1331a856eb0ef8c0852d3d412dd41ed615eb&=&width=832&height=468" alt="Discord">
-            </a>
+            <a href="about.html">About</a>
+            <a href="#options"> Options</a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="image-box">
-            <h2>Murder Mystery 2 Auto Farm | Vertex Hub (OP)</h2>
-            <img src="https://media.discordapp.net/attachments/1237163573894053888/1322659186370154607/2F2C2865-7B60-43F0-B2D6-9BC7AF38E716.jpg?ex=6771addb&is=67705c5b&hm=e4b0bc70dbca0031d964cdcb17ffcdeadadaf9c598ac6dac214c3b7149d45e7e&=&width=1071&height=602" alt="Script Image">
-            <button class="copy-button" onclick="copyScript()">Copy Script</button>
-        </div>
+    <!-- Main Section -->
+    <div class="main-content">
+        <!-- Example Copy Buttons -->
+        <button class="copy-button" onclick="copyScript()">Copy Script</button>
+        <button class="copy-button" onclick="copyScriptV()">Copy Script</button>
+    </div>
 
-        <!-- New image box for the v script -->
-        <div class="image-box">
-            <h2>Blade Ball Auto Parry | Frostware Hub (OP) </h2>
-            <img src="https://media.discordapp.net/attachments/1249093223134003221/1323413290432462989/C1ADBCB6-1342-4F79-8295-D3E9171E22A2.jpg?ex=67746c2c&is=67731aac&hm=210424d528f889b226d577652b6a37bc5dda7162655cb0377d5371901db8f84d&=&width=1071&height=602" alt="Script Image">
-            <button class="copy-button" onclick="copyScript()">Copy Script</button>
+    <!-- Footer -->
+    <footer>
+        <div>
+            ©2024 GlobalExploiter.
         </div>
-    </section>
+    </footer>
 
     <!-- JavaScript -->
     <script>
-        function toggleMenu() {
-            const menu = document.getElementById('menu');
-            const toggle = document.querySelector('.menu-toggle');
-            const scriptsHeader = document.getElementById('scripts-header');
-            menu.classList.toggle('active');
-            toggle.classList.toggle('active');
-            
-            // Toggle the fade effect for "Scripts" header only on mobile
-            if (window.innerWidth <= 768) {
-                if (menu.classList.contains('active')) {
-                    scriptsHeader.style.opacity = '0'; // Fade out on mobile
-                } else {
-                    scriptsHeader.style.opacity = '1'; // Fade in on mobile
-                }
-            }
-        }
+        const copyScript = copyCode(.
 
-        function copyScript() {
-            const scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Burdenerd/VertexHub/refs/heads/main/Offical'))()";
-            navigator.clipboard.writeText(scriptText).then(() => {
-                const button = document.querySelector('.copy-button');
-                button.textContent = "Copied!";
-                setTimeout(() => {
-                    button.textContent = "Copy Script";
-                }, 2000);
-            }).catch(err => {
-                console.error('Failed to copy:', err);
-            });
-        }
-
-        function copyScriptV() {
-            const scriptText = "v";
-            navigator.clipboard.writeText(scriptText).then(() => {
-                const button = document.querySelectorAll('.copy-button')[1];
-                button.textContent = "Copied!";
-                setTimeout(() => {
-                    button.textContent = "Copy Script";
-                }, 2000);
-            }).catch(err => {
-                console.error('Failed to copy:', err);
-            });
-        }
-    </script>
-</body>
-</html>
+.
