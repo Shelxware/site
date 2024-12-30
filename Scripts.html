@@ -330,7 +330,7 @@
 
         <!-- New image box for the v script -->
         <div class="image-box">
-            <h2>Blade Ball Auto Parry | Frostware Hub (OP)</h2>
+            <h2>Blade Ball Auto Parry | Frostware Hub (OP) </h2>
             <img src="https://media.discordapp.net/attachments/1249093223134003221/1323413290432462989/C1ADBCB6-1342-4F79-8295-D3E9171E22A2.jpg?ex=67746c2c&is=67731aac&hm=210424d528f889b226d577652b6a37bc5dda7162655cb0377d5371901db8f84d&=&width=1071&height=602" alt="Script Image">
             <button class="copy-button" onclick="copyScriptV()">Copy Script</button>
         </div>
@@ -369,7 +369,7 @@
         }
 
         function copyScriptV() {
-            const scriptText = "v";
+            const scriptText = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/Fsploit/Frostware-/refs/heads/main/Bypass.lua"))()';
             navigator.clipboard.writeText(scriptText).then(() => {
                 const button = document.querySelectorAll('.copy-button')[1];
                 button.textContent = "Copied!";
