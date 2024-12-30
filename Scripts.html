@@ -52,6 +52,10 @@
 
         /* Hamburger menu styling */
         .menu-toggle {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
             display: flex;
             flex-direction: column;
             cursor: pointer;
@@ -260,28 +264,11 @@
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
         }
 
-        /* Mobile styles for the hamburger menu */
+        /* Mobile styles for the Scripts header */
         @media (max-width: 768px) {
             .scripts-header {
                 font-size: 1.5em; /* Reduce the size on mobile */
-            }
-
-            header {
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-between;
-                width: 100%;
-            }
-
-            .menu-toggle {
-                margin-top: 0;
-            }
-
-            .search-box {
-                margin-top: 0;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                top: 30%; /* Move "Scripts" higher up */
             }
         }
     </style>
@@ -349,6 +336,8 @@
                 setTimeout(() => {
                     button.textContent = "Copy Script";
                 }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy:', err);
             });
         }
     </script>
