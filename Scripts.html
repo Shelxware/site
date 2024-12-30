@@ -44,6 +44,7 @@
         header {
             display: flex;
             align-items: center;
+            justify-content: space-between;
             padding: 20px;
             background: rgba(0, 0, 0, 0.8);
             position: relative;
@@ -86,17 +87,25 @@
             border-radius: 5px;
         }
 
+        /* "Scripts" styling */
+        .scripts-header {
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 700;
+            font-size: 2em;
+            color: #ffffff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
         /* Search box styling */
         .search-box {
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
             background-color: rgba(255, 255, 255, 0.7);
             padding: 8px 15px;
             border-radius: 20px;
             display: flex;
             align-items: center;
+            margin-left: auto;
         }
 
         .search-box input {
@@ -250,20 +259,10 @@
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
         }
 
-        /* "Scripts" header styling */
-        .scripts-header {
-            font-family: 'Fredoka', sans-serif;
-            font-weight: 700;
-            font-size: 2.5em;
-            color: #ffffff;
-            text-align: center;
-            margin-top: 20px;
-        }
-
         /* Mobile styles for the Scripts header */
         @media (max-width: 768px) {
             .scripts-header {
-                font-size: 1.8em; /* Reduce the size on mobile */
+                font-size: 1.5em; /* Reduce the size on mobile */
             }
         }
     </style>
@@ -279,15 +278,13 @@
             <div></div>
             <div></div>
         </div>
-        <div style="flex: 1; height: 50px;"></div>
+        <!-- "Scripts" header on the left side of the black bar -->
+        <div class="scripts-header">Scripts</div>
         <div class="search-box">
             <input type="text" placeholder="Search...">
             <button>Search</button>
         </div>
     </header>
-
-    <!-- "Scripts" Header for Desktop -->
-    <div class="scripts-header">Scripts</div>
 
     <!-- Menu Overlay -->
     <nav class="menu-overlay" id="menu">
