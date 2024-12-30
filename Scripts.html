@@ -52,10 +52,6 @@
 
         /* Hamburger menu styling */
         .menu-toggle {
-            position: absolute;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
             display: flex;
             flex-direction: column;
             cursor: pointer;
@@ -267,24 +263,25 @@
         /* Mobile styles for the hamburger menu */
         @media (max-width: 768px) {
             .scripts-header {
-                position: static;
-                margin-top: 10px;  /* Moves below the black bar */
                 font-size: 1.5em; /* Reduce the size on mobile */
             }
 
             header {
-                flex-direction: column;
+                flex-direction: row;
                 align-items: center;
+                justify-content: space-between;
+                width: 100%;
             }
 
             .menu-toggle {
-                position: static;
-                margin-top: 10px; /* Moves the hamburger menu below the black bar */
-                transform: translateY(0); /* Remove vertical centering */
+                margin-top: 0;
             }
 
             .search-box {
-                margin-top: 10px;
+                margin-top: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
         }
     </style>
