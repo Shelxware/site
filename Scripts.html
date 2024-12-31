@@ -276,72 +276,50 @@
             }
 
             .image-box {
-                margin-top: 115px; /* Increased by 40px */
-                width: 80%; /* Increased width for mobile devices */
-            }
-
-            .menu-overlay.active .scripts-header {
-                opacity: 0; /* Hide the header in the menu */
+                margin-top: 60px; /* Adjust margin-top for smaller screens */
             }
         }
     </style>
 </head>
 <body>
-    <!-- Background -->
-    <div class="background-blur"></div>
-
-    <!-- Header -->
     <header>
         <div class="menu-toggle" onclick="toggleMenu()">
             <div></div>
             <div></div>
             <div></div>
         </div>
-        <!-- "Scripts" header -->
-        <div class="scripts-header" id="scripts-header">Scripts</div>
-        <div class="search-box">
-            <input type="text" placeholder="Search...">
-            <button>Search</button>
-        </div>
+        <h1 class="scripts-header" id="scripts-header">Welcome to GlobalExploiter</h1>
     </header>
 
-    <!-- Menu Overlay -->
-    <nav class="menu-overlay" id="menu">
-        <div>
-            <a href="#home" onclick="window.location.href='https://globalexploiter.xyz';">Home</a>
-            <a href="Scripts.html">Scripts</a>
-            <a href="Executor.html">Executors</a>
-            <a href="#contact">Contact</a>
-        </div>
-        <div class="social-icons">
-            <a href="https://youtube.com/@globalexploitor?si=ULxJfeU0MbH6DNhy" target="_blank">
-                <img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" alt="YouTube">
-            </a>
-            <a href="#" target="_blank">
-                <img src="https://media.discordapp.net/attachments/1235374443413635115/1322719710835638313/IMG_1348.png?ex=6771e63a&is=677094ba&hm=b584940836f5bfef6e2333f84f6b1331a856eb0ef8c0852d3d412dd41ed615eb&=&width=832&height=468" alt="Discord">
-            </a>
-        </div>
-    </nav>
+    <!-- Hamburger Menu Overlay -->
+    <div class="menu-overlay" id="menu">
+        <a href="#home" onclick="toggleMenu()">Home</a>
+        <a href="#scripts" onclick="toggleMenu()">Scripts</a>
+        <a href="#contact" onclick="toggleMenu()">Contact</a>
+    </div>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="image-box">
             <h2>Murder Mystery 2 Auto Farm | Vertex Hub (OP)</h2>
             <img src="https://media.discordapp.net/attachments/1237163573894053888/1322659186370154607/2F2C2865-7B60-43F0-B2D6-9BC7AF38E716.jpg?ex=6771addb&is=67705c5b&hm=e4b0bc70dbca0031d964cdcb17ffcdeadadaf9c598ac6dac214c3b7149d45e7e&=&width=1071&height=602" alt="Script Image">
-            <button class="copy-button" onclick="copyScript()">Copy Script</button>
+            <button class="copy-button copy-button-1" onclick="copyScript()">Copy Script</button>
         </div>
 
         <!-- New image box for the v script with purple glow -->
         <div class="image-box purple-glow">
             <h2>Blade Ball Auto Parry | Frostware Hub (OP)</h2>
-            <!-- Image URL added here -->
             <img src="https://media.discordapp.net/attachments/1249093223134003221/1323559486136516609/C6DEE7F9-DAF3-4F93-8B24-74CA1EFD6644.png?ex=6774f454&is=6773a2d4&hm=8d7f821a29b7d94d65f1d8bd1b108a55a7aeb565d69b114b74120e7bd0cecfa9&=&width=1071&height=602" alt="Script Image">
-            <button class="copy-button" onclick="copyScript()">Copy Script</button>
+            <button class="copy-button copy-button-2" onclick="copyScriptV()">Copy Script</button>
         </div>
     </section>
 
-    <!-- JavaScript -->
-      <!-- JavaScript -->
+    <!-- Social Media Links -->
+    <div class="social-icons">
+        <a href="https://discord.com" target="_blank"><img src="discord-icon.png" alt="Discord"></a>
+        <a href="https://twitter.com" target="_blank"><img src="twitter-icon.png" alt="Twitter"></a>
+    </div>
+
     <script>
         function toggleMenu() {
             const menu = document.getElementById('menu');
@@ -352,10 +330,10 @@
             scriptsHeader.style.opacity = menu.classList.contains('active') ? 0 : 1;
         }
 
-         function copyScript() {
+        function copyScript() {
             const scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Burdenerd/VertexHub/refs/heads/main/Offical'))()";
             navigator.clipboard.writeText(scriptText).then(() => {
-                const button = document.querySelector('.copy-button');
+                const button = document.querySelector('.copy-button-1');
                 button.textContent = "Copied!";
                 setTimeout(() => {
                     button.textContent = "Copy Script";
@@ -366,7 +344,7 @@
         function copyScriptV() {
             const scriptTextV = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Burdenerd/FrostwareHub/main/Autofarm'))()";
             navigator.clipboard.writeText(scriptTextV).then(() => {
-                const buttonV = document.querySelector('.copy-button');
+                const buttonV = document.querySelector('.copy-button-2');
                 buttonV.textContent = "Copied!";
                 setTimeout(() => {
                     buttonV.textContent = "Copy Script";
