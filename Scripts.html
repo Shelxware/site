@@ -20,7 +20,7 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            background-color: transparent; /* Removed black background */
+            background: linear-gradient(to bottom right, #1e2a47, #4f6d8c); /* Updated background gradient */
             transition: background-color 0.3s ease;
             opacity: 0; /* Initially set to invisible */
             animation: fadeIn 1s forwards; /* Apply fade-in animation */
@@ -87,10 +87,10 @@
             border-radius: 5px;
         }
 
-        /* "Scripts" styling - Centered */
+        /* "Scripts" styling - Centered with Arial font */
         .scripts-header {
-            font-family: 'Fredoka', sans-serif;
-            font-weight: 900; /* Made it bolder */
+            font-family: 'Arial', sans-serif; /* Changed font to Arial */
+            font-weight: 700;
             font-size: 2em;
             color: #ffffff;
             text-align: center;
@@ -225,7 +225,11 @@
             text-align: center;
             border-radius: 15px;
             position: relative;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.9); /* Increased cyan glow effect for the first box */
+        }
+
+        .image-box.purple-glow {
+            box-shadow: 0 0 30px rgba(128, 0, 128, 1), 0 0 50px rgba(128, 0, 128, 0.5); /* Stronger purple glow with more blur */
         }
 
         .image-box img {
@@ -233,6 +237,7 @@
             height: auto;
             max-height: 500px;
             border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
         }
 
         .copy-button {
@@ -328,9 +333,9 @@
             <button class="copy-button" onclick="copyScript()">Copy Script</button>
         </div>
 
-        <!-- New image box for the v script -->
-        <div class="image-box">
-            <h2>Blade Ball Auto Parry | Frostware Hub (OP) </h2>
+        <!-- New image box for the v script with purple glow -->
+        <div class="image-box purple-glow">
+            <h2>Blade Ball Auto Parry | Frostware Hub (OP)</h2>
             <img src="https://media.discordapp.net/attachments/1249093223134003221/1323413290432462989/C1ADBCB6-1342-4F79-8295-D3E9171E22A2.jpg?ex=67746c2c&is=67731aac&hm=210424d528f889b226d577652b6a37bc5dda7162655cb0377d5371901db8f84d&=&width=1071&height=602" alt="Script Image">
             <button class="copy-button" onclick="copyScriptV()">Copy Script</button>
         </div>
@@ -344,36 +349,20 @@
             const scriptsHeader = document.getElementById('scripts-header');
             menu.classList.toggle('active');
             toggle.classList.toggle('active');
-            
-            // Toggle the fade effect for "Scripts" header only on mobile
-            if (window.innerWidth <= 768) {
-                if (menu.classList.contains('active')) {
-                    scriptsHeader.style.opacity = '0'; // Fade out on mobile
-                } else {
-                    scriptsHeader.style.opacity = '1'; // Fade in on mobile
-                }
-            }
+            scriptsHeader.style.opacity = menu.classList.contains('active') ? 0 : 1;
         }
 
         function copyScript() {
-            const scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Burdenerd/VertexHub/refs/heads/main/Offical'))()";
-            navigator.clipboard.writeText(scriptText).then(() => {
-                const button = document.querySelector(".copy-button");
-                button.innerText = "Copied!";
-                setTimeout(() => {
-                    button.innerText = "Copy Script";
-                }, 2000);
+            const copyText = "your script code here";
+            navigator.clipboard.writeText(copyText).then(() => {
+                alert("Script copied to clipboard!");
             });
         }
 
         function copyScriptV() {
-            const scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/FrostwareHub/Scripts/main/Frostware'))()";
-            navigator.clipboard.writeText(scriptText).then(() => {
-                const button = document.querySelector(".copy-button");
-                button.innerText = "Copied!";
-                setTimeout(() => {
-                    button.innerText = "Copy Script";
-                }, 2000);
+            const copyText = "your other script code here";
+            navigator.clipboard.writeText(copyText).then(() => {
+                alert("Script copied to clipboard!");
             });
         }
     </script>
