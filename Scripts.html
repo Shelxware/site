@@ -22,17 +22,6 @@
             min-height: 100vh;
             background: linear-gradient(to bottom right, #1e2a47, #4f6d8c);
             transition: background-color 0.3s ease;
-            opacity: 0;
-            animation: fadeIn 1s forwards;
-        }
-
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
         }
 
         html {
@@ -263,6 +252,11 @@
             .image-box {
                 width: 40%; /* Make the image box smaller on desktop */
                 margin: 50px auto; /* Adjust margin for smaller box size */
+            }
+
+            /* No fade effect for desktop */
+            body {
+                opacity: 1; /* Remove fade-in effect for desktop */
             }
         }
 
