@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GlobalExploiter</title>
     <!-- Favicon -->
-    <link rel="icon" type="https://media.discordapp.net/attachments/1249093223134003221/1323739686186782731/global-exploiter-discord-abnner.png?ex=67759c27&is=67744aa7&hm=4822580b204d22e22c6dc19261858c7f2c4f84d42bbe6e1e2db2e6e94e48947f&=&width=1071&height=602">
+    <link rel="icon" type="image/png" href="https://media.discordapp.net/attachments/1249093223134003221/1323739686186782731/global-exploiter-discord-abnner.png?ex=67759c27&is=67744aa7&hm=4822580b204d22e22c6dc19261858c7f2c4f84d42bbe6e1e2db2e6e94e48947f&=&width=1071&height=602">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap" rel="stylesheet">
     <style>
         /* General styling */
@@ -18,7 +18,7 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            background-color: transparent; /* Removed black background */
+            background-color: #000000; /* Set background to black */
             transition: background-color 0.3s ease;
         }
 
@@ -70,17 +70,17 @@
             flex-direction: column;
             cursor: pointer;
             z-index: 10;
-            border-radius: 10px; /* Rounded corners for the entire hamburger */
-            padding: 5px; /* Space around the hamburger icon */
-            background-color: transparent; /* Transparent background for the hamburger */
+            border-radius: 10px;
+            padding: 5px;
+            background-color: transparent;
         }
 
         .menu-toggle div {
             width: 30px;
             height: 4px;
-            background-color: #fff; /* White color for the lines */
+            background-color: #fff;
             margin: 4px 0;
-            border-radius: 2px; /* Rounded edges for the individual bars */
+            border-radius: 2px;
             transition: transform 0.3s ease, opacity 0.3s ease;
         }
 
@@ -94,10 +94,6 @@
 
         .menu-toggle.active div:nth-child(3) {
             transform: translateY(-8px) rotate(-45deg);
-        }
-
-        .menu-toggle.active div {
-            border-radius: 2px;
         }
 
         /* Overlay styling */
@@ -149,7 +145,7 @@
             display: flex;
             justify-content: center;
             position: absolute;
-            top: 600px; /* Updated to 600px */
+            top: 600px;
             left: 50%;
             transform: translateX(-50%);
             margin: 0;
@@ -157,8 +153,8 @@
 
         .social-icons a {
             display: inline-block;
-            width: 30px; /* Reduced size to 30px */
-            height: 30px; /* Reduced size to 30px */
+            width: 30px;
+            height: 30px;
             margin: 0 10px;
             border-radius: 50%;
             overflow: hidden;
@@ -196,37 +192,36 @@
             opacity: 0;
             animation: fadeIn 1s forwards;
             position: relative;
-            min-height: 150px; /* Ensures the box maintains its size even when empty */
-            padding-bottom: 50px; /* Prevents overlap with text below */
+            min-height: 150px;
+            padding-bottom: 50px;
         }
 
-        /* Fade-in effect for text-box */
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
 
         .hero .text-box h2 {
-            font-size: 2.5em; /* Increased font size */
+            font-size: 2.5em;
             margin-bottom: 10px;
             text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
         }
 
         .hero .text-box p {
             font-size: 1.2em;
-            color: cyan; /* Cyan text color */
-            position: absolute; /* Ensures it stays in place */
-            bottom: 20px; /* Positions it at the bottom of the box */
+            color: cyan;
+            position: absolute;
+            bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
             margin: 0;
-            text-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 30px cyan; /* Cyan glow */
+            text-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 30px cyan;
         }
 
         /* Button styling */
         .view-scripts-btn {
             position: absolute;
-            top: 340px; /* Updated to 340px */
+            top: 340px;
             left: 50%;
             transform: translateX(-50%);
             padding: 15px 25px;
@@ -272,21 +267,20 @@
         /* Adjust text size on mobile */
         @media (max-width: 768px) {
             .hero .text-box h2 {
-                font-size: 2em; /* Slightly reduced for mobile */
+                font-size: 2em;
             }
 
             .hero .text-box p {
-                font-size: 1em; /* Adjust font size to fit mobile screens */
-                bottom: 10px; /* Slightly adjusted position for better fit */
+                font-size: 1em;
+                bottom: 10px;
             }
 
             .view-scripts-btn {
-                top: 270px; /* Adjust the button position for mobile */
+                top: 270px;
             }
 
-            /* Move header text to the right on mobile */
             header h1 {
-                padding-left: 40px; /* Adjust the padding to move the text to the right */
+                padding-left: 40px;
             }
         }
     </style>
@@ -316,12 +310,10 @@
         <!-- Social Icons -->
         <div class="social-icons">
             <a href="https://youtube.com/@globalexploitor?si=ULxJfeU0MbH6DNhy" target="_blank">
-                <img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" 
-                     alt="YouTube">
+                <img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" alt="YouTube">
             </a>
             <a href="https://discord.gg/Hk9h8vnZ7w" target="_blank">
-                <img src="https://media.discordapp.net/attachments/1235374443413635115/1322719710835638313/IMG_1348.png?ex=6771e63a&is=677094ba&hm=b584940836f5bfef6e2333f84f6b1331a856eb0ef8c0852d3d412dd41ed615eb&=&width=832&height=468" 
-                     alt="Discord">
+                <img src="https://media.discordapp.net/attachments/1235374443413635115/1322719710835638313/IMG_1348.png?ex=6771e63a&is=677094ba&hm=b584940836f5bfef6e2333f84f6b1331a856eb0ef8c0852d3d412dd41ed615eb&=&width=832&height=468" alt="Discord">
             </a>
         </div>
     </nav>
