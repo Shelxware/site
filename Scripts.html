@@ -340,7 +340,7 @@
         </div>
     </section>
 
-     <!-- JavaScript -->
+  <!-- JavaScript -->
     <script>
         function toggleMenu() {
             const menu = document.getElementById('menu');
@@ -351,24 +351,19 @@
             scriptsHeader.style.opacity = menu.classList.contains('active') ? 0 : 1;
         }
 
-        function copyScript() {
-            const scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Burdenerd/VertexHub/refs/heads/main/Offical'))()";
+        function copyScript(scriptType) {
+            let scriptText;
+            if (scriptType === 'vertex') {
+                scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Burdenerd/VertexHub/refs/heads/main/Offical'))()";
+            } else if (scriptType === 'frostware') {
+                scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Burdenerd/FrostwareHub/main/Autofarm'))()";
+            }
+            
             navigator.clipboard.writeText(scriptText).then(() => {
-                const button = document.querySelector('.copy-button-1');
+                const button = document.querySelector(`.copy-button-${scriptType}`);
                 button.textContent = "Copied!";
                 setTimeout(() => {
                     button.textContent = "Copy Script";
-                }, 2000);
-            });
-        }
-
-        function copyScriptV() {
-            const scriptTextV = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Burdenerd/FrostwareHub/main/Autofarm'))()";
-            navigator.clipboard.writeText(scriptTextV).then(() => {
-                const buttonV = document.querySelector('.copy-button-2');
-                buttonV.textContent = "Copied!";
-                setTimeout(() => {
-                    buttonV.textContent = "Copy Script";
                 }, 2000);
             });
         }
