@@ -14,7 +14,7 @@
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Fredoka', sans-serif; /* Ensure 'Fredoka' is used */
+            font-family: sans-serif; /* Use default font for the body */
             color: #ffffff;
             overflow-x: hidden;
             display: flex;
@@ -87,9 +87,9 @@
             border-radius: 5px;
         }
 
-        /* "Scripts" styling - Centered */
+        /* "Scripts" header styling - Updated font */
         .scripts-header {
-            font-family: 'Fredoka', sans-serif; /* Ensure 'Fredoka' is used */
+            font-family: 'Fredoka', sans-serif; /* Apply 'Fredoka' font */
             font-weight: 700;
             font-size: 2em;
             color: #ffffff;
@@ -360,21 +360,17 @@
                 setTimeout(() => {
                     button.textContent = "Copy Script";
                 }, 2000);
-            }).catch(err => {
-                console.error('Failed to copy:', err);
             });
         }
 
         function copyScriptV() {
-            const scriptText = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/Fsploit/Frostware-/refs/heads/main/Bypass.lua"))()';
-            navigator.clipboard.writeText(scriptText).then(() => {
-                const button = document.querySelectorAll('.copy-button')[1];
-                button.textContent = "Copied!";
+            const scriptTextV = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Burdenerd/FrostwareHub/main/Autofarm'))()";
+            navigator.clipboard.writeText(scriptTextV).then(() => {
+                const buttonV = document.querySelector('.copy-button');
+                buttonV.textContent = "Copied!";
                 setTimeout(() => {
-                    button.textContent = "Copy Script";
+                    buttonV.textContent = "Copy Script";
                 }, 2000);
-            }).catch(err => {
-                console.error('Failed to copy:', err);
             });
         }
     </script>
