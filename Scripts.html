@@ -22,7 +22,17 @@
             min-height: 100vh;
             background: linear-gradient(to bottom right, #1e2a47, #4f6d8c);
             transition: background-color 0.3s ease;
-            opacity: 1; /* Remove fade effect */
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
         }
 
         html {
@@ -84,7 +94,8 @@
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 10;
-            opacity: 1; /* Remove fade effect */
+            opacity: 1;
+            transition: opacity 0.3s ease;
             text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #ffffff;
         }
 
