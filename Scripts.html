@@ -225,7 +225,11 @@
             text-align: center;
             border-radius: 15px;
             position: relative;
-            box-shadow: 0 0 15px rgba(0, 255, 255, 0.7); /* Glow effect */
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.7); /* Glow effect for the first box */
+        }
+
+        .image-box.purple-glow {
+            box-shadow: 0 0 15px rgba(128, 0, 128, 0.7); /* Purple glow effect for the second box */
         }
 
         .image-box img {
@@ -329,9 +333,9 @@
             <button class="copy-button" onclick="copyScript()">Copy Script</button>
         </div>
 
-        <!-- New image box for the v script -->
-        <div class="image-box">
-            <h2>Blade Ball Auto Parry | Frostware Hub (OP) </h2>
+        <!-- New image box for the v script with purple glow -->
+        <div class="image-box purple-glow">
+            <h2>Blade Ball Auto Parry | Frostware Hub (OP)</h2>
             <img src="https://media.discordapp.net/attachments/1249093223134003221/1323413290432462989/C1ADBCB6-1342-4F79-8295-D3E9171E22A2.jpg?ex=67746c2c&is=67731aac&hm=210424d528f889b226d577652b6a37bc5dda7162655cb0377d5371901db8f84d&=&width=1071&height=602" alt="Script Image">
             <button class="copy-button" onclick="copyScriptV()">Copy Script</button>
         </div>
