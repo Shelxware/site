@@ -208,8 +208,8 @@
         }
 
         .image-box {
-            width: 60%;
-            margin: 95px auto; /* Increased margin-top by 40px */
+            width: 48%;
+            margin: 20px 1%; /* Adjusted margin for side-by-side positioning */
             background-color: rgba(0, 0, 0, 0.8);
             padding: 20px;
             text-align: center;
@@ -298,6 +298,20 @@
                 margin-top: 20px;
                 margin-left: 0;
             }
+
+            /* Adjust hero section to stack images vertically on mobile */
+            .hero {
+                display: block;
+            }
+        }
+
+        /* Desktop styles: Image boxes side by side */
+        @media (min-width: 769px) {
+            .hero {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+            }
         }
     </style>
 </head>
@@ -354,19 +368,15 @@
         </div>
     </section>
 
-  <!-- JavaScript -->
+    <!-- Scripts -->
     <script>
         function toggleMenu() {
-            const menu = document.getElementById('menu');
-            const toggle = document.querySelector('.menu-toggle');
-            const scriptsHeader = document.getElementById('scripts-header');
-            menu.classList.toggle('active');
-            toggle.classList.toggle('active');
-            scriptsHeader.style.opacity = menu.classList.contains('active') ? 0 : 1;
+            document.getElementById('menu').classList.toggle('active');
+            document.querySelector('.menu-toggle').classList.toggle('active');
         }
 
         function copyScript(scriptType) {
-            let scriptText;
+            let scriptText = '';
             if (scriptType === 'vertex') {
                 scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/vertex-hub/vertexhub/main/auto-farm.lua'))()";
             } else if (scriptType === 'frostware') {
