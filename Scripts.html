@@ -97,13 +97,11 @@
             margin: 0;
             padding: 0;
             position: absolute;
-            top: 50%; /* Center vertically */
             left: 50%;
-            transform: translate(-50%, -50%); /* Center both horizontally and vertically */
+            transform: translate(-50%, -50%);
             z-index: 10;
             opacity: 1; /* Initially visible */
             transition: opacity 0.3s ease; /* Add fade-out transition */
-            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff; /* White glow effect */
         }
 
         /* Search box styling */
@@ -343,25 +341,40 @@
         </div>
     </section>
 
+    <!-- JavaScript -->
     <script>
         function toggleMenu() {
             const menu = document.getElementById('menu');
-            const menuToggle = document.querySelector('.menu-toggle');
+            const toggle = document.querySelector('.menu-toggle');
+            const scriptsHeader = document.getElementById('scripts-header');
             menu.classList.toggle('active');
-            menuToggle.classList.toggle('active');
+            toggle.classList.toggle('active');
+            scriptsHeader.style.opacity = menu.classList.contains('active') ? 0 : 1;
         }
 
-        function copyScript() {
-            // Script for copying the first script
-            navigator.clipboard.writeText('your-script-here').then(function() {
-                alert('Script copied!');
+         function copyScript() {
+            const scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Burdenerd/VertexHub/refs/heads/main/Offical'))()";
+            navigator.clipboard.writeText(scriptText).then(() => {
+                const button = document.querySelector('.copy-button');
+                button.textContent = "Copied!";
+                setTimeout(() => {
+                    button.textContent = "Copy Script";
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy:', err);
             });
         }
 
         function copyScriptV() {
-            // Script for copying the second script
-            navigator.clipboard.writeText('your-script-here-v').then(function() {
-                alert('Script copied!');
+            const scriptText = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/Fsploit/Frostware-/refs/heads/main/Bypass.lua"))()';
+            navigator.clipboard.writeText(scriptText).then(() => {
+                const button = document.querySelectorAll('.copy-button')[1];
+                button.textContent = "Copied!";
+                setTimeout(() => {
+                    button.textContent = "Copy Script";
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy:', err);
             });
         }
     </script>
