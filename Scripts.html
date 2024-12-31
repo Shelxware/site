@@ -225,11 +225,11 @@
             text-align: center;
             border-radius: 15px;
             position: relative;
-            box-shadow: 0 0 15px rgba(0, 255, 255, 0.7); /* Glow effect for the first box */
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.9); /* Increased cyan glow effect for the first box */
         }
 
         .image-box.purple-glow {
-            box-shadow: 0 0 15px rgba(128, 0, 128, 0.7); /* Purple glow effect for the second box */
+            box-shadow: 0 0 30px rgba(128, 0, 128, 1), 0 0 50px rgba(128, 0, 128, 0.5); /* Stronger purple glow with more blur */
         }
 
         .image-box img {
@@ -349,32 +349,20 @@
             const scriptsHeader = document.getElementById('scripts-header');
             menu.classList.toggle('active');
             toggle.classList.toggle('active');
-            
-            // Toggle the fade effect for "Scripts" header only on mobile
-            if (window.innerWidth <= 768) {
-                if (menu.classList.contains('active')) {
-                    scriptsHeader.style.opacity = '0'; // Fade out on mobile
-                } else {
-                    scriptsHeader.style.opacity = '1'; // Fade in on mobile
-                }
-            }
+            scriptsHeader.style.opacity = menu.classList.contains('active') ? 0 : 1;
         }
 
         function copyScript() {
-            const scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Burdenerd/VertexHub/main/Loader.lua', true))()";
-            navigator.clipboard.writeText(scriptText).then(function() {
-                alert('Script copied to clipboard!');
-            }, function() {
-                alert('Failed to copy script!');
+            const copyText = "your script code here";
+            navigator.clipboard.writeText(copyText).then(() => {
+                alert("Script copied to clipboard!");
             });
         }
 
         function copyScriptV() {
-            const scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Burdenerd/FrostwareHub/main/Loader.lua', true))()";
-            navigator.clipboard.writeText(scriptText).then(function() {
-                alert('Script copied to clipboard!');
-            }, function() {
-                alert('Failed to copy script!');
+            const copyText = "your other script code here";
+            navigator.clipboard.writeText(copyText).then(() => {
+                alert("Script copied to clipboard!");
             });
         }
     </script>
