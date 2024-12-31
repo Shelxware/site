@@ -277,6 +277,7 @@
 
             .image-box {
                 margin-top: 115px; /* Increased by 40px */
+                width: 80%; /* Increased width for mobile devices */
             }
 
             .menu-overlay.active .scripts-header {
@@ -350,25 +351,10 @@
             scriptsHeader.style.opacity = menu.classList.contains('active') ? 0 : 1;
         }
 
-         function copyScript() {
+        function copyScript() {
             const scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Burdenerd/VertexHub/refs/heads/main/Offical'))()";
             navigator.clipboard.writeText(scriptText).then(() => {
-                const button = document.querySelector('.copy-button');
-                button.textContent = "Copied!";
-                setTimeout(() => {
-                    button.textContent = "Copy Script";
-                }, 2000);
-            });
-        }
-
-        function copyScriptV() {
-            const scriptTextV = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Burdenerd/FrostwareHub/main/Autofarm'))()";
-            navigator.clipboard.writeText(scriptTextV).then(() => {
-                const buttonV = document.querySelector('.copy-button');
-                buttonV.textContent = "Copied!";
-                setTimeout(() => {
-                    buttonV.textContent = "Copy Script";
-                }, 2000);
+                alert('Script copied to clipboard!');
             });
         }
     </script>
