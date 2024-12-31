@@ -101,6 +101,8 @@
             left: 50%;
             transform: translate(-50%, -50%); /* Center both horizontally and vertically */
             z-index: 10;
+            opacity: 1; /* Initially visible */
+            transition: opacity 0.3s ease; /* Add fade-out transition */
             text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff; /* White glow effect */
         }
 
@@ -225,11 +227,11 @@
             text-align: center;
             border-radius: 15px;
             position: relative;
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.9);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.9); /* Increased cyan glow effect for the first box */
         }
 
         .image-box.purple-glow {
-            box-shadow: 0 0 30px rgba(128, 0, 128, 1), 0 0 50px rgba(128, 0, 128, 0.5);
+            box-shadow: 0 0 30px rgba(128, 0, 128, 1), 0 0 50px rgba(128, 0, 128, 0.5); /* Stronger purple glow with more blur */
         }
 
         .image-box img {
@@ -260,35 +262,46 @@
             transform: scale(1.1);
         }
 
+        /* Heading styling inside the box - smaller size */
         .image-box h2 {
             font-family: 'Fredoka', sans-serif;
             font-weight: 700;
-            font-size: 1.2em;
+            font-size: 1.2em; /* Further reduced font size */
             color: #ffffff;
             margin-bottom: 15px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
         }
 
+        /* Mobile styles for the Scripts header */
         @media (max-width: 768px) {
             .scripts-header {
-                font-size: 1.5em;
-                top: 90px;
+                font-size: 1.5em; /* Reduce the size on mobile */
+                top: 90px; /* Move the "Scripts" header 90px from the top */
             }
 
             .image-box {
                 margin-top: 40px;
             }
+
+            /* Mobile-only menu fade effect */
+            .menu-overlay.active .scripts-header {
+                opacity: 0; /* Fade out on mobile */
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Background -->
     <div class="background-blur"></div>
 
+    <!-- Header -->
     <header>
         <div class="menu-toggle" onclick="toggleMenu()">
             <div></div>
             <div></div>
             <div></div>
         </div>
+        <!-- "Scripts" header on the black bar -->
         <div class="scripts-header" id="scripts-header">Scripts</div>
         <div class="search-box">
             <input type="text" placeholder="Search...">
@@ -296,6 +309,7 @@
         </div>
     </header>
 
+    <!-- Menu Overlay -->
     <nav class="menu-overlay" id="menu">
         <div>
             <a href="#home" onclick="window.location.href='https://globalexploiter.xyz';">Home</a>
@@ -308,21 +322,23 @@
                 <img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" alt="YouTube">
             </a>
             <a href="#" target="_blank">
-                <img src="https://media.discordapp.net/attachments/1235374443413635115/1322719710835638313/IMG_1348.png" alt="Discord">
+                <img src="https://media.discordapp.net/attachments/1235374443413635115/1322719710835638313/IMG_1348.png?ex=6771e63a&is=677094ba&hm=b584940836f5bfef6e2333f84f6b1331a856eb0ef8c0852d3d412dd41ed615eb&=&width=832&height=468" alt="Discord">
             </a>
         </div>
     </nav>
 
+    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="image-box">
             <h2>Murder Mystery 2 Auto Farm | Vertex Hub (OP)</h2>
-            <img src="https://media.discordapp.net/attachments/1322659186370154607" alt="Script Image">
+            <img src="https://media.discordapp.net/attachments/1237163573894053888/1322659186370154607/2F2C2865-7B60-43F0-B2D6-9BC7AF38E716.jpg?ex=6771addb&is=67705c5b&hm=e4b0bc70dbca0031d964cdcb17ffcdeadadaf9c598ac6dac214c3b7149d45e7e&=&width=1071&height=602" alt="Script Image">
             <button class="copy-button" onclick="copyScript()">Copy Script</button>
         </div>
 
+        <!-- New image box for the v script with purple glow -->
         <div class="image-box purple-glow">
             <h2>Blade Ball Auto Parry | Frostware Hub (OP)</h2>
-            <img src="https://media.discordapp.net/attachments/1323413290432462989" alt="Script Image">
+            <img src="https://media.discordapp.net/attachments/1249093223134003221/1323413290432462989/C1ADBCB6-1342-4F79-8295-D3E9171E22A2.jpg?ex=67746c2c&is=67731aac&hm=210424d528f889b226d577652b6a37bc5dda7162655cb0377d5371901db8f84d&=&width=1071&height=602" alt="Script Image">
             <button class="copy-button" onclick="copyScriptV()">Copy Script</button>
         </div>
     </section>
@@ -336,20 +352,16 @@
         }
 
         function copyScript() {
+            // Script for copying the first script
             navigator.clipboard.writeText('your-script-here').then(function() {
-                const button = document.querySelector('.copy-button');
-                const originalText = button.textContent;
-                button.textContent = 'Copied!';
-                setTimeout(() => button.textContent = originalText, 2000);
+                alert('Script copied!');
             });
         }
 
         function copyScriptV() {
+            // Script for copying the second script
             navigator.clipboard.writeText('your-script-here-v').then(function() {
-                const button = document.querySelector('.purple-glow .copy-button');
-                const originalText = button.textContent;
-                button.textContent = 'Copied!';
-                setTimeout(() => button.textContent = originalText, 2000);
+                alert('Script copied!');
             });
         }
     </script>
