@@ -94,8 +94,7 @@
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 10;
-            opacity: 1;
-            transition: opacity 0.3s ease;
+            opacity: 1;  /* Keep it fully visible */
             text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #ffffff;
         }
 
@@ -339,7 +338,7 @@
         </div>
     </section>
 
-  <!-- JavaScript -->
+    <!-- JavaScript -->
     <script>
         function toggleMenu() {
             const menu = document.getElementById('menu');
@@ -353,18 +352,17 @@
         function copyScript(scriptType) {
             let scriptText;
             if (scriptType === 'vertex') {
-                scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Burdenerd/VertexHub/refs/heads/main/Offical'))()";
+                scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Burdenerd/VertexHub/main/vertexhub.lua'))()";
             } else if (scriptType === 'frostware') {
-                scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Otheruser/Script'))()";
+                scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/FrostwareHub/main/Frostware.lua'))()";
             }
-            
-            navigator.clipboard.writeText(scriptText).then(() => {
-                const button = document.getElementById(`copy-btn-${scriptType}`);
-                button.textContent = "📜Script Copied!";
-                setTimeout(() => {
-                    button.textContent = "Copy Script";  // Reset after 2 seconds
-                }, 2000);
-            });
+            navigator.clipboard.writeText(scriptText)
+                .then(() => {
+                    alert('Script copied to clipboard!');
+                })
+                .catch(err => {
+                    console.error('Error copying script: ', err);
+                });
         }
     </script>
 </body>
