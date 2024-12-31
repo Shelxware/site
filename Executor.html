@@ -46,6 +46,7 @@
             padding: 10px 20px;
             background: rgba(0, 0, 0, 0.8);
             position: relative;
+            z-index: 10;
         }
 
         /* Hamburger menu styling */
@@ -57,7 +58,6 @@
             display: flex;
             flex-direction: column;
             cursor: pointer;
-            z-index: 10;
         }
 
         .menu-toggle div {
@@ -89,10 +89,7 @@
             text-align: center;
             margin: 0;
             padding: 0;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            position: relative;
             z-index: 10;
             opacity: 1;
             transition: opacity 0.3s ease;
@@ -259,20 +256,45 @@
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
         }
 
-        /* Mobile styles for the Scripts header */
+        /* Mobile styles for the Executors header */
         @media (max-width: 768px) {
+            header {
+                flex-direction: row;  /* Ensure the menu and header content are aligned in a row */
+                justify-content: space-between;
+                align-items: center;
+            }
+
             .scripts-header {
-                font-size: 4.5em; /* Increased font size on mobile */
-                top: 120px; /* Adjust position to move it down more */
-                text-shadow: 0 0 6px #ffffff, 0 0 10px #ffffff; /* Reduced glow */
+                font-size: 3em; /* Adjust size for mobile */
+                margin: 0; /* Remove any extra margin */
+                text-shadow: 0 0 6px #ffffff, 0 0 10px #ffffff;
+                order: 1;  /* Make sure it stays at the same level as 'Mobile' */
+            }
+
+            .menu-toggle {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 20px;
             }
 
             .image-box {
                 margin-top: 115px; /* Increased by 40px */
             }
+        }
 
-            .menu-overlay.active .scripts-header {
-                opacity: 0; /* Hide the header in the menu */
+        /* Desktop styling */
+        @media (min-width: 769px) {
+            header {
+                flex-direction: row;  /* Align content in a row for desktop */
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .scripts-header {
+                font-size: 3.5em;  /* Adjust font size for desktop */
+                margin: 0;
+                text-shadow: 0 0 6px #ffffff, 0 0 10px #ffffff;
             }
         }
     </style>
@@ -288,8 +310,8 @@
             <div></div>
             <div></div>
         </div>
-        <!-- "Scripts" header -->
-        <div class="scripts-header" id="scripts-header">Scripts</div>
+        <!-- "Executors" header -->
+        <div class="scripts-header" id="scripts-header">Executors</div>
         <div class="search-box">
             <input type="text" placeholder="Search...">
             <button>Search</button>
@@ -300,7 +322,7 @@
     <nav class="menu-overlay" id="menu">
         <div>
             <a href="#home" onclick="window.location.href='https://globalexploiter.xyz';">Home</a>
-            <a href="Scripts.html">Scripts</a>
+            <a href="Scripts.html">Executors</a>
             <a href="Executor.html">Executors</a>
             <a href="#contact">Contact</a>
         </div>
@@ -318,48 +340,21 @@
     <section id="home" class="hero">
         <div class="image-box">
             <h2>Murder Mystery 2 Auto Farm | Vertex Hub (OP)</h2>
-            <img src="https://media.discordapp.net/attachments/1237163573894053888/1322659186370154607/2F2C2865-7B60-43F0-B2D6-9BC7AF38E716.jpg?ex=6771addb&is=67705c5b&hm=e4b0bc70dbca0031d964cdcb17ffcdeadadaf9c598ac6dac214c3b7149d45e7e&=&width=1071&height=602" alt="Script Image">
-            <button class="copy-button" onclick="copyScript()">Copy Script</button>
-        </div>
-
-        <!-- New image box for the v script with purple glow -->
-        <div class="image-box purple-glow">
-            <h2>Blade Ball Auto Parry | Frostware Hub (OP)</h2>
-            <img src="https://media.discordapp.net/attachments/1249093223134003221/1323413290432462989/C1ADBCB6-1342-4F79-8295-D3E9171E22A2.jpg?ex=67746c2c&is=67731aac&hm=210424d528f889b226d577652b6a37bc5dda7162655cb0377d5371901db8f84d&=&width=1071&height=602" alt="Script Image">
-            <button class="copy-button" onclick="copyScriptV()">Copy Script</button>
+            <img src="https://media.discordapp.net/attachments/1237163573894053888/1322659186370154607/2F9FAE7F-A8F0-4A92-B3C2-7689F8E80B2C.png?width=602&height=338" alt="Image">
+            <button class="copy-button" onclick="copyText('https://globalexploiter.xyz')">Copy Link</button>
         </div>
     </section>
 
-    <!-- JavaScript -->
+    <!-- JS -->
     <script>
         function toggleMenu() {
-            const menu = document.getElementById('menu');
-            const toggle = document.querySelector('.menu-toggle');
-            const scriptsHeader = document.getElementById('scripts-header');
-            menu.classList.toggle('active');
-            toggle.classList.toggle('active');
-            scriptsHeader.style.opacity = menu.classList.contains('active') ? 0 : 1;
+            document.getElementById('menu').classList.toggle('active');
+            document.querySelector('.menu-toggle').classList.toggle('active');
         }
 
-         function copyScript() {
-            const scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Burdenerd/VertexHub/refs/heads/main/Offical'))()";
-            navigator.clipboard.writeText(scriptText).then(() => {
-                const button = document.querySelector('.copy-button');
-                button.textContent = "Copied!";
-                setTimeout(() => {
-                    button.textContent = "Copy Script";
-                }, 2000);
-            });
-        }
-
-        function copyScriptV() {
-            const scriptTextV = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Burdenerd/FrostwareHub/main/Autofarm'))()";
-            navigator.clipboard.writeText(scriptTextV).then(() => {
-                const buttonV = document.querySelector('.copy-button');
-                buttonV.textContent = "Copied!";
-                setTimeout(() => {
-                    buttonV.textContent = "Copy Script";
-                }, 2000);
+        function copyText(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                alert("Link copied to clipboard!");
             });
         }
     </script>
