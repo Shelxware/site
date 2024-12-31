@@ -259,6 +259,14 @@
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
         }
 
+        /* Media query for desktop and larger screens */
+        @media (min-width: 1024px) {
+            .image-box {
+                width: 40%; /* Make the image box smaller on desktop */
+                margin: 50px auto; /* Adjust margin for smaller box size */
+            }
+        }
+
         /* Mobile styles for the Scripts header */
         @media (max-width: 768px) {
             .scripts-header {
@@ -325,42 +333,21 @@
         <!-- New image box for the v script with purple glow -->
         <div class="image-box purple-glow">
             <h2>Blade Ball Auto Parry | Frostware Hub (OP)</h2>
-            <img src="https://media.discordapp.net/attachments/1249093223134003221/1323413290432462989/C1ADBCB6-1342-4F79-8295-D3E9171E22A2.jpg?ex=67746c2c&is=67731aac&hm=210424d528f889b226d577652b6a37bc5dda7162655cb0377d5371901db8f84d&=&width=1071&height=602" alt="Script Image">
-            <button class="copy-button" onclick="copyScriptV()">Copy Script</button>
+            <img src="https://media.discordapp.net/attachments/1249093223134003221/1323413290432462989/C1ADBCB6-1342-4F79-98B3-B6C71A4A8F4A.jpg?ex=6771a470&is=677029b6&hm=0a5d0316bc90a6d080227bdf8158e631dd8976606b5fc8c3c15859ef3b9dbcc7&=&width=1276&height=577" alt="Script Image">
+            <button class="copy-button" onclick="copyScript()">Copy Script</button>
         </div>
     </section>
 
-    <!-- JavaScript -->
     <script>
         function toggleMenu() {
             const menu = document.getElementById('menu');
-            const toggle = document.querySelector('.menu-toggle');
-            const scriptsHeader = document.getElementById('scripts-header');
+            const header = document.getElementById('scripts-header');
             menu.classList.toggle('active');
-            toggle.classList.toggle('active');
-            scriptsHeader.style.opacity = menu.classList.contains('active') ? 0 : 1;
+            header.classList.toggle('active');
         }
 
-         function copyScript() {
-            const scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Burdenerd/VertexHub/refs/heads/main/Offical'))()";
-            navigator.clipboard.writeText(scriptText).then(() => {
-                const button = document.querySelector('.copy-button');
-                button.textContent = "Copied!";
-                setTimeout(() => {
-                    button.textContent = "Copy Script";
-                }, 2000);
-            });
-        }
-
-        function copyScriptV() {
-            const scriptTextV = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Burdenerd/FrostwareHub/main/Autofarm'))()";
-            navigator.clipboard.writeText(scriptTextV).then(() => {
-                const buttonV = document.querySelector('.copy-button');
-                buttonV.textContent = "Copied!";
-                setTimeout(() => {
-                    buttonV.textContent = "Copy Script";
-                }, 2000);
-            });
+        function copyScript() {
+            alert("Script Copied!");
         }
     </script>
 </body>
