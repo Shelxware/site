@@ -225,26 +225,17 @@
             text-align: center;
             border-radius: 15px;
             position: relative;
+            transition: box-shadow 0.3s ease;
         }
 
-        /* Cyan glow for "Murder Mystery 2 Auto Farm | Vertex Hub (OP)" */
-        .image-box:first-of-type h2 {
-            font-family: 'Fredoka', sans-serif;
-            font-weight: 700;
-            font-size: 1.2em;
-            color: #ffffff;
-            margin-bottom: 15px;
-            text-shadow: 0 0 10px #00bcd4, 0 0 20px #00bcd4, 0 0 30px #00bcd4; /* Cyan glow */
+        /* Cyan glow for the first box */
+        .image-box:first-of-type {
+            box-shadow: 0 0 20px #00bcd4, 0 0 40px #00bcd4, 0 0 60px #00bcd4;
         }
 
-        /* Purple glow for "Blade Ball Auto Parry | Frostware Hub (OP)" */
-        .image-box:last-of-type h2 {
-            font-family: 'Fredoka', sans-serif;
-            font-weight: 700;
-            font-size: 1.2em;
-            color: #ffffff;
-            margin-bottom: 15px;
-            text-shadow: 0 0 10px #9b59b6, 0 0 20px #9b59b6, 0 0 30px #9b59b6; /* Purple glow */
+        /* Purple glow for the second box */
+        .image-box:last-of-type {
+            box-shadow: 0 0 20px #9b59b6, 0 0 40px #9b59b6, 0 0 60px #9b59b6;
         }
 
         .copy-button {
