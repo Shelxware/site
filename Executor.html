@@ -46,7 +46,6 @@
             padding: 10px 20px;
             background: rgba(0, 0, 0, 0.8);
             position: relative;
-            z-index: 10;
         }
 
         /* Hamburger menu styling */
@@ -58,6 +57,7 @@
             display: flex;
             flex-direction: column;
             cursor: pointer;
+            z-index: 10;
         }
 
         .menu-toggle div {
@@ -89,7 +89,10 @@
             text-align: center;
             margin: 0;
             padding: 0;
-            position: relative;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             z-index: 10;
             opacity: 1;
             transition: opacity 0.3s ease;
@@ -256,28 +259,20 @@
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
         }
 
-        /* Mobile styles for the Executors header */
+        /* Mobile styles for the Scripts header */
         @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                align-items: center;
-            }
-
             .scripts-header {
-                font-size: 3em; /* Adjust size for mobile */
-                margin: 20px 0;
-                text-shadow: 0 0 6px #ffffff, 0 0 10px #ffffff;
-            }
-
-            .menu-toggle {
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                left: 20px;
+                font-size: 4.5em; /* Increased font size on mobile */
+                top: 120px; /* Adjust position to move it down more */
+                text-shadow: 0 0 6px #ffffff, 0 0 10px #ffffff; /* Reduced glow */
             }
 
             .image-box {
                 margin-top: 115px; /* Increased by 40px */
+            }
+
+            .menu-overlay.active .scripts-header {
+                opacity: 0; /* Hide the header in the menu */
             }
         }
     </style>
@@ -293,8 +288,8 @@
             <div></div>
             <div></div>
         </div>
-        <!-- "Executors" header -->
-        <div class="scripts-header" id="scripts-header">Executors</div>
+        <!-- "Scripts" header -->
+        <div class="scripts-header" id="scripts-header">Scripts</div>
         <div class="search-box">
             <input type="text" placeholder="Search...">
             <button>Search</button>
@@ -305,7 +300,7 @@
     <nav class="menu-overlay" id="menu">
         <div>
             <a href="#home" onclick="window.location.href='https://globalexploiter.xyz';">Home</a>
-            <a href="Scripts.html">Executors</a>
+            <a href="Scripts.html">Scripts</a>
             <a href="Executor.html">Executors</a>
             <a href="#contact">Contact</a>
         </div>
