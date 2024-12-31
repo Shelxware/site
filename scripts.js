@@ -21,6 +21,18 @@
             flex-direction: column;
             min-height: 100vh;
             background: linear-gradient(to bottom right, #1e2a47, #4f6d8c);
+            transition: background-color 0.3s ease;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
         }
 
         html {
@@ -53,7 +65,20 @@
             height: 4px;
             background-color: #fff;
             margin: 4px 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
             border-radius: 5px;
+        }
+
+        .menu-toggle.active div:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .menu-toggle.active div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active div:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
         }
 
         .scripts-header {
@@ -69,7 +94,8 @@
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 10;
-            opacity: 1; /* Ensuring the header is fully visible */
+            opacity: 1;
+            transition: opacity 0.3s ease;
             text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #ffffff;
         }
 
@@ -253,6 +279,10 @@
                 margin-top: 115px; /* Increased by 40px */
                 width: 80%; /* Increased width for mobile devices */
             }
+
+            .menu-overlay.active .scripts-header {
+                display: none; /* Hide the header when menu is active */
+            }
         }
     </style>
 </head>
@@ -309,32 +339,39 @@
         </div>
     </section>
 
-  <!-- JavaScript -->
     <script>
         function toggleMenu() {
             const menu = document.getElementById('menu');
             const toggle = document.querySelector('.menu-toggle');
             const scriptsHeader = document.getElementById('scripts-header');
+            
+            // Toggle the menu visibility without affecting the header
             menu.classList.toggle('active');
             toggle.classList.toggle('active');
-            scriptsHeader.style.opacity = menu.classList.contains('active') ? 0 : 1;
+            
+            // Ensure the header doesn't show when the menu is active
+            scriptsHeader.style.display = menu.classList.contains('active') ? 'none' : 'block';
         }
 
-        function copyScript(scriptType) {
-            let scriptText;
-            if (scriptType === 'vertex') {
-                scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Burdenerd/VertexHub/refs/heads/main/Offical'))()";
-            } else if (scriptType === 'frostware') {
-                scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Otheruser/Script'))()";
+        // Copy function
+        function copyScript(scriptName) {
+            let scriptText = '';
+            if (scriptName === 'vertex') {
+                scriptText = 'Script for Vertex Hub...';
+            } else if (scriptName === 'frostware') {
+                scriptText = 'Script for Frostware Hub...';
             }
-            
-            navigator.clipboard.writeText(scriptText).then(() => {
-                const button = document.getElementById(`copy-btn-${scriptType}`);
-                button.textContent = "📜Script Copied!";
-                setTimeout(() => {
-                    button.textContent = "Copy Script";  // Reset after 2 seconds
-                }, 2000);
-            });
+
+            // Create a temporary textarea to copy the script to clipboard
+            const tempTextarea = document.createElement('textarea');
+            tempTextarea.value = scriptText;
+            document.body.appendChild(tempTextarea);
+            tempTextarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextarea);
+
+            // Alert user that the script has been copied
+            alert('Script copied to clipboard!');
         }
     </script>
 </body>
