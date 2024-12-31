@@ -27,17 +27,11 @@
         }
 
         @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
+            0% { opacity: 0; }
+            100% { opacity: 1; }
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         header {
             display: flex;
@@ -48,7 +42,6 @@
             position: relative;
         }
 
-        /* Hamburger menu styling */
         .menu-toggle {
             position: absolute;
             left: 20px;
@@ -69,22 +62,14 @@
             border-radius: 5px;
         }
 
-        .menu-toggle.active div:nth-child(1) {
-            transform: translateY(8px) rotate(45deg);
-        }
-
-        .menu-toggle.active div:nth-child(2) {
-            opacity: 0;
-        }
-
-        .menu-toggle.active div:nth-child(3) {
-            transform: translateY(-8px) rotate(-45deg);
-        }
+        .menu-toggle.active div:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+        .menu-toggle.active div:nth-child(2) { opacity: 0; }
+        .menu-toggle.active div:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
         .scripts-header {
             font-family: Arial, sans-serif;
             font-weight: 700;
-            font-size: 3.2em; /* Default font size for larger screens */
+            font-size: 3.2em;
             color: #ffffff;
             text-align: center;
             margin: 0;
@@ -96,7 +81,7 @@
             z-index: 10;
             opacity: 1;
             transition: opacity 0.3s ease;
-            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #ffffff;
+            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff;
         }
 
         .search-box {
@@ -129,9 +114,7 @@
             transition: background-color 0.3s;
         }
 
-        .search-box button:hover {
-            background-color: #0097a7;
-        }
+        .search-box button:hover { background-color: #0097a7; }
 
         .menu-overlay {
             position: fixed;
@@ -149,9 +132,7 @@
             justify-content: space-between;
         }
 
-        .menu-overlay.active {
-            left: 0;
-        }
+        .menu-overlay.active { left: 0; }
 
         .menu-overlay a {
             display: block;
@@ -165,61 +146,36 @@
             text-align: center;
             background-color: rgba(135, 206, 235, 0.9);
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.6);
-            transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+            transition: transform 0.3s, background-color 0.3s;
         }
 
-        .menu-overlay a:hover {
-            transform: scale(1.1);
-            background-color: rgba(100, 149, 237, 0.9);
-            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.9);
-        }
+        .menu-overlay a:hover { transform: scale(1.1); }
 
-        .social-icons {
+        .image-container {
             display: flex;
-            justify-content: center;
-            position: absolute;
-            top: 600px;
-            left: 50%;
-            transform: translateX(-50%);
-            margin: 0;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
         }
 
-        .social-icons a {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            margin: 0 10px;
-            border-radius: 50%;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+        @media (min-width: 1024px) {
+            .image-container {
+                flex-direction: row;
+                justify-content: center;
+                align-items: flex-start;
+            }
 
-        .social-icons a img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .social-icons a:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.8);
+            .image-box { width: 45%; }
         }
 
         .image-box {
-            width: 60%;
-            margin: 95px auto; /* Increased margin-top by 40px */
+            width: 80%;
             background-color: rgba(0, 0, 0, 0.8);
             padding: 20px;
             text-align: center;
             border-radius: 15px;
             position: relative;
             box-shadow: 0 0 20px rgba(0, 255, 255, 0.9);
-        }
-
-        .image-box.purple-glow {
-            box-shadow: 0 0 30px rgba(128, 0, 128, 1), 0 0 50px rgba(128, 0, 128, 0.5);
         }
 
         .image-box img {
@@ -239,65 +195,18 @@
             color: white;
             border-radius: 10px;
             cursor: pointer;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-            transition: background-color 0.3s, transform 0.3s;
-            font-family: 'Fredoka', sans-serif;
-            font-weight: 700;
         }
 
-        .copy-button:hover {
-            background-color: #0097a7;
-            transform: scale(1.1);
-        }
-
-        .image-box h2 {
-            font-family: 'Fredoka', sans-serif;
-            font-weight: 700;
-            font-size: 2em;
-            color: #ffffff;
-            margin-bottom: 15px;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-        }
-
-        /* Media query for desktop and larger screens */
-        @media (min-width: 1024px) {
-            .image-box {
-                width: 40%; /* Make the image box smaller on desktop */
-                margin: 50px auto; /* Adjust margin for smaller box size */
-            }
-        }
-
-        /* Mobile styles for the Scripts header */
-        @media (max-width: 768px) {
-            .scripts-header {
-                font-size: 4.5em; /* Increased font size on mobile */
-                top: 120px; /* Adjust position to move it down more */
-                text-shadow: 0 0 6px #ffffff, 0 0 10px #ffffff; /* Reduced glow */
-            }
-
-            .image-box {
-                margin-top: 115px; /* Increased by 40px */
-                width: 80%; /* Increased width for mobile devices */
-            }
-
-            .menu-overlay.active .scripts-header {
-                opacity: 0; /* Hide the header in the menu */
-            }
-        }
+        .copy-button:hover { background-color: #0097a7; }
     </style>
 </head>
 <body>
-    <!-- Background -->
-    <div class="background-blur"></div>
-
-    <!-- Header -->
     <header>
         <div class="menu-toggle" onclick="toggleMenu()">
             <div></div>
             <div></div>
             <div></div>
         </div>
-        <!-- "Scripts" header -->
         <div class="scripts-header" id="scripts-header">Scripts</div>
         <div class="search-box">
             <input type="text" placeholder="Search...">
@@ -305,66 +214,38 @@
         </div>
     </header>
 
-    <!-- Menu Overlay -->
     <nav class="menu-overlay" id="menu">
-        <div>
-            <a href="#home" onclick="window.location.href='https://globalexploiter.xyz';">Home</a>
-            <a href="Scripts.html">Scripts</a>
-            <a href="Executor.html">Executors</a>
-            <a href="#contact">Contact</a>
-        </div>
-        <div class="social-icons">
-            <a href="https://youtube.com/@globalexploitor?si=ULxJfeU0MbH6DNhy" target="_blank">
-                <img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" alt="YouTube">
-            </a>
-            <a href="#" target="_blank">
-                <img src="https://media.discordapp.net/attachments/1235374443413635115/1322719710835638313/IMG_1348.png?ex=6771e63a&is=677094ba&hm=b584940836f5bfef6e2333f84f6b1331a856eb0ef8c0852d3d412dd41ed615eb&=&width=832&height=468" alt="Discord">
-            </a>
-        </div>
+        <a href="#home">Home</a>
+        <a href="Scripts.html">Scripts</a>
+        <a href="Executor.html">Executors</a>
+        <a href="#contact">Contact</a>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="image-box">
-            <h2>Murder Mystery 2 Auto Farm | Vertex Hub (OP)</h2>
-            <img src="https://media.discordapp.net/attachments/1237163573894053888/1322659186370154607/2F2C2865-7B60-43F0-B2D6-9BC7AF38E716.jpg?ex=6771addb&is=67705c5b&hm=e4b0bc70dbca0031d964cdcb17ffcdeadadaf9c598ac6dac214c3b7149d45e7e&=&width=1071&height=602" alt="Script Image">
-            <button class="copy-button" id="copy-btn-vertex" onclick="copyScript('vertex')">Copy Script</button>
-        </div>
-
-        <!-- New image box for the v script with purple glow -->
-        <div class="image-box purple-glow">
-            <h2>Blade Ball Auto Parry | Frostware Hub (OP)</h2>
-            <img src="https://media.discordapp.net/attachments/1249093223134003221/1323559486136516609/C6DEE7F9-DAF3-4F93-8B24-74CA1EFD6644.png?ex=6774f454&is=6773a2d4&hm=8d7f821a29b7d94d65f1d8bd1b108a55a7aeb565d69b114b74120e7bd0cecfa9&=&width=1071&height=602" alt="Script Image">
-            <button class="copy-button" id="copy-btn-frostware" onclick="copyScript('frostware')">Copy Script</button>
+    <section id="home">
+        <div class="image-container">
+            <div class="image-box">
+                <h2>Murder Mystery 2 Auto Farm</h2>
+                <img src="image1.jpg" alt="MM2 Script">
+                <button class="copy-button" onclick="copyScript('mm2')">Copy Script</button>
+            </div>
+            <div class="image-box">
+                <h2>Blade Ball Auto Parry</h2>
+                <img src="image2.jpg" alt="Blade Ball Script">
+                <button class="copy-button" onclick="copyScript('blade')">Copy Script</button>
+            </div>
         </div>
     </section>
 
-  <!-- JavaScript -->
     <script>
         function toggleMenu() {
             const menu = document.getElementById('menu');
-            const toggle = document.querySelector('.menu-toggle');
-            const scriptsHeader = document.getElementById('scripts-header');
             menu.classList.toggle('active');
-            toggle.classList.toggle('active');
-            scriptsHeader.style.opacity = menu.classList.contains('active') ? 0 : 1;
         }
 
-        function copyScript(scriptType) {
-            let scriptText;
-            if (scriptType === 'vertex') {
-                scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Burdenerd/VertexHub/refs/heads/main/Offical'))()";
-            } else if (scriptType === 'frostware') {
-                scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Otheruser/Script'))()";
-            }
-            
-            navigator.clipboard.writeText(scriptText).then(() => {
-                const button = document.getElementById(`copy-btn-${scriptType}`);
-                button.textContent = "📜Script Copied!";
-                setTimeout(() => {
-                    button.textContent = "Copy Script";  // Reset after 2 seconds
-                }, 2000);
-            });
+        function copyScript(type) {
+            let script = type === 'mm2' ? 'loadstring(game:Get())' : 'another loadstring';
+            navigator.clipboard.writeText(script);
+            alert('Script Copied!');
         }
     </script>
 </body>
