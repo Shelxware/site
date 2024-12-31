@@ -279,10 +279,6 @@
                 margin-top: 115px; /* Increased by 40px */
                 width: 80%; /* Increased width for mobile devices */
             }
-
-            .menu-overlay.active .scripts-header {
-                display: none; /* Hide the header when menu is active */
-            }
         }
     </style>
 </head>
@@ -343,14 +339,8 @@
         function toggleMenu() {
             const menu = document.getElementById('menu');
             const toggle = document.querySelector('.menu-toggle');
-            const scriptsHeader = document.getElementById('scripts-header');
-            
-            // Toggle the menu visibility without affecting the header
             menu.classList.toggle('active');
             toggle.classList.toggle('active');
-            
-            // Ensure the header doesn't show when the menu is active
-            scriptsHeader.style.display = menu.classList.contains('active') ? 'none' : 'block';
         }
 
         // Copy function
