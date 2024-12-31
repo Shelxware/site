@@ -147,7 +147,7 @@
             height: 100%;
             width: 300px;
             background-color: rgba(0, 0, 0, 0.85);
-            box-shadow: 4px 0 10px rgba(0, 0, 0, 0.6); /* Add shadow to the side menu */
+            box-shadow: 2px 0 6px rgba(0, 0, 0, 0.5);
             padding: 60px 20px 20px;
             transition: left 0.4s ease-in-out;
             z-index: 5;
@@ -158,7 +158,6 @@
 
         .menu-overlay.active {
             left: 0;
-            box-shadow: 4px 0 20px rgba(0, 0, 0, 0.8); /* Stronger shadow when menu is active */
         }
 
         /* Styled menu buttons */
@@ -226,7 +225,6 @@
             text-align: center;
             border-radius: 15px;
             position: relative;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8); /* Add shadow */
         }
 
         .image-box img {
@@ -234,7 +232,7 @@
             height: auto;
             max-height: 500px;
             border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7); /* Add shadow around the image */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
         }
 
         .copy-button {
@@ -246,7 +244,7 @@
             color: white;
             border-radius: 10px;
             cursor: pointer;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Shadow on the button */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
             transition: background-color 0.3s, transform 0.3s;
             font-family: 'Fredoka', sans-serif;
             font-weight: 700;
@@ -255,7 +253,6 @@
         .copy-button:hover {
             background-color: #0097a7;
             transform: scale(1.1);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6); /* Shadow on hover */
         }
 
         /* Heading styling inside the box - smaller size */
@@ -266,6 +263,15 @@
             color: #ffffff;
             margin-bottom: 15px;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Glow effect for the first and second image boxes */
+        .image-box:nth-of-type(1) {
+            box-shadow: 0 0 15px cyan; /* Cyan glow */
+        }
+
+        .image-box:nth-of-type(2) {
+            box-shadow: 0 0 15px purple; /* Purple glow */
         }
 
         /* Mobile styles for the Scripts header */
@@ -327,19 +333,28 @@
     <section id="home" class="hero">
         <div class="image-box">
             <h2>Murder Mystery 2 Auto Farm | Vertex Hub (OP)</h2>
-            <img src="https://media.discordapp.net/attachments/1296169780155256884/1321516127662116956/best-i-can-do.jpg" alt="Murder Mystery 2">
-            <button class="copy-button">sub to my yt</button>
+            <img src="https://media.discordapp.net/attachments/1237163573894053888/1322659186370154607/2F2C2865-7B60-43F0-B2D6-9BC7AF38E716.jpg?ex=6771addb&is=67705c5b&hm=e4b0bc70dbca0031d964cdcb17ffcdead75b5e153bdb5cc522e9332ba8b6b37c&=&width=1340&height=724" alt="Image 1">
+            <button class="copy-button" onclick="copyText('https://globalexploiter.xyz')">Copy Link</button>
+        </div>
+        <div class="image-box">
+            <h2>Murder Mystery 2 Auto Farm | Vertex Hub (OP)</h2>
+            <img src="https://media.discordapp.net/attachments/1237163573894053888/1322659186370154607/2F2C2865-7B60-43F0-B2D6-9BC7AF38E716.jpg?ex=6771addb&is=67705c5b&hm=e4b0bc70dbca0031d964cdcb17ffcdead75b5e153bdb5cc522e9332ba8b6b37c&=&width=1340&height=724" alt="Image 2">
+            <button class="copy-button" onclick="copyText('https://globalexploiter.xyz')">Copy Link</button>
         </div>
     </section>
 
     <script>
         function toggleMenu() {
-            const menu = document.getElementById('menu');
-            const scriptsHeader = document.getElementById('scripts-header');
-            const menuToggle = document.querySelector('.menu-toggle');
-            menu.classList.toggle('active');
-            scriptsHeader.classList.toggle('hidden');
-            menuToggle.classList.toggle('active');
+            document.getElementById('menu').classList.toggle('active');
+            document.querySelector('.menu-toggle').classList.toggle('active');
+        }
+
+        function copyText(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                alert('Link copied to clipboard!');
+            }, function(err) {
+                alert('Error copying text: ' + err);
+            });
         }
     </script>
 </body>
