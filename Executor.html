@@ -46,7 +46,6 @@
             padding: 10px 20px;
             background: rgba(0, 0, 0, 0.8);
             position: relative;
-            width: 100%;
         }
 
         /* Hamburger menu styling */
@@ -85,17 +84,18 @@
         .scripts-header {
             font-family: Arial, sans-serif;
             font-weight: 700;
-            font-size: 2.5em; /* Reduced font size */
+            font-size: 3.2em; /* Default font size for larger screens */
             color: #ffffff;
             text-align: center;
             margin: 0;
             padding: 0;
             position: absolute;
-            top: 10px; /* Positioned at the top */
+            top: 50%;
             left: 50%;
-            transform: translateX(-50%);
+            transform: translate(-50%, -50%);
             z-index: 10;
             opacity: 1;
+            transition: opacity 0.3s ease;
             text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #ffffff;
         }
 
@@ -228,13 +228,17 @@
         /* Mobile styles for the Scripts header */
         @media (max-width: 768px) {
             .scripts-header {
-                font-size: 3.5em; /* Adjusted font size */
-                top: 20px; /* Adjusted position for mobile */
+                font-size: 4.5em; /* Increased font size on mobile */
+                top: 120px; /* Adjust position to move it down more */
                 text-shadow: 0 0 6px #ffffff, 0 0 10px #ffffff; /* Reduced glow */
             }
 
             .image-box {
                 margin-top: 115px; /* Increased by 40px */
+            }
+
+            .menu-overlay.active .scripts-header {
+                opacity: 0; /* Hide the header in the menu */
             }
         }
     </style>
@@ -293,11 +297,13 @@
         function toggleMenu() {
             const menu = document.getElementById('menu');
             const toggle = document.querySelector('.menu-toggle');
+            const scriptsHeader = document.getElementById('scripts-header');
             menu.classList.toggle('active');
             toggle.classList.toggle('active');
+            scriptsHeader.style.opacity = menu.classList.contains('active') ? 0 : 1;
         }
 
-        function copyScript() {
+         function copyScript() {
             const scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Burdenerd/VertexHub/refs/heads/main/Offical'))()";
             navigator.clipboard.writeText(scriptText).then(() => {
                 const button = document.querySelector('.copy-button');
