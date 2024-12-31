@@ -14,16 +14,16 @@
         body {
             margin: 0;
             padding: 0;
-            font-family: sans-serif; /* Use default font for the body */
+            font-family: sans-serif;
             color: #ffffff;
             overflow-x: hidden;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            background: linear-gradient(to bottom right, #1e2a47, #4f6d8c); /* Updated background gradient */
+            background: linear-gradient(to bottom right, #1e2a47, #4f6d8c);
             transition: background-color 0.3s ease;
-            opacity: 0; /* Initially set to invisible */
-            animation: fadeIn 1s forwards; /* Apply fade-in animation */
+            opacity: 0;
+            animation: fadeIn 1s forwards;
         }
 
         @keyframes fadeIn {
@@ -35,12 +35,10 @@
             }
         }
 
-        /* Smooth scrolling */
         html {
             scroll-behavior: smooth;
         }
 
-        /* Header styling */
         header {
             display: flex;
             align-items: center;
@@ -68,7 +66,7 @@
             background-color: #fff;
             margin: 4px 0;
             transition: transform 0.3s ease, opacity 0.3s ease;
-            border-radius: 5px; /* Rounded edges */
+            border-radius: 5px;
         }
 
         .menu-toggle.active div:nth-child(1) {
@@ -83,32 +81,24 @@
             transform: translateY(-8px) rotate(-45deg);
         }
 
-        .menu-toggle.active div {
-            border-radius: 5px;
+        .scripts-header {
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 700;
+            font-size: 2.4em;
+            color: #ffffff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #ffffff;
         }
 
-   /* "Scripts" header styling - Add white glow and center it */
-.scripts-header {
-    font-family: 'Fredoka', sans-serif;
-    font-weight: 700;
-    font-size: 2.4em;
-    color: #ffffff;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    top: 50%; /* Centers it vertically */
-    left: 50%; /* Centers it horizontally */
-    transform: translate(-50%, -50%); /* Adjusts the final position to be fully centered */
-    z-index: 10;
-    opacity: 1;
-    transition: opacity 0.3s ease;
-    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #ffffff; /* White glow effect */
-}
-
-
-
-        /* Search box styling */
         .search-box {
             background-color: rgba(255, 255, 255, 0.7);
             padding: 8px 15px;
@@ -143,7 +133,6 @@
             background-color: #0097a7;
         }
 
-        /* Overlay styling */
         .menu-overlay {
             position: fixed;
             top: 0;
@@ -164,12 +153,11 @@
             left: 0;
         }
 
-        /* Styled menu buttons */
         .menu-overlay a {
             display: block;
             color: white;
             text-decoration: none;
-            font-family: 'Fredoka', sans-serif; /* Ensure 'Fredoka' is used */
+            font-family: 'Fredoka', sans-serif;
             font-weight: 700;
             font-size: 1.5em;
             margin: 20px 0;
@@ -187,7 +175,6 @@
             box-shadow: 0 6px 15px rgba(255, 255, 255, 0.9);
         }
 
-        /* Social icon container */
         .social-icons {
             display: flex;
             justify-content: center;
@@ -220,7 +207,6 @@
             box-shadow: 0 6px 15px rgba(255, 255, 255, 0.8);
         }
 
-        /* New box with image, text, and button */
         .image-box {
             width: 60%;
             margin: 20px auto;
@@ -229,11 +215,11 @@
             text-align: center;
             border-radius: 15px;
             position: relative;
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.9); /* Increased cyan glow effect for the first box */
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.9);
         }
 
         .image-box.purple-glow {
-            box-shadow: 0 0 30px rgba(128, 0, 128, 1), 0 0 50px rgba(128, 0, 128, 0.5); /* Stronger purple glow with more blur */
+            box-shadow: 0 0 30px rgba(128, 0, 128, 1), 0 0 50px rgba(128, 0, 128, 0.5);
         }
 
         .image-box img {
@@ -255,7 +241,7 @@
             cursor: pointer;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
             transition: background-color 0.3s, transform 0.3s;
-            font-family: 'Fredoka', sans-serif; /* Ensure 'Fredoka' is used */
+            font-family: 'Fredoka', sans-serif;
             font-weight: 700;
         }
 
@@ -264,11 +250,10 @@
             transform: scale(1.1);
         }
 
-        /* Heading styling inside the box - smaller size */
         .image-box h2 {
-            font-family: 'Fredoka', sans-serif; /* Ensure 'Fredoka' is used */
+            font-family: 'Fredoka', sans-serif;
             font-weight: 700;
-            font-size: 2em; /* Further reduced font size */
+            font-size: 2em;
             color: #ffffff;
             margin-bottom: 15px;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
@@ -278,16 +263,15 @@
         @media (max-width: 768px) {
             .scripts-header {
                 font-size: 1.5em; /* Reduce the size on mobile */
-                top: 90px; /* Move the "Scripts" header 90px from the top */
+                top: 90px; /* Adjust position to move it down */
             }
 
             .image-box {
                 margin-top: 40px;
             }
 
-            /* Mobile-only menu fade effect */
             .menu-overlay.active .scripts-header {
-                opacity: 0; /* Fade out on mobile */
+                opacity: 0; /* Hide the header in the menu */
             }
         }
     </style>
@@ -303,7 +287,7 @@
             <div></div>
             <div></div>
         </div>
-        <!-- "Scripts" header on the black bar -->
+        <!-- "Scripts" header -->
         <div class="scripts-header" id="scripts-header">Scripts</div>
         <div class="search-box">
             <input type="text" placeholder="Search...">
