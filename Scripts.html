@@ -87,23 +87,24 @@
             border-radius: 5px;
         }
 
-        /* "Scripts" header styling - Updated font */
-        .scripts-header {
-             font-family: Arial, sans-serif;
- /* Apply 'Fredoka' font */
-            font-weight: 700;
-            font-size: 2.4em;
-            color: #ffffff;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            position: absolute;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 10;
-            opacity: 1; /* Initially visible */
-            transition: opacity 0.3s ease; /* Add fade-out transition */
-        }
+     /* "Scripts" header styling - Add white glow */
+.scripts-header {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: 2.4em;
+    color: #ffffff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #ffffff; /* White glow effect */
+}
+
 
         /* Search box styling */
         .search-box {
