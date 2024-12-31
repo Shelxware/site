@@ -87,7 +87,7 @@
             border-radius: 5px;
         }
 
-     /* "Scripts" header styling - Add white glow */
+   /* "Scripts" header styling - Add white glow and center it */
 .scripts-header {
     font-family: 'Fredoka', sans-serif;
     font-weight: 700;
@@ -97,13 +97,15 @@
     margin: 0;
     padding: 0;
     position: absolute;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 50%; /* Centers it vertically */
+    left: 50%; /* Centers it horizontally */
+    transform: translate(-50%, -50%); /* Adjusts the final position to be fully centered */
     z-index: 10;
     opacity: 1;
     transition: opacity 0.3s ease;
     text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #ffffff; /* White glow effect */
 }
+
 
 
         /* Search box styling */
