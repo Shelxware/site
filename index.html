@@ -1,84 +1,3 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background: #363;
-            color: #fff;
-            padding: 1rem 0;
-            text-align: center;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background: #444;
-            padding: 0.5rem 0;
-        }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 15px;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 0 15px;
-        }
-        footer {
-            text-align: center;
-            padding: 1rem 0;
-            background: #333;
-            color: #fff;
-            margin-top: 20px;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Welcome to My Website</h1>
-        <p>Your tagline goes here!</p>
-    </header>
-
-    <nav>
-        <a href="#">Home</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
-    <div class="container">
-        <section id="about">
-            <h2>About</h2>
-            <p>This is where you can write something about yourself or your website.</p>
-        </section>
-
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Email: your-email@example.cm</p>
-        </section>
-    </div>
-
-    <footer>
-        <p>&copy; 2024 My 
-        e. All rights reserved.</p>
-    </footer>
-</body>
-</html>
-=======
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -139,97 +58,6 @@
             text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
             flex: 1;
             text-align: center;
-        }
-
-        /* Viewer count styling */
-        #live-view-count {
-            font-size: 2em;
-            color: cyan;
-            margin-top: 20px;
-        }
-
-        /* Hamburger menu styling */
-        .menu-toggle {
-            position: absolute;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-            flex-direction: column;
-            cursor: pointer;
-            z-index: 10;
-            border-radius: 10px; /* Rounded corners for the entire hamburger */
-            padding: 5px; /* Space around the hamburger icon */
-            background-color: transparent; /* Transparent background for the hamburger */
-        }
-
-        .menu-toggle div {
-            width: 30px;
-            height: 4px;
-            background-color: #fff; /* White color for the lines */
-            margin: 4px 0;
-            border-radius: 2px; /* Rounded edges for the individual bars */
-            transition: transform 0.3s ease, opacity 0.3s ease;
-        }
-
-        .menu-toggle.active div:nth-child(1) {
-            transform: translateY(8px) rotate(45deg);
-        }
-
-        .menu-toggle.active div:nth-child(2) {
-            opacity: 0;
-        }
-
-        .menu-toggle.active div:nth-child(3) {
-            transform: translateY(-8px) rotate(-45deg);
-        }
-
-        .menu-toggle.active div {
-            border-radius: 2px;
-        }
-
-        /* Overlay styling */
-        .menu-overlay {
-            position: fixed;
-            top: 0;
-            left: -100%;
-            height: 100%;
-            width: 300px;
-            background-color: rgba(0, 0, 0, 0.85);
-            box-shadow: 2px 0 6px rgba(0, 0, 0, 0.5);
-            padding: 60px 20px 20px;
-            transition: left 0.4s ease-in-out;
-            z-index: 5;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .menu-overlay.active {
-            left: 0;
-        }
-
-        /* Styled menu buttons */
-        .menu-overlay a {
-            display: block;
-            color: white;
-            text-decoration: none;
-            font-family: 'Fredoka', sans-serif;
-            font-weight: 700;
-            font-size: 1.5em;
-            margin: 20px 0;
-            padding: 10px;
-            text-align: center;
-            background-color: rgba(135, 206, 235, 0.9);
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.6);
-            transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
-        }
-
-        .menu-overlay a:hover {
-            transform: scale(1.1);
-            background-color: rgba(100, 149, 237, 0.9);
-            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.9);
         }
 
         /* Hero section */
@@ -304,46 +132,14 @@
             box-shadow: 0 6px 15px rgba(255, 255, 255, 0.8);
         }
 
-        /* Footer styling */
-        footer {
+        /* New Viewer Count Section */
+        .viewer-count {
             text-align: center;
-            background: rgba(0, 0, 0, 0.9);
-            padding: 20px;
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #00bcd4;
         }
 
-        footer p {
-            margin: 0;
-        }
-
-        /* Dark mode styling */
-        .dark-mode {
-            background-color: #121212;
-        }
-
-        .dark-mode .background-blur {
-            filter: blur(5px) brightness(50%);
-        }
-
-        /* Adjust text size on mobile */
-        @media (max-width: 768px) {
-            .hero .text-box h2 {
-                font-size: 2em; /* Slightly reduced for mobile */
-            }
-
-            .hero .text-box p {
-                font-size: 1em; /* Adjust font size to fit mobile screens */
-                bottom: 10px; /* Slightly adjusted position for better fit */
-            }
-
-            .view-scripts-btn {
-                top: 270px; /* Adjust the button position for mobile */
-            }
-
-            /* Move header text to the right on mobile */
-            header h1 {
-                padding-left: 40px; /* Adjust the padding to move the text to the right */
-            }
-        }
     </style>
 </head>
 <body>
@@ -360,64 +156,89 @@
         <h1>Global Exploiter</h1>
     </header>
 
-    <!-- Menu Overlay -->
-    <nav class="menu-overlay" id="menu">
-        <div>
-            <a href="#home">Home</a>
-            <a href="Scripts.html">Scripts</a>
-            <a href="Executor.html">Executors</a>
-            <a href="#contact">Contact</a>
-        </div>
-        <!-- Social Icons -->
-        <div class="social-icons">
-            <a href="https://youtube.com/@globalexploitor?si=ULxJfeU0MbH6DNhy" target="_blank">
-                <img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" 
-                     alt="YouTube">
-            </a>
-            <a href="https://discord.gg/Hk9h8vnZ7w" target="_blank">
-                <img src="https://media.discordapp.net/attachments/1235374443413635115/1322719710835638313/IMG_1348.png?ex=6771e63a&is=677094ba&hm=b584940836f5bfef6e2333f84f6b1331a856eb0ef8c0852d3d412dd41ed615eb&=&width=832&height=468" 
-                     alt="Discord">
-            </a>
-        </div>
-    </nav>
-
-    <!-- Live View Count -->
-    <div id="live-view-count">Live Views: 0</div>
-
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="text-box">
-            <h2>Welcome to Global Exploiter</h2>
-            <p>Your go-to source for the best exploits.</p>
+            <h2 id="quote"></h2>
+            <p>Subscribe To Global Exploiter On Youtube!</p>
+            <a href="Scripts.html" class="view-scripts-btn">View Scripts</a>
         </div>
-        <a href="Scripts.html" class="view-scripts-btn">View Scripts</a>
+        <!-- Viewer Count Display -->
+        <div class="viewer-count" id="viewerCount">Loading Viewer Count...</div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 GlobalExploiter | All Rights Reserved</p>
+        <p>© 2024 GlobalExploiter. All rights reserved.</p>
     </footer>
 
+    <!-- JavaScript -->
     <script>
-        // Toggle Menu Function
         function toggleMenu() {
-            const menu = document.getElementById("menu");
-            menu.classList.toggle("active");
-            document.querySelector(".menu-toggle").classList.toggle("active");
+            const menu = document.getElementById('menu');
+            const toggle = document.querySelector('.menu-toggle');
+            menu.classList.toggle('active');
+            toggle.classList.toggle('active');
         }
 
-        // Live View Count
-        let viewCount = 0;
+        // Dark mode toggle
+        document.body.addEventListener('click', function(e) {
+            if (e.target.id === 'darkModeToggle') {
+                document.body.classList.toggle('dark-mode');
+            }
+        });
 
-        // Function to simulate view count updates
-        function incrementViewCount() {
-            viewCount++;
-            document.getElementById("live-view-count").innerText = "Live Views: " + viewCount;
+        // Fetch Viewer Count from API
+        function fetchViewerCount() {
+            fetch('/api/viewers')
+                .then(response => response.json())
+                .then(data => {
+                    const viewerCountElement = document.getElementById('viewerCount');
+                    viewerCountElement.innerText = `Total Viewers: ${data.viewers}`;
+                })
+                .catch(error => {
+                    console.error('Error fetching viewer count:', error);
+                    const viewerCountElement = document.getElementById('viewerCount');
+                    viewerCountElement.innerText = 'Error loading viewer count';
+                });
         }
 
-        // Simulate a live view increment every 10 seconds
-        setInterval(incrementViewCount, 10000); // Increment every 10 seconds
+        // Call the fetchViewerCount function when the page loads
+        window.onload = fetchViewerCount;
+
+        // Typewriter effect
+        const quotes = [
+            "Subscribe to Global Exploitor",
+            "Share my videos with your friends!",
+            "100% Safe and secure scripts!",
+            "Dont Go Broke Trying To Look Rich",
+        ];
+        let quoteIndex = 0;
+        let index = 0;
+        const quoteElement = document.getElementById('quote');
+
+        function typeWriter() {
+            if (index < quotes[quoteIndex].length) {
+                quoteElement.innerHTML += quotes[quoteIndex].charAt(index);
+                index++;
+                setTimeout(typeWriter, 100);
+            } else {
+                setTimeout(deleteText, 2000);
+            }
+        }
+
+        function deleteText() {
+            if (index > 0) {
+                quoteElement.innerHTML = quotes[quoteIndex].substring(0, index - 1);
+                index--;
+                setTimeout(deleteText, 50);
+            } else {
+                quoteIndex = (quoteIndex + 1) % quotes.length;
+                setTimeout(typeWriter, 500);
+            }
+        }
+
+        typeWriter();
     </script>
 </body>
 </html>
->>>>>>> 1131931fec498e3151881ebb48ff874dc68f1aca
