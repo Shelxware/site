@@ -360,7 +360,7 @@
             
             navigator.clipboard.writeText(scriptText).then(() => {
                 const button = document.getElementById(`copy-btn-${scriptType}`);
-                button.textContent = "Copied!";
+                button.textContent = "📜Script Copied!";
                 setTimeout(() => {
                     button.textContent = "Copy Script";  // Reset after 2 seconds
                 }, 2000);
