@@ -147,7 +147,7 @@
             height: 100%;
             width: 300px;
             background-color: rgba(0, 0, 0, 0.85);
-            box-shadow: 2px 0 6px rgba(0, 0, 0, 0.5);
+            box-shadow: 4px 0 10px rgba(0, 0, 0, 0.6); /* Add shadow to the side menu */
             padding: 60px 20px 20px;
             transition: left 0.4s ease-in-out;
             z-index: 5;
@@ -158,6 +158,7 @@
 
         .menu-overlay.active {
             left: 0;
+            box-shadow: 4px 0 20px rgba(0, 0, 0, 0.8); /* Stronger shadow when menu is active */
         }
 
         /* Styled menu buttons */
@@ -225,17 +226,15 @@
             text-align: center;
             border-radius: 15px;
             position: relative;
-            transition: box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8); /* Add shadow */
         }
 
-        /* Cyan glow for the first box */
-        .image-box:first-of-type {
-            box-shadow: 0 0 20px #00bcd4, 0 0 40px #00bcd4, 0 0 60px #00bcd4;
-        }
-
-        /* Purple glow for the second box */
-        .image-box:last-of-type {
-            box-shadow: 0 0 20px #9b59b6, 0 0 40px #9b59b6, 0 0 60px #9b59b6;
+        .image-box img {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7); /* Add shadow around the image */
         }
 
         .copy-button {
@@ -247,7 +246,7 @@
             color: white;
             border-radius: 10px;
             cursor: pointer;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Shadow on the button */
             transition: background-color 0.3s, transform 0.3s;
             font-family: 'Fredoka', sans-serif;
             font-weight: 700;
@@ -256,6 +255,17 @@
         .copy-button:hover {
             background-color: #0097a7;
             transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6); /* Shadow on hover */
+        }
+
+        /* Heading styling inside the box - smaller size */
+        .image-box h2 {
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 700;
+            font-size: 1.2em; /* Further reduced font size */
+            color: #ffffff;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
         }
 
         /* Mobile styles for the Scripts header */
@@ -317,29 +327,19 @@
     <section id="home" class="hero">
         <div class="image-box">
             <h2>Murder Mystery 2 Auto Farm | Vertex Hub (OP)</h2>
-            <img src="https://media.discordapp.net/attachments/1237163573894053888/1322659186370154607/2F2C2865-7B60-43F0-B2D6-9BC7AF38E716.jpg?ex=6771addb&is=67705c5b&hm=e4b0bc70dbca0031d964cdcb17ffcdeadadaf9c598ac6dac214c3b7149d45e7e&=&width=1071&height=602" alt="Script Image">
-            <button class="copy-button" onclick="copyScript()">Copy Script</button>
-        </div>
-
-        <!-- New image box for the v script -->
-        <div class="image-box">
-            <h2>Blade Ball Auto Parry | Frostware Hub (OP) </h2>
-            <img src="https://media.discordapp.net/attachments/1296169780155256884/1322499564344737280/FXzDEKrXgAIA3hx.jpg?ex=677179cd&is=6770284d&hm=8247194597191c24bfeb6261a996d5c909f78d60ec00383125f59a265e5b5576&=&width=602&height=602" alt="Script Image">
-            <button class="copy-button" onclick="copyScript()">Copy Script</button>
+            <img src="https://media.discordapp.net/attachments/1296169780155256884/1321516127662116956/best-i-can-do.jpg" alt="Murder Mystery 2">
+            <button class="copy-button">sub to my yt</button>
         </div>
     </section>
 
     <script>
         function toggleMenu() {
-            document.getElementById('menu').classList.toggle('active');
-            document.getElementById('scripts-header').classList.toggle('active');
-            document.querySelector('.menu-toggle').classList.toggle('active');
-        }
-
-        function copyScript() {
-            navigator.clipboard.writeText("Script Code Here").then(function() {
-                alert("Script copied to clipboard!");
-            });
+            const menu = document.getElementById('menu');
+            const scriptsHeader = document.getElementById('scripts-header');
+            const menuToggle = document.querySelector('.menu-toggle');
+            menu.classList.toggle('active');
+            scriptsHeader.classList.toggle('hidden');
+            menuToggle.classList.toggle('active');
         }
     </script>
 </body>
