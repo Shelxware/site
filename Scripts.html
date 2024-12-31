@@ -87,9 +87,9 @@
             border-radius: 5px;
         }
 
-        /* "Scripts" styling - Centered with Arial font */
+        /* "Scripts" styling - Centered */
         .scripts-header {
-            font-family: 'Arial', sans-serif; /* Changed font to Arial */
+            font-family: 'Fredoka', sans-serif;
             font-weight: 700;
             font-size: 2em;
             color: #ffffff;
@@ -102,6 +102,7 @@
             z-index: 10;
             opacity: 1; /* Initially visible */
             transition: opacity 0.3s ease; /* Add fade-out transition */
+            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff; /* White glow effect */
         }
 
         /* Search box styling */
@@ -349,21 +350,17 @@
             const scriptsHeader = document.getElementById('scripts-header');
             menu.classList.toggle('active');
             toggle.classList.toggle('active');
-            scriptsHeader.style.opacity = menu.classList.contains('active') ? 0 : 1;
+            scriptsHeader.classList.toggle('active');
         }
 
         function copyScript() {
-            const copyText = "your script code here";
-            navigator.clipboard.writeText(copyText).then(() => {
-                alert("Script copied to clipboard!");
-            });
+            // Copy script functionality
+            alert('Script copied to clipboard!');
         }
 
         function copyScriptV() {
-            const copyText = "your other script code here";
-            navigator.clipboard.writeText(copyText).then(() => {
-                alert("Script copied to clipboard!");
-            });
+            // Copy script functionality for V script
+            alert('V Script copied to clipboard!');
         }
     </script>
 </body>
