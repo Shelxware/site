@@ -96,40 +96,6 @@
             text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #ffffff;
         }
 
-        .search-box {
-            background-color: rgba(255, 255, 255, 0.7);
-            padding: 8px 15px;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            margin-left: auto;
-        }
-
-        .search-box input {
-            border: none;
-            padding: 5px;
-            font-size: 1em;
-            border-radius: 10px;
-            outline: none;
-            background-color: transparent;
-            color: #333;
-            margin-right: 10px;
-        }
-
-        .search-box button {
-            border: none;
-            background: #00bcd4;
-            color: white;
-            padding: 8px 12px;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .search-box button:hover {
-            background-color: #0097a7;
-        }
-
         .menu-overlay {
             position: fixed;
             top: 0;
@@ -312,10 +278,6 @@
         </div>
         <!-- "Executors" header -->
         <div class="scripts-header" id="scripts-header">Executors</div>
-        <div class="search-box">
-            <input type="text" placeholder="Search...">
-            <button>Search</button>
-        </div>
     </header>
 
     <!-- Menu Overlay -->
@@ -336,11 +298,26 @@
         </div>
     </nav>
 
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="image-box">
+            <h2>Murder Mystery 2 Auto Farm | Vertex Hub (OP)</h2>
+            <img src="https://media.discordapp.net/attachments/1237163573894053888/1322659186370154607/2F9FAE7F-A8F0-4A92-B3C2-7689F8E80B2C.png?width=602&height=338" alt="Image">
+            <button class="copy-button" onclick="copyText('https://globalexploiter.xyz')">Copy Link</button>
+        </div>
+    </section>
+
     <!-- JS -->
     <script>
         function toggleMenu() {
             document.getElementById('menu').classList.toggle('active');
             document.querySelector('.menu-toggle').classList.toggle('active');
+        }
+
+        function copyText(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                alert("Link copied to clipboard!");
+            });
         }
     </script>
 </body>
