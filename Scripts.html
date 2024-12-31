@@ -46,6 +46,7 @@
             padding: 10px 20px;
             background: rgba(0, 0, 0, 0.8);
             position: relative;
+            width: 100%;
         }
 
         /* Hamburger menu styling */
@@ -175,117 +176,34 @@
             box-shadow: 0 6px 15px rgba(255, 255, 255, 0.9);
         }
 
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            position: absolute;
-            top: 600px;
-            left: 50%;
-            transform: translateX(-50%);
-            margin: 0;
-        }
-
-        .social-icons a {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            margin: 0 10px;
-            border-radius: 50%;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .social-icons a img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .social-icons a:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.8);
-        }
-
-        .image-box {
-            width: 48%;
-            margin: 20px 1%; /* Adjusted margin for side-by-side positioning */
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 20px;
-            text-align: center;
-            border-radius: 15px;
-            position: relative;
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.9);
-        }
-
-        .image-box.purple-glow {
-            box-shadow: 0 0 30px rgba(128, 0, 128, 1), 0 0 50px rgba(128, 0, 128, 0.5);
-        }
-
-        .image-box img {
-            width: 100%;
-            height: auto;
-            max-height: 500px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
-        }
-
-        .copy-button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 1.2em;
-            background-color: #00bcd4;
-            border: none;
-            color: white;
-            border-radius: 10px;
-            cursor: pointer;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-            transition: background-color 0.3s, transform 0.3s;
-            font-family: 'Fredoka', sans-serif;
-            font-weight: 700;
-        }
-
-        .copy-button:hover {
-            background-color: #0097a7;
-            transform: scale(1.1);
-        }
-
-        .image-box h2 {
-            font-family: 'Fredoka', sans-serif;
-            font-weight: 700;
-            font-size: 2em;
-            color: #ffffff;
-            margin-bottom: 15px;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-        }
-
         /* Mobile styles for the Scripts header */
         @media (max-width: 768px) {
             .scripts-header {
-                font-size: 4.5em; /* Increased font size on mobile */
-                top: 120px; /* Adjust position to move it down more */
+                font-size: 2.5em; /* Adjusted font size for better mobile view */
+                top: 70px; /* Adjusted position */
+                left: 50%;
+                transform: translateX(-50%);
                 text-shadow: 0 0 6px #ffffff, 0 0 10px #ffffff; /* Reduced glow */
             }
 
-            .image-box {
-                margin-top: 115px; /* Increased by 40px */
-                width: 80%; /* Increased width for mobile devices */
-            }
-
-            .menu-overlay.active .scripts-header {
-                opacity: 0; /* Hide the header in the menu */
+            .menu-toggle {
+                left: 20px;
+                top: 25px;
             }
 
             header {
-                flex-direction: column; /* Stack header elements vertically */
+                flex-direction: column;
                 align-items: center;
-                padding: 20px 10px; /* Adjust padding */
+                padding: 10px;
             }
 
-            .menu-toggle {
-                position: absolute;
-                top: 15px;
-                left: 20px;
+            .search-box {
+                width: 100%;
+                margin-top: 20px;
+            }
+
+            .menu-overlay.active .scripts-header {
+                opacity: 0; /* Hide the header when menu is active */
             }
 
             .social-icons {
@@ -293,24 +211,22 @@
                 top: 800px;
             }
 
-            .search-box {
-                width: 100%;
+            .image-box {
+                width: 80%; /* Increased width for mobile */
                 margin-top: 20px;
-                margin-left: 0;
-            }
-
-            /* Adjust hero section to stack images vertically on mobile */
-            .hero {
-                display: block;
             }
         }
 
-        /* Desktop styles: Image boxes side by side */
+        /* Desktop styles */
         @media (min-width: 769px) {
             .hero {
                 display: flex;
                 justify-content: space-between;
                 align-items: flex-start;
+            }
+
+            .scripts-header {
+                font-size: 3.2em;
             }
         }
     </style>
