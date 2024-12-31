@@ -90,12 +90,12 @@
             margin: 0;
             padding: 0;
             position: absolute;
-            top: 50%;
+            top: 10px; /* Adjusted to place at the top */
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translateX(-50%);
             z-index: 10;
-            opacity: 1;
-            transition: opacity 0.3s ease;
+            opacity: 1; /* Make sure it's always visible */
+            transition: none; /* No fading */
             text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #ffffff;
         }
 
