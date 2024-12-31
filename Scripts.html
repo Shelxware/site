@@ -21,8 +21,7 @@
             flex-direction: column;
             min-height: 100vh;
             background: linear-gradient(to bottom right, #1e2a47, #4f6d8c); /* Updated background gradient */
-            transition: background-color 0.3s ease;
-            opacity: 0; /* Initially set to invisible */
+            opacity: 0; /* Initially invisible */
             animation: fadeIn 1s forwards; /* Apply fade-in animation */
         }
 
@@ -48,6 +47,29 @@
             padding: 10px 20px;
             background: rgba(0, 0, 0, 0.8);
             position: relative;
+        }
+
+        /* "Scripts" header styling */
+        .scripts-header {
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 700;
+            font-size: 2em;
+            color: #ffffff;
+            text-align: center;
+            position: absolute;
+            top: 50%; /* Center vertically */
+            left: 50%; /* Center horizontally */
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff; /* White glow effect */
+        }
+
+        /* Media query for PC */
+        @media (min-width: 1024px) {
+            .scripts-header {
+                top: 50%; /* Center vertically for PC */
+                left: 50%; /* Center horizontally for PC */
+            }
         }
 
         /* Hamburger menu styling */
@@ -87,280 +109,27 @@
             border-radius: 5px;
         }
 
-        /* "Scripts" styling - Centered */
-        .scripts-header {
-            font-family: 'Fredoka', sans-serif;
-            font-weight: 700;
-            font-size: 2em;
-            color: #ffffff;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            position: absolute;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 10;
-            opacity: 1; /* Initially visible */
-            transition: opacity 0.3s ease; /* Add fade-out transition */
-            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff; /* White glow effect */
-        }
+        /* Additional styling (search box, social icons, etc.) */
+        /* Add other styles here if necessary */
 
-        /* Search box styling */
-        .search-box {
-            background-color: rgba(255, 255, 255, 0.7);
-            padding: 8px 15px;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            margin-left: auto;
-        }
-
-        .search-box input {
-            border: none;
-            padding: 5px;
-            font-size: 1em;
-            border-radius: 10px;
-            outline: none;
-            background-color: transparent;
-            color: #333;
-            margin-right: 10px;
-        }
-
-        .search-box button {
-            border: none;
-            background: #00bcd4;
-            color: white;
-            padding: 8px 12px;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .search-box button:hover {
-            background-color: #0097a7;
-        }
-
-        /* Overlay styling */
-        .menu-overlay {
-            position: fixed;
-            top: 0;
-            left: -100%;
-            height: 100%;
-            width: 300px;
-            background-color: rgba(0, 0, 0, 0.85);
-            box-shadow: 2px 0 6px rgba(0, 0, 0, 0.5);
-            padding: 60px 20px 20px;
-            transition: left 0.4s ease-in-out;
-            z-index: 5;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .menu-overlay.active {
-            left: 0;
-        }
-
-        /* Styled menu buttons */
-        .menu-overlay a {
-            display: block;
-            color: white;
-            text-decoration: none;
-            font-family: 'Fredoka', sans-serif;
-            font-weight: 700;
-            font-size: 1.5em;
-            margin: 20px 0;
-            padding: 10px;
-            text-align: center;
-            background-color: rgba(135, 206, 235, 0.9);
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.6);
-            transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
-        }
-
-        .menu-overlay a:hover {
-            transform: scale(1.1);
-            background-color: rgba(100, 149, 237, 0.9);
-            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.9);
-        }
-
-        /* Social icon container */
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            position: absolute;
-            top: 600px;
-            left: 50%;
-            transform: translateX(-50%);
-            margin: 0;
-        }
-
-        .social-icons a {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            margin: 0 10px;
-            border-radius: 50%;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .social-icons a img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .social-icons a:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.8);
-        }
-
-        /* New box with image, text, and button */
-        .image-box {
-            width: 60%;
-            margin: 20px auto;
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 20px;
-            text-align: center;
-            border-radius: 15px;
-            position: relative;
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.9); /* Increased cyan glow effect for the first box */
-        }
-
-        .image-box.purple-glow {
-            box-shadow: 0 0 30px rgba(128, 0, 128, 1), 0 0 50px rgba(128, 0, 128, 0.5); /* Stronger purple glow with more blur */
-        }
-
-        .image-box img {
-            width: 100%;
-            height: auto;
-            max-height: 500px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
-        }
-
-        .copy-button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 1.2em;
-            background-color: #00bcd4;
-            border: none;
-            color: white;
-            border-radius: 10px;
-            cursor: pointer;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-            transition: background-color 0.3s, transform 0.3s;
-            font-family: 'Fredoka', sans-serif;
-            font-weight: 700;
-        }
-
-        .copy-button:hover {
-            background-color: #0097a7;
-            transform: scale(1.1);
-        }
-
-        /* Heading styling inside the box - smaller size */
-        .image-box h2 {
-            font-family: 'Fredoka', sans-serif;
-            font-weight: 700;
-            font-size: 1.2em; /* Further reduced font size */
-            color: #ffffff;
-            margin-bottom: 15px;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-        }
-
-        /* Mobile styles for the Scripts header */
-        @media (max-width: 768px) {
-            .scripts-header {
-                font-size: 1.5em; /* Reduce the size on mobile */
-                top: 90px; /* Move the "Scripts" header 90px from the top */
-            }
-
-            .image-box {
-                margin-top: 40px;
-            }
-
-            /* Mobile-only menu fade effect */
-            .menu-overlay.active .scripts-header {
-                opacity: 0; /* Fade out on mobile */
-            }
-        }
     </style>
 </head>
 <body>
-    <!-- Background -->
-    <div class="background-blur"></div>
-
-    <!-- Header -->
     <header>
         <div class="menu-toggle" onclick="toggleMenu()">
             <div></div>
             <div></div>
             <div></div>
         </div>
-        <!-- "Scripts" header on the black bar -->
-        <div class="scripts-header" id="scripts-header">Scripts</div>
-        <div class="search-box">
-            <input type="text" placeholder="Search...">
-            <button>Search</button>
-        </div>
+        <div class="scripts-header">Scripts</div>
     </header>
 
-    <!-- Menu Overlay -->
-    <nav class="menu-overlay" id="menu">
-        <div>
-            <a href="#home" onclick="window.location.href='https://globalexploiter.xyz';">Home</a>
-            <a href="Scripts.html">Scripts</a>
-            <a href="Executor.html">Executors</a>
-            <a href="#contact">Contact</a>
-        </div>
-        <div class="social-icons">
-            <a href="https://youtube.com/@globalexploitor?si=ULxJfeU0MbH6DNhy" target="_blank">
-                <img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" alt="YouTube">
-            </a>
-            <a href="#" target="_blank">
-                <img src="https://media.discordapp.net/attachments/1235374443413635115/1322719710835638313/IMG_1348.png?ex=6771e63a&is=677094ba&hm=b584940836f5bfef6e2333f84f6b1331a856eb0ef8c0852d3d412dd41ed615eb&=&width=832&height=468" alt="Discord">
-            </a>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="image-box">
-            <h2>Murder Mystery 2 Auto Farm | Vertex Hub (OP)</h2>
-            <img src="https://media.discordapp.net/attachments/1237163573894053888/1322659186370154607/2F2C2865-7B60-43F0-B2D6-9BC7AF38E716.jpg?ex=6771addb&is=67705c5b&hm=e4b0bc70dbca0031d964cdcb17ffcdeadadaf9c598ac6dac214c3b7149d45e7e&=&width=1071&height=602" alt="Script Image">
-            <button class="copy-button" onclick="copyScript()">Copy Script</button>
-        </div>
-
-        <!-- New image box for the v script with purple glow -->
-        <div class="image-box purple-glow">
-            <h2>Blade Ball Auto Parry | Frostware Hub (OP)</h2>
-            <img src="https://media.discordapp.net/attachments/1249093223134003221/1323413290432462989/C1ADBCB6-1342-4F79-8295-D3E9171E22A2.jpg?ex=67746c2c&is=67731aac&hm=210424d528f889b226d577652b6a37bc5dda7162655cb0377d5371901db8f84d&=&width=1071&height=602" alt="Script Image">
-            <button class="copy-button" onclick="copyScriptV()">Copy Script</button>
-        </div>
-    </section>
-
-    <!-- JavaScript -->
     <script>
         function toggleMenu() {
             const menu = document.getElementById('menu');
-            const toggle = document.querySelector('.menu-toggle');
-            const scriptsHeader = document.getElementById('scripts-header');
+            const menuToggle = document.querySelector('.menu-toggle');
             menu.classList.toggle('active');
-            toggle.classList.toggle('active');
-            scriptsHeader.classList.toggle('active');
-        }
-
-        function copyScript() {
-            // Copy script functionality
-            alert('Script copied to clipboard!');
-        }
-
-        function copyScriptV() {
-            // Copy script functionality for V script
-            alert('V Script copied to clipboard!');
+            menuToggle.classList.toggle('active');
         }
     </script>
 </body>
