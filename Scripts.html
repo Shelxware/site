@@ -207,18 +207,9 @@
             box-shadow: 0 6px 15px rgba(255, 255, 255, 0.8);
         }
 
-        .image-box-container {
-            display: flex;
-            justify-content: space-between;
-            gap: 20px; /* Adds space between the two boxes */
-            margin-top: 50px;
-            width: 100%;
-            padding: 0 20px;
-            box-sizing: border-box;
-        }
-
         .image-box {
-            width: 48%; /* Fixed width for both desktop and mobile */
+            width: 60%;
+            margin: 95px auto; /* Increased margin-top by 40px */
             background-color: rgba(0, 0, 0, 0.8);
             padding: 20px;
             text-align: center;
@@ -267,6 +258,47 @@
             margin-bottom: 15px;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
         }
+
+        /* Mobile styles for the Scripts header */
+        @media (max-width: 768px) {
+            .scripts-header {
+                font-size: 4.5em; /* Increased font size on mobile */
+                top: 120px; /* Adjust position to move it down more */
+                text-shadow: 0 0 6px #ffffff, 0 0 10px #ffffff; /* Reduced glow */
+            }
+
+            .image-box {
+                margin-top: 115px; /* Increased by 40px */
+                width: 80%; /* Increased width for mobile devices */
+            }
+
+            .menu-overlay.active .scripts-header {
+                opacity: 0; /* Hide the header in the menu */
+            }
+
+            header {
+                flex-direction: column; /* Stack header elements vertically */
+                align-items: center;
+                padding: 20px 10px; /* Adjust padding */
+            }
+
+            .menu-toggle {
+                position: absolute;
+                top: 15px;
+                left: 20px;
+            }
+
+            .social-icons {
+                position: absolute;
+                top: 800px;
+            }
+
+            .search-box {
+                width: 100%;
+                margin-top: 20px;
+                margin-left: 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -308,25 +340,21 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <!-- Image Box Container -->
-        <div class="image-box-container">
-            <!-- First Image Box -->
-            <div class="image-box">
-                <h2>Murder Mystery 2 Auto Farm | Vertex Hub (OP)</h2>
-                <img src="https://media.discordapp.net/attachments/1237163573894053888/1322659186370154607/2F2C2865-7B60-43F0-B2D6-9BC7AF38E716.jpg?ex=6771addb&is=67705c5b&hm=e4b0bc70dbca0031d964cdcb17ffcdeadadaf9c598ac6dac214c3b7149d45e7e&=&width=1071&height=602" alt="Script Image">
-                <button class="copy-button" id="copy-btn-vertex" onclick="copyScript('vertex')">Copy Script</button>
-            </div>
+        <div class="image-box">
+            <h2>Murder Mystery 2 Auto Farm | Vertex Hub (OP)</h2>
+            <img src="https://media.discordapp.net/attachments/1237163573894053888/1322659186370154607/2F2C2865-7B60-43F0-B2D6-9BC7AF38E716.jpg?ex=6771addb&is=67705c5b&hm=e4b0bc70dbca0031d964cdcb17ffcdeadadaf9c598ac6dac214c3b7149d45e7e&=&width=1071&height=602" alt="Script Image">
+            <button class="copy-button" id="copy-btn-vertex" onclick="copyScript('vertex')">Copy Script</button>
+        </div>
 
-            <!-- Second Image Box with Purple Glow -->
-            <div class="image-box purple-glow">
-                <h2>Blade Ball Auto Parry | Frostware Hub (OP)</h2>
-                <img src="https://media.discordapp.net/attachments/1249093223134003221/1323559486136516609/C6DEE7F9-DAF3-4F93-8B24-74CA1EFD6644.png?ex=6774f454&is=6773a2d4&hm=8d7f821a29b7d94d65f1d8bd1b108a55a7aeb565d69b114b74120e7bd0cecfa9&=&width=1071&height=602" alt="Script Image">
-                <button class="copy-button" id="copy-btn-frostware" onclick="copyScript('frostware')">Copy Script</button>
-            </div>
+        <!-- New image box for the v script with purple glow -->
+        <div class="image-box purple-glow">
+            <h2>Blade Ball Auto Parry | Frostware Hub (OP)</h2>
+            <img src="https://media.discordapp.net/attachments/1249093223134003221/1323559486136516609/C6DEE7F9-DAF3-4F93-8B24-74CA1EFD6644.png?ex=6774f454&is=6773a2d4&hm=8d7f821a29b7d94d65f1d8bd1b108a55a7aeb565d69b114b74120e7bd0cecfa9&=&width=1071&height=602" alt="Script Image">
+            <button class="copy-button" id="copy-btn-frostware" onclick="copyScript('frostware')">Copy Script</button>
         </div>
     </section>
 
-    <!-- JavaScript -->
+  <!-- JavaScript -->
     <script>
         function toggleMenu() {
             const menu = document.getElementById('menu');
@@ -340,18 +368,15 @@
         function copyScript(scriptType) {
             let scriptText;
             if (scriptType === 'vertex') {
-                scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Burdenerd/VertexHub/refs/heads/main/Offical'))()";
+                scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/vertex-hub/vertexhub/main/auto-farm.lua'))()";
             } else if (scriptType === 'frostware') {
-                scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/FrostwareHub/BladeBall/main/AutoParry'))()";
+                scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/frostware-hub/frostware/main/auto-parry.lua'))()";
             }
-
-            const tempInput = document.createElement('input');
-            tempInput.value = scriptText;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            document.execCommand('copy');
-            document.body.removeChild(tempInput);
-            alert('Script copied to clipboard!');
+            navigator.clipboard.writeText(scriptText).then(function() {
+                alert('Script copied to clipboard!');
+            }).catch(function(err) {
+                alert('Error copying script: ', err);
+            });
         }
     </script>
 </body>
