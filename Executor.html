@@ -84,15 +84,15 @@
         .scripts-header {
             font-family: Arial, sans-serif;
             font-weight: 700;
-            font-size: 3.2em; /* Default font size for larger screens */
+            font-size: 2.5em; /* Reduced font size */
             color: #ffffff;
             text-align: center;
             margin: 0;
             padding: 0;
             position: absolute;
-            top: 50%;
+            top: 10px; /* Positioned at the top */
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translateX(-50%);
             z-index: 10;
             opacity: 1;
             transition: opacity 0.3s ease;
@@ -228,8 +228,8 @@
         /* Mobile styles for the Scripts header */
         @media (max-width: 768px) {
             .scripts-header {
-                font-size: 4.5em; /* Increased font size on mobile */
-                top: 120px; /* Adjust position to move it down more */
+                font-size: 3.5em; /* Adjusted font size */
+                top: 20px; /* Adjusted position for mobile */
                 text-shadow: 0 0 6px #ffffff, 0 0 10px #ffffff; /* Reduced glow */
             }
 
