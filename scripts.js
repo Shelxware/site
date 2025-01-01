@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -283,86 +282,6 @@
     </style>
 </head>
 <body>
-    <!-- Background -->
-    <div class="background-blur"></div>
-
-    <!-- Header -->
-    <header>
-        <div class="menu-toggle" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <!-- "Scripts" header -->
-        <div class="scripts-header" id="scripts-header">Scripts</div>
-        <div class="search-box">
-            <input type="text" placeholder="Search...">
-            <button>Search</button>
-        </div>
-    </header>
-
-    <!-- Menu Overlay -->
-    <nav class="menu-overlay" id="menu">
-        <div>
-            <a href="#home" onclick="window.location.href='https://globalexploiter.xyz';">Home</a>
-            <a href="Scripts.html">Scripts</a>
-            <a href="Executor.html">Executors</a>
-            <a href="#contact">Contact</a>
-        </div>
-        <div class="social-icons">
-            <a href="https://youtube.com/@globalexploitor?si=ULxJfeU0MbH6DNhy" target="_blank">
-                <img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" alt="YouTube">
-            </a>
-            <a href="#" target="_blank">
-                <img src="https://media.discordapp.net/attachments/1235374443413635115/1322719710835638313/IMG_1348.png?ex=6771e63a&is=677094ba&hm=b584940836f5bfef6e2333f84f6b1331a856eb0ef8c0852d3d412dd41ed615eb&=&width=832&height=468" alt="Discord">
-            </a>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="image-box">
-            <h2>Murder Mystery 2 Auto Farm | Vertex Hub (OP)</h2>
-            <img src="https://media.discordapp.net/attachments/1237163573894053888/1322659186370154607/2F2C2865-7B60-43F0-B2D6-9BC7AF38E716.jpg?ex=6774f99b&is=6773a81b&hm=e3bad873dd5bbb9ae389e40f724c1d62aee529bd10ac1961379697ce6351a455&=&width=1071&height=602" alt="Script Image">
-            <button class="copy-button" id="copy-btn-vertex" onclick="copyScript('vertex')">Copy Script</button>
-        </div>
-
-        <!-- New image box for the v script with purple glow -->
-        <div class="image-box purple-glow">
-            <h2>Blade Ball Auto Parry | Frostware Hub (OP)</h2>
-            <img src="https://media.discordapp.net/attachments/1249093223134003221/1323559486136516609/C6DEE7F9-DAF3-4F93-8B24-74CA1EFD6644.png?ex=6774f454&is=6773a2d4&hm=8d7f821a29b7d94d65f1d8bd1b108a55a7aeb565d69b114b74120e7bd0cecfa9&=&width=1071&height=602" alt="Script Image">
-            <button class="copy-button" id="copy-btn-frostware" onclick="copyScript('frostware')">Copy Script</button>
-        </div>
-    </section>
-
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById('menu');
-            const toggle = document.querySelector('.menu-toggle');
-            menu.classList.toggle('active');
-            toggle.classList.toggle('active');
-        }
-
-        // Copy function
-        function copyScript(scriptName) {
-            let scriptText = '';
-            if (scriptName === 'vertex') {
-                scriptText = 'Script for Vertex Hub...';
-            } else if (scriptName === 'frostware') {
-                scriptText = 'Script for Frostware Hub...';
-            }
-
-            // Create a temporary textarea to copy the script to clipboard
-            const tempTextarea = document.createElement('textarea');
-            tempTextarea.value = scriptText;
-            document.body.appendChild(tempTextarea);
-            tempTextarea.select();
-            document.execCommand('copy');
-            document.body.removeChild(tempTextarea);
-
-            // Alert user that the script has been copied
-            alert('Script copied to clipboard!');
-        }
-    </script>
+    <!-- Content here -->
 </body>
 </html>
