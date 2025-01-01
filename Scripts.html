@@ -84,7 +84,7 @@
         .scripts-header {
             font-family: Arial, sans-serif;
             font-weight: 700;
-            font-size: 3.2em; /* Default font size for larger screens */
+            font-size: 3.2em;
             color: #ffffff;
             text-align: center;
             margin: 0;
@@ -209,7 +209,7 @@
 
         .image-box {
             width: 60%;
-            margin: 95px auto; /* Increased margin-top by 40px */
+            margin: 95px auto;
             background-color: rgba(0, 0, 0, 0.8);
             padding: 20px;
             text-align: center;
@@ -262,30 +262,26 @@
         /* Media query for desktop and larger screens */
         @media (min-width: 1024px) {
             .image-box {
-                width: 40%; /* Make the image box smaller on desktop */
-                margin: 50px auto; /* Adjust margin for smaller box size */
+                width: 40%;
+                margin: 50px auto;
             }
         }
 
         /* Mobile styles for the Scripts header */
         @media (max-width: 768px) {
             .scripts-header {
-                font-size: 4.5em; /* Increased font size on mobile */
-                top: 120px; /* Adjust position to move it down more */
-                text-shadow: 0 0 6px #ffffff, 0 0 10px #ffffff; /* Reduced glow */
+                font-size: 4.5em;
+                top: 120px;
+                text-shadow: 0 0 6px #ffffff, 0 0 10px #ffffff;
             }
 
             .image-box {
-                margin-top: 115px; /* Increased by 40px */
-                width: 80%; /* Increased width for mobile devices */
-            }
-
-            .image-box.purple-glow {
-                margin-top: 95px; /* Move it 20px higher on mobile */
+                margin-top: 115px;
+                width: 80%;
             }
 
             .menu-overlay.active .scripts-header {
-                opacity: 0; /* Hide the header in the menu */
+                opacity: 0;
             }
         }
     </style>
@@ -301,6 +297,7 @@
             <div></div>
             <div></div>
         </div>
+        <div class="scripts-header" id="scripts-header"></div>
         <div class="search-box">
             <input type="text" placeholder="Search...">
             <button>Search</button>
@@ -346,8 +343,27 @@
         function toggleMenu() {
             const menu = document.getElementById('menu');
             const toggle = document.querySelector('.menu-toggle');
+            const scriptsHeader = document.getElementById('scripts-header');
             menu.classList.toggle('active');
             toggle.classList.toggle('active');
+            scriptsHeader.style.opacity = menu.classList.contains('active') ? 0 : 1;
+        }
+
+        function copyScript(scriptType) {
+            let scriptText;
+            if (scriptType === 'vertex') {
+                scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Burdenerd/VertexHub/refs/heads/main/Offical'))()";
+            } else if (scriptType === 'frostware') {
+                scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Otheruser/Script'))()";
+            }
+            
+            navigator.clipboard.writeText(scriptText).then(() => {
+                const button = document.getElementById(`copy-btn-${scriptType}`);
+                button.textContent = "📜Script Copied!";
+                setTimeout(() => {
+                    button.textContent = "Copy Script";  // Reset after 2 seconds
+                }, 2000);
+            });
         }
     </script>
 </body>
