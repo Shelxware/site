@@ -263,17 +263,18 @@
     <div class="background-blur"></div>
 
     <!-- Header -->
-    <header>
-        <div class="menu-toggle" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <div class="search-box">
-            <input type="text" placeholder="Search...">
-            <button>Search</button>
-        </div>
-    </header>
+ <header>
+    <div class="menu-toggle" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="search-box">
+        <input type="text" placeholder="Search...">
+        <button>Search</button>
+    </div>
+</header>
+
 
     <!-- Menu Overlay -->
     <nav class="menu-overlay" id="menu">
