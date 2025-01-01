@@ -84,7 +84,7 @@
         .scripts-header {
             font-family: Arial, sans-serif;
             font-weight: 700;
-            font-size: 3.2em; /* Default font size for larger screens */
+            font-size: 3.2em;
             color: #ffffff;
             text-align: center;
             margin: 0;
@@ -209,7 +209,7 @@
 
         .image-box {
             width: 60%;
-            margin: 95px auto; /* Increased margin-top by 40px */
+            margin: 95px auto;
             background-color: rgba(0, 0, 0, 0.8);
             padding: 20px;
             text-align: center;
@@ -259,20 +259,29 @@
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
         }
 
+        /* Media query for desktop and larger screens */
+        @media (min-width: 1024px) {
+            .image-box {
+                width: 40%;
+                margin: 50px auto;
+            }
+        }
+
         /* Mobile styles for the Scripts header */
         @media (max-width: 768px) {
             .scripts-header {
-                font-size: 4.5em; /* Increased font size on mobile */
-                top: 120px; /* Adjust position to move it down more */
-                text-shadow: 0 0 6px #ffffff, 0 0 10px #ffffff; /* Reduced glow */
+                font-size: 4.5em;
+                top: 120px;
+                text-shadow: 0 0 6px #ffffff, 0 0 10px #ffffff;
             }
 
             .image-box {
-                margin-top: 115px; /* Increased by 40px */
+                margin-top: 115px;
+                width: 80%;
             }
 
             .menu-overlay.active .scripts-header {
-                opacity: 0; /* Hide the header in the menu */
+                opacity: 0;
             }
         }
     </style>
@@ -288,6 +297,7 @@
             <div></div>
             <div></div>
         </div>
+        <div class="scripts-header" id="scripts-header"></div>
         <div class="search-box">
             <input type="text" placeholder="Search...">
             <button>Search</button>
@@ -312,13 +322,31 @@
         </div>
     </nav>
 
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="image-box">
+            <h2>Murder Mystery 2 Auto Farm | Vertex Hub (OP)</h2>
+            <img src="https://media.discordapp.net/attachments/1237163573894053888/1322659186370154607/2F2C2865-7B60-43F0-B2D6-9BC7AF38E716.jpg?ex=6774f99b&is=6773a81b&hm=e3bad873dd5bbb9ae389e40f724c1d62aee529bd10ac1961379697ce6351a455&=&width=1071&height=602" alt="Script Image">
+            <button class="copy-button" onclick="window.location.href='https://example.com/vertex';">Go to Vertex Hub</button>
+        </div>
+
+        <!-- New image box for the v script with purple glow -->
+        <div class="image-box purple-glow">
+            <h2>Blade Ball Auto Parry | Frostware Hub (OP)</h2>
+            <img src="https://media.discordapp.net/attachments/1249093223134003221/1323559486136516609/C6DEE7F9-DAF3-4F93-8B24-74CA1EFD6644.png?ex=6774f454&is=6773a2d4&hm=8d7f821a29b7d94d65f1d8bd1b108a55a7aeb565d69b114b74120e7bd0cecfa9&=&width=1071&height=602" alt="Script Image">
+            <button class="copy-button" onclick="window.location.href='https://example.com/frostware';">Go to Frostware Hub</button>
+        </div>
+    </section>
+
     <!-- JavaScript -->
     <script>
         function toggleMenu() {
             const menu = document.getElementById('menu');
             const toggle = document.querySelector('.menu-toggle');
+            const scriptsHeader = document.getElementById('scripts-header');
             menu.classList.toggle('active');
             toggle.classList.toggle('active');
+            scriptsHeader.style.opacity = menu.classList.contains('active') ? 0 : 1;
         }
     </script>
 </body>
