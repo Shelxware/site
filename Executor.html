@@ -207,6 +207,7 @@
             box-shadow: 0 6px 15px rgba(255, 255, 255, 0.8);
         }
 
+        /* For both image boxes */
         .image-box {
             width: 60%;
             margin: 95px auto;
@@ -216,18 +217,19 @@
             border-radius: 15px;
             position: relative;
             box-shadow: 0 0 20px rgba(0, 255, 255, 0.9);
+            height: 400px; /* Set fixed height to ensure both boxes are the same height */
         }
 
-        .image-box.purple-glow {
-            box-shadow: 0 0 30px rgba(128, 0, 128, 1), 0 0 50px rgba(128, 0, 128, 0.5);
+        /* For first image (Delta Executor) */
+        .image-box img:nth-child(2) {
+            max-height: 400px; /* Set max height for the image to avoid it overflowing */
+            object-fit: cover;
         }
 
-        .image-box img {
-            width: 100%;
-            height: auto;
-            max-height: 500px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+        /* For second image (Argon Executor) */
+        .image-box.purple-glow img {
+            max-height: 400px; /* Set max height for the image to avoid it overflowing */
+            object-fit: cover;
         }
 
         .copy-button {
@@ -317,36 +319,36 @@
                 <img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" alt="YouTube">
             </a>
             <a href="#" target="_blank">
-                <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b73aa61f-e941-43e9-b2fa-4289e618fb58/digo5z4-560f8812-d21c-419d-acdd-bb80da76d596.png/v1/fill/w_600,h_600/delta_executor___roblox___only_android_or_pc_by_oggysupermandrawing_digo5z4-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NjAwIiwicGF0aCI6IlwvZlwvYjczYWE2MWYtZTk0MS00M2U5LWIyZmEtNDI4OWU2MThmYjU4XC9kaWdvNXo0LTU2MGY4ODEyLWQyMWMtNDE5ZC1hY2RkLWJiODBkYTc2ZDU5Ni5wbmciLCJ3aWR0aCI6Ijw9NjAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.Aq0mmYxFVveM8eoTL_c-uxwdqJqQUbQY77lIpo_ZHf8">
+                <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b73aa61f-e941-43e9-b2fa-4289e618fb58/digo5z4-560f8812-d21c-419d-acdd-bb80da76d596.png/v1/fill/w_600,h_600/delta_executor___roblox___only_android_or_pc_by_oggysupermandrawing_digo5z4-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NjAwIiwicGF0aCI6IlwvZlwvYjczYWE2MWYtZTk0MS00M2U5LWIyZmEtNDI4OWU2MThmYjU4XC9kaWdvNXo0LTU2MGY4ODEyLWQyMWMtNDE5ZC1hY2RkLWJiODBkYTc2ZDU5Ni5wbmciLCJ3aWR0aCI6Ijw9NjAwIn1dLCJ1Y2lkIjoiNTYzODAwNjA2M2M1NDliOTliNmNjNTQ3OWM4ZjczMjgifQ.3o2U-nuBs_4zO4D1jc-YWxTgcdZGgszjDsftbx_2d8Q" alt="Delta Executor">
             </a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
+    <!-- Content -->
+    <section>
         <div class="image-box">
-            <h2>Delta Andriord Executor </h2>
-            <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b73aa61f-e941-43e9-b2fa-4289e618fb58/digo5z4-560f8812-d21c-419d-acdd-bb80da76d596.png/v1/fill/w_600,h_600/delta_executor___roblox___only_android_or_pc_by_oggysupermandrawing_digo5z4-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NjAwIiwicGF0aCI6IlwvZlwvYjczYWE2MWYtZTk0MS00M2U5LWIyZmEtNDI4OWU2MThmYjU4XC9kaWdvNXo0LTU2MGY4ODEyLWQyMWMtNDE5ZC1hY2RkLWJiODBkYTc2ZDU5Ni5wbmciLCJ3aWR0aCI6Ijw9NjAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.Aq0mmYxFVveM8eoTL_c-uxwdqJqQUbQY77lIpo_ZHf8">
-            <button class="copy-button" onclick="window.location.href='https://deltaexploits.gg/delta-executor-mobile';">Download</button>
+            <h2>Delta Executor</h2>
+            <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b73aa61f-e941-43e9-b2fa-4289e618fb58/digo5z4-560f8812-d21c-419d-acdd-bb80da76d596.png" alt="Delta Executor">
+            <button class="copy-button" onclick="copyText('Delta Executor')">Copy</button>
         </div>
-
-        <!-- New image box for the v script with purple glow -->
         <div class="image-box purple-glow">
-            <h2>Argon Fre Pc Executor </h2>
-            <img src="https://i.ytimg.com/vi/n_R5bwZ5B50/maxresdefault.jpg">
-            <button class="copy-button" onclick="window.location.href='https://getargon.xyz/';">Download</button>
+            <h2>Argon Executor</h2>
+            <img src="https://www.example.com/argon_executor.png" alt="Argon Executor">
+            <button class="copy-button" onclick="copyText('Argon Executor')">Copy</button>
         </div>
     </section>
 
-    <!-- JavaScript -->
     <script>
         function toggleMenu() {
-            const menu = document.getElementById('menu');
-            const toggle = document.querySelector('.menu-toggle');
-            const scriptsHeader = document.getElementById('scripts-header');
-            menu.classList.toggle('active');
-            toggle.classList.toggle('active');
-            scriptsHeader.style.opacity = menu.classList.contains('active') ? 0 : 1;
+            document.getElementById('menu').classList.toggle('active');
+            document.querySelector('.menu-toggle').classList.toggle('active');
+        }
+        
+        function copyText(executorName) {
+            const textToCopy = `${executorName} Executor`;
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                alert(`${textToCopy} copied!`);
+            });
         }
     </script>
 </body>
