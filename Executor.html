@@ -285,35 +285,20 @@
             }
         }
 
-        /* New styles for clickable image boxes on the right */
-        .image-box-container {
+        .image-box .right-side-images {
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between;
             margin-top: 15px;
-            gap: 20px;
         }
 
-        .clickable-image-box {
-            width: 150px;
-            height: 150px;
-            background-color: rgba(0, 0, 0, 0.7);
+        .right-side-images a {
+            width: 48%;
+        }
+
+        .right-side-images a img {
+            width: 100%;
             border-radius: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
-        }
-
-        .clickable-image-box img {
-            width: 80%;
-            height: 80%;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-
-        .clickable-image-box:hover {
-            box-shadow: 0 0 25px rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
         }
     </style>
 </head>
@@ -354,32 +339,23 @@
     <section id="home" class="hero">
         <!-- Duplicate the Argon executor box 5 times -->
         <div class="image-box purple-glow">
-            <h2>Argon Executor</h2>
-            <img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" alt="Argon Executor">
-            <button class="copy-button" onclick="copyText('executor-1')">Copy Link</button>
-        </div>
-
-        <!-- New clickable image boxes -->
-        <div class="image-box-container">
-            <div class="clickable-image-box" onclick="window.open('https://youtube.com/@globalexploitor?si=ULxJfeU0MbH6DNhy', '_blank')">
-                <img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" alt="YouTube">
-            </div>
-            <div class="clickable-image-box" onclick="window.open('https://media.discordapp.net/attachments/1235364046039945288/1324128537556291585/IMG_1348.png', '_blank')">
-                <img src="https://media.discordapp.net/attachments/1235364046039945288/1324128537556291585/IMG_1348.png?ex=6777064c&is=6775b4cc&hm=3eca129196fed3b5824269df1c2c31769f274d01025b2e7183abc82adfad7bb9&=&width=687&height=387" alt="Discord">
+            <h2>Argon Free Pc Executor</h2>
+            <img src="https://i.ytimg.com/vi/n_R5bwZ5B50/maxresdefault.jpg">
+            <button class="copy-button" onclick="window.location.href='https://getargon.xyz/';">Download</button>
+            <div class="right-side-images">
+                <a href="#"><img src="https://via.placeholder.com/150" alt="Image 1"></a>
+                <a href="#"><img src="https://via.placeholder.com/150" alt="Image 2"></a>
             </div>
         </div>
     </section>
 
+    <!-- Scripts -->
     <script>
         function toggleMenu() {
-            const menu = document.getElementById('menu');
-            menu.classList.toggle('active');
-        }
-
-        function copyText(id) {
-            const text = document.getElementById(id).textContent;
-            navigator.clipboard.writeText(text);
-            alert('Link copied: ' + text);
+            const menu = document.getElementById("menu");
+            const toggle = document.querySelector(".menu-toggle");
+            menu.classList.toggle("active");
+            toggle.classList.toggle("active");
         }
     </script>
 </body>
