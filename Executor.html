@@ -187,8 +187,8 @@
 
         .social-icons a {
             display: inline-block;
-            width: 40px;  /* Set fixed width */
-            height: 40px; /* Set fixed height */
+            width: 40px;
+            height: 40px;
             margin: 0 10px;
             border-radius: 50%;
             overflow: hidden;
@@ -285,22 +285,18 @@
             }
         }
 
-        /* Right-side images styling */
-        .right-side-images {
+        .image-box .right-side-images {
             display: flex;
             justify-content: space-between;
-            margin-top: 20px;
+            margin-top: 15px;
         }
 
         .right-side-images a {
             width: 48%;
-            height: auto;
         }
 
         .right-side-images a img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
         }
@@ -314,7 +310,7 @@
             <div></div>
             <div></div>
         </div>
-        <div class="scripts-header" id="scripts-header">GlobalExploiter</div>
+        <div class="scripts-header" id="scripts-header"></div>
         <div class="search-box">
             <input type="text" placeholder="Search...">
             <button>Search</button>
@@ -339,35 +335,27 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <div class="image-box purple-glow">
-        <h2>Argon Free Pc Executor</h2>
-        <img src="https://via.placeholder.com/800x400" alt="Argon Free PC Executor">
-        <button class="copy-button" onclick="copyToClipboard()">Copy Executor</button>
-    </div>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <!-- Duplicate the Argon executor box 5 times -->
+        <div class="image-box purple-glow">
+            <h2>Argon Free Pc Executor</h2>
+            <img src="https://i.ytimg.com/vi/n_R5bwZ5B50/maxresdefault.jpg">
+            <button class="copy-button" onclick="window.location.href='https://getargon.xyz/';">Download</button>
+            <div class="right-side-images">
+                <a href="#"><img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" alt="Image 1"></a>
+                <a href="#"><img src="https://media.discordapp.net/attachments/1235364046039945288/1324128537556291585/IMG_1348.png?ex=6777064c&is=6775b4cc&hm=3eca129196fed3b5824269df1c2c31769f274d01025b2e7183abc82adfad7bb9&=&width=687&height=387" alt="Image 2"></a>
+            </div>
+        </div>
+    </section>
 
-    <div class="right-side-images">
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
-            <img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" alt="YouTube">
-        </a>
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
-            <img src="https://media.discordapp.net/attachments/1235364046039945288/1324128537556291585/IMG_1348.png?ex=6777064c&is=6775b4cc&hm=3eca129196fed3b5824269df1c2c31769f274d01025b2e7183abc82adfad7bb9&=&width=687&height=387" alt="Discord">
-        </a>
-    </div>
-
-    <!-- Script to toggle menu -->
+    <!-- Scripts -->
     <script>
         function toggleMenu() {
-            document.getElementById('menu').classList.toggle('active');
-            document.getElementById('scripts-header').classList.toggle('active');
-            document.querySelector('.menu-toggle').classList.toggle('active');
-        }
-
-        function copyToClipboard() {
-            const text = 'Your executor code or link here';
-            navigator.clipboard.writeText(text).then(() => {
-                alert('Executor code copied to clipboard!');
-            });
+            const menu = document.getElementById("menu");
+            const toggle = document.querySelector(".menu-toggle");
+            menu.classList.toggle("active");
+            toggle.classList.toggle("active");
         }
     </script>
 </body>
