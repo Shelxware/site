@@ -95,6 +95,7 @@
             transform: translate(-50%, -50%);
             z-index: 10;
             opacity: 1;
+            transition: opacity 0.3s ease;
             text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #ffffff;
         }
 
@@ -346,7 +347,7 @@
             const scriptsHeader = document.getElementById('scripts-header');
             menu.classList.toggle('active');
             toggle.classList.toggle('active');
-        
+            scriptsHeader.style.opacity = menu.classList.contains('active') ? 0 : 1;
         }
 
         function copyScript(scriptType) {
@@ -358,7 +359,7 @@
             }
             
             navigator.clipboard.writeText(scriptText).then(() => {
-                const button = document.getElementById(copy-btn-${scriptType});
+                const button = document.getElementById(`copy-btn-${scriptType}`);
                 button.textContent = "📜Script Copied!";
                 setTimeout(() => {
                     button.textContent = "Copy Script";  // Reset after 2 seconds
