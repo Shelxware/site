@@ -94,7 +94,7 @@
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 10;
-            opacity: 1;
+            opacity: 0;
             transition: opacity 0.3s ease;
             text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #ffffff;
         }
