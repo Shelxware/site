@@ -345,33 +345,26 @@
             const menu = document.getElementById('menu');
             const toggle = document.querySelector('.menu-toggle');
             const scriptsHeader = document.getElementById('scripts-header');
-
             menu.classList.toggle('active');
             toggle.classList.toggle('active');
-
-            // Check if the device is not a desktop (i.e., width less than 1024px)
-            if (window.innerWidth < 1024) {
-                scriptsHeader.style.opacity = menu.classList.contains('active') ? 0 : 1;
-            }
+            scriptsHeader.style.opacity = menu.classList.contains('active') ? 0 : 1;
         }
 
-        function copyScript(scriptName) {
-            let script;
-            if (scriptName === 'vertex') {
-                script = "loadstring(game:HttpGet('https://raw.githubusercontent.com/vertexhub/vertexhub/main/loader.lua'))()";
-            } else if (scriptName === 'frostware') {
-                script = "loadstring(game:HttpGet('https://raw.githubusercontent.com/frostwarehub/frostwarehub/main/loader.lua'))()";
+        function copyScript(scriptType) {
+            let scriptText;
+            if (scriptType === 'vertex') {
+                scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Burdenerd/VertexHub/refs/heads/main/Offical'))()";
+            } else if (scriptType === 'frostware') {
+                scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Otheruser/Script'))()";
             }
-
-            // Create a temporary input element to hold the script and copy it to clipboard
-            const tempInput = document.createElement('input');
-            tempInput.value = script;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            document.execCommand('copy');
-            document.body.removeChild(tempInput);
             
-            alert('Script copied to clipboard!');
+            navigator.clipboard.writeText(scriptText).then(() => {
+                const button = document.getElementById(`copy-btn-${scriptType}`);
+                button.textContent = "📜Script Copied!";
+                setTimeout(() => {
+                    button.textContent = "Copy Script";  // Reset after 2 seconds
+                }, 2000);
+            });
         }
     </script>
 </body>
