@@ -18,28 +18,13 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            background-color: transparent; /* Removed black background */
+            background-color: #0d1117; /* Same background as Scripts page */
             transition: background-color 0.3s ease;
         }
 
         /* Smooth scrolling */
         html {
             scroll-behavior: smooth;
-        }
-
-        /* Background blur */
-        .background-blur {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('https://chromewebstore.google.com/detail/delta-executor-latest-ver/pagnajggbhcejleocjdobkpegekbcepl');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            filter: blur(5px);
-            z-index: -1;
         }
 
         /* Header styling */
@@ -70,9 +55,9 @@
             flex-direction: column;
             cursor: pointer;
             z-index: 10;
-            border-radius: 10px; /* Rounded corners for the entire hamburger */
+            border-radius: 10px; /* Rounded corners for the hamburger */
             padding: 5px; /* Space around the hamburger icon */
-            background-color: transparent; /* Transparent background for the hamburger */
+            background-color: transparent; /* Transparent background */
         }
 
         .menu-toggle div {
@@ -80,7 +65,7 @@
             height: 4px;
             background-color: #fff; /* White color for the lines */
             margin: 4px 0;
-            border-radius: 2px; /* Rounded edges for the individual bars */
+            border-radius: 2px;
             transition: transform 0.3s ease, opacity 0.3s ease;
         }
 
@@ -121,7 +106,6 @@
             left: 0;
         }
 
-        /* Styled menu buttons */
         .menu-overlay a {
             display: block;
             color: white;
@@ -144,21 +128,19 @@
             box-shadow: 0 6px 15px rgba(255, 255, 255, 0.9);
         }
 
-        /* Social icon container */
         .social-icons {
             display: flex;
             justify-content: center;
             position: absolute;
-            top: 600px; /* Updated to 600px */
+            top: 600px;
             left: 50%;
             transform: translateX(-50%);
-            margin: 0;
         }
 
         .social-icons a {
             display: inline-block;
-            width: 30px; /* Reduced size to 30px */
-            height: 30px; /* Reduced size to 30px */
+            width: 30px;
+            height: 30px;
             margin: 0 10px;
             border-radius: 50%;
             overflow: hidden;
@@ -177,12 +159,10 @@
             box-shadow: 0 6px 15px rgba(255, 255, 255, 0.8);
         }
 
-        /* Hero section */
         .hero {
             text-align: center;
             padding: 50px 20px;
             flex: 1;
-            position: relative;
         }
 
         .hero .text-box {
@@ -193,63 +173,24 @@
             max-width: 600px;
             margin: 20px auto;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            opacity: 0;
             animation: fadeIn 1s forwards;
-            position: relative;
-            min-height: 150px; /* Ensures the box maintains its size even when empty */
-            padding-bottom: 50px; /* Prevents overlap with text below */
         }
 
-        /* Fade-in effect for text-box */
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
 
         .hero .text-box h2 {
-            font-size: 2.5em; /* Increased font size */
+            font-size: 2.5em;
             margin-bottom: 10px;
-            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
         }
 
         .hero .text-box p {
             font-size: 1.2em;
-            color: cyan; /* Cyan text color */
-            position: absolute; /* Ensures it stays in place */
-            bottom: 20px; /* Positions it at the bottom of the box */
-            left: 50%;
-            transform: translateX(-50%);
-            margin: 0;
-            text-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 30px cyan; /* Cyan glow */
+            color: cyan;
         }
 
-        /* Button styling */
-        .view-scripts-btn {
-            position: absolute;
-            top: 340px; /* Updated to 340px */
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 15px 25px;
-            background-color: cyan;
-            color: white;
-            font-size: 1.2em;
-            font-family: 'Fredoka', sans-serif;
-            font-weight: 700;
-            border: 2px solid #000;
-            border-radius: 10px;
-            text-decoration: none;
-            display: inline-block;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            transition: background-color 0.3s, box-shadow 0.3s;
-        }
-
-        .view-scripts-btn:hover {
-            background-color: #00bcd4;
-            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.8);
-        }
-
-        /* Footer styling */
         footer {
             text-align: center;
             background: rgba(0, 0, 0, 0.9);
@@ -259,42 +200,9 @@
         footer p {
             margin: 0;
         }
-
-        /* Dark mode styling */
-        .dark-mode {
-            background-color: #121212;
-        }
-
-        .dark-mode .background-blur {
-            filter: blur(5px) brightness(50%);
-        }
-
-        /* Adjust text size on mobile */
-        @media (max-width: 768px) {
-            .hero .text-box h2 {
-                font-size: 2em; /* Slightly reduced for mobile */
-            }
-
-            .hero .text-box p {
-                font-size: 1em; /* Adjust font size to fit mobile screens */
-                bottom: 10px; /* Slightly adjusted position for better fit */
-            }
-
-            .view-scripts-btn {
-                top: 270px; /* Adjust the button position for mobile */
-            }
-
-            /* Move header text to the right on mobile */
-            header h1 {
-                padding-left: 40px; /* Adjust the padding to move the text to the right */
-            }
-        }
     </style>
 </head>
 <body>
-    <!-- Background -->
-    <div class="background-blur"></div>
-
     <!-- Header -->
     <header>
         <div class="menu-toggle" onclick="toggleMenu()">
@@ -313,15 +221,12 @@
             <a href="Executor.html">Executors</a>
             <a href="#contact">Contact</a>
         </div>
-        <!-- Social Icons -->
         <div class="social-icons">
             <a href="https://youtube.com/@globalexploitor?si=ULxJfeU0MbH6DNhy" target="_blank">
-                <img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" 
-                     alt="YouTube">
+                <img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" alt="YouTube">
             </a>
             <a href="https://discord.gg/Hk9h8vnZ7w" target="_blank">
-                <img src="https://media.discordapp.net/attachments/1235374443413635115/1322719710835638313/IMG_1348.png?ex=6771e63a&is=677094ba&hm=b584940836f5bfef6e2333f84f6b1331a856eb0ef8c0852d3d412dd41ed615eb&=&width=832&height=468" 
-                     alt="Discord">
+                <img src="https://media.discordapp.net/attachments/1235374443413635115/1322719710835638313/IMG_1348.png?ex=6771e63a&is=677094ba" alt="Discord">
             </a>
         </div>
     </nav>
@@ -329,9 +234,8 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="text-box">
-            <h2 id="quote"></h2>
-            <p>Subscribe To Global Exploiter On Youtube!</p>
-            <a href="Scripts.html" class="view-scripts-btn">View Scripts</a>
+            <h2>Welcome to Global Exploiter</h2>
+            <p>Subscribe To Global Exploiter On YouTube!</p>
         </div>
     </section>
 
@@ -348,47 +252,6 @@
             menu.classList.toggle('active');
             toggle.classList.toggle('active');
         }
-
-        // Dark mode toggle
-        document.body.addEventListener('click', function(e) {
-            if (e.target.id === 'darkModeToggle') {
-                document.body.classList.toggle('dark-mode');
-            }
-        });
-
-        // Typewriter effect
-        const quotes = [
-            "Subscribe to Global Exploitor",
-            "Share my videos with your friends!",
-            "100% Safe and secure scripts!",
-            "Dont Go Broke Trying To Look Rich",
-        ];
-        let quoteIndex = 0;
-        let index = 0;
-        const quoteElement = document.getElementById('quote');
-
-        function typeWriter() {
-            if (index < quotes[quoteIndex].length) {
-                quoteElement.innerHTML += quotes[quoteIndex].charAt(index);
-                index++;
-                setTimeout(typeWriter, 100);
-            } else {
-                setTimeout(deleteText, 2000);
-            }
-        }
-
-        function deleteText() {
-            if (index > 0) {
-                quoteElement.innerHTML = quotes[quoteIndex].substring(0, index - 1);
-                index--;
-                setTimeout(deleteText, 50);
-            } else {
-                quoteIndex = (quoteIndex + 1) % quotes.length;
-                setTimeout(typeWriter, 500);
-            }
-        }
-
-        typeWriter();
     </script>
 </body>
 </html>
