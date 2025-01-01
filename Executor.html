@@ -288,8 +288,6 @@
             <div></div>
             <div></div>
         </div>
-        <!-- "Scripts" header -->
-        <div class="scripts-header" id="scripts-header">Scripts</div>
         <div class="search-box">
             <input type="text" placeholder="Search...">
             <button>Search</button>
@@ -319,10 +317,8 @@
         function toggleMenu() {
             const menu = document.getElementById('menu');
             const toggle = document.querySelector('.menu-toggle');
-            const scriptsHeader = document.getElementById('scripts-header');
             menu.classList.toggle('active');
             toggle.classList.toggle('active');
-            scriptsHeader.style.opacity = menu.classList.contains('active') ? 0 : 1;
         }
     </script>
 </body>
