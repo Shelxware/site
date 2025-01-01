@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GlobalExploiter</title>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap" rel="stylesheet">
-
+    
     <!-- Favicon -->
     <link rel="icon" href="https://media.discordapp.net/attachments/1296169780155256884/1321516127662116956/best-i-can-do.jpg?ex=677179cd&is=6770284d&hm=8247194597191c24bfeb6261a996d5c909f78d60ec00383125f59a265e5b5576&=&width=602&height=602" type="image/jpg">
-
+    
     <style>
         /* General styling */
         body {
@@ -345,21 +345,16 @@
             const menu = document.getElementById('menu');
             const toggle = document.querySelector('.menu-toggle');
             const scriptsHeader = document.getElementById('scripts-header');
+
             menu.classList.toggle('active');
             toggle.classList.toggle('active');
-            scriptsHeader.style.opacity = menu.classList.contains('active') ? 0 : 1;
+
             // Check if the device is not a desktop (i.e., width less than 1024px)
             if (window.innerWidth < 1024) {
                 scriptsHeader.style.opacity = menu.classList.contains('active') ? 0 : 1;
             }
         }
 
-        function copyScript(scriptType) {
-            let scriptText;
-            if (scriptType === 'vertex') {
-                scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Burdenerd/VertexHub/refs/heads/main/Offical'))()";
-            } else if (scriptType === 'frostware') {
-                scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Otheruser/Script'))()";
         function copyScript(scriptName) {
             let script;
             if (scriptName === 'vertex') {
@@ -367,6 +362,7 @@
             } else if (scriptName === 'frostware') {
                 script = "loadstring(game:HttpGet('https://raw.githubusercontent.com/frostwarehub/frostwarehub/main/loader.lua'))()";
             }
+
             // Create a temporary input element to hold the script and copy it to clipboard
             const tempInput = document.createElement('input');
             tempInput.value = script;
@@ -374,15 +370,9 @@
             tempInput.select();
             document.execCommand('copy');
             document.body.removeChild(tempInput);
-
-            navigator.clipboard.writeText(scriptText).then(() => {
-                const button = document.getElementById(`copy-btn-${scriptType}`);
-                button.textContent = "📜Script Copied!";
-                setTimeout(() => {
-                    button.textContent = "Copy Script";  // Reset after 2 seconds
-                }, 2000);
-            });
+            
             alert('Script copied to clipboard!');
         }
     </script>
 </body>
+</html>
