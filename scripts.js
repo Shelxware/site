@@ -279,7 +279,7 @@
     <nav class="menu-overlay" id="menu">
         <div>
             <a href="#home" onclick="window.location.href='https://globalexploiter.xyz';">Home</a>
-            <a href="Scripts.html">Scripts</a>
+            <a href="Scripts.html"></a>
             <a href="Executor.html">Executors</a>
             <a href="#contact">Contact</a>
         </div>
