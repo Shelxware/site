@@ -252,21 +252,14 @@
         }
 
         /* Mobile styles for the Scripts header */
-        @media (max-width: 768px) {
-            .scripts-header {
-                font-size: 4.5em; /* Increased font size on mobile */
-                top: 120px; /* Adjust position to move it down more */
-                text-shadow: 0 0 6px #ffffff, 0 0 10px #ffffff; /* Reduced glow */
-            }
+       
 
             .image-box {
                 margin-top: 115px; /* Increased by 40px */
                 width: 80%; /* Increased width for mobile devices */
             }
 
-            .menu-overlay.active .scripts-header {
-                opacity: 0; /* Hide the header in the menu */
-            }
+           
         }
     </style>
 </head>
@@ -325,13 +318,7 @@
 
   <!-- JavaScript -->
     <script>
-        function toggleMenu() {
-            const menu = document.getElementById('menu');
-            const toggle = document.querySelector('.menu-toggle');
-            const scriptsHeader = document.getElementById('scripts-header');
-            menu.classList.toggle('active');
-            toggle.classList.toggle('active');
-            scriptsHeader.style.opacity = menu.classList.contains('active') ? 0 : 1;
+     
         }
 
         function copyScript(scriptType) {
