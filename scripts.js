@@ -274,8 +274,8 @@
             <div></div>
             <div></div>
         </div>
-        <!-- "Scripts" header -->
-        <div class="scripts-header" id="scripts-header">Scripts</div>
+        <!-- "" header -->
+        <div class="-header" id="-header"></div>
         <div class="search-box">
             <input type="text" placeholder="Search...">
             <button>Search</button>
