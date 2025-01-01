@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -78,24 +79,6 @@
 
         .menu-toggle.active div:nth-child(3) {
             transform: translateY(-8px) rotate(-45deg);
-        }
-
-        .scripts-header {
-            font-family: Arial, sans-serif;
-            font-weight: 700;
-            font-size: 3.2em; /* Default font size for larger screens */
-            color: #ffffff;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            position: absolute;
-            top: 10px; /* Adjusted to place at the top */
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10;
-            opacity: 1; /* Make sure it's always visible */
-            transition: none; /* No fading */
-            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #ffffff;
         }
 
         .search-box {
@@ -208,7 +191,7 @@
 
         .image-box {
             width: 60%;
-            margin: 95px auto; /* Increased margin-top by 40px */
+            margin: 95px auto;
             background-color: rgba(0, 0, 0, 0.8);
             padding: 20px;
             text-align: center;
@@ -261,27 +244,95 @@
         /* Media query for desktop and larger screens */
         @media (min-width: 1024px) {
             .image-box {
-                width: 40%; /* Make the image box smaller on desktop */
-                margin: 50px auto; /* Adjust margin for smaller box size */
+                width: 40%;
+                margin: 50px auto;
             }
         }
 
-        /* Mobile styles for the Scripts header */
+        /* Mobile styles */
         @media (max-width: 768px) {
-            .scripts-header {
-                font-size: 4.5em; /* Increased font size on mobile */
-                top: 120px; /* Adjust position to move it down more */
-                text-shadow: 0 0 6px #ffffff, 0 0 10px #ffffff; /* Reduced glow */
-            }
-
             .image-box {
-                margin-top: 115px; /* Increased by 40px */
-                width: 80%; /* Increased width for mobile devices */
+                margin-top: 115px;
+                width: 80%;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Content here -->
+    <!-- Background -->
+    <div class="background-blur"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="search-box">
+            <input type="text" placeholder="Search...">
+            <button>Search</button>
+        </div>
+    </header>
+
+    <!-- Menu Overlay -->
+    <nav class="menu-overlay" id="menu">
+        <div>
+            <a href="#home" onclick="window.location.href='https://globalexploiter.xyz';">Home</a>
+            <a href="Scripts.html">Scripts</a>
+            <a href="Executor.html">Executors</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="social-icons">
+            <a href="https://youtube.com/@globalexploitor?si=ULxJfeU0MbH6DNhy" target="_blank">
+                <img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" alt="YouTube">
+            </a>
+            <a href="#" target="_blank">
+                <img src="https://media.discordapp.net/attachments/1235374443413635115/1322719710835638313/IMG_1348.png" alt="Discord">
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="image-box">
+            <h2>Murder Mystery 2 Auto Farm | Vertex Hub (OP)</h2>
+            <img src="https://media.discordapp.net/attachments/1237163573894053888/1322659186370154607/2F2C2865-7B60-43F0-B2D6-9BC7AF38E716.jpg" alt="Script Image">
+            <button class="copy-button" id="copy-btn-vertex" onclick="copyScript('vertex')">Copy Script</button>
+        </div>
+
+        <div class="image-box purple-glow">
+            <h2>Blade Ball Auto Parry | Frostware Hub (OP)</h2>
+            <img src="https://media.discordapp.net/attachments/1249093223134003221/1323559486136516609/C6DEE7F9-DAF3-4F93-8B24-74CA1EFD6644.png" alt="Script Image">
+            <button class="copy-button" id="copy-btn-frostware" onclick="copyScript('frostware')">Copy Script</button>
+        </div>
+    </section>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            const toggle = document.querySelector('.menu-toggle');
+            menu.classList.toggle('active');
+            toggle.classList.toggle('active');
+        }
+
+        function copyScript(scriptName) {
+            let scriptText = '';
+            if (scriptName === 'vertex') {
+                scriptText = 'Script for Vertex Hub...';
+            } else if (scriptName === 'frostware') {
+                scriptText = 'Script for Frostware Hub...';
+            }
+
+            const tempTextarea = document.createElement('textarea');
+            tempTextarea.value = scriptText;
+            document.body.appendChild(tempTextarea);
+            tempTextarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextarea);
+
+            alert('Script copied to clipboard!');
+        }
+    </script>
 </body>
 </html>
