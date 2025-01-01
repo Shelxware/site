@@ -284,6 +284,22 @@
                 opacity: 0; /* Hide the header in the menu */
             }
         }
+
+        /* When the menu is active, move the Scripts header behind the menu */
+        .menu-overlay.active + .scripts-header {
+            z-index: 0; /* Move the header behind the menu */
+        }
+
+        /* Add some margin to push the Scripts header down when the menu is open */
+        .menu-overlay.active ~ .scripts-header {
+            top: 120px; /* Adjust to push it further down if needed */
+            position: absolute; /* Ensure it's correctly positioned */
+        }
+
+        /* Ensure header does not overlap by adjusting its z-index */
+        .scripts-header {
+            z-index: 10; /* Make sure it stays above other elements when not active */
+        }
     </style>
 </head>
 <body>
@@ -334,36 +350,33 @@
         <!-- New image box for the v script with purple glow -->
         <div class="image-box purple-glow">
             <h2>Blade Ball Auto Parry | Frostware Hub (OP)</h2>
-            <img src="https://media.discordapp.net/attachments/1249093223134003221/1323559486136516609/C6DEE7F9-DAF3-4F93-8B24-74CA1EFD6644.png?ex=6774f454&is=6773a2d4&hm=8d7f821a29b7d94d65f1d8bd1b108a55a7aeb565d69b114b74120e7bd0cecfa9&=&width=1071&height=602" alt="Script Image">
+            <img src="https://media.discordapp.net/attachments/1249093223134003221/1323559486136516609/C6DEE7F9-DAF3-4F93-8B24-74CA1EFD6644.png?ex=6774f454&is=6773a2d4&hm=8d7f821a4640428f8103b0d759941a7425cd57341bc9353a6465b2b2460fa303&=&width=827&height=466" alt="Script Image">
             <button class="copy-button" id="copy-btn-frostware" onclick="copyScript('frostware')">Copy Script</button>
         </div>
     </section>
 
-  <!-- JavaScript -->
     <script>
         function toggleMenu() {
-            const menu = document.getElementById('menu');
-            const toggle = document.querySelector('.menu-toggle');
-            const scriptsHeader = document.getElementById('scripts-header');
+            var menu = document.getElementById('menu');
+            var menuToggle = document.querySelector('.menu-toggle');
             menu.classList.toggle('active');
-            toggle.classList.toggle('active');
+            menuToggle.classList.toggle('active');
         }
 
-        function copyScript(scriptType) {
-            let scriptText;
-            if (scriptType === 'vertex') {
-                scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Burdenerd/VertexHub/refs/heads/main/Offical'))()";
-            } else if (scriptType === 'frostware') {
-                scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Otheruser/Script'))()";
+        function copyScript(script) {
+            var scriptText = '';
+            if (script === 'vertex') {
+                scriptText = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/vertex-hub/main"))();';
+            } else if (script === 'frostware') {
+                scriptText = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/frostware-hub/main"))();';
             }
-            
-            navigator.clipboard.writeText(scriptText).then(() => {
-                const button = document.getElementById(`copy-btn-${scriptType}`);
-                button.textContent = "📜Script Copied!";
-                setTimeout(() => {
-                    button.textContent = "Copy Script";  // Reset after 2 seconds
-                }, 2000);
-            });
+
+            var textArea = document.createElement('textarea');
+            textArea.value = scriptText;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
         }
     </script>
 </body>
