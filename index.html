@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +8,7 @@
     <link rel="icon" type="image/jpeg" href="https://media.discordapp.net/attachments/1296169780155256884/1321516127662116956/best-i-can-do.jpg?ex=677179cd&is=6770284d&hm=8247194597191c24bfeb6261a996d5c909f78d60ec00383125f59a265e5b5576&=&width=602&height=602">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap" rel="stylesheet">
     <style>
-        /* General styling */
+        /* Updated background */
         body {
             margin: 0;
             padding: 0;
@@ -19,8 +18,10 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            background-color: #1a1a1a; /* Default dark background */
+            background: linear-gradient(to bottom right, #1e2a47, #4f6d8c); /* Updated background gradient */
             transition: background-color 0.3s ease;
+            opacity: 0; /* Initially set to invisible */
+            animation: fadeIn 1s forwards; /* Apply fade-in animation */
         }
 
         /* Smooth scrolling */
@@ -76,7 +77,7 @@
         .menu-toggle div {
             width: 30px;
             height: 4px;
-            background-color: #fff; /* Set the hamburger lines to white */
+            background-color: #fff;
             margin: 4px 0;
             transition: transform 0.3s ease, opacity 0.3s ease;
         }
