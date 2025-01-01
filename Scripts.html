@@ -82,9 +82,9 @@
         }
 
         .scripts-header {
-            font-family: 'Fredoka', sans-serif;
+            font-family: Arial, sans-serif;
             font-weight: 700;
-            font-size: 3.2em; /* Increased font size */
+            font-size: 3.2em; /* Default font size for larger screens */
             color: #ffffff;
             text-align: center;
             margin: 0;
@@ -259,20 +259,46 @@
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
         }
 
+        /* Media query for desktop and larger screens */
+        @media (min-width: 1024px) {
+            .image-box {
+                width: 40%; /* Make the image box smaller on desktop */
+                margin: 50px auto; /* Adjust margin for smaller box size */
+            }
+        }
+
         /* Mobile styles for the Scripts header */
         @media (max-width: 768px) {
             .scripts-header {
-                font-size: 2.4em; /* Reduced size on mobile */
-                top: 90px; /* Adjust position to move it down */
+                font-size: 4.5em; /* Increased font size on mobile */
+                top: 120px; /* Adjust position to move it down more */
+                text-shadow: 0 0 6px #ffffff, 0 0 10px #ffffff; /* Reduced glow */
             }
 
             .image-box {
                 margin-top: 115px; /* Increased by 40px */
+                width: 80%; /* Increased width for mobile devices */
             }
 
             .menu-overlay.active .scripts-header {
                 opacity: 0; /* Hide the header in the menu */
             }
+        }
+
+        /* When the menu is active, move the Scripts header behind the menu */
+        .menu-overlay.active + .scripts-header {
+            z-index: 0; /* Move the header behind the menu */
+        }
+
+        /* Add some margin to push the Scripts header down when the menu is open */
+        .menu-overlay.active ~ .scripts-header {
+            top: 120px; /* Adjust to push it further down if needed */
+            position: absolute; /* Ensure it's correctly positioned */
+        }
+
+        /* Ensure header does not overlap by adjusting its z-index */
+        .scripts-header {
+            z-index: 10; /* Make sure it stays above other elements when not active */
         }
     </style>
 </head>
@@ -317,49 +343,40 @@
     <section id="home" class="hero">
         <div class="image-box">
             <h2>Murder Mystery 2 Auto Farm | Vertex Hub (OP)</h2>
-            <img src="https://media.discordapp.net/attachments/1237163573894053888/1322659186370154607/2F2C2865-7B60-43F0-B2D6-9BC7AF38E716.jpg?ex=6771addb&is=67705c5b&hm=e4b0bc70dbca0031d964cdcb17ffcdeadadaf9c598ac6dac214c3b7149d45e7e&=&width=1071&height=602" alt="Script Image">
-            <button class="copy-button" onclick="copyScript()">Copy Script</button>
+            <img src="https://media.discordapp.net/attachments/1237163573894053888/1322659186370154607/2F2C2865-7B60-43F0-B2D6-9BC7AF38E716.jpg?ex=6774f99b&is=6773a81b&hm=e3bad873dd5bbb9ae389e40f724c1d62aee529bd10ac1961379697ce6351a455&=&width=1071&height=602" alt="Script Image">
+            <button class="copy-button" id="copy-btn-vertex" onclick="copyScript('vertex')">Copy Script</button>
         </div>
 
         <!-- New image box for the v script with purple glow -->
         <div class="image-box purple-glow">
             <h2>Blade Ball Auto Parry | Frostware Hub (OP)</h2>
-            <img src="https://media.discordapp.net/attachments/1249093223134003221/1323413290432462989/C1ADBCB6-1342-4F79-8295-D3E9171E22A2.jpg?ex=67746c2c&is=67731aac&hm=210424d528f889b226d577652b6a37bc5dda7162655cb0377d5371901db8f84d&=&width=1071&height=602" alt="Script Image">
-            <button class="copy-button" onclick="copyScriptV()">Copy Script</button>
+            <img src="https://media.discordapp.net/attachments/1249093223134003221/1323559486136516609/C6DEE7F9-DAF3-4F93-8B24-74CA1EFD6644.png?ex=6774f454&is=6773a2d4&hm=8d7f821a4640428f8103b0d759941a7425cd57341bc9353a6465b2b2460fa303&=&width=827&height=466" alt="Script Image">
+            <button class="copy-button" id="copy-btn-frostware" onclick="copyScript('frostware')">Copy Script</button>
         </div>
     </section>
 
-    <!-- JavaScript -->
     <script>
         function toggleMenu() {
-            const menu = document.getElementById('menu');
-            const toggle = document.querySelector('.menu-toggle');
-            const scriptsHeader = document.getElementById('scripts-header');
+            var menu = document.getElementById('menu');
+            var menuToggle = document.querySelector('.menu-toggle');
             menu.classList.toggle('active');
-            toggle.classList.toggle('active');
-            scriptsHeader.style.opacity = menu.classList.contains('active') ? 0 : 1;
+            menuToggle.classList.toggle('active');
         }
 
-         function copyScript() {
-            const scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Burdenerd/VertexHub/refs/heads/main/Offical'))()";
-            navigator.clipboard.writeText(scriptText).then(() => {
-                const button = document.querySelector('.copy-button');
-                button.textContent = "Copied!";
-                setTimeout(() => {
-                    button.textContent = "Copy Script";
-                }, 2000);
-            });
-        }
+        function copyScript(script) {
+            var scriptText = '';
+            if (script === 'vertex') {
+                scriptText = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/vertex-hub/main"))();';
+            } else if (script === 'frostware') {
+                scriptText = 'loadstring(game:HttpGet("https://raw.githubusercontent.com/frostware-hub/main"))();';
+            }
 
-        function copyScriptV() {
-            const scriptTextV = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Burdenerd/FrostwareHub/main/Autofarm'))()";
-            navigator.clipboard.writeText(scriptTextV).then(() => {
-                const buttonV = document.querySelector('.copy-button');
-                buttonV.textContent = "Copied!";
-                setTimeout(() => {
-                    buttonV.textContent = "Copy Script";
-                }, 2000);
-            });
+            var textArea = document.createElement('textarea');
+            textArea.value = scriptText;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
         }
     </script>
 </body>
