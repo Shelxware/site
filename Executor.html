@@ -1,4 +1,4 @@
-html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -207,48 +207,43 @@ html>
             box-shadow: 0 6px 15px rgba(255, 255, 255, 0.8);
         }
 
-       .image-box {
-    width: 60%;
-    margin: 95px auto;
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    text-align: center;
-    border-radius: 15px;
-    position: relative;
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.9);
-    height: 400px; /* Fixed height for consistency */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
+        .image-box {
+            width: 60%;
+            margin: 95px auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            text-align: center;
+            border-radius: 15px;
+            position: relative;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.9);
+        }
 
-.image-box.purple-glow {
-    box-shadow: 0 0 30px rgba(128, 0, 128, 1), 0 0 50px rgba(128, 0, 128, 0.5);
-}
+        .image-box.purple-glow {
+            box-shadow: 0 0 30px rgba(128, 0, 128, 1), 0 0 50px rgba(128, 0, 128, 0.5);
+        }
 
-.image-box img {
-    max-height: 300px; /* Constrains image height */
-    object-fit: cover; /* Ensures image fits without distortion */
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
-    width: 100%; /* Ensures the image scales to fit container width */
-}
+        .image-box img {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+        }
 
-
-      .copy-button {
-    padding: 10px 20px; /* Original padding */
-    font-size: 1.2em;   /* Original font size */
-    background-color: #00bcd4;
-    border: none;
-    color: white;
-    border-radius: 10px;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-    transition: background-color 0.3s, transform 0.3s;
-    font-family: 'Fredoka', sans-serif;
-    font-weight: 700;
-}
-
+        .copy-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background-color: #00bcd4;
+            border: none;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            transition: background-color 0.3s, transform 0.3s;
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 700;
+        }
 
         .copy-button:hover {
             background-color: #0097a7;
