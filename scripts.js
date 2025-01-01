@@ -81,23 +81,7 @@
             transform: translateY(-8px) rotate(-45deg);
         }
 
-        .scripts-header {
-            font-family: Arial, sans-serif;
-            font-weight: 700;
-            font-size: 3.2em; /* Default font size for larger screens */
-            color: #ffffff;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            position: absolute;
-            top: 50000%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 10;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #ffffff;
-        }
+        
 
         .search-box {
             background-color: rgba(255, 255, 255, 0.7);
