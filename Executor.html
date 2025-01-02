@@ -133,22 +133,29 @@
             background-color: #0097a7;
         }
 
-      .menu-overlay {
-    position: fixed;
-    top: 0;
-    left: -100%;
-    height: 100%;
-    width: 300px;
-    background-color: rgba(0, 0, 0, 0.6); /* Adjust transparency here */
-    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.5);
-    padding: 60px 20px 20px;
-    transition: left 0.4s ease-in-out;
-    z-index: 5;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    backdrop-filter: blur(10px); /* Optional: Add a blur effect for a frosted-glass look */
-}
+        .search-message {
+            color: red;
+            font-size: 1.1em;
+            margin-left: 15px;
+            display: none;
+        }
+
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            height: 100%;
+            width: 300px;
+            background-color: rgba(0, 0, 0, 0.6); /* Adjust transparency here */
+            box-shadow: 2px 0 6px rgba(0, 0, 0, 0.5);
+            padding: 60px 20px 20px;
+            transition: left 0.4s ease-in-out;
+            z-index: 5;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            backdrop-filter: blur(10px); /* Optional: Add a blur effect for a frosted-glass look */
+        }
 
         .menu-overlay.active {
             left: 0;
@@ -298,8 +305,9 @@
         <div class="scripts-header" id="scripts-header"></div>
         <div class="search-box">
             <input type="text" id="search-input" placeholder="Search...">
-            <button onclick="handleSearch()">Search</button>
+            <button onclick="searchExecutor()">Search</button>
         </div>
+        <div id="search-message" class="search-message"></div>
     </header>
 
     <!-- Menu Overlay -->
@@ -311,53 +319,49 @@
             <a href="#Uploads">Uploads</a>
             <a href="#contact">Contact</a>
         </div>
-        <div class="social-icons">
-            <a href="https://youtube.com/@globalexploitor?si=ULxJfeU0MbH6DNhy" target="_blank">
-                <img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" alt="YouTube">
-            </a>
-            <a href="#" target="_blank">
-                <img src="https://media.discordapp.net/attachments/1235364046039945288/1324128537556291585/IMG_1348.png?ex=6777064c&is=6775b4cc&hm=3eca129196fed3b5824269df1c2c31769f274d01025b2e7183abc82adfad7bb9&=&width=832&height=468">
-            </a>
-        </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="image-box purple-glow">
-            <h2>Delta Andriod/IOS Executor</h2>
-            <img src="https://lh3.googleusercontent.com/rpGDnqN7XM7IQv1a1tipKOT-iHWmrqkLMoalU8V8GIjfibg9m2OrYCyNe-y1EL3Rhh0x2JFw6hRN-eFMeCK2uc5Uavo=s1280-w1280-h800">
-            <button class="copy-button" onclick="window.location.href='https://deltaexploits.gg/delta-executor-mobile';">Download</button>
+        <!-- Executor Boxes (Example) -->
+        <div class="image-box purple-glow" id="soliware-box">
+            <h2>Seliware Pc Executor (PAID)</h2>
+            <img src="https://media.karousell.com/media/photos/products/2024/10/25/roblox_seliware_executor__robl_1729850799_85acbab8_progressive">
+            <button class="copy-button" onclick="window.location.href='https://discord.gg/zovware';">Download</button>
         </div>
-        <div class="image-box purple-glow">
-            <h2>CodeX Andiord Executor</h2>
-            <img src="https://static-sg.winudf.com/wupload/xy/aprojectadmin/SbY7pyJA.jpg?imageMogr2/thumbnail/600x">
-            <button class="copy-button" onclick="window.location.href='https://codex.lol';">Download</button>
-        </div>
-        <div class="image-box purple-glow">
-            <h2>Flux Free Pc Executor</h2>
-            <img src="https://i.ytimg.com/vi/vLf463z4HU0/maxresdefault.jpg">
-            <button class="copy-button" onclick="window.location.href='https://discord.gg/fluxus';">Download</button>
-        </div>
-        <div class="image-box purple-glow">
-            <h2>Evon Mobile Executor (FREE)</h2>
-            <img src="https://imgur.com/RlfsHRr.png">
-            <button class="copy-button" onclick="window.location.href='https://discord.gg/evon';">Download</button>
-        </div>
+        <!-- More executor boxes here... -->
     </section>
 
+    <!-- JavaScript -->
     <script>
-        // Toggle menu
         function toggleMenu() {
-            document.getElementById('menu').classList.toggle('active');
-            document.querySelector('.menu-toggle').classList.toggle('active');
+            const menu = document.getElementById('menu');
+            const toggle = document.querySelector('.menu-toggle');
+            const scriptsHeader = document.getElementById('scripts-header');
+            menu.classList.toggle('active');
+            toggle.classList.toggle('active');
+            scriptsHeader.style.opacity = menu.classList.contains('active') ? '0' : '1';
         }
 
-        // Handle Search functionality
-        function handleSearch() {
-            const query = document.getElementById('search-input').value.toLowerCase();
-            if (query) {
-                alert('Searching for: ' + query); 
-                // You can add search functionality here, such as filtering content or redirecting to a search page
+        function searchExecutor() {
+            const searchInput = document.getElementById('search-input').value.trim().toLowerCase();
+            const boxes = document.querySelectorAll('.image-box');
+            const searchMessage = document.getElementById('search-message');
+            let found = false;
+
+            boxes.forEach(box => {
+                const title = box.querySelector('h2').textContent.toLowerCase();
+                if (title.includes(searchInput)) {
+                    box.scrollIntoView({ behavior: 'smooth' });
+                    found = true;
+                }
+            });
+
+            if (!found) {
+                searchMessage.textContent = 'Invalid name';
+                searchMessage.style.display = 'inline';
+            } else {
+                searchMessage.style.display = 'none';
             }
         }
     </script>
