@@ -357,18 +357,15 @@
         } else if (scriptType === 'frostware') {
             scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Otheruser/Script'))()";
         } else if (scriptType === 'example') {
-            scriptText = "loadstring(game:HttpGet("https:";
+            scriptText = "loadstring(game:HttpGet('https://example.com/script'))()";  // Corrected line
         }
 
         navigator.clipboard.writeText(scriptText).then(() => {
             const button = document.getElementById(`copy-btn-${scriptType}`);
-            button.textContent = "📜Script Copied!";
+            button.textContent = "📜 Script Copied!";
             setTimeout(() => {
                 button.textContent = "Copy Script";
             }, 2000);
         });
     }
 </script>
-
-</body>
-</html>
