@@ -328,26 +328,23 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
+      <section id="home" class="hero">
         <div class="image-box">
             <h2>Murder Mystery 2 Auto Farm | Vertex Hub (OP)</h2>
-            <img src="https://media.discordapp.net/attachments/1237163573894053888/1322659186370154607/2F2C2865-7B60-43F0-B2D6-9BC7AF38E716.jpg?ex=6774f99b&is=6773a81b&hm=e3bad873dd5bbb9ae389e40f724c1d62aee529bd10ac1961379697ce6351a455&=&width=1071&height=602" alt="Script Image">
+            <img src="https://media.discordapp.net/attachments/1237163573894053888/1322659186370154607/2F2C2865-7B60-43F0-B2D6-9BC7AF38E716.jpg" alt="Vertex Hub Script">
             <button class="copy-button" id="copy-btn-vertex" onclick="copyScript('vertex')">Copy Script</button>
         </div>
 
-        <!-- New image box for the v script with purple glow -->
         <div class="image-box purple-glow">
             <h2>Blade Ball Auto Parry | Frostware Hub (OP)</h2>
-            <img src="https://media.discordapp.net/attachments/1249093223134003221/1323559486136516609/C6DEE7F9-DAF3-4F93-8B24-74CA1EFD6644.png?ex=6774f454&is=6773a2d4&hm=8d7f821a29b7d94d65f1d8bd1b108a55a7aeb565d69b114b74120e7bd0cecfa9&=&width=1071&height=602" alt="Script Image">
+            <img src="https://media.discordapp.net/attachments/1249093223134003221/1323559486136516609/C6DEE7F9-DAF3-4F93-8B24-74CA1EFD6644.png" alt="Frostware Hub Script">
             <button class="copy-button" id="copy-btn-frostware" onclick="copyScript('frostware')">Copy Script</button>
         </div>
-    </section>
 
-   <!-- New image box for the v script with purple glow -->
         <div class="image-box purple-glow">
-            <h2>Pets Go / Pet Simulator 99 Pet Swaper | open sourced </h2>
-            <img src="https://media.discordapp.net/attachments/1249093223134003221/1323559486136516609/C6DEE7F9-DAF3-4F93-8B24-74CA1EFD6644.png?ex=6774f454&is=6773a2d4&hm=8d7f821a29b7d94d65f1d8bd1b108a55a7aeb565d69b114b74120e7bd0cecfa9&=&width=1071&height=602" alt="Script Image">
-            <button class="copy-button" id="copy-btn-frostware" onclick="copyScript('frostware')">Copy Script</button>
+            <h2>Pets Go / Pet Simulator 99 Pet Swapper | Open Source</h2>
+            <img src="https://media.discordapp.net/attachments/1249093223134003221/1323559486136516609/C6DEE7F9-DAF3-4F93-8B24-74CA1EFD6644.png" alt="Pets Go Script">
+            <button class="copy-button" id="copy-btn-pets-go" onclick="copyScript('pets-go')">Copy Script</button>
         </div>
     </section>
 
@@ -365,18 +362,18 @@
         function copyScript(scriptType) {
             let scriptText;
             if (scriptType === 'vertex') {
-                scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Burdenerd/VertexHub/refs/heads/main/Offical'))()";
+                scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Burdenerd/VertexHub/main/Official'))()";
             } else if (scriptType === 'frostware') {
                 scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Otheruser/Script'))()";
-  } else if (scriptType === 'Pets Go') {
-                scriptText = "loadstring(game:HttpGet("https://dpaste.org/Rs3o4/raw"))()";
+            } else if (scriptType === 'pets-go') {
+                scriptText = "loadstring(game:HttpGet('https://dpaste.org/Rs3o4/raw'))()";
             }
-            
+
             navigator.clipboard.writeText(scriptText).then(() => {
                 const button = document.getElementById(`copy-btn-${scriptType}`);
-                button.textContent = "📜Script Copied!";
+                button.textContent = "📜 Script Copied!";
                 setTimeout(() => {
-                    button.textContent = "Copy Script";  // Reset after 2 seconds
+                    button.textContent = "Copy Script";
                 }, 2000);
             });
         }
