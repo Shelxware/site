@@ -222,13 +222,14 @@
             box-shadow: 0 0 30px rgba(128, 0, 128, 1), 0 0 50px rgba(128, 0, 128, 0.5);
         }
 
-        .image-box img {
-            width: 100%;
-            height: auto;
-            max-height: 500px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
-        }
+.image-box img {
+    width: 60%; /* Adjust the width to make it smaller */
+    max-height: 250px; /* Set a maximum height */
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
 
         .copy-button {
             margin-top: 20px;
@@ -292,13 +293,13 @@
         }
 
     .right-side-images a {
-    width: 30%; /* Adjust this value to make the images smaller */
+    width: 20%; /* Adjust this value to make the images smaller */
     height: auto;
 }
 
 .right-side-images a img {
     width: 100%;
-    height: auto; /* Ensures the aspect ratio is maintained */
+    height: auto; /* Maintain aspect ratio */
     object-fit: cover;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
