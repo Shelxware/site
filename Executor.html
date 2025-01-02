@@ -48,6 +48,7 @@
             position: relative;
         }
 
+        /* Hamburger menu styling */
         .menu-toggle {
             position: absolute;
             left: 20px;
@@ -132,22 +133,22 @@
             background-color: #0097a7;
         }
 
-        .menu-overlay {
-            position: fixed;
-            top: 0;
-            left: -100%;
-            height: 100%;
-            width: 300px;
-            background-color: rgba(0, 0, 0, 0.6);
-            box-shadow: 2px 0 6px rgba(0, 0, 0, 0.5);
-            padding: 60px 20px 20px;
-            transition: left 0.4s ease-in-out;
-            z-index: 5;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            backdrop-filter: blur(10px);
-        }
+      .menu-overlay {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.6); /* Adjust transparency here */
+    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.5);
+    padding: 60px 20px 20px;
+    transition: left 0.4s ease-in-out;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    backdrop-filter: blur(10px); /* Optional: Add a blur effect for a frosted-glass look */
+}
 
         .menu-overlay.active {
             left: 0;
@@ -174,6 +175,116 @@
             background-color: rgba(100, 149, 237, 0.9);
             box-shadow: 0 6px 15px rgba(255, 255, 255, 0.9);
         }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            top: 600px;
+            left: 50%;
+            transform: translateX(-50%);
+            margin: 0;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            margin: 0 10px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .social-icons a img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.8);
+        }
+
+        .image-box {
+            width: 60%;
+            margin: 95px auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            text-align: center;
+            border-radius: 15px;
+            position: relative;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.9);
+        }
+
+        .image-box.purple-glow {
+            box-shadow: 0 0 30px rgba(128, 0, 128, 1), 0 0 50px rgba(128, 0, 128, 0.5);
+        }
+
+        .image-box img {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+        }
+
+        .copy-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background-color: #00bcd4;
+            border: none;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            transition: background-color 0.3s, transform 0.3s;
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 700;
+        }
+
+        .copy-button:hover {
+            background-color: #0097a7;
+            transform: scale(1.1);
+        }
+
+        .image-box h2 {
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 700;
+            font-size: 2em;
+            color: #ffffff;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Media query for desktop and larger screens */
+        @media (min-width: 1024px) {
+            .image-box {
+                width: 40%;
+                margin: 50px auto;
+            }
+        }
+
+        /* Mobile styles for the Scripts header */
+        @media (max-width: 768px) {
+            .scripts-header {
+                font-size: 4.5em;
+                top: 120px;
+                text-shadow: 0 0 6px #ffffff, 0 0 10px #ffffff;
+            }
+
+            .image-box {
+                margin-top: 115px;
+                width: 80%;
+            }
+
+            .menu-overlay.active .scripts-header {
+                opacity: 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -184,10 +295,10 @@
             <div></div>
             <div></div>
         </div>
-        <div class="scripts-header" id="scripts-header">GlobalExploiter</div>
+        <div class="scripts-header" id="scripts-header"></div>
         <div class="search-box">
-            <input type="text" id="searchInput" placeholder="Search...">
-            <button onclick="performSearch()">Search</button>
+            <input type="text" id="search-input" placeholder="Search...">
+            <button onclick="handleSearch()">Search</button>
         </div>
     </header>
 
@@ -200,25 +311,53 @@
             <a href="#Uploads">Uploads</a>
             <a href="#contact">Contact</a>
         </div>
+        <div class="social-icons">
+            <a href="https://youtube.com/@globalexploitor?si=ULxJfeU0MbH6DNhy" target="_blank">
+                <img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" alt="YouTube">
+            </a>
+            <a href="#" target="_blank">
+                <img src="https://media.discordapp.net/attachments/1235364046039945288/1324128537556291585/IMG_1348.png?ex=6777064c&is=6775b4cc&hm=3eca129196fed3b5824269df1c2c31769f274d01025b2e7183abc82adfad7bb9&=&width=832&height=468">
+            </a>
+        </div>
     </nav>
 
-    <!-- JavaScript -->
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="image-box purple-glow">
+            <h2>Delta Andriod/IOS Executor</h2>
+            <img src="https://lh3.googleusercontent.com/rpGDnqN7XM7IQv1a1tipKOT-iHWmrqkLMoalU8V8GIjfibg9m2OrYCyNe-y1EL3Rhh0x2JFw6hRN-eFMeCK2uc5Uavo=s1280-w1280-h800">
+            <button class="copy-button" onclick="window.location.href='https://deltaexploits.gg/delta-executor-mobile';">Download</button>
+        </div>
+        <div class="image-box purple-glow">
+            <h2>CodeX Andiord Executor</h2>
+            <img src="https://static-sg.winudf.com/wupload/xy/aprojectadmin/SbY7pyJA.jpg?imageMogr2/thumbnail/600x">
+            <button class="copy-button" onclick="window.location.href='https://codex.lol';">Download</button>
+        </div>
+        <div class="image-box purple-glow">
+            <h2>Flux Free Pc Executor</h2>
+            <img src="https://i.ytimg.com/vi/vLf463z4HU0/maxresdefault.jpg">
+            <button class="copy-button" onclick="window.location.href='https://discord.gg/fluxus';">Download</button>
+        </div>
+        <div class="image-box purple-glow">
+            <h2>Evon Mobile Executor (FREE)</h2>
+            <img src="https://imgur.com/RlfsHRr.png">
+            <button class="copy-button" onclick="window.location.href='https://discord.gg/evon';">Download</button>
+        </div>
+    </section>
+
     <script>
+        // Toggle menu
         function toggleMenu() {
-            const menu = document.getElementById('menu');
-            const toggle = document.querySelector('.menu-toggle');
-            const scriptsHeader = document.getElementById('scripts-header');
-            menu.classList.toggle('active');
-            toggle.classList.toggle('active');
-            scriptsHeader.style.opacity = menu.classList.contains('active') ? '0' : '1';
+            document.getElementById('menu').classList.toggle('active');
+            document.querySelector('.menu-toggle').classList.toggle('active');
         }
 
-        function performSearch() {
-            const query = document.getElementById('searchInput').value.trim().toLowerCase();
+        // Handle Search functionality
+        function handleSearch() {
+            const query = document.getElementById('search-input').value.toLowerCase();
             if (query) {
-                window.location.href = `search.html?query=${encodeURIComponent(query)}`;
-            } else {
-                alert("Please enter a search term.");
+                alert('Searching for: ' + query); 
+                // You can add search functionality here, such as filtering content or redirecting to a search page
             }
         }
     </script>
