@@ -343,6 +343,14 @@
         </div>
     </section>
 
+   <!-- New image box for the v script with purple glow -->
+        <div class="image-box purple-glow">
+            <h2>Pets Go / Pet Simulator 99 Pet Swaper | open sourced </h2>
+            <img src="https://media.discordapp.net/attachments/1249093223134003221/1323559486136516609/C6DEE7F9-DAF3-4F93-8B24-74CA1EFD6644.png?ex=6774f454&is=6773a2d4&hm=8d7f821a29b7d94d65f1d8bd1b108a55a7aeb565d69b114b74120e7bd0cecfa9&=&width=1071&height=602" alt="Script Image">
+            <button class="copy-button" id="copy-btn-frostware" onclick="copyScript('frostware')">Copy Script</button>
+        </div>
+    </section>
+
     <!-- JavaScript -->
     <script>
         function toggleMenu() {
@@ -360,6 +368,8 @@
                 scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Burdenerd/VertexHub/refs/heads/main/Offical'))()";
             } else if (scriptType === 'frostware') {
                 scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Otheruser/Script'))()";
+  } else if (scriptType === 'Pets Go') {
+                scriptText = "loadstring(game:HttpGet("https://dpaste.org/Rs3o4/raw"))()";
             }
             
             navigator.clipboard.writeText(scriptText).then(() => {
