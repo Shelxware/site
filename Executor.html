@@ -99,47 +99,6 @@
             text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #ffffff;
         }
 
-        .search-box {
-            background-color: rgba(255, 255, 255, 0.7);
-            padding: 8px 15px;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            margin-left: auto;
-        }
-
-        .search-box input {
-            border: none;
-            padding: 5px;
-            font-size: 1em;
-            border-radius: 10px;
-            outline: none;
-            background-color: transparent;
-            color: #333;
-            margin-right: 10px;
-        }
-
-        .search-box button {
-            border: none;
-            background: #00bcd4;
-            color: white;
-            padding: 8px 12px;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .search-box button:hover {
-            background-color: #0097a7;
-        }
-
-        .search-message {
-            color: red;
-            font-size: 1.1em;
-            margin-left: 15px;
-            display: none;
-        }
-
         .menu-overlay {
             position: fixed;
             top: 0;
@@ -302,12 +261,7 @@
             <div></div>
             <div></div>
         </div>
-        <div class="scripts-header" id="scripts-header">GlobalExploiter Scripts</div>
-        <div class="search-box">
-            <input type="text" id="search-input" placeholder="Search...">
-            <button onclick="searchExecutor()">Search</button>
-        </div>
-        <div id="search-message" class="search-message"></div>
+        <div class="scripts-header" id="scripts-header"></div>
     </header>
 
     <!-- Menu Overlay -->
@@ -319,70 +273,42 @@
             <a href="#Uploads">Uploads</a>
             <a href="#contact">Contact</a>
         </div>
+        <div class="social-icons">
+            <a href="https://youtube.com/@globalexploitor?si=ULxJfeU0MbH6DNhy" target="_blank">
+                <img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" alt="YouTube">
+            </a>
+            <a href="#" target="_blank">
+                <img src="https://media.discordapp.net/attachments/1235364046039945288/1324128537556291585/IMG_1348.png?ex=6777064c&is=6775b4cc&hm=3eca129196fed3b5824269df1c2c31769f274d01025b2e7183abc82adfad7bb9&=&width=832&height=468">
+            </a>
+        </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <!-- Executor Boxes -->
-        <div class="image-box purple-glow" id="soliware-box">
-            <h2>Seliware Pc Executor (PAID)</h2>
-            <img src="https://media.karousell.com/media/photos/products/2024/10/25/roblox_seliware_executor__robl_1729850799_85acbab8_progressive">
-            <button class="copy-button" onclick="window.location.href='https://discord.gg/zovware';">Download</button>
+        <!-- Duplicate the Argon executor box 5 times -->
+        <div class="image-box purple-glow">
+            <h2>Delta Andriod/IOS Executor</h2>
+            <img src="https://lh3.googleusercontent.com/rpGDnqN7XM7IQv1a1tipKOT-iHWmrqkLMoalU8V8GIjfibg9m2OrYCyNe-y1EL3Rhh0x2JFw6hRN-eFMeCK2uc5Uavo=s1280-w1280-h800">
+            <button class="copy-button" onclick="window.location.href='https://deltaexploits.gg/delta-executor-mobile';">Download</button>
         </div>
-
-        <div class="image-box purple-glow" id="exploiter-box">
-            <h2>Exploiter Pro Executor (FREE)</h2>
-            <img src="https://example.com/exploit.jpg">
-            <button class="copy-button" onclick="window.location.href='https://discord.gg/exploit';">Download</button>
+        <div class="image-box purple-glow">
+            <h2>CodeX Andiord Executor</h2>
+            <img src="https://static-sg.winudf.com/wupload/xy/aprojectadmin/SbY7pyJA.jpg?imageMogr2/thumbnail/600x">
+            <button class="copy-button" onclick="window.location.href='https://codex.lol';">Download</button>
         </div>
-
-        <div class="image-box purple-glow" id="inferno-box">
-            <h2>Inferno Executor (PAID)</h2>
-            <img src="https://example.com/inferno.jpg">
-            <button class="copy-button" onclick="window.location.href='https://discord.gg/inferno';">Download</button>
+        <div class="image-box purple-glow">
+            <h2>Executor</h2>
+            <img src="https://www.screenshot.net/i/kwptzxw">
+            <button class="copy-button" onclick="window.location.href='https://globalexploiter.xyz';">Download</button>
         </div>
-
-        <div class="image-box purple-glow" id="blaze-box">
-            <h2>Blaze Executor (FREE)</h2>
-            <img src="https://example.com/blaze.jpg">
-            <button class="copy-button" onclick="window.location.href='https://discord.gg/blaze';">Download</button>
-        </div>
-
-        <!-- Add all other original executor boxes here -->
-        
     </section>
 
-    <!-- JavaScript -->
     <script>
+        // Menu toggle function
         function toggleMenu() {
-            const menu = document.getElementById('menu');
-            const toggle = document.querySelector('.menu-toggle');
-            const scriptsHeader = document.getElementById('scripts-header');
-            menu.classList.toggle('active');
-            toggle.classList.toggle('active');
-            scriptsHeader.style.opacity = menu.classList.contains('active') ? '0' : '1';
-        }
-
-        function searchExecutor() {
-            const searchInput = document.getElementById('search-input').value.trim().toLowerCase();
-            const boxes = document.querySelectorAll('.image-box');
-            const searchMessage = document.getElementById('search-message');
-            let found = false;
-
-            boxes.forEach(box => {
-                const title = box.querySelector('h2').textContent.toLowerCase();
-                if (title.includes(searchInput)) {
-                    box.scrollIntoView({ behavior: 'smooth' });
-                    found = true;
-                }
-            });
-
-            if (!found) {
-                searchMessage.textContent = 'Invalid name';
-                searchMessage.style.display = 'inline';
-            } else {
-                searchMessage.style.display = 'none';
-            }
+            document.getElementById('menu').classList.toggle('active');
+            document.querySelector('.menu-toggle').classList.toggle('active');
+            document.getElementById('scripts-header').classList.toggle('active');
         }
     </script>
 </body>
