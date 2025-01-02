@@ -99,22 +99,56 @@
             text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #ffffff;
         }
 
-        .menu-overlay {
-            position: fixed;
-            top: 0;
-            left: -100%;
-            height: 100%;
-            width: 300px;
-            background-color: rgba(0, 0, 0, 0.6); /* Adjust transparency here */
-            box-shadow: 2px 0 6px rgba(0, 0, 0, 0.5);
-            padding: 60px 20px 20px;
-            transition: left 0.4s ease-in-out;
-            z-index: 5;
+        .search-box {
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 8px 15px;
+            border-radius: 20px;
             display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            backdrop-filter: blur(10px); /* Optional: Add a blur effect for a frosted-glass look */
+            align-items: center;
+            margin-left: auto;
         }
+
+        .search-box input {
+            border: none;
+            padding: 5px;
+            font-size: 1em;
+            border-radius: 10px;
+            outline: none;
+            background-color: transparent;
+            color: #333;
+            margin-right: 10px;
+        }
+
+        .search-box button {
+            border: none;
+            background: #00bcd4;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .search-box button:hover {
+            background-color: #0097a7;
+        }
+
+      .menu-overlay {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.6); /* Adjust transparency here */
+    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.5);
+    padding: 60px 20px 20px;
+    transition: left 0.4s ease-in-out;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    backdrop-filter: blur(10px); /* Optional: Add a blur effect for a frosted-glass look */
+}
 
         .menu-overlay.active {
             left: 0;
@@ -262,6 +296,10 @@
             <div></div>
         </div>
         <div class="scripts-header" id="scripts-header"></div>
+        <div class="search-box">
+            <input type="text" placeholder="Search...">
+            <button>Search</button>
+        </div>
     </header>
 
     <!-- Menu Overlay -->
@@ -270,8 +308,8 @@
             <a href="#home" onclick="window.location.href='https://globalexploiter.xyz';">Home</a>
             <a href="Scripts.html">Scripts</a>
             <a href="Executor.html">Executors</a>
-            <a href="#Uploads">Uploads</a>
-            <a href="#contact">Contact</a>
+ <a href="#Uploads">Uploads</a>
+ <a href="#contact">Contact</a>
         </div>
         <div class="social-icons">
             <a href="https://youtube.com/@globalexploitor?si=ULxJfeU0MbH6DNhy" target="_blank">
@@ -297,18 +335,56 @@
             <button class="copy-button" onclick="window.location.href='https://codex.lol';">Download</button>
         </div>
         <div class="image-box purple-glow">
-            <h2>Executor</h2>
-            <img src="https://www.screenshot.net/i/kwptzxw">
-            <button class="copy-button" onclick="window.location.href='https://globalexploiter.xyz';">Download</button>
+            <h2>Flux Free Pc Executor</h2>
+            <img src="https://i.ytimg.com/vi/vLf463z4HU0/maxresdefault.jpg">
+            <button class="copy-button" onclick="window.location.href='https://discord.gg/fluxus';">Download</button>
+        </div>
+        <div class="image-box purple-glow">
+            <h2>Evon Mobile Executor (FREE)</h2>
+            <img src="https://static1.thegamerimages.com/wordpress/wp-content/uploads/2024/04/evon-executor-logo.jpeg">
+            <button class="copy-button" onclick="window.location.href='https://evon.cc';">Download</button>
+        </div>
+        <div class="image-box purple-glow">
+            <h2>Argon Free Pc Executor</h2>
+            <img src="https://i.ytimg.com/vi/n_R5bwZ5B50/maxresdefault.jpg">
+            <button class="copy-button" onclick="window.location.href='https://getargon.xyz/';">Download</button>
+        </div>
+ <div class="image-box purple-glow">
+            <h2>Solara Free Pc Executor</h2>
+            <img src="https://i.ytimg.com/vi/-8ZCt5yylUU/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDnO1yQYG11pEnQQH9Agc6EzjHOng">
+            <button class="copy-button" onclick="window.location.href='https://discord.gg/U7gsq8mgRp';">Download</button>
+        </div>
+        <div class="image-box purple-glow">
+            <h2>Seliware Pc Executor (PAID)</h2>
+            <img src="https://media.karousell.com/media/photos/products/2024/10/25/roblox_seliware_executor__robl_1729850799_85acbab8_progressive">
+            <button class="copy-button" onclick="window.location.href='https://discord.gg/zovware';">Download</button>
+        </div>
+        <div class="image-box purple-glow">
+            <h2>Wave Executor (PAID)</h2>
+            <img src="https://repository-images.githubusercontent.com/909319981/f5aeb2db-49d8-4e1d-880d-d8669813e2e6">
+            <button class="copy-button" onclick="window.location.href='https://getwave.gg';">Download</button>
+        </div>
+        <div class="image-box purple-glow">
+            <h2>Apple Ware (FREE)</h2>
+            <img src="https://i.ytimg.com/vi/Xs2BG18wcm0/maxresdefault.jpg">
+            <button class="copy-button" onclick="window.location.href='https://discord.gg/MkkxGDrH3W';">Download</button>
+        </div>
+        <div class="image-box purple-glow">
+            <h2>Arceus X Free Andriod Executor</h2>
+            <img src="https://i.pinimg.com/originals/3b/e9/5b/3be95bdcf1f6975a474a42d8778014f0.jpg">
+            <button class="copy-button" onclick="window.location.href='https://spdmteam.com/index';">Download</button>
         </div>
     </section>
 
+    <!-- JavaScript -->
     <script>
-        // Menu toggle function
         function toggleMenu() {
-            document.getElementById('menu').classList.toggle('active');
-            document.querySelector('.menu-toggle').classList.toggle('active');
-            document.getElementById('scripts-header').classList.toggle('active');
+            const menu = document.getElementById('menu');
+            const toggle = document.querySelector('.menu-toggle');
+            const scriptsHeader = document.getElementById('scripts-header');
+            menu.classList.toggle('active');
+            toggle.classList.toggle('active');
+            scriptsHeader.style.opacity = menu.classList.contains('active') ? '0' : '1';
         }
     </script>
 </body>
