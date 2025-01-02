@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -230,6 +230,19 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
         }
 
+        .right-side-images a {
+            width: 20%; /* Adjusted size for smaller images */
+            height: auto; /* Maintains aspect ratio */
+        }
+
+        .right-side-images a img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+        }
+
         .copy-button {
             margin-top: 20px;
             padding: 10px 20px;
@@ -249,118 +262,18 @@
             background-color: #0097a7;
             transform: scale(1.1);
         }
-
-        .image-box h2 {
-            font-family: 'Fredoka', sans-serif;
-            font-weight: 700;
-            font-size: 2em;
-            color: #ffffff;
-            margin-bottom: 15px;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-        }
-
-        /* Media query for desktop and larger screens */
-        @media (min-width: 1024px) {
-            .image-box {
-                width: 40%;
-                margin: 50px auto;
-            }
-        }
-
-        /* Mobile styles for the Scripts header */
-        @media (max-width: 768px) {
-            .scripts-header {
-                font-size: 4.5em;
-                top: 120px;
-                text-shadow: 0 0 6px #ffffff, 0 0 10px #ffffff;
-            }
-
-            .image-box {
-                margin-top: 115px;
-                width: 80%;
-            }
-
-            .menu-overlay.active .scripts-header {
-                opacity: 0;
-            }
-        }
-
-        .image-box .right-side-images {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 15px;
-        }
-
-    .right-side-images a {
-    width: 30%; /* Adjust this value to make the images smaller */
-    height: auto;
-}
-
-.right-side-images a img {
-    width: 100%;
-    height: auto; /* Ensures the aspect ratio is maintained */
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
-}
-
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="menu-toggle" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <div class="scripts-header" id="scripts-header"></div>
-        <div class="search-box">
-            <input type="text" placeholder="Search...">
-            <button>Search</button>
-        </div>
-    </header>
-
-    <!-- Menu Overlay -->
-    <nav class="menu-overlay" id="menu">
-        <div>
-            <a href="#home" onclick="window.location.href='https://globalexploiter.xyz';">Home</a>
-            <a href="Scripts.html">Scripts</a>
-            <a href="Executor.html">Executors</a>
-            <a href="#contact">Contact</a>
-        </div>
-        <div class="social-icons">
-            <a href="https://youtube.com/@globalexploitor?si=ULxJfeU0MbH6DNhy" target="_blank">
-                <img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" alt="YouTube">
-            </a>
-            <a href="#" target="_blank">
-                <img src="https://media.discordapp.net/attachments/1235364046039945288/1324128537556291585/IMG_1348.png?ex=6777064c&is=6775b4cc&hm=3eca129196fed3b5824269df1c2c31769f274d01025b2e7183abc82adfad7bb9&=&width=687&height=387" alt="Discord">
-            </a>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <!-- Duplicate the Argon executor box 5 times -->
+    <header>...</header>
+    <section id="home">
         <div class="image-box purple-glow">
-            <h2>Argon Free Pc Executor</h2>
-            <img src="https://i.ytimg.com/vi/n_R5bwZ5B50/maxresdefault.jpg">
-            <button class="copy-button" onclick="window.location.href='https://getargon.xyz/';">Download</button>
+            <h2>Executor</h2>
             <div class="right-side-images">
-                <a href="#"><img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" alt="Image 1"></a>
-                <a href="#"><img src="https://media.discordapp.net/attachments/1235364046039945288/1324128537556291585/IMG_1348.png?ex=6777064c&is=6775b4cc&hm=3eca129196fed3b5824269df1c2c31769f274d01025b2e7183abc82adfad7bb9&=&width=687&height=387" alt="Image 2"></a>
+                <!-- Smaller right-side images -->
+                <a><img src="..."></a>
             </div>
         </div>
     </section>
-
-    <!-- Scripts -->
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById("menu");
-            const toggle = document.querySelector(".menu-toggle");
-            menu.classList.toggle("active");
-            toggle.classList.toggle("active");
-        }
-    </script>
 </body>
 </html>
