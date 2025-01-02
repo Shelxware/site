@@ -99,21 +99,23 @@
         }
 
         /* Overlay styling */
-        .menu-overlay {
-            position: fixed;
-            top: 0;
-            left: -100%;
-            height: 100%;
-            width: 300px;
-            background-color: rgba(0, 0, 0, 0.85);
-            box-shadow: 2px 0 6px rgba(0, 0, 0, 0.5);
-            padding: 60px 20px 20px;
-            transition: left 0.4s ease-in-out;
-            z-index: 5;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
+       .menu-overlay {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.6); /* Adjust transparency here */
+    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.5);
+    padding: 60px 20px 20px;
+    transition: left 0.4s ease-in-out;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    backdrop-filter: blur(10px); /* Optional: Add a blur effect for a frosted-glass look */
+}
+
 
         .menu-overlay.active {
             left: 0;
@@ -318,7 +320,7 @@
                      alt="YouTube">
             </a>
             <a href="https://discord.gg/Hk9h8vnZ7w" target="_blank">
-                <img src="https://media.discordapp.net/attachments/1235374443413635115/1322719710835638313/IMG_1348.png?ex=6771e63a&is=677094ba&hm=b584940836f5bfef6e2333f84f6b1331a856eb0ef8c0852d3d412dd41ed615eb&=&width=832&height=468" 
+                <img src="https://media.discordapp.net/attachments/1235364046039945288/1324128537556291585/IMG_1348.png?ex=6777064c&is=6775b4cc&hm=3eca129196fed3b5824269df1c2c31769f274d01025b2e7183abc82adfad7bb9&=&width=832&height=468" 
                      alt="Discord">
             </a>
         </div>
