@@ -341,35 +341,34 @@
             <img src="https://media.discordapp.net/attachments/1249093223134003221/1323559486136516609/C6DEE7F9-DAF3-4F93-8B24-74CA1EFD6644.png?ex=6774f454&is=6773a2d4&hm=8d7f821a29b7d94d65f1d8bd1b108a55a7aeb565d69b114b74120e7bd0cecfa9&=&width=1071&height=602" alt="Script Image">
             <button class="copy-button" id="copy-btn-frostware" onclick="copyScript('frostware')">Copy Script</button>
         </div>
-    </section>
+   <!-- Third image box -->
+    <div class="image-box">
+        <h2>New Awesome Script | Example Hub</h2>
+        <img src="https://example.com/new-image.jpg" alt="New Script Image">
+        <button class="copy-button" id="copy-btn-example" onclick="copyScript('example')">Copy Script</button>
+    </div>
+</section>
 
-    <!-- JavaScript -->
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById('menu');
-            const toggle = document.querySelector('.menu-toggle');
-            const scriptsHeader = document.getElementById('scripts-header');
-            menu.classList.toggle('active');
-            toggle.classList.toggle('active');
-            scriptsHeader.style.opacity = menu.classList.contains('active') ? 0 : 1;
+<script>
+    function copyScript(scriptType) {
+        let scriptText;
+        if (scriptType === 'vertex') {
+            scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Burdenerd/VertexHub/refs/heads/main/Offical'))()";
+        } else if (scriptType === 'frostware') {
+            scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Otheruser/Script'))()";
+        } else if (scriptType === 'example') {
+            scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/ExampleHub/Script'))()";
         }
 
-        function copyScript(scriptType) {
-            let scriptText;
-            if (scriptType === 'vertex') {
-                scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Burdenerd/VertexHub/refs/heads/main/Offical'))()";
-            } else if (scriptType === 'frostware') {
-                scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Otheruser/Script'))()";
-            }
-            
-            navigator.clipboard.writeText(scriptText).then(() => {
-                const button = document.getElementById(`copy-btn-${scriptType}`);
-                button.textContent = "📜Script Copied!";
-                setTimeout(() => {
-                    button.textContent = "Copy Script";  // Reset after 2 seconds
-                }, 2000);
-            });
-        }
-    </script>
+        navigator.clipboard.writeText(scriptText).then(() => {
+            const button = document.getElementById(`copy-btn-${scriptType}`);
+            button.textContent = "📜Script Copied!";
+            setTimeout(() => {
+                button.textContent = "Copy Script";
+            }, 2000);
+        });
+    }
+</script>
+
 </body>
 </html>
