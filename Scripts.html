@@ -349,29 +349,34 @@
     </div>
 </section>
 
-<script>
-   function copyScript(scriptType) {
-    let scriptText;
-    if (scriptType === 'vertex') {
-        scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Burdenerd/VertexHub/refs/heads/main/Offical'))()";
-    } else if (scriptType === 'frostware') {
-        scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Otheruser/Script'))()";
-    } else if (scriptType === 'example') {
-        scriptText = "loadstring(game:HttpGet('https://pastebin.com/raw/ex32UueK'))()";
-    }
+ <script>
+        // Function to copy script to clipboard
+        function copyScript(scriptType) {
+            const scripts = {
+                vertex: "loadstring(game:HttpGet('https://raw.githubusercontent.com/Burdenerd/VertexHub/refs/heads/main/Offical'))()",
+                frostware: "loadstring(game:HttpGet('https://raw.githubusercontent.com/Otheruser/Script'))()",
+                example: "loadstring(game:HttpGet('https://pastebin.com/raw/ex32UueK'))()"
+            };
 
-    if (scriptText) {
-        navigator.clipboard.writeText(scriptText).then(() => {
-            const button = document.getElementById(`copy-btn-${scriptType}`);
-            button.textContent = "📜 Script Copied!";
-            setTimeout(() => {
-                button.textContent = "Copy Script";
-            }, 2000);
-        }).catch(err => {
-            console.error("Clipboard copy failed:", err);
-            alert("Failed to copy the script. Please try again.");
-        });
-    } else {
-        console.error("Invalid scriptType:", scriptType);
-    }
-}
+            const scriptText = scripts[scriptType];
+            if (!scriptText) {
+                console.error("Invalid scriptType:", scriptType);
+                return;
+            }
+
+            navigator.clipboard.writeText(scriptText)
+                .then(() => {
+                    const button = document.getElementById(`copy-btn-${scriptType}`);
+                    if (button) {
+                        button.textContent = "📜 Script Copied!";
+                        setTimeout(() => button.textContent = "Copy Script", 2000);
+                    }
+                })
+                .catch(err => {
+                    console.error("Clipboard copy failed:", err);
+                    alert("Failed to copy the script. Please try again.");
+                });
+        }
+    </script>
+</body>
+</html>
