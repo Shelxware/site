@@ -331,51 +331,44 @@
     <section id="home" class="hero">
         <div class="image-box">
             <h2>Murder Mystery 2 Auto Farm | Vertex Hub (OP)</h2>
-            <img src="https://media.discordapp.net/attachments/1249093223134003221/1322302400802979861/317EF5E6-1B72-4F6A-BB45-FFAFA40E8063.jpg?ex=677a44d3&is=6778f353&hm=8d6f4dcb394b1ab6bb16af7af636c53831b389d1be0a36e99d036bd475d3de8a&=&width=1071&height=602" alt="Script Image">
+            <img src="https://media.discordapp.net/attachments/1237163573894053888/1322659186370154607/2F2C2865-7B60-43F0-B2D6-9BC7AF38E716.jpg?ex=6774f99b&is=6773a81b&hm=e3bad873dd5bbb9ae389e40f724c1d62aee529bd10ac1961379697ce6351a455&=&width=1071&height=602" alt="Script Image">
             <button class="copy-button" id="copy-btn-vertex" onclick="copyScript('vertex')">Copy Script</button>
         </div>
 
         <!-- New image box for the v script with purple glow -->
         <div class="image-box purple-glow">
             <h2>Blade Ball Auto Parry | Frostware Hub (OP)</h2>
-            <img src="https://media.discordapp.net/attachments/1249093223134003221/1325166312317522111/C6DEE7F9-DAF3-4F93-8B24-74CA1EFD6644.png?ex=677acccd&is=67797b4d&hm=5935ad6e9163734e5894cf4819bf8627df882388b2cc93d13d05d05653b5b837&=&width=1072&height=602" alt="Script Image">
+            <img src="https://media.discordapp.net/attachments/1249093223134003221/1323559486136516609/C6DEE7F9-DAF3-4F93-8B24-74CA1EFD6644.png?ex=6774f454&is=6773a2d4&hm=8d7f821a29b7d94d65f1d8bd1b108a55a7aeb565d69b114b74120e7bd0cecfa9&=&width=1071&height=602" alt="Script Image">
             <button class="copy-button" id="copy-btn-frostware" onclick="copyScript('frostware')">Copy Script</button>
         </div>
-   <!-- Third image box -->
-    <div class="image-box">
-        <h2>Pet Changing Scripts | Pets Go</h2>
-        <img src="https://media.discordapp.net/attachments/1249093223134003221/1325166263936483328/F64C6CA4-EF67-41D3-B75B-B463280EE643.png?ex=677accc1&is=67797b41&hm=f37485b396cd873845f57ad49228e578a4599dc4a477d99a61ced0179e7b8c56&=&width=1072&height=602" alt="New Script Image">
-        <button class="copy-button" id="copy-btn-example" onclick="copyScript('example')">Copy Script</button>
-    </div>
-</section>
+    </section>
 
- <script>
-        // Function to copy script to clipboard
+    <!-- JavaScript -->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            const toggle = document.querySelector('.menu-toggle');
+            const scriptsHeader = document.getElementById('scripts-header');
+            menu.classList.toggle('active');
+            toggle.classList.toggle('active');
+            scriptsHeader.style.opacity = menu.classList.contains('active') ? 0 : 1;
+        }
+
         function copyScript(scriptType) {
-            const scripts = {
-                vertex: "loadstring(game:HttpGet('https://raw.githubusercontent.com/Burdenerd/VertexHub/refs/heads/main/Offical'))()",
-                frostware: "loadstring(game:HttpGet('https://raw.githubusercontent.com/Otheruser/Script'))()",
-                example: "loadstring(game:HttpGet('https://pastebin.com/raw/ex32UueK'))()"
-            };
-
-            const scriptText = scripts[scriptType];
-            if (!scriptText) {
-                console.error("Invalid scriptType:", scriptType);
-                return;
+            let scriptText;
+            if (scriptType === 'vertex') {
+                scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Burdenerd/VertexHub/refs/heads/main/Offical'))()";
+            } else if (scriptType === 'frostware') {
+                scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Otheruser/Script'))()";
             }
-
-            navigator.clipboard.writeText(scriptText)
-                .then(() => {
-                    const button = document.getElementById(`copy-btn-${scriptType}`);
-                    if (button) {
-                        button.textContent = "📜 Script Copied!";
-                        setTimeout(() => button.textContent = "Copy Script", 2000);
-                    }
-                })
-                .catch(err => {
-                    console.error("Clipboard copy failed:", err);
-                    alert("Failed to copy the script. Please try again.");
-                });
+            
+            navigator.clipboard.writeText(scriptText).then(() => {
+                const button = document.getElementById(`copy-btn-${scriptType}`);
+                button.textContent = "📜Script Copied!";
+                setTimeout(() => {
+                    button.textContent = "Copy Script";  // Reset after 2 seconds
+                }, 2000);
+            });
         }
     </script>
 </body>
