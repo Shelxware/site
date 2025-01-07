@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,26 +31,28 @@
 </head>
 <body>
     <script>
+        // Function to create orbs at random positions
         function createOrb() {
             const orb = document.createElement('div');
             orb.classList.add('orb');
             document.body.appendChild(orb);
 
-            const size = Math.random() * 10 + 5; // Random size between 10 and 20px
+            const size = Math.random() * 5 + 5; // Random size between 5 and 10px
             orb.style.width = `${size}px`;
             orb.style.height = `${size}px`;
 
-            // Start position: Random horizontal position at the top
+            // Random starting position on the screen
             const startX = Math.random() * window.innerWidth;
+            const startY = Math.random() * window.innerHeight;
             orb.style.left = `${startX}px`;
-            orb.style.top = `-20px`; // Start just above the top of the screen
+            orb.style.top = `${startY}px`;
 
             // Randomize movement path
             const endX = Math.random() * window.innerWidth - window.innerWidth / 2; // Random X end position
             const endY = Math.random() * window.innerHeight + window.innerHeight / 2; // Random Y end position
 
             orb.style.setProperty('--endX', `${endX}px`);
-            orb.style.setProperty('--endY', `${endY}px`);
+            orb.style.setProperty('--endY`, `${endY}px`);
 
             // Set a random animation duration (between 8 and 12 seconds)
             const duration = Math.random() * 4 + 8;
@@ -62,8 +63,13 @@
             }, duration * 1000);
         }
 
-        // Create orbs at intervals
-        setInterval(createOrb, 150); // Create a new orb every 150ms
+        // Create a fixed number of orbs on page load
+        for (let i = 0; i < 50; i++) {
+            createOrb(); // Create 50 orbs initially
+        }
+
+        // Optional: Continuously create new orbs at intervals
+        setInterval(createOrb, 500); // Create a new orb every 500ms
     </script>
 </body>
 </html>
