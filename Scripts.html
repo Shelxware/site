@@ -24,7 +24,7 @@
                 transform: translate(0, 0);
             }
             100% {
-                transform: translate(calc(100vw * 1), calc(100vh * 1));
+                transform: translate(var(--endX), var(--endY));
             }
         }
     </style>
@@ -40,23 +40,24 @@
             orb.style.width = `${size}px`;
             orb.style.height = `${size}px`;
 
+            // Start position: Random horizontal position at the top
             const startX = Math.random() * window.innerWidth;
-            const startY = Math.random() * window.innerHeight;
             orb.style.left = `${startX}px`;
-            orb.style.top = `${startY}px`;
+            orb.style.top = `-20px`; // Start just above the top of the screen
 
-            // Set a random animation speed (duration) for each orb
-            const duration = Math.random() * 6 + 4; // Random animation duration between 4 and 10 seconds
+            // Randomize movement path
+            const endX = Math.random() * window.innerWidth - window.innerWidth / 2; // Random X end position
+            const endY = Math.random() * window.innerHeight + window.innerHeight / 2; // Random Y end position
+
+            orb.style.setProperty('--endX', `${endX}px`);
+            orb.style.setProperty('--endY', `${endY}px`);
+
+            // Set a random animation duration (between 8 and 12 seconds)
+            const duration = Math.random() * 4 + 8;
             orb.style.animationDuration = `${duration}s`;
 
-            // Set a random floating path by adjusting the keyframes dynamically
-            const floatX = Math.random() * 200 - 100;  // Random horizontal offset
-            const floatY = Math.random() * 200 - 100;  // Random vertical offset
-
-            orb.style.animation = `float ${duration}s infinite linear`;
-
             setTimeout(() => {
-                orb.remove(); // Remove orb after animation
+                orb.remove(); // Remove orb after animation ends
             }, duration * 1000);
         }
 
