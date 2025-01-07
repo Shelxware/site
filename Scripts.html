@@ -36,7 +36,7 @@
             orb.classList.add('orb');
             document.body.appendChild(orb);
 
-            const size = Math.random() * 15 + 5; // Random size between 5 and 20px
+            const size = Math.random() * 5 + 5; // Random size between 5 and 10px
             orb.style.width = `${size}px`;
             orb.style.height = `${size}px`;
 
@@ -50,7 +50,7 @@
             const endY = Math.random() * window.innerHeight + window.innerHeight / 2; // Random Y end position
 
             orb.style.setProperty('--endX', `${endX}px`);
-            orb.style.setProperty('--endY', `${endY}px`);
+            orb.style.setProperty('--endY`, `${endY}px`);
 
             // Set a random animation duration (between 8 and 12 seconds)
             const duration = Math.random() * 4 + 8;
