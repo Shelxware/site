@@ -1,2628 +1,388 @@
-
 <!DOCTYPE html>
-<html lang='zh-TW' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<html lang="en">
 <head>
-<link href='https://www.blogger.com/static/v1/widgets/55013136-widget_css_bundle.css' rel='stylesheet' type='text/css'/>
-<title>GEEKY BLOX</title>
-<!-- Google tag (gtag.js) -->
-<script async='async' src='https://www.googletagmanager.com/gtag/js?id=G-C3LB3F1PTG'></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-C3LB3F1PTG');
-</script>
-<meta charset='UTF-8'/>
-<meta content='width=device-width, initial-scale=1.0' name='viewport'/>
-<meta content='Geeky Blox is your trusted source for Roblox Executor Mobile, Roblox Scripts, executor news, and helpful tips and tricks, all 100% safe and reliable.' name='description'/>
-<meta content='Geeky Blox, Roblox scripts, Roblox executor script 100% trusted, Roblox Executor, Roblox Executor Mobile, New Mobile Executor, Roblox Scripts, Roblox Tips and Tricks, New Scripts Roblox, New Roblox Script Executor' name='keywords'/>
-<meta content='Geeky Blox' name='author'/>
-<meta content='© 2024 Geeky Blox. All rights reserved.' name='copyright'/>
-<link href='https://www.geekyblox.com/?m=1' rel='canonical'/>
-<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
-<meta content='blogger' name='generator'/>
-<link href='https://www.geekyblox.com/favicon.ico' rel='icon' type='image/x-icon'/>
-<link href='https://www.geekyblox.com/' rel='canonical'/>
-<link rel="alternate" type="application/atom+xml" title="GEEKY BLOX - Atom" href="https://www.geekyblox.com/feeds/posts/default" />
-<link rel="alternate" type="application/rss+xml" title="GEEKY BLOX - RSS" href="https://www.geekyblox.com/feeds/posts/default?alt=rss" />
-<link rel="service.post" type="application/atom+xml" title="GEEKY BLOX - Atom" href="https://www.blogger.com/feeds/9199095950636163520/posts/default" />
-<link rel="me" href="https://www.blogger.com/profile/00584955897225000017" />
-<!--Can't find substitution for tag [blog.ieCssRetrofitLinks]-->
-<meta content='Geeky Blox is your trusted source for Roblox Executor Mobile, Roblox Scripts, executor news, and helpful tips and tricks, all 100% safe and reliable.' name='description'/>
-<meta content='https://www.geekyblox.com/' property='og:url'/>
-<meta content='GEEKY BLOX' property='og:title'/>
-<meta content='Geeky Blox is your trusted source for Roblox Executor Mobile, Roblox Scripts, executor news, and helpful tips and tricks, all 100% safe and reliable.' property='og:description'/>
-<link href='https://www.geekyblox.com/' rel='canonical'/>
-<!-- Bootstrap CSS -->
-<link crossorigin='anonymous' href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css' integrity='sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0' rel='stylesheet'/>
-<!-- Link to Font Awesome library for icons -->
-<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css' rel='stylesheet'/>
-<style id='page-skin-1' type='text/css'><!--
-
---></style>
-<style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlobalExploiter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap" rel="stylesheet">
     
-::selection {
-    background-color: rgb(84, 155, 245);
-    color: white;
-}
-a {
-    text-decoration: none;
-}
-
-.text-theme-color {
-    color: #0d6efd;
-}
-
-h1,
-h2,
-h3 {
-    font-weight: bold;
-}
-
-h2 {
-    margin-top: 1.75rem;
-    margin-bottom: 1rem;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-.item-snippet {
-    text-align: justify;
-}
-
-.sticky-top,
-.navbar,
-.dropdown-menu {
-    background-color: rgb(37, 41, 47);
-    border-color: rgb(81, 90, 98);
-}
-
-tr {
-    background-color: rgb(247, 248, 250);
-}
-
-tr:hover {
-    background-color: rgb(247, 248, 250);
-}
-
-#navbarDropdown:hover {
-    background-color: rgb(71, 77, 87);
-}
-
-#navbarDropdown:focus {
-    outline: none !important;
-}
-
-.dropdown-item {
-    color: white;
-}
-
-.dropdown-item:hover {
-    color: black;
-}
-
-.navbar-brand:hover,
-.navbar-nav >
-
-a.nav-link:hover {
-    color: orange !important;
-}
-
-.yt-red {
-    color: red;
-    border-color: red;
-}
-
-.yt-red:hover {
-    background-color: red;
-    border-color: red;
-}
-
-.ig-orange {
-    color: orange;
-    border-color: orange;
-}
-
-.ig-orange:hover {
-    background-color: orange;
-    border-color: orange;
-}
-
-.line-green {
-    color: #03C755;
-    border-color: #03C755;
-}
-
-.line-green:hover {
-    border-color: #03C755;
-    background-color: #03C755;
-}
-
-.twitter-blue {
-    color: #1EA1F1;
-    border-color: #1EA1F1;
-}
-
-.twitter-blue:hover {
-    border-color: #1EA1F1;
-    background-color: #1EA1F1;
-}
-
-.facebook-blue {
-    color: #2D88FF;
-    border-color: #2D88FF;
-}
-
-.facebook-blue:hover {
-    border-color: #2D88FF;
-    background-color: #2D88FF;
-}
-
-.purple {
-    color: #A96FFF;
-    border-color: #A96FFF;
-}
-
-.purple:hover {
-    border-color: #A96FFF;
-    background-color: #A96FFF;
-}
-
-.GitHub-white {
-    color: rgb(205, 217, 229);
-    border-color: rgb(205, 217, 229);
-}
-
-
-.GitHub-white:hover {
-    color: rgb(45, 51, 59);
-    border-color: rgb(205, 217, 229);
-    background-color: rgb(205, 217, 229);
-}
-
-.Share-btn {
-    color: rgb(71, 77, 87);
-    border-color: rgb(71, 77, 87);
-}
-
-.Share-btn:hover {
-    color: white;
-    border-color: rgb(71, 77, 87);
-    background-color: rgb(71, 77, 87);
-}
-
-
-.position-sticky >
-
-
-tr {
-    color: rgb(205, 217, 229);
-    background-color: rgb(45, 51, 59);
-    border-color: rgb(205, 217, 229);
-}
-
-tr:hover {
-    color: rgb(45, 51, 59);
-    background-color: rgb(205, 217, 229);
-    border-color: rgb(45, 51, 59);
-}
-
-.sticky-top,
-.navbar,
-.dropdown-menu {
-    background-color: rgb(21 24 28);
-}
-
-.navbar-nav >
-
-a.active {
-    color: rgb(205, 217, 229) !important;
-}
-
-.card {
-    border-radius: 15px;
-    color: rgb(205, 217, 229);
-    background-color: rgb(28 28 28 / 80%);
-    border-color: rgb(67, 76, 86);
-}
-
-a,
-.btn-outline-primary {
-    color: rgb(255 255 255);
-    border-color: rgb(255 255 255);
-}
-
-.text-theme-color {
-    color: rgb(84, 155, 245);
-}
-
-.btn-outline-primary:hover {
-    border-color: rgb(255 255 255);
-    background-color: rgb(255 255 255);
-    color: black;
-}
-
-.position-sticky >
-
-.card {
-    background-color: rgb(28 28 28 / 80%);
-}
-
-.Share-btn {
-    color: rgb(205, 217, 229);
-    border-color: rgb(205, 217, 229);
-}
-
-.Share-btn:hover {
-    color: rgb(34, 39, 46);
-    border-color: rgb(205, 217, 229);
-    background-color: rgb(205, 217, 229);
-}
-
-
-body {
-    margin: 0;
-    background: #000000;
-}
-
-
-
-
-/* General styles for the entire page, including the hero section and its animations */
-.hero {
-    height: 60vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    padding: 0 20px;
-    background-image: url('https://i.pinimg.com/1200x/b7/ae/89/b7ae899d5c764c3e8f2c377e56471711.jpg');
-    background-size: cover;
-    background-position: center;
-}
-
-@supports (background-attachment: fixed) {
-    .hero {
-        background-attachment: fixed;
-    }
-}
-
-/* For iOS devices */
-@supports (-webkit-overflow-scrolling: touch) {
-    .hero {
-        background-attachment: scroll;
-        /* Ensure smooth scrolling on iOS */
-        -webkit-overflow-scrolling: touch;
-    }
-}
-
-/* White transparency overlay */
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px);
-    z-index: 1;
-}
-
-
-.hero-content {
-    text-align: center;
-    background: rgba(0, 0, 0, 0.4);
-    padding: 2rem;
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    position: relative;
-    z-index: 3;
-}
-
-.hero-content h1 {
-    font-size: clamp(2rem, 8vw, 4.5rem);
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    color: #ffffff;
-    font-weight: 800;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-}
-
-.hero-content p {
-    font-size: clamp(1rem, 4vw, 1.8rem);
-    color: #ffffff;
-    min-height: 2.5em;
-    margin: 0;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-}
-
-@media (max-width: 768px) {
-    .hero {
-        padding: 0 1rem;
-    }
+    <!-- Favicon -->
+    <link rel="icon" href="https://media.discordapp.net/attachments/1296169780155256884/1321516127662116956/best-i-can-do.jpg?ex=677179cd&is=6770284d&hm=8247194597191c24bfeb6261a996d5c909f78d60ec00383125f59a265e5b5576&=&width=602&height=602" type="image/jpg">
     
-    .hero-content {
-        padding: 1.5rem;
-        width: 95%;
-    }
-}
-  
+    <style>
+        /* General styling */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            color: #ffffff;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background: linear-gradient(to bottom right, #1e2a47, #4f6d8c);
+            transition: background-color 0.3s ease;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
 
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
 
-/* Styles for images to center them and maintain their size */
-img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 100%;
-    height: auto;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background: rgba(0, 0, 0, 0.8);
+            position: relative;
+        }
 
-/* Styles for the header of popular posts */
-/* Title Style */
-.popular-posts-header {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
-    padding: 1rem;
-    background: rgba(0, 0, 0, 0.8);
-    border-radius: 8px;
-    border-left: 4px solid white;
-}
+        /* Hamburger menu styling */
+        .menu-toggle {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 10;
+        }
 
-.popular-posts-header i {
-    font-size: 1.5rem;
-    color:white;
-}
+        .menu-toggle div {
+            width: 30px;
+            height: 4px;
+            background-color: #fff;
+            margin: 4px 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            border-radius: 5px;
+        }
 
-.popular-posts-header h3 {
-    margin: 0;
-    color: #fff;
-    font-size: 1.5rem;
-    font-weight: bold;
-}
+        .menu-toggle.active div:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
 
-/* Popular Posts List Style */
-.popular-posts {
-    padding: 0;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.popular-post-item {
-    display: flex;
-    gap: 1rem;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    background: rgb(28 28 28 / 80%);
-    border-radius: 8px;
-    transition: background 0.2s;
-    border-left: 3px solid transparent;
-}
-
-.popular-post-item:hover {
-    background: rgba(30, 30, 30, 0.9);
-    border-left-color: #ffffff;
-}
-
-.post-thumbnail {
-    position: relative;
-    min-width: 100px;
-    width: 100px;
-    height: 100px;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.post-thumbnail img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s;
-}
-
-.popular-post-item:hover .post-thumbnail img {
-    transform: scale(1.05);
-}
-
-.rank-container {
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 3px 8px;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-}
-
-.rank-number {
-    font-size: 0.9rem;
-    font-weight: bold;
-    color: #fff;
-}
-
-.post-icon {
-    color: white;
-    font-size: 0.9rem;
-}
-
-.post-content {
-    flex: 1;
-    min-width: 0;
-    display: flex;
-    flex-direction: column;
-}
-
-.post-title {
-    font-size: 1.1rem;
-    font-weight: bold;
-    margin: 0 0 0.5rem 0;
-    color: #fff;
-    word-wrap: break-word;
-}
-
-.post-snippet {
-    font-size: 0.9rem;
-    color: #ccc;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    margin-bottom: 0.5rem;
-    flex-grow: 1;
-}
-
-.post-meta {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-top: auto;
-}
-
-.read-more-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    background: transparent;
-    border: 1px solid #ffffff;
-    color: #ffffff;
-    border-radius: 4px;
-    text-decoration: none;
-    transition: all 0.2s;
-    font-size: 0.9rem;
-}
-
-.read-more-btn i {
-    font-size: 0.8rem;
-}
-
-.read-more-btn:hover {
-    background: #ffffff;
-    color: black;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .popular-post-item {
-        padding: 0.8rem;
-    }
-
-    .post-thumbnail {
-        min-width: 80px;
-        width: 80px;
-        height: 80px;
-    }
-
-    .rank-container {
-        padding: 2px 6px;
-    }
-
-    .rank-number {
-        font-size: 0.8rem;
-    }
-
-    .post-icon {
-        font-size: 0.8rem;
-    }
-
-    .post-title {
-        font-size: 1rem;
-    }
-
-    .popular-posts-header {
-        margin: 1rem;
-    }
-
-    .popular-posts-header h3 {
-        font-size: 1.2rem;
-    }
-
-    .read-more-btn {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.8rem;
-    }
-}
-
-/* For very small screens */
-@media (max-width: 480px) {
-    .post-snippet {
-        -webkit-line-clamp: 2;
-    }
-
-    .post-thumbnail {
-        min-width: 70px;
-        width: 70px;
-        height: 70px;
-    }
-}
-
-
-
-
-/* Styles for the header of recent posts */
-.recent-posts-header {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
-    padding: 1rem;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 8px;
-    border-left: 4px solid white;
-}
-
-.recent-posts-header i {
-    font-size: 1.5rem;
-    color: white;
-}
-
-.recent-posts-header h2 {
-    margin: 0;
-    color: #fff;
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-/* Blog Pager Container */
-
-      .blog-pager {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      gap: 1.5rem;
-      padding: 2rem 0;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-      background: #000;
-    }
-    
-    .pager-button {
-      padding: 1rem 1.8rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 500;
-      display: inline-flex;
-      align-items: center;
-      transition: all 0.3s ease;
-      border: 2px solid;
-      position: relative;
-      overflow: hidden;
-      z-index: 1;
-      min-width: 160px;
-      justify-content: center;
-      font-size: 0.95rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    
-    .pager-button::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      transition: all 0.4s ease;
-      z-index: -1;
-    }
-    
-    .newer-post {
-      border-color: #ffffff;
-      color: #ffffff;
-      justify-self: start;
-      background: transparent;
-    }
-    
-    .newer-post::before {
-      background: #ffffff;
-    }
-    
-    .newer-post:hover::before {
-      left: 0;
-    }
-    
-    .newer-post:hover {
-      color: #000000;
-      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
-    }
-    
-    .older-post {
-      border-color: #ffffff;
-      color: #ffffff;
-      justify-self: end;
-      background: transparent;
-    }
-    
-    .older-post::before {
-      background: #ffffff;
-    }
-    
-    .older-post:hover::before {
-      left: 0;
-    }
-    
-    .older-post:hover {
-      color: #000000;
-      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
-    }
-    
-    .disabled-button {
-      border-color: #333333;
-      color: #666666;
-      cursor: not-allowed;
-      opacity: 0.6;
-      background: transparent;
-    }
-    
-    .home-button {
-      background: #ffffff;
-      color: #000000;
-      border: 2px solid #ffffff;
-      padding: 1rem 2rem;
-      border-radius: 50px;
-      text-align: center;
-      transition: all 0.3s ease;
-      text-decoration: none;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-      justify-self: center;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      min-width: 140px;
-    }
-    
-    .home-button:hover {
-      background: transparent;
-      color: #ffffff;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
-    }
-    
-    .button-icon {
-      margin: 0 8px;
-      font-size: 1.1em;
-    }
-    
-    @media (max-width: 768px) {
-      .blog-pager {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0.5rem;
-        padding: 1.5rem;
-      }
-      
-      .pager-button, .home-button {
-        padding: 0.8rem 1rem;
-        font-size: 0.8rem;
-        min-width: 0;
-        width: 100%;
-      }
-      
-      .button-icon {
-        margin: 0 4px;
-        font-size: 1em;
-      }
-      
-      .pager-button span {
-        display: none;
-      }
-    
-      .home-button span {
-        display: none;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .blog-pager {
-        padding: 1rem;
-        gap: 0.3rem;
-      }
-      
-      .pager-button, .home-button {
-        padding: 0.6rem;
-      }
-      
-      .button-icon {
-        margin: 0;
-      }
-    }
-  
-  
-
-.alert-warning {
-    color: #ffffff;
-    background-color: #000000;
-    border-color: #000000;
-}
-
-  #Stats0_totalCount{
-
-    color: white;
-  }
-
-  
-/* Style for the button */  
-
-  
-    .myButton {
-      display: block;
-      background-color: #1f1f1f;
-      color: white;
-      padding: 15px 20px;
-      text-align: center;
-      text-decoration: none;
-      font-family: system-ui, -apple-system, sans-serif;
-      font-size: 14px;
-      border-radius: 25px;
-      border: 1px solid #474747;
-      width: 100%;
-      transition: all 0.3s ease;
-      user-select: none;
-      position: relative;
-      overflow: hidden;
-      z-index: 1;
-      margin: 10px 0;
-    }
-
-    .myButton::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 50%;
-      height: 100%;
-      background: linear-gradient(
-        120deg,
-        transparent,
-        rgba(255, 255, 255, 0.1),
-        transparent
-      );
-      animation: shine 4s infinite linear;
-      animation-delay: var(--shine-delay);
-    }
-
-    @keyframes shine {
-      0% {
-        left: -100%;
-      }
-      100% {
-        left: 200%;
-      }
-    }
-
-    .myButton:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-      border-color: #565656;
-      background-color: #474747; 
-      color:white;
-    }
-
-    .myButton:active {
-      transform: translateY(1px);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    }
-  
- 
-.views-count {
-    font-size: 1rem;
-    color: white; /* Bootstrap secondary color */
-    display: flex;
-    align-items: center;
-}
-.views-count h4 {
-    margin-left: 10px; /* Space between icon and text */
-}
-.views-count i {
-    color: white;
-}
-
-.info-text {
-    font-size: 1rem;
-    color: white; /* Bootstrap secondary color */
-    display: flex;
-    align-items: center;
-}
-.info-text h4 {
-    margin-left: 10px; /* Space between icon and text */
-}
-.info-text i {
-    color: white;
-}
-  
-
-#custom-h2 {
-  font-size: 1.125rem;
-  line-height: 1.5;
-}
-  
-  
-
-  
-  /* warning */
- 
-    .warning-container {
-        max-width: auto;
-        width: 100%;
-        padding: 15px;
-        box-sizing: border-box;
-    }
-
-    .warning {
-        background-color: #2d2d2d;
-        border: 2px dotted #ffffff;
-        padding: 20px;
-        border-radius: 4px;
-        box-shadow: 0 2px 5px rgba(255,255,255,0.1);
-        display: flex;
-        align-items: flex-start;
-        animation: slideIn 0.5s ease-out;
-    }
-
-    @keyframes slideIn {
-        from {
-            transform: translateY(-20px);
+        .menu-toggle.active div:nth-child(2) {
             opacity: 0;
         }
-        to {
-            transform: translateY(0);
+
+        .menu-toggle.active div:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        .scripts-header {
+            font-family: Arial, sans-serif;
+            font-weight: 700;
+            font-size: 3.2em;
+            color: #ffffff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
             opacity: 1;
-        }
-    }
-
-    .warning i {
-        color: #ffc107;
-        font-size: 24px;
-        margin-right: 15px;
-        flex-shrink: 0;
-        margin-top: 2px;
-    }
-
-    .warning-content {
-        flex: 1;
-    }
-
-    .warning-title {
-        color: #ffc107;
-        font-size: 18px;
-        font-weight: bold;
-        margin: 0 0 5px 0;
-    }
-
-    .warning-text {
-        color: #ffffff;
-        margin: 0;
-        line-height: 1.5;
-    }
-
-    .warning:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 8px rgba(255,255,255,0.15);
-        transition: all 0.3s ease;
-    }
-
-    /* Responsive styles */
-    @media screen and (max-width: 480px) {
-        .warning-container {
-            width: 100%;
-            padding: 10px;
+            transition: opacity 0.3s ease;
+            text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #ffffff;
         }
 
-        .warning {
-            padding: 15px;
+        .search-box {
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 8px 15px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            margin-left: auto;
         }
 
-        .warning i {
-            font-size: 20px;
+        .search-box input {
+            border: none;
+            padding: 5px;
+            font-size: 1em;
+            border-radius: 10px;
+            outline: none;
+            background-color: transparent;
+            color: #333;
             margin-right: 10px;
-            margin-top: 3px;
         }
 
-        .warning-title {
-            font-size: 16px;
+        .search-box button {
+            border: none;
+            background: #00bcd4;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
 
-        .warning-text {
-            font-size: 14px;
-        }
-    }
-
-    @media screen and (max-width: 320px) {
-        .warning {
-            padding: 12px;
+        .search-box button:hover {
+            background-color: #0097a7;
         }
 
-        .warning i {
-            font-size: 18px;
-            margin-right: 8px;
-            margin-top: 3px;
-        }
-
-        .warning-title {
-            font-size: 15px;
-        }
-
-        .warning-text {
-            font-size: 13px;
-        }
-    }
-  
-  
-  
-  
-  
-  
-  
-
-  </style>
-<script>
-    /*<![CDATA[*/ var uri = window.location.toString(); if (uri.indexOf("%3D","%3D") > 0) { var clean_uri = uri.substring(0, uri.indexOf("%3D")); window.history.replaceState({}, document.title, clean_uri);} var uri = window.location.toString(); if (uri.indexOf("%3D%3D","%3D%3D") > 0) { var clean_uri = uri.substring(0, uri.indexOf("%3D%3D")); window.history.replaceState({}, document.title, clean_uri);} var uri = window.location.toString(); if (uri.indexOf("&m=1","&m=1") > 0) { var clean_uri = uri.substring(0, uri.indexOf("&m=1")); window.history.replaceState({}, document.title, clean_uri); } var uri = window.location.toString(); if (uri.indexOf("?m=1","?m=1") > 0) { var clean_uri = uri.substring(0, uri.indexOf("?m=1"));window.history.replaceState({}, document.title, clean_uri);}; var protocol=window.location.protocol.replace(/\:/g,''); if(protocol=='http'){ var url=window.location.href.replace('http','https'); window.location.replace(url);} /*]]>*/
-  </script>
-<link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=9199095950636163520&amp;zx=fda6649f-48bd-4a45-86e4-c671fd26ede6' media='none' onload='if(media!=&#39;all&#39;)media=&#39;all&#39;' rel='stylesheet'/><noscript><link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=9199095950636163520&amp;zx=fda6649f-48bd-4a45-86e4-c671fd26ede6' rel='stylesheet'/></noscript>
-<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
-<meta name='google-adsense-platform-domain' content='blogspot.com'/>
-
-</head>
-<body oncopy='return true'>
-<header class='sticky-top'>
-<div class='container'>
-<nav class='navbar navbar-expand-xl navbar-dark'>
-<div class='container-fluid'>
-<a class='navbar-brand fs-4 fw-bold text-white' href='/'>GEEKY BLOX</a>
-<button aria-controls='hamburger' aria-expanded='false' aria-label='Toggle navigation' class='navbar-toggler' data-bs-target='#hamburger' data-bs-toggle='collapse' type='button'>
-<span class='navbar-toggler-icon'></span>
-</button>
-<div class='collapse navbar-collapse' id='hamburger'>
-<div class='navbar-nav flex-row'>
-<a class='nav-link me-2' href='/' style='color:#ADD8E6;'>Home</a>
-<a class='nav-link me-2 active' href='/search/label/Tools'>Tools</a>
-<a class='nav-link me-2 active' href='/search/label/Script'>Script</a>
-<a class='nav-link me-2 active' href='/p/about-me_11.html'>About Me</a>
-<!-- dropdown wd -->
-<!-- end -->
-</div>
-<div class='navbar-nav ms-md-auto'>
-<form action='/search' class='d-flex me-1 my-1'>
-<div class='input-group'>
-<input aria-label='Search' class='form-control search' name='q' placeholder='Search for tools, scripts, and more.' required='required' style='background-color:#22272E; border-color:rgb(81,90,98); color:#ADBAC7;' type='search'/>
-<button aria-label='Search for articles' class='btn btn-outline-secondary' data-bs-placement='bottom' data-bs-toggle='tooltip' title='Search articles' type='submit'>
-<svg class='bi bi-search' fill='white' height='17' viewBox='0 0 17 17' width='17' xmlns='http://www.w3.org/2000/svg'>
-<path d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'></path>
-</svg>
-</button>
-</div>
-</form>
-</div>
-<div class='navbar-nav flex-row flex-wrap ms-md-auto'>
-<!--YT-->
-<a class='btn btn-outline-danger yt-red me-1 my-1' data-bs-placement='bottom' data-bs-toggle='tooltip' href='https://www.youtube.com/@geekyblox5278' role='button' target='_blank' title='YouTube'>
-<svg class='bi bi-youtube' fill='currentColor' height='16' viewBox='0 0 16 16' width='16' xmlns='http://www.w3.org/2000/svg'>
-<path d='M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z'></path>
-</svg>
-</a>
-<!--IG-->
-<a class='btn btn-outline-danger ig-orange me-1 my-1' data-bs-placement='bottom' data-bs-toggle='tooltip' href='https://www.instagram.com/geekyblox/' role='button' target='_blank' title='Instagram'>
-<svg class='bi bi-instagram' fill='currentColor' height='16' viewBox='0 0 16 16' width='16' xmlns='http://www.w3.org/2000/svg'><path d='M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z'></path>
-</svg>
-</a>
-<!-- DISCORD -->
-<a class='btn btn-outline-primary discord-blue me-1 my-1' data-bs-original-title='Discord' data-bs-placement='bottom' data-bs-toggle='tooltip' href='https://discord.com/invite/VNUMemjs' role='button' style='border-color: #7289DA; color: #7289DA;' target='_blank' title=''>
-<svg class='bi bi-discord' fill='#7289DA' height='16' viewBox='0 0 16 16' width='16' xmlns='http://www.w3.org/2000/svg'>
-<path d='M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.235.524-3.257 1.011a.041.041 0 0 0-.021.018C.533 6.225-.32 9.49.099 12.709a.052.052 0 0 0 .02.035c1.37 1.006 2.685 1.611 4.043 2.013a.05.05 0 0 0 .056-.019c.31-.42.583-.863.818-1.329a.05.05 0 0 0-.027-.067c-.448-.169-.87-.379-1.272-.633a.05.05 0 0 1-.005-.084c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.664 1.192 5.554 1.192 8.216 0a.05.05 0 0 1 .053.006c.08.066.164.132.248.196a.05.05 0 0 1-.004.084 7.978 7.978 0 0 1-1.273.632.05.05 0 0 0-.026.068c.24.465.513.909.817 1.329a.05.05 0 0 0 .056.02c1.358-.403 2.673-1.007 4.042-2.013a.052.052 0 0 0 .021-.035c.5-3.301-.808-6.566-3.418-9.784a.034.034 0 0 0-.02-.019zM5.656 10.954c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.733 1.438 1.613 0 .888-.637 1.612-1.438 1.612zm4.688 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.733 1.438 1.613 0 .888-.631 1.612-1.438 1.612z'></path>
-</svg>
-</a>
-<!--Twitter-->
-<a class='btn btn-outline-secondary twitter-blue me-1 my-1' data-bs-placement='bottom' data-bs-toggle='tooltip' href='https://x.com/GeekyBloxYt' role='button' target='_blank' title='Twitter'>
-<svg class='bi bi-twitter' fill='currentColor' height='16' viewBox='0 0 16 16' width='16' xmlns='http://www.w3.org/2000/svg'>
-<path d='M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z'></path>
-</svg>
-</a>
-<!--GitHub-->
-<a class='btn btn-outline-dark GitHub-white me-1 my-1' data-bs-placement='bottom' data-bs-toggle='tooltip' href='https://github.com/greekBack' role='button' target='_blank' title='GitHub'>
-<svg class='bi bi-github' fill='currentColor' height='16' viewBox='0 0 16 16' width='16' xmlns='http://www.w3.org/2000/svg'>
-<path d='M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z'></path>
-</svg>
-</a>
-</div>
-</div>
-</div>
-</nav>
-</div>
-</header>
-<!-- Recent Posts TEXT -->
-<section class='hero' id='home'>
-<div class='hero-content'>
-<h1>Geeky Blox</h1>
-<p id='typewriter'></p>
-</div>
-</section>
-<!-- hero section -->
-<div class='container'>
-<!-- For the main index/archive pages -->
-<!-- Only show hero section on main pages, not on label pages -->
->  
-<!-- Header for Recent Posts section -->
-<div class='recent-posts-header'>
-<i class='fas fa-clock'></i>
-<h2>Recent Posts</h2>
-</div>
-<div class='row mt-4'>
-<div class='col-lg-8'>
-<div class='section' id='BlogPost0'><div class='widget Blog' data-version='1' id='Blog0'>
-<main class='blog-posts hfeed'>
-<div class='post-outer'>
-<style>
-            .blog-posts {
-            display: flex;
-            flex-wrap: wrap;
-            margin: 0 -12px;
-            }
-            .blog-posts > *:not(.post-outer) {
-            width: 100%;
-            margin: 0 12px 24px;
-            }
-            .post-outer {
-            width: calc(50% - 24px) !important;
-            margin: 0 12px 24px !important;
-            float: none !important;
-            }
-            .card {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            border-radius: 15px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            }
-            .card-img-container {
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            height: 200px;
-            position: relative;
-            }
-            .card-img-top {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-top-left-radius: 15px;
-            border-top-right-radius: 15px;
-            transition: transform 0.3s ease;
-            }
-            .card-img-top:hover {
-            transform: scale(1.05);
-            }
-            .card-body {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            padding: 16px;
-            gap: 8px;
-            }
-            .card-title {
-            font-size: 1.25rem !important;
-            line-height: 1.4 !important;
-            height: 2.8em;
-            margin: 0 !important;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            }
-            .card-subtitle {
-            font-size: 0.875rem !important;
-            color: #6c757d !important;
-            margin: 0 !important;
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 8px;
-            }
-            .post-labels {
-            margin-bottom: 5px;
-            display: flex;
-            gap: 4px;
-            flex-wrap: wrap;
-            }
-            .badge {
-            display: inline-block;
-            padding: 8px 25px;
-            font-size: 0.75rem;
-            text-decoration: none;
-            margin: 0;
-            background-color: #fff;
-            color: black;
-            border-radius: 25px;
-            }
-            .badge:hover {
-            background-color: #e9ecef;
-            }
-            .item-snippet {
-            flex: 1;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: rgb(205, 217, 229);
-            height: 4.8em;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            margin: 0;
-            }
-            .btn.btn-outline-primary {
-            margin-top: auto;
-            padding: 8px 16px;
-            font-size: 0.95rem;
-            height: 40px;
-            }
-            .status-msg-wrap {
-            width: 100%;
-            margin: 0 12px 24px;
-            }
-            .status-msg-body {
-            width: 100%;
-            }
-
-            .ms-2 {
-            margin-left: 0rem!important;
-            }
-
-            @media (max-width: 768px) {
-            .post-outer {
-            width: calc(100% - 24px) !important;
-            }
-
-            }
-        </style>
-<script> // <![CDATA[
-            function filterAndTruncateContent() {
-                // Handle grid post labels
-                document.querySelectorAll('.grid-post-labels').forEach(labelContainer => {
-                    const labels = labelContainer.querySelectorAll('a');
-                    labels.forEach(label => {
-                        const text = label.textContent.trim();
-                        if (text !== 'Script' && text !== 'Tools') {
-                            label.style.display = 'none';
-                        }
-                    });
-                });
-
-                // Truncate descriptions
-                document.querySelectorAll('.item-snippet').forEach(snippet => {
-                    const text = snippet.textContent;
-                    if (text.length > 80) {
-                        snippet.textContent = text.substring(0, 80) + '...';
-                    }
-                });
-            }
-            
-            // Run after page load
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', filterAndTruncateContent);
-            } else {
-                filterAndTruncateContent();
-            }// ]]>
-        </script>
-<div class='card h-100'>
-<article>
-<div class='card-img-container'>
-<img alt='Codex and Arceus X Mobile Executor New Update Released' class='card-img-top' loading='lazy' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh1USjeuk3D5qytrE-xCyBqpPZK-zEr3cMClui5fOF-mWfO8oWkymQGOMGo_7ovF5qOj75jBWo6zomqBDhutLY-_c-Mf1B40K3HvPQqHZS5Fur04670PNldAYUU9-kud7jWKHliEuPj8rb1DN_ZIaRQ0F3G3wLobNLH9eQeY2urKsQHlcMe7tJ4PUQh4Zs/w640-h360/%F0%9F%91%8B%20w.jpg'/>
-</div>
-<div class='card-body'>
-<div class='post-labels grid-post-labels'>
-<a class='badge' href='https://www.geekyblox.com/search/label/arceus%20x%20executor%20new%20update' rel='tag'>
-arceus x executor new update
-</a>
-<a class='badge' href='https://www.geekyblox.com/search/label/arceus%20x%20neo%20executor' rel='tag'>
-arceus x neo executor
-</a>
-<a class='badge' href='https://www.geekyblox.com/search/label/codex%20executor' rel='tag'>
-codex executor
-</a>
-<a class='badge' href='https://www.geekyblox.com/search/label/codex%20executor%20mobile%20new%20update' rel='tag'>
-codex executor mobile new update
-</a>
-<a class='badge' href='https://www.geekyblox.com/search/label/Tools' rel='tag'>
-Tools
-</a>
-</div>
-<header>
-<h1 class='card-title fs-3 fw-bold'>
-Codex and Arceus X Mobile Executor New Update Released
-</h1>
-<h6 class='card-subtitle text-muted my-2'>
-<i class='far fa-calendar-alt me-1'></i>
-January 07, 2025
-</h6>
-</header>
-<div class='item-snippet'>
-The new update of Codex and Arceus X Mobile Executor brings the best and safest features. Both executors offer a clean UI, powerful features...
-</div>
-<a class='btn btn-outline-primary stretched-link d-grid mt-3' href='https://www.geekyblox.com/2025/01/codex-and-arceus-x.html'>
-<span class='d-flex justify-content-center align-items-center'> Read
-                                newest post &#160; <i class='fas fa-book-reader ms-2'></i>
-</span>
-</a>
-</div>
-</article>
-</div>
-</div>
-<div class='post-outer'>
-<style>
-            .blog-posts {
-            display: flex;
-            flex-wrap: wrap;
-            margin: 0 -12px;
-            }
-            .blog-posts > *:not(.post-outer) {
-            width: 100%;
-            margin: 0 12px 24px;
-            }
-            .post-outer {
-            width: calc(50% - 24px) !important;
-            margin: 0 12px 24px !important;
-            float: none !important;
-            }
-            .card {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            border-radius: 15px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            }
-            .card-img-container {
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            height: 200px;
-            position: relative;
-            }
-            .card-img-top {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-top-left-radius: 15px;
-            border-top-right-radius: 15px;
-            transition: transform 0.3s ease;
-            }
-            .card-img-top:hover {
-            transform: scale(1.05);
-            }
-            .card-body {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            padding: 16px;
-            gap: 8px;
-            }
-            .card-title {
-            font-size: 1.25rem !important;
-            line-height: 1.4 !important;
-            height: 2.8em;
-            margin: 0 !important;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            }
-            .card-subtitle {
-            font-size: 0.875rem !important;
-            color: #6c757d !important;
-            margin: 0 !important;
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 8px;
-            }
-            .post-labels {
-            margin-bottom: 5px;
-            display: flex;
-            gap: 4px;
-            flex-wrap: wrap;
-            }
-            .badge {
-            display: inline-block;
-            padding: 8px 25px;
-            font-size: 0.75rem;
-            text-decoration: none;
-            margin: 0;
-            background-color: #fff;
-            color: black;
-            border-radius: 25px;
-            }
-            .badge:hover {
-            background-color: #e9ecef;
-            }
-            .item-snippet {
-            flex: 1;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: rgb(205, 217, 229);
-            height: 4.8em;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            margin: 0;
-            }
-            .btn.btn-outline-primary {
-            margin-top: auto;
-            padding: 8px 16px;
-            font-size: 0.95rem;
-            height: 40px;
-            }
-            .status-msg-wrap {
-            width: 100%;
-            margin: 0 12px 24px;
-            }
-            .status-msg-body {
-            width: 100%;
-            }
-
-            .ms-2 {
-            margin-left: 0rem!important;
-            }
-
-            @media (max-width: 768px) {
-            .post-outer {
-            width: calc(100% - 24px) !important;
-            }
-
-            }
-        </style>
-<script> // <![CDATA[
-            function filterAndTruncateContent() {
-                // Handle grid post labels
-                document.querySelectorAll('.grid-post-labels').forEach(labelContainer => {
-                    const labels = labelContainer.querySelectorAll('a');
-                    labels.forEach(label => {
-                        const text = label.textContent.trim();
-                        if (text !== 'Script' && text !== 'Tools') {
-                            label.style.display = 'none';
-                        }
-                    });
-                });
-
-                // Truncate descriptions
-                document.querySelectorAll('.item-snippet').forEach(snippet => {
-                    const text = snippet.textContent;
-                    if (text.length > 80) {
-                        snippet.textContent = text.substring(0, 80) + '...';
-                    }
-                });
-            }
-            
-            // Run after page load
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', filterAndTruncateContent);
-            } else {
-                filterAndTruncateContent();
-            }// ]]>
-        </script>
-<div class='card h-100'>
-<article>
-<div class='card-img-container'>
-<img alt='Blox Fruits Script Mobile | Auto Farm, Race V4, Raids, Sea Events & More (2025)' class='card-img-top' loading='lazy' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjfp71QwigL0eE85Z5OT_HGjWY3gAX4zXhAToB1RY8h5E1KtuWNVR34UfX5c57A1ha3KMPn-Maknr4P0C4F3S6fpxU-LURJyW0XepTz4g5ckSU5JF7NmIvOILW0U3BZJtfs-JLv0V7OZSQdVMedzEUqYwD7f1jLS4r-xz9qmInc2_iWDSHQyV_wvPX1jAM/w623-h350/w.jpg'/>
-</div>
-<div class='card-body'>
-<div class='post-labels grid-post-labels'>
-<a class='badge' href='https://www.geekyblox.com/search/label/Blox%20Fruits%20Script' rel='tag'>
-Blox Fruits Script
-</a>
-<a class='badge' href='https://www.geekyblox.com/search/label/Blox%20Fruits%20Script%202025' rel='tag'>
-Blox Fruits Script 2025
-</a>
-<a class='badge' href='https://www.geekyblox.com/search/label/New%20Blox%20Fruits%20Script%20Update' rel='tag'>
-New Blox Fruits Script Update
-</a>
-<a class='badge' href='https://www.geekyblox.com/search/label/Script' rel='tag'>
-Script
-</a>
-</div>
-<header>
-<h1 class='card-title fs-3 fw-bold'>
-Blox Fruits Script Mobile | Auto Farm, Race V4, Raids, Sea Events & More (2025)
-</h1>
-<h6 class='card-subtitle text-muted my-2'>
-<i class='far fa-calendar-alt me-1'></i>
-January 05, 2025
-</h6>
-</header>
-<div class='item-snippet'>
-&#160;New Blox Fruits script for 2025 works on both mobile and PC. However, for PC, a high-level executor is needed. This script is excellent, ve...
-</div>
-<a class='btn btn-outline-primary stretched-link d-grid mt-3' href='https://www.geekyblox.com/2025/01/blox-fruits-script-2025.html'>
-<span class='d-flex justify-content-center align-items-center'> Read
-                                newest post &#160; <i class='fas fa-book-reader ms-2'></i>
-</span>
-</a>
-</div>
-</article>
-</div>
-</div>
-<div class='post-outer'>
-<style>
-            .blog-posts {
-            display: flex;
-            flex-wrap: wrap;
-            margin: 0 -12px;
-            }
-            .blog-posts > *:not(.post-outer) {
-            width: 100%;
-            margin: 0 12px 24px;
-            }
-            .post-outer {
-            width: calc(50% - 24px) !important;
-            margin: 0 12px 24px !important;
-            float: none !important;
-            }
-            .card {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            border-radius: 15px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            }
-            .card-img-container {
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            height: 200px;
-            position: relative;
-            }
-            .card-img-top {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-top-left-radius: 15px;
-            border-top-right-radius: 15px;
-            transition: transform 0.3s ease;
-            }
-            .card-img-top:hover {
-            transform: scale(1.05);
-            }
-            .card-body {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            padding: 16px;
-            gap: 8px;
-            }
-            .card-title {
-            font-size: 1.25rem !important;
-            line-height: 1.4 !important;
-            height: 2.8em;
-            margin: 0 !important;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            }
-            .card-subtitle {
-            font-size: 0.875rem !important;
-            color: #6c757d !important;
-            margin: 0 !important;
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 8px;
-            }
-            .post-labels {
-            margin-bottom: 5px;
-            display: flex;
-            gap: 4px;
-            flex-wrap: wrap;
-            }
-            .badge {
-            display: inline-block;
-            padding: 8px 25px;
-            font-size: 0.75rem;
-            text-decoration: none;
-            margin: 0;
-            background-color: #fff;
-            color: black;
-            border-radius: 25px;
-            }
-            .badge:hover {
-            background-color: #e9ecef;
-            }
-            .item-snippet {
-            flex: 1;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: rgb(205, 217, 229);
-            height: 4.8em;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            margin: 0;
-            }
-            .btn.btn-outline-primary {
-            margin-top: auto;
-            padding: 8px 16px;
-            font-size: 0.95rem;
-            height: 40px;
-            }
-            .status-msg-wrap {
-            width: 100%;
-            margin: 0 12px 24px;
-            }
-            .status-msg-body {
-            width: 100%;
-            }
-
-            .ms-2 {
-            margin-left: 0rem!important;
-            }
-
-            @media (max-width: 768px) {
-            .post-outer {
-            width: calc(100% - 24px) !important;
-            }
-
-            }
-        </style>
-<script> // <![CDATA[
-            function filterAndTruncateContent() {
-                // Handle grid post labels
-                document.querySelectorAll('.grid-post-labels').forEach(labelContainer => {
-                    const labels = labelContainer.querySelectorAll('a');
-                    labels.forEach(label => {
-                        const text = label.textContent.trim();
-                        if (text !== 'Script' && text !== 'Tools') {
-                            label.style.display = 'none';
-                        }
-                    });
-                });
-
-                // Truncate descriptions
-                document.querySelectorAll('.item-snippet').forEach(snippet => {
-                    const text = snippet.textContent;
-                    if (text.length > 80) {
-                        snippet.textContent = text.substring(0, 80) + '...';
-                    }
-                });
-            }
-            
-            // Run after page load
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', filterAndTruncateContent);
-            } else {
-                filterAndTruncateContent();
-            }// ]]>
-        </script>
-<div class='card h-100'>
-<article>
-<div class='card-img-container'>
-<img alt='New Jujutsu Infinite Script | Auto Farm, Item Collection, Skills & More (No Key)' class='card-img-top' loading='lazy' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhyj6zNl-8D2aicUQk0Xd5PLIKUh-asgg-lp7s5mfUq3vvjDU1FTFQFycWFTNxEpVjfXcAl5c4gv8I2wSBhi5FjEQkikq8-J39LhDOTjIaO2OCMAPntSFAzQigJCBDa7rxlms4RjuC4c_KYGWxt8xzjzCN273b0_XC5XJf5eV1RgbcMmlaFGCOv0Ln0_Z0/w663-h373/Jujutsu%20Infinite2.jpg'/>
-</div>
-<div class='card-body'>
-<div class='post-labels grid-post-labels'>
-<a class='badge' href='https://www.geekyblox.com/search/label/Jujutsu%20Infinite%20Script' rel='tag'>
-Jujutsu Infinite Script
-</a>
-<a class='badge' href='https://www.geekyblox.com/search/label/Jujutsu%20Infinite%20Script%20No%20Key' rel='tag'>
-Jujutsu Infinite Script No Key
-</a>
-<a class='badge' href='https://www.geekyblox.com/search/label/New%20Jujutsu%20Infinite%20Script' rel='tag'>
-New Jujutsu Infinite Script
-</a>
-<a class='badge' href='https://www.geekyblox.com/search/label/Script' rel='tag'>
-Script
-</a>
-</div>
-<header>
-<h1 class='card-title fs-3 fw-bold'>
-New Jujutsu Infinite Script | Auto Farm, Item Collection, Skills & More (No Key)
-</h1>
-<h6 class='card-subtitle text-muted my-2'>
-<i class='far fa-calendar-alt me-1'></i>
-December 28, 2024
-</h6>
-</header>
-<div class='item-snippet'>
-The new Jujutsu Infinite Script is here for both mobile and PC, packed with features like Auto Farm, Item Collection, Skills, Spins, and mor...
-</div>
-<a class='btn btn-outline-primary stretched-link d-grid mt-3' href='https://www.geekyblox.com/2024/12/new-jujutsu-infinite-script.html'>
-<span class='d-flex justify-content-center align-items-center'> Read
-                                newest post &#160; <i class='fas fa-book-reader ms-2'></i>
-</span>
-</a>
-</div>
-</article>
-</div>
-</div>
-<div class='post-outer'>
-<style>
-            .blog-posts {
-            display: flex;
-            flex-wrap: wrap;
-            margin: 0 -12px;
-            }
-            .blog-posts > *:not(.post-outer) {
-            width: 100%;
-            margin: 0 12px 24px;
-            }
-            .post-outer {
-            width: calc(50% - 24px) !important;
-            margin: 0 12px 24px !important;
-            float: none !important;
-            }
-            .card {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            border-radius: 15px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            }
-            .card-img-container {
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            height: 200px;
-            position: relative;
-            }
-            .card-img-top {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-top-left-radius: 15px;
-            border-top-right-radius: 15px;
-            transition: transform 0.3s ease;
-            }
-            .card-img-top:hover {
-            transform: scale(1.05);
-            }
-            .card-body {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            padding: 16px;
-            gap: 8px;
-            }
-            .card-title {
-            font-size: 1.25rem !important;
-            line-height: 1.4 !important;
-            height: 2.8em;
-            margin: 0 !important;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            }
-            .card-subtitle {
-            font-size: 0.875rem !important;
-            color: #6c757d !important;
-            margin: 0 !important;
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 8px;
-            }
-            .post-labels {
-            margin-bottom: 5px;
-            display: flex;
-            gap: 4px;
-            flex-wrap: wrap;
-            }
-            .badge {
-            display: inline-block;
-            padding: 8px 25px;
-            font-size: 0.75rem;
-            text-decoration: none;
-            margin: 0;
-            background-color: #fff;
-            color: black;
-            border-radius: 25px;
-            }
-            .badge:hover {
-            background-color: #e9ecef;
-            }
-            .item-snippet {
-            flex: 1;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: rgb(205, 217, 229);
-            height: 4.8em;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            margin: 0;
-            }
-            .btn.btn-outline-primary {
-            margin-top: auto;
-            padding: 8px 16px;
-            font-size: 0.95rem;
-            height: 40px;
-            }
-            .status-msg-wrap {
-            width: 100%;
-            margin: 0 12px 24px;
-            }
-            .status-msg-body {
-            width: 100%;
-            }
-
-            .ms-2 {
-            margin-left: 0rem!important;
-            }
-
-            @media (max-width: 768px) {
-            .post-outer {
-            width: calc(100% - 24px) !important;
-            }
-
-            }
-        </style>
-<script> // <![CDATA[
-            function filterAndTruncateContent() {
-                // Handle grid post labels
-                document.querySelectorAll('.grid-post-labels').forEach(labelContainer => {
-                    const labels = labelContainer.querySelectorAll('a');
-                    labels.forEach(label => {
-                        const text = label.textContent.trim();
-                        if (text !== 'Script' && text !== 'Tools') {
-                            label.style.display = 'none';
-                        }
-                    });
-                });
-
-                // Truncate descriptions
-                document.querySelectorAll('.item-snippet').forEach(snippet => {
-                    const text = snippet.textContent;
-                    if (text.length > 80) {
-                        snippet.textContent = text.substring(0, 80) + '...';
-                    }
-                });
-            }
-            
-            // Run after page load
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', filterAndTruncateContent);
-            } else {
-                filterAndTruncateContent();
-            }// ]]>
-        </script>
-<div class='card h-100'>
-<article>
-<div class='card-img-container'>
-<img alt=' Christmas Update Murder Mystery 2 Script - (No Key)' class='card-img-top' loading='lazy' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg6kjDe4EhfrU2w2TAJ9L87zqaCks3CccWFqX5KvdqRnEl3Eoaciu1_HBPCbgmOegy2pmkDn82KI2Y64TkM8uYRVEZ0Xp8TnfpkcnfOI6ZY9Nnw1rNoG4RLbiUYOks-1_QWOGTCN7Nf4RIfVZtYVwS3CEFYjA239Ab8NsnXb9NNV_zl9EqqhmbOGfR7_Vo/w664-h372/Untitled.jpg'/>
-</div>
-<div class='card-body'>
-<div class='post-labels grid-post-labels'>
-<a class='badge' href='https://www.geekyblox.com/search/label/Christmas%20Update%20Murder%20Mystery%202' rel='tag'>
-Christmas Update Murder Mystery 2
-</a>
-<a class='badge' href='https://www.geekyblox.com/search/label/mm2%20script' rel='tag'>
-mm2 script
-</a>
-<a class='badge' href='https://www.geekyblox.com/search/label/murder%20mystery%202%20script' rel='tag'>
-murder mystery 2 script
-</a>
-<a class='badge' href='https://www.geekyblox.com/search/label/Script' rel='tag'>
-Script
-</a>
-</div>
-<header>
-<h1 class='card-title fs-3 fw-bold'>
- Christmas Update Murder Mystery 2 Script - (No Key)
-</h1>
-<h6 class='card-subtitle text-muted my-2'>
-<i class='far fa-calendar-alt me-1'></i>
-December 21, 2024
-</h6>
-</header>
-<div class='item-snippet'>
-Christmas Update Murder Mystery 2 script with awesome features! This script, called XHub, is 100% safe, trusted, and keyless. It&#8217;s perfect f...
-</div>
-<a class='btn btn-outline-primary stretched-link d-grid mt-3' href='https://www.geekyblox.com/2024/12/christmas-update-murder-mystery-2.html'>
-<span class='d-flex justify-content-center align-items-center'> Read
-                                newest post &#160; <i class='fas fa-book-reader ms-2'></i>
-</span>
-</a>
-</div>
-</article>
-</div>
-</div>
-<div class='post-outer'>
-<style>
-            .blog-posts {
-            display: flex;
-            flex-wrap: wrap;
-            margin: 0 -12px;
-            }
-            .blog-posts > *:not(.post-outer) {
-            width: 100%;
-            margin: 0 12px 24px;
-            }
-            .post-outer {
-            width: calc(50% - 24px) !important;
-            margin: 0 12px 24px !important;
-            float: none !important;
-            }
-            .card {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            border-radius: 15px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            }
-            .card-img-container {
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            height: 200px;
-            position: relative;
-            }
-            .card-img-top {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-top-left-radius: 15px;
-            border-top-right-radius: 15px;
-            transition: transform 0.3s ease;
-            }
-            .card-img-top:hover {
-            transform: scale(1.05);
-            }
-            .card-body {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            padding: 16px;
-            gap: 8px;
-            }
-            .card-title {
-            font-size: 1.25rem !important;
-            line-height: 1.4 !important;
-            height: 2.8em;
-            margin: 0 !important;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            }
-            .card-subtitle {
-            font-size: 0.875rem !important;
-            color: #6c757d !important;
-            margin: 0 !important;
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 8px;
-            }
-            .post-labels {
-            margin-bottom: 5px;
-            display: flex;
-            gap: 4px;
-            flex-wrap: wrap;
-            }
-            .badge {
-            display: inline-block;
-            padding: 8px 25px;
-            font-size: 0.75rem;
-            text-decoration: none;
-            margin: 0;
-            background-color: #fff;
-            color: black;
-            border-radius: 25px;
-            }
-            .badge:hover {
-            background-color: #e9ecef;
-            }
-            .item-snippet {
-            flex: 1;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: rgb(205, 217, 229);
-            height: 4.8em;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            margin: 0;
-            }
-            .btn.btn-outline-primary {
-            margin-top: auto;
-            padding: 8px 16px;
-            font-size: 0.95rem;
-            height: 40px;
-            }
-            .status-msg-wrap {
-            width: 100%;
-            margin: 0 12px 24px;
-            }
-            .status-msg-body {
-            width: 100%;
-            }
-
-            .ms-2 {
-            margin-left: 0rem!important;
-            }
-
-            @media (max-width: 768px) {
-            .post-outer {
-            width: calc(100% - 24px) !important;
-            }
-
-            }
-        </style>
-<script> // <![CDATA[
-            function filterAndTruncateContent() {
-                // Handle grid post labels
-                document.querySelectorAll('.grid-post-labels').forEach(labelContainer => {
-                    const labels = labelContainer.querySelectorAll('a');
-                    labels.forEach(label => {
-                        const text = label.textContent.trim();
-                        if (text !== 'Script' && text !== 'Tools') {
-                            label.style.display = 'none';
-                        }
-                    });
-                });
-
-                // Truncate descriptions
-                document.querySelectorAll('.item-snippet').forEach(snippet => {
-                    const text = snippet.textContent;
-                    if (text.length > 80) {
-                        snippet.textContent = text.substring(0, 80) + '...';
-                    }
-                });
-            }
-            
-            // Run after page load
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', filterAndTruncateContent);
-            } else {
-                filterAndTruncateContent();
-            }// ]]>
-        </script>
-<div class='card h-100'>
-<article>
-<div class='card-img-container'>
-<img alt='Dragon Update 24 Blox Fruits Scripts for Mobile and PC' class='card-img-top' loading='lazy' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEidwHXnQ3ZpAylEfevLZJOZiizYIcXtc2qExd1yOyjAZYJ_GTFuIIVCAGBVG9I8hsGjtzpP-RXvhg1Dsbgw0ZDmDxrqJuFIoEtHa6QI-vL5D8UsG5TicE33L4OuLBAr_NlKEaae8P13NQ-UhVLccJiHI4W0bQIQhRtysnJorrUbKhGX2YHIsjyyCkP5IQc/w663-h373/Untitled(1).jpg'/>
-</div>
-<div class='card-body'>
-<div class='post-labels grid-post-labels'>
-<a class='badge' href='https://www.geekyblox.com/search/label/best%20blox%20fruits%20script' rel='tag'>
-best blox fruits script
-</a>
-<a class='badge' href='https://www.geekyblox.com/search/label/Blox%20Fruits' rel='tag'>
-Blox Fruits
-</a>
-<a class='badge' href='https://www.geekyblox.com/search/label/Dragon%20Update%2024%20Blox%20Fruits%20Scripts' rel='tag'>
-Dragon Update 24 Blox Fruits Scripts
-</a>
-<a class='badge' href='https://www.geekyblox.com/search/label/New%20Blox%20Fruits%20Script%20Update' rel='tag'>
-New Blox Fruits Script Update
-</a>
-<a class='badge' href='https://www.geekyblox.com/search/label/Script' rel='tag'>
-Script
-</a>
-</div>
-<header>
-<h1 class='card-title fs-3 fw-bold'>
-Dragon Update 24 Blox Fruits Scripts for Mobile and PC
-</h1>
-<h6 class='card-subtitle text-muted my-2'>
-<i class='far fa-calendar-alt me-1'></i>
-December 16, 2024
-</h6>
-</header>
-<div class='item-snippet'>
-What is Blox Fruits? Blox Fruits is a popular Roblox game inspired by One Piece . In this game, you explore, fight, and level up using power...
-</div>
-<a class='btn btn-outline-primary stretched-link d-grid mt-3' href='https://www.geekyblox.com/2024/12/update-24-blox-fruits-script.html'>
-<span class='d-flex justify-content-center align-items-center'> Read
-                                newest post &#160; <i class='fas fa-book-reader ms-2'></i>
-</span>
-</a>
-</div>
-</article>
-</div>
-</div>
-<div class='post-outer'>
-<style>
-            .blog-posts {
-            display: flex;
-            flex-wrap: wrap;
-            margin: 0 -12px;
-            }
-            .blog-posts > *:not(.post-outer) {
-            width: 100%;
-            margin: 0 12px 24px;
-            }
-            .post-outer {
-            width: calc(50% - 24px) !important;
-            margin: 0 12px 24px !important;
-            float: none !important;
-            }
-            .card {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            border-radius: 15px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            }
-            .card-img-container {
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            height: 200px;
-            position: relative;
-            }
-            .card-img-top {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-top-left-radius: 15px;
-            border-top-right-radius: 15px;
-            transition: transform 0.3s ease;
-            }
-            .card-img-top:hover {
-            transform: scale(1.05);
-            }
-            .card-body {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            padding: 16px;
-            gap: 8px;
-            }
-            .card-title {
-            font-size: 1.25rem !important;
-            line-height: 1.4 !important;
-            height: 2.8em;
-            margin: 0 !important;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            }
-            .card-subtitle {
-            font-size: 0.875rem !important;
-            color: #6c757d !important;
-            margin: 0 !important;
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 8px;
-            }
-            .post-labels {
-            margin-bottom: 5px;
-            display: flex;
-            gap: 4px;
-            flex-wrap: wrap;
-            }
-            .badge {
-            display: inline-block;
-            padding: 8px 25px;
-            font-size: 0.75rem;
-            text-decoration: none;
-            margin: 0;
-            background-color: #fff;
-            color: black;
-            border-radius: 25px;
-            }
-            .badge:hover {
-            background-color: #e9ecef;
-            }
-            .item-snippet {
-            flex: 1;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: rgb(205, 217, 229);
-            height: 4.8em;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            margin: 0;
-            }
-            .btn.btn-outline-primary {
-            margin-top: auto;
-            padding: 8px 16px;
-            font-size: 0.95rem;
-            height: 40px;
-            }
-            .status-msg-wrap {
-            width: 100%;
-            margin: 0 12px 24px;
-            }
-            .status-msg-body {
-            width: 100%;
-            }
-
-            .ms-2 {
-            margin-left: 0rem!important;
-            }
-
-            @media (max-width: 768px) {
-            .post-outer {
-            width: calc(100% - 24px) !important;
-            }
-
-            }
-        </style>
-<script> // <![CDATA[
-            function filterAndTruncateContent() {
-                // Handle grid post labels
-                document.querySelectorAll('.grid-post-labels').forEach(labelContainer => {
-                    const labels = labelContainer.querySelectorAll('a');
-                    labels.forEach(label => {
-                        const text = label.textContent.trim();
-                        if (text !== 'Script' && text !== 'Tools') {
-                            label.style.display = 'none';
-                        }
-                    });
-                });
-
-                // Truncate descriptions
-                document.querySelectorAll('.item-snippet').forEach(snippet => {
-                    const text = snippet.textContent;
-                    if (text.length > 80) {
-                        snippet.textContent = text.substring(0, 80) + '...';
-                    }
-                });
-            }
-            
-            // Run after page load
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', filterAndTruncateContent);
-            } else {
-                filterAndTruncateContent();
-            }// ]]>
-        </script>
-<div class='card h-100'>
-<article>
-<div class='card-img-container'>
-<img alt='[🐲DRAGON] Blox Fruits Script | Mobile Auto Farm, Dragon Fruit & Level Up' class='card-img-top' loading='lazy' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg4bRGXGMsgkYmig65UJspdASLqocr61yOuITKNybk2wTcRNOK-KJNWjh4fWWJh_fww_5Mdq2-Kq56btTgvjZBB2tcNGcZ7nNOgQTrLqJwBeNzzVljatLr6qmrSQNOfaH9WnLYSC_arb4rYe6elL7-1aA3rEKnsQ9jPGDePpS-YYM9KaBRHa29AvDbviTY/w641-h361/Dragon%20update%20blox%20fruits%20script.jpg'/>
-</div>
-<div class='card-body'>
-<div class='post-labels grid-post-labels'>
-<a class='badge' href='https://www.geekyblox.com/search/label/best%20blox%20fruits%20script' rel='tag'>
-best blox fruits script
-</a>
-<a class='badge' href='https://www.geekyblox.com/search/label/Blox%20Fruits' rel='tag'>
-Blox Fruits
-</a>
-<a class='badge' href='https://www.geekyblox.com/search/label/Blox%20Fruits%20Script' rel='tag'>
-Blox Fruits Script
-</a>
-<a class='badge' href='https://www.geekyblox.com/search/label/New%20Blox%20Fruits%20Script%20Update' rel='tag'>
-New Blox Fruits Script Update
-</a>
-<a class='badge' href='https://www.geekyblox.com/search/label/Script' rel='tag'>
-Script
-</a>
-</div>
-<header>
-<h1 class='card-title fs-3 fw-bold'>
-[🐲DRAGON] Blox Fruits Script | Mobile Auto Farm, Dragon Fruit & Level Up
-</h1>
-<h6 class='card-subtitle text-muted my-2'>
-<i class='far fa-calendar-alt me-1'></i>
-December 15, 2024
-</h6>
-</header>
-<div class='item-snippet'>
-New DRAGON update Blox Fruits Scripts for mobile and PC called Hoho Hub and Speed Hub X. These scripts have lots of useful features that wil...
-</div>
-<a class='btn btn-outline-primary stretched-link d-grid mt-3' href='https://www.geekyblox.com/2024/12/%20dragon-update-blox-fruits.html'>
-<span class='d-flex justify-content-center align-items-center'> Read
-                                newest post &#160; <i class='fas fa-book-reader ms-2'></i>
-</span>
-</a>
-</div>
-</article>
-</div>
-</div>
-</main>
-<div class='blog-pager' id='blog-pager'>
-<span id='blog-pager-newer-link'>
-<a aria-label='Go to next Previous' class='pager-button disabled-button' role='button'>
-<i class='fas fa-ban button-icon'></i>
-<span>Previous</span>
-</a>
-</span>
-<a aria-label='Go to home page' class='home-button' href='https://www.geekyblox.com/' role='button'>
-<i class='fas fa-home button-icon'></i>
-<span>Home</span>
-</a>
-<span id='blog-pager-older-link'>
-<a aria-label='Go to older posts' class='pager-button older-post' href='https://www.geekyblox.com/search?updated-max=2024-12-15T02:25:00-08:00&max-results=6' role='button'>
-<span>Older Posts</span>
-<i class='fas fa-arrow-right button-icon'></i>
-</a>
-</span>
-</div>
-</div></div>
-<div class='section' id='BlogPost1'><div class='widget PopularPosts' data-version='1' id='PopularPosts1'>
-<div class='popular-posts-container'>
-<div class='popular-posts-header'>
-<i class='fas fa-fire'></i>
-<h3>Popular Posts</h3>
-</div>
-<div class='widget-content popular-posts'>
-<div class='popular-post-item'>
-<div class='post-thumbnail'>
-<img alt='New Redz Hub Blox Fruits Script | No Key, No Lag, Many Features & Latest Update' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg_BUB1gCQNc90NAr0TSgGoi9-i9xH0YZ8inFxxX4GiW5GktzdmzKeCOjgJFYGg7XtdQt30HnCyDUT2BRBSUKKHquOeS859R12gowBnYSQJwSgyyCA_d-PR_5kLSMqXtywPttMvd77LkizMpdMm_rjdKO3bMcLcAAR11tPLIQKQazPqHP7abY-2nh1jb-k/s72-w561-c-h315/Screenshot%202024-09-15%20013430.jpg'/>
-<div class='rank-container'>
-<div class='rank-number'>#1</div>
-<i class='fas fa-star post-icon'></i>
-</div>
-</div>
-<div class='post-content'>
-<h4 class='post-title'>New Redz Hub Blox Fruits Script | No Key, No Lag, Many Features & Latest Update</h4>
-<div class='post-snippet'>The Redz Hub Blox Fruits script has just released a new update with some really useful features. This script includes things like Auto Farm,...</div>
-<div class='post-meta'>
-<a class='read-more-btn' href='https://www.geekyblox.com/2024/11/Redz-Hub-Blox-Fruits.html'>
-                    Read popular post this month
-                    <i class='fas fa-arrow-right'></i>
-</a>
-</div>
-</div>
-</div>
-<div class='popular-post-item'>
-<div class='post-thumbnail'>
-<img alt='[🐲DRAGON] Blox Fruits Script | Mobile Auto Farm, Dragon Fruit & Level Up' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg4bRGXGMsgkYmig65UJspdASLqocr61yOuITKNybk2wTcRNOK-KJNWjh4fWWJh_fww_5Mdq2-Kq56btTgvjZBB2tcNGcZ7nNOgQTrLqJwBeNzzVljatLr6qmrSQNOfaH9WnLYSC_arb4rYe6elL7-1aA3rEKnsQ9jPGDePpS-YYM9KaBRHa29AvDbviTY/s72-w641-c-h361/Dragon%20update%20blox%20fruits%20script.jpg'/>
-<div class='rank-container'>
-<div class='rank-number'>#2</div>
-<i class='fas fa-star post-icon'></i>
-</div>
-</div>
-<div class='post-content'>
-<h4 class='post-title'>[🐲DRAGON] Blox Fruits Script | Mobile Auto Farm, Dragon Fruit & Level Up</h4>
-<div class='post-snippet'>New DRAGON update Blox Fruits Scripts for mobile and PC called Hoho Hub and Speed Hub X. These scripts have lots of useful features that wil...</div>
-<div class='post-meta'>
-<a class='read-more-btn' href='https://www.geekyblox.com/2024/12/%20dragon-update-blox-fruits.html'>
-                    Read popular post this month
-                    <i class='fas fa-arrow-right'></i>
-</a>
-</div>
-</div>
-</div>
-<div class='popular-post-item'>
-<div class='post-thumbnail'>
-<img alt='Ultimate Blox Fruits Script for Mobile & PC | Auto Farm, Race V4, Devil Fruit & More | No Key Required' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjRAKKPmmlh5UCkAaYtGJ3Fj31rJmzaUVNb-DC4KTF79r6zuhzqcgkplupmWYYmQoXa98jGIey1Jr1DOythgo-gUM4N4VUDAIUH-aSZGrsxl3GIWIsDwf6pJ_LMpUTKRbFPCWIcqP2Qzu-4ronfTmyKtkNZFEEB0ls3eeHgidMnbj_5K7UO9N9RkO2mXaM/s72-w637-c-h359/why.jpg'/>
-<div class='rank-container'>
-<div class='rank-number'>#3</div>
-<i class='fas fa-star post-icon'></i>
-</div>
-</div>
-<div class='post-content'>
-<h4 class='post-title'>Ultimate Blox Fruits Script for Mobile & PC | Auto Farm, Race V4, Devil Fruit & More | No Key Required</h4>
-<div class='post-snippet'>The best Blox Fruits script for PC and mobile comes with many useful features to help you grind efficiently. You won&#39;t need to spend 24 ...</div>
-<div class='post-meta'>
-<a class='read-more-btn' href='https://www.geekyblox.com/2024/12/Best-Blox-Fruits-Script-2024.html'>
-                    Read popular post this month
-                    <i class='fas fa-arrow-right'></i>
-</a>
-</div>
-</div>
-</div>
-<div class='popular-post-item'>
-<div class='post-thumbnail'>
-<img alt=' Christmas Update Murder Mystery 2 Script - (No Key)' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg6kjDe4EhfrU2w2TAJ9L87zqaCks3CccWFqX5KvdqRnEl3Eoaciu1_HBPCbgmOegy2pmkDn82KI2Y64TkM8uYRVEZ0Xp8TnfpkcnfOI6ZY9Nnw1rNoG4RLbiUYOks-1_QWOGTCN7Nf4RIfVZtYVwS3CEFYjA239Ab8NsnXb9NNV_zl9EqqhmbOGfR7_Vo/s72-w664-c-h372/Untitled.jpg'/>
-<div class='rank-container'>
-<div class='rank-number'>#4</div>
-<i class='fas fa-star post-icon'></i>
-</div>
-</div>
-<div class='post-content'>
-<h4 class='post-title'> Christmas Update Murder Mystery 2 Script - (No Key)</h4>
-<div class='post-snippet'>Christmas Update Murder Mystery 2 script with awesome features! This script, called XHub, is 100% safe, trusted, and keyless. It&#8217;s perfect f...</div>
-<div class='post-meta'>
-<a class='read-more-btn' href='https://www.geekyblox.com/2024/12/christmas-update-murder-mystery-2.html'>
-                    Read popular post this month
-                    <i class='fas fa-arrow-right'></i>
-</a>
-</div>
-</div>
-</div>
-<div class='popular-post-item'>
-<div class='post-thumbnail'>
-<img alt='New Jujutsu Infinite Script | Auto Farm, Item Collection, Skills & More (No Key)' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhyj6zNl-8D2aicUQk0Xd5PLIKUh-asgg-lp7s5mfUq3vvjDU1FTFQFycWFTNxEpVjfXcAl5c4gv8I2wSBhi5FjEQkikq8-J39LhDOTjIaO2OCMAPntSFAzQigJCBDa7rxlms4RjuC4c_KYGWxt8xzjzCN273b0_XC5XJf5eV1RgbcMmlaFGCOv0Ln0_Z0/s72-w663-c-h373/Jujutsu%20Infinite2.jpg'/>
-<div class='rank-container'>
-<div class='rank-number'>#5</div>
-<i class='fas fa-star post-icon'></i>
-</div>
-</div>
-<div class='post-content'>
-<h4 class='post-title'>New Jujutsu Infinite Script | Auto Farm, Item Collection, Skills & More (No Key)</h4>
-<div class='post-snippet'>The new Jujutsu Infinite Script is here for both mobile and PC, packed with features like Auto Farm, Item Collection, Skills, Spins, and mor...</div>
-<div class='post-meta'>
-<a class='read-more-btn' href='https://www.geekyblox.com/2024/12/new-jujutsu-infinite-script.html'>
-                    Read popular post this month
-                    <i class='fas fa-arrow-right'></i>
-</a>
-</div>
-</div>
-</div>
-<div class='popular-post-item'>
-<div class='post-thumbnail'>
-<img alt='Dragon Update 24 Blox Fruits Scripts for Mobile and PC' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEidwHXnQ3ZpAylEfevLZJOZiizYIcXtc2qExd1yOyjAZYJ_GTFuIIVCAGBVG9I8hsGjtzpP-RXvhg1Dsbgw0ZDmDxrqJuFIoEtHa6QI-vL5D8UsG5TicE33L4OuLBAr_NlKEaae8P13NQ-UhVLccJiHI4W0bQIQhRtysnJorrUbKhGX2YHIsjyyCkP5IQc/s72-w663-c-h373/Untitled(1).jpg'/>
-<div class='rank-container'>
-<div class='rank-number'>#6</div>
-<i class='fas fa-star post-icon'></i>
-</div>
-</div>
-<div class='post-content'>
-<h4 class='post-title'>Dragon Update 24 Blox Fruits Scripts for Mobile and PC</h4>
-<div class='post-snippet'>What is Blox Fruits? Blox Fruits is a popular Roblox game inspired by One Piece . In this game, you explore, fight, and level up using power...</div>
-<div class='post-meta'>
-<a class='read-more-btn' href='https://www.geekyblox.com/2024/12/update-24-blox-fruits-script.html'>
-                    Read popular post this month
-                    <i class='fas fa-arrow-right'></i>
-</a>
-</div>
-</div>
-</div>
-<div class='popular-post-item'>
-<div class='post-thumbnail'>
-<img alt='Delta Executor Mobile: New Update' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhBkWAFhvnarQpy0Ln591Iq1b0TttuSJOn21WyryhgcS7GKlMTNjcs2JN4OMzZ1pagTnb6WbowJfW8CEjVpSkG8Ovrrq2D0NRwt180c4mODQuGlE-I0hMwIhLiJOb4t8W64zwKA5wse0UmEDgKVrMR1CKxHNpLkezNISJBYb28mEi-2JonEcUFY27gkFJc/s72-w677-c-h381/Delta%20mobile.jpg'/>
-<div class='rank-container'>
-<div class='rank-number'>#7</div>
-<i class='fas fa-star post-icon'></i>
-</div>
-</div>
-<div class='post-content'>
-<h4 class='post-title'>Delta Executor Mobile: New Update</h4>
-<div class='post-snippet'>Delta Executor Mobile Latest Official Version Released Delta Executor  Mobile&#39;s new update  and the latest version  have been released. ...</div>
-<div class='post-meta'>
-<a class='read-more-btn' href='https://www.geekyblox.com/2024/09/Delta-Executor.html'>
-                    Read popular post this month
-                    <i class='fas fa-arrow-right'></i>
-</a>
-</div>
-</div>
-</div>
-<div class='popular-post-item'>
-<div class='post-thumbnail'>
-<img alt='Fisch Script GUI | Quick Auto Fisch Farming, Auto Sell & More (No Key)' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjxELd0TawiKtw_tKRN5F6Woo2uMAwgDyrBbk7wxHE-iajbj0PMFRIRpzdSZxCACo3GCjMYXZMUYYBFlSXDa7BDCHMCl2LKWHn4ABZ_0UrfxOAvaE_Kn7HOuZ1kXU7-FuDOqP0k0jLHlQPa4pOJWjMe8i7szSgdvSrb2lzG2f1RkifoQ0qotly3TgAejOU/s72-w461-c-h259/3041755048_16732694052_1731173288905(3).jpg'/>
-<div class='rank-container'>
-<div class='rank-number'>#8</div>
-<i class='fas fa-star post-icon'></i>
-</div>
-</div>
-<div class='post-content'>
-<h4 class='post-title'>Fisch Script GUI | Quick Auto Fisch Farming, Auto Sell & More (No Key)</h4>
-<div class='post-snippet'>Hidden Hub, Speed Hub X, and Mercury Hub are top Fisch Script GUIs with amazing features and smooth performance. Hidden Hub and Speed Hub X ...</div>
-<div class='post-meta'>
-<a class='read-more-btn' href='https://www.geekyblox.com/2024/11/Latest-Fisch-Script.html'>
-                    Read popular post this month
-                    <i class='fas fa-arrow-right'></i>
-</a>
-</div>
-</div>
-</div>
-<div class='popular-post-item'>
-<div class='post-thumbnail'>
-<img alt='OP Murder Mystery 2 Script Mobile' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgOp6W9gbD-mZJE5dph2KUi2-Hv1cbl7st81lxTUX02ahugrAJ2v0LAPr97d1q4wxpcUdMH28kpZluswMtWij6ic489WhCOraeguyj5ulnhPuTxmf2-16eRB8-YhdTwY1PYTxuA9o9TS_zXED_EIiT4by9BT59kwkuowZrP687ScBmK9of-CHIG3LjjThE/s72-w677-c-h381/script.jpg'/>
-<div class='rank-container'>
-<div class='rank-number'>#9</div>
-<i class='fas fa-star post-icon'></i>
-</div>
-</div>
-<div class='post-content'>
-<h4 class='post-title'>OP Murder Mystery 2 Script Mobile</h4>
-<div class='post-snippet'>   Script Roblox Murder Mystery 2 Mobile and PC | MM2 NEW Murder Mystery 2 Script for Mobile and PC, called Overdrive H! This script is free...</div>
-<div class='post-meta'>
-<a class='read-more-btn' href='https://www.geekyblox.com/2024/10/OP-MM2-SCRIPT.html'>
-                    Read popular post this month
-                    <i class='fas fa-arrow-right'></i>
-</a>
-</div>
-</div>
-</div>
-<div class='popular-post-item'>
-<div class='post-thumbnail'>
-<img alt='[🤿] Fisch Script | Fish Auto-Farm, Auto-Sell & More - No Key' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhf4QWPnxGsERIW8yuYAyM3zIzntiKqdj_t45qdeObjL4KBgDhmPimb-GbCuNIsUyGEjAwHusgD8Q4XZWT84nMzRlWFVYbrRAi05ZIz_VDKfmNfG01BulmE0mQWVj8FApTCXplC8o3L4D8s6gxOL5pu7ClbaUkUQeidftmBAwcLPioO7g9l18GT9DACtAE/s72-w599-c-h336/2nd.jpg'/>
-<div class='rank-container'>
-<div class='rank-number'>#10</div>
-<i class='fas fa-star post-icon'></i>
-</div>
-</div>
-<div class='post-content'>
-<h4 class='post-title'>[🤿] Fisch Script | Fish Auto-Farm, Auto-Sell & More - No Key</h4>
-<div class='post-snippet'>   [🤿] New Best Fisch Script | Mobile &amp; PC | No Key Required New Fisch Script &#160;with many good and useful features like&#160; Auto Farm Fish ...</div>
-<div class='post-meta'>
-<a class='read-more-btn' href='https://www.geekyblox.com/2024/10/New-Fisch-Script.html'>
-                    Read popular post this month
-                    <i class='fas fa-arrow-right'></i>
-</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div></div>
-</div>
-<aside class='col-lg-4'>
-<div class='position-sticky' style='top:5.5rem;'>
-<div class='card p-4 mb-4'>
-<div class='info-text'>
-<i class='fas fa-check-circle'></i><h4 class='fw-bold'>About</h4>
-</div>
-<p class='mb-2'>Hello! Get awesome scripts and tools, #1 and 100% trusted!</p>
-<div class='section' id='ViewsCount'><div class='widget Stats' data-version='1' id='Stats0'>
-<hr/>
-<div class='views-count'>
-<i class='fas fa-eye'></i>
-<h4 class='fw-bold'>View Counts</h4>
-</div>
-<div class='widget-content' style='color:#03C755;'>
-<div id='Stats0_content' style='display: none;'>
-<span class='counter-wrapper text-counter-wrapper' id='Stats0_totalCount'>
-</span>
-</div>
-</div>
-<hr/>
-</div></div>
-<!-- wd followers -->
-<!-- end -->
-</div>
-</div>
-</aside>
-</div>
-</div>
-<footer class='text-muted py-3 mt-4 border-top'>
-<div class='container'>
-<p class='text-center'>
-         &#169; 2024 All rights reserved
-        
-      </p>
-</div>
-</footer>
-<script crossorigin='anonymous' integrity='sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8' src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js'></script>
-<script async='async'>
-  // <![CDATA[
-    // Initialize tooltips
-    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-        return new bootstrap.Tooltip(tooltipTriggerEl);
-    });
-
-    function hideEmptyAlert() {
-        const emptyAlert = document.querySelector('h4.alert.alert-warning');
-        if (emptyAlert && emptyAlert.textContent.trim() === '') {
-            emptyAlert.style.display = 'none';
-        }
-    }
-
-    // Run when DOM is loaded
-    document.addEventListener('DOMContentLoaded', hideEmptyAlert);
-
-    // Also run when Blogger's pagination occurs
-    if (typeof window._WidgetManager !== 'undefined') {
-        window._WidgetManager.addPostBodyListener(hideEmptyAlert);
-    }
-
-    // This will run every time the DOM loads or when new buttons are added
-    function initializeShineEffects() {
-      const buttons = document.querySelectorAll('.myButton');
-      const totalDuration = 8; // Total animation duration in seconds
-      
-      buttons.forEach(button => {
-        // Create a random delay between 0 and the total animation duration
-        const randomDelay = -(Math.random() * totalDuration) + 's';
-        button.style.setProperty('--shine-delay', randomDelay);
-      });
-    }
-
-    // Initialize on page load
-    document.addEventListener('DOMContentLoaded', initializeShineEffects);
-
-    // hero section code here 
-const slogans = [
-    "Explore the best Roblox scripts, tools, and content!",
-    "100% trusted and safe",
-    "Subscribe to the Geeky Blox YouTube channel",
-    "Remember to like the videos and share them with your friends!"
-];
-
-const typewriter = document.getElementById('typewriter');
-let slogan_index = 0;
-let isDeleting = false;
-let charIndex = 0;
-const typingSpeed = 100;
-const deletingSpeed = 50;
-const pauseBeforeDelete = 2000;
-const pauseBeforeNextSlogan = 500;
-
-function typeWrite() {
-    const currentSlogan = slogans[slogan_index];
-    
-    if (isDeleting) {
-        typewriter.textContent = currentSlogan.substring(0, charIndex - 1);
-        charIndex--;
-        
-        if (charIndex === 0) {
-            isDeleting = false;
-            slogan_index = (slogan_index + 1) % slogans.length;
-            setTimeout(typeWrite, pauseBeforeNextSlogan);
-            return;
-        }
-        
-        setTimeout(typeWrite, deletingSpeed);
-    } else {
-        typewriter.textContent = currentSlogan.substring(0, charIndex + 1);
-        charIndex++;
-        
-        if (charIndex === currentSlogan.length) {
-            isDeleting = true;
-            setTimeout(typeWrite, pauseBeforeDelete);
-            return;
-        }
-        
-        setTimeout(typeWrite, typingSpeed);
-    }
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.6); /* Adjust transparency here */
+    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.5);
+    padding: 60px 20px 20px;
+    transition: left 0.4s ease-in-out;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    backdrop-filter: blur(10px); /* Optional: Add a blur effect for a frosted-glass look */
 }
 
-window.addEventListener('load', () => {
-    typeWrite();
-});
+
+        .menu-overlay.active {
+            left: 0;
+        }
+
+        .menu-overlay a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 700;
+            font-size: 1.5em;
+            margin: 20px 0;
+            padding: 10px;
+            text-align: center;
+            background-color: rgba(135, 206, 235, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.6);
+            transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .menu-overlay a:hover {
+            transform: scale(1.1);
+            background-color: rgba(100, 149, 237, 0.9);
+            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.9);
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            top: 600px;
+            left: 50%;
+            transform: translateX(-50%);
+            margin: 0;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            margin: 0 10px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .social-icons a img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.8);
+        }
+
+        .image-box {
+            width: 60%;
+            margin: 95px auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            text-align: center;
+            border-radius: 15px;
+            position: relative;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.9);
+        }
+
+        .image-box.purple-glow {
+            box-shadow: 0 0 30px rgba(128, 0, 128, 1), 0 0 50px rgba(128, 0, 128, 0.5);
+        }
+
+        .image-box img {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+        }
+
+        .copy-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background-color: #00bcd4;
+            border: none;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            transition: background-color 0.3s, transform 0.3s;
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 700;
+        }
+
+        .copy-button:hover {
+            background-color: #0097a7;
+            transform: scale(1.1);
+        }
+
+        .image-box h2 {
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 700;
+            font-size: 2em;
+            color: #ffffff;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Media query for desktop and larger screens */
+        @media (min-width: 1024px) {
+            .image-box {
+                width: 40%;
+                margin: 50px auto;
+            }
+        }
+
+        /* Mobile styles for the Scripts header */
+        @media (max-width: 768px) {
+            .scripts-header {
+                font-size: 4.5em;
+                top: 120px;
+                text-shadow: 0 0 6px #ffffff, 0 0 10px #ffffff;
+            }
+
+            .image-box {
+                margin-top: 115px;
+                width: 80%;
+            }
+
+            .menu-overlay.active .scripts-header {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background -->
+    <div class="background-blur"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="scripts-header" id="scripts-header"></div>
+        <div class="search-box">
+            <input type="text" placeholder="Search...">
+            <button>Search</button>
+        </div>
+    </header>
+
+    <!-- Menu Overlay -->
+    <nav class="menu-overlay" id="menu">
+        <div>
+            <a href="#home" onclick="window.location.href='https://globalexploiter.xyz';">Home</a>
+            <a href="Scripts.html">Scripts</a>
+            
+
+<a href="Executor.html">Executors</a>
+          <a href="#Uploads">Uploads</a> 
+  <a href="#contact">Contact</a>
+        </div>
+        <div class="social-icons">
+            <a href="https://youtube.com/@globalexploitor?si=ULxJfeU0MbH6DNhy" target="_blank">
+                <img src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png" alt="YouTube">
+            </a>
+            <a href="#" target="_blank">
+                <img src="https://media.discordapp.net/attachments/1235364046039945288/1324128537556291585/IMG_1348.png?ex=6777064c&is=6775b4cc&hm=3eca129196fed3b5824269df1c2c31769f274d01025b2e7183abc82adfad7bb9&=&width=832&height=468" alt="Discord">
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="image-box">
+            <h2>Murder Mystery 2 Auto Farm | Vertex Hub (OP)</h2>
+            <img src="https://media.discordapp.net/attachments/1237163573894053888/1322659186370154607/2F2C2865-7B60-43F0-B2D6-9BC7AF38E716.jpg?ex=6774f99b&is=6773a81b&hm=e3bad873dd5bbb9ae389e40f724c1d62aee529bd10ac1961379697ce6351a455&=&width=1071&height=602" alt="Script Image">
+            <button class="copy-button" id="copy-btn-vertex" onclick="copyScript('vertex')">Copy Script</button>
+        </div>
 
 
-  // ]]>
-</script>
+        <!-- New image box for the v script with purple glow -->
+        <div class="image-box purple-glow">
+            <h2>Blade Ball Auto Parry | Frostware Hub (OP)</h2>
+            <img src="https://media.discordapp.net/attachments/1249093223134003221/1323559486136516609/C6DEE7F9-DAF3-4F93-8B24-74CA1EFD6644.png?ex=6774f454&is=6773a2d4&hm=8d7f821a29b7d94d65f1d8bd1b108a55a7aeb565d69b114b74120e7bd0cecfa9&=&width=1071&height=602" alt="Script Image">
+            <button class="copy-button" id="copy-btn-frostware" onclick="copyScript('frostware')">Copy Script</button>
+        </div>
 
-<script type="text/javascript" src="https://www.blogger.com/static/v1/widgets/3100690138-widgets.js"></script>
-<script type='text/javascript'>
-window['__wavt'] = 'AOuZoY4Vt3drwCSe-kvPBJzqPx0JIHQ4Rw:1736280490485';_WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d9199095950636163520','//www.geekyblox.com/','9199095950636163520');
-_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'blogId': '9199095950636163520', 'title': 'GEEKY BLOX', 'url': 'https://www.geekyblox.com/', 'canonicalUrl': 'https://www.geekyblox.com/', 'homepageUrl': 'https://www.geekyblox.com/', 'searchUrl': 'https://www.geekyblox.com/search', 'canonicalHomepageUrl': 'https://www.geekyblox.com/', 'blogspotFaviconUrl': 'https://www.geekyblox.com/favicon.ico', 'bloggerUrl': 'https://www.blogger.com', 'hasCustomDomain': true, 'httpsEnabled': true, 'enabledCommentProfileImages': true, 'gPlusViewType': 'FILTERED_POSTMOD', 'adultContent': false, 'analyticsAccountNumber': '', 'encoding': 'UTF-8', 'locale': 'en', 'localeUnderscoreDelimited': 'en', 'languageDirection': 'ltr', 'isPrivate': false, 'isMobile': false, 'isMobileRequest': false, 'mobileClass': '', 'isPrivateBlog': false, 'isDynamicViewsAvailable': true, 'feedLinks': '\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22GEEKY BLOX - Atom\x22 href\x3d\x22https://www.geekyblox.com/feeds/posts/default\x22 /\x3e\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/rss+xml\x22 title\x3d\x22GEEKY BLOX - RSS\x22 href\x3d\x22https://www.geekyblox.com/feeds/posts/default?alt\x3drss\x22 /\x3e\n\x3clink rel\x3d\x22service.post\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22GEEKY BLOX - Atom\x22 href\x3d\x22https://www.blogger.com/feeds/9199095950636163520/posts/default\x22 /\x3e\n', 'meTag': '\x3clink rel\x3d\x22me\x22 href\x3d\x22https://www.blogger.com/profile/00584955897225000017\x22 /\x3e\n', 'adsenseHostId': 'ca-host-pub-1556223355139109', 'adsenseHasAds': false, 'adsenseAutoAds': false, 'boqCommentIframeForm': true, 'loginRedirectParam': '', 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/9061ab5735f61690', 'plusOneApiSrc': 'https://apis.google.com/js/platform.js', 'disableGComments': true, 'interstitialAccepted': false, 'sharing': {'platforms': [{'name': 'Get link', 'key': 'link', 'shareMessage': 'Get link', 'target': ''}, {'name': 'Facebook', 'key': 'facebook', 'shareMessage': 'Share to Facebook', 'target': 'facebook'}, {'name': 'BlogThis!', 'key': 'blogThis', 'shareMessage': 'BlogThis!', 'target': 'blog'}, {'name': 'X', 'key': 'twitter', 'shareMessage': 'Share to X', 'target': 'twitter'}, {'name': 'Pinterest', 'key': 'pinterest', 'shareMessage': 'Share to Pinterest', 'target': 'pinterest'}, {'name': 'Email', 'key': 'email', 'shareMessage': 'Email', 'target': 'email'}], 'disableGooglePlus': true, 'googlePlusShareButtonWidth': 0, 'googlePlusBootstrap': '\x3cscript type\x3d\x22text/javascript\x22\x3ewindow.___gcfg \x3d {\x27lang\x27: \x27en\x27};\x3c/script\x3e'}, 'hasCustomJumpLinkMessage': true, 'jumpLinkMessage': 'Read More', 'pageType': 'index', 'pageName': '', 'pageTitle': 'GEEKY BLOX', 'metaDescription': 'Geeky Blox is your trusted source for Roblox Executor Mobile, Roblox Scripts, executor news, and helpful tips and tricks, all 100% safe and reliable.'}}, {'name': 'features', 'data': {}}, {'name': 'messages', 'data': {'edit': 'Edit', 'linkCopiedToClipboard': 'Link copied to clipboard!', 'ok': 'Ok', 'postLink': 'Post Link'}}, {'name': 'template', 'data': {'name': 'custom', 'localizedName': 'Custom', 'isResponsive': false, 'isAlternateRendering': false, 'isCustom': true}}, {'name': 'view', 'data': {'classic': {'name': 'classic', 'url': '?view\x3dclassic'}, 'flipcard': {'name': 'flipcard', 'url': '?view\x3dflipcard'}, 'magazine': {'name': 'magazine', 'url': '?view\x3dmagazine'}, 'mosaic': {'name': 'mosaic', 'url': '?view\x3dmosaic'}, 'sidebar': {'name': 'sidebar', 'url': '?view\x3dsidebar'}, 'snapshot': {'name': 'snapshot', 'url': '?view\x3dsnapshot'}, 'timeslide': {'name': 'timeslide', 'url': '?view\x3dtimeslide'}, 'isMobile': false, 'title': 'GEEKY BLOX', 'description': 'Geeky Blox is your trusted source for Roblox Executor Mobile, Roblox Scripts, executor news, and helpful tips and tricks, all 100% safe and reliable.', 'url': 'https://www.geekyblox.com/', 'type': 'feed', 'isSingleItem': false, 'isMultipleItems': true, 'isError': false, 'isPage': false, 'isPost': false, 'isHomepage': true, 'isArchive': false, 'isLabelSearch': false}}]);
-_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog0', 'BlogPost0', document.getElementById('Blog0'), {'cmtInteractionsEnabled': false, 'lightboxEnabled': true, 'lightboxModuleUrl': 'https://www.blogger.com/static/v1/jsbin/1596418130-lbx.js', 'lightboxCssUrl': 'https://www.blogger.com/static/v1/v-css/1964470060-lightbox_bundle.css'}, 'displayModeFull'));
-_WidgetManager._RegisterWidget('_PopularPostsView', new _WidgetInfo('PopularPosts1', 'BlogPost1', document.getElementById('PopularPosts1'), {}, 'displayModeFull'));
-_WidgetManager._RegisterWidget('_StatsView', new _WidgetInfo('Stats0', 'ViewsCount', document.getElementById('Stats0'), {'title': '\u7e3d\u7db2\u9801\u700f\u89bd\u91cf', 'showGraphicalCounter': false, 'showAnimatedCounter': false, 'showSparkline': false, 'statsUrl': '//www.geekyblox.com/b/stats?style\x3dBLACK_TRANSPARENT\x26timeRange\x3dALL_TIME\x26token\x3dAPq4FmB074PCA2F1fllhMOQBZ46VSFn6vJu1AGwTeIT6ognU7lvHzfIlO65cW45n5Nl_QlS0sNixX7hBM1dfMAcb9JAkJ4mT7w'}, 'displayModeFull'));
-</script>
+ <div class="image-box purple-glow">
+    <h2>Pets Go / Pet Sim 99 | Pet Changer (Visual)</h2>
+    <img src="https://media.discordapp.net/attachments/1249093223134003221/1323559486136516609/C6DEE7F9-DAF3-4F93-8B24-74CA1EFD6644.png?ex=6774f454&is=6773a2d4&hm=8d7f821a29b7d94d65f1d8bd1b108a55a7aeb565d69b114b74120e7bd0cecfa9&=&width=1071&height=602" alt="Script Image">
+    <button class="copy-button" id="copy-btn-petchanger" onclick="copyScript('petchanger')">Copy Script</button>
+</div>
+
+
+    </section>
+
+
+
+    <!-- JavaScript -->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            const toggle = document.querySelector('.menu-toggle');
+            const scriptsHeader = document.getElementById('scripts-header');
+            menu.classList.toggle('active');
+            toggle.classList.toggle('active');
+            scriptsHeader.style.opacity = menu.classList.contains('active') ? 0 : 1;
+        }
+function copyScript(scriptType) {
+    let scriptText;
+    if (scriptType === 'vertex') {
+        scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Burdenerd/VertexHub/refs/heads/main/Offical'))()";
+    } else if (scriptType === 'frostware') {
+        scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Otheruser/Script'))()";
+    } else if (scriptType === 'petchanger') {
+        scriptText = "loadstring(game:HttpGet('https://raw.githubusercontent.com/Otheruser/PetChanger'))()";
+    }
+    
+    navigator.clipboard.writeText(scriptText).then(() => {
+        const button = document.getElementById(`copy-btn-${scriptType}`);
+        button.textContent = "📜Script Copied!";
+        setTimeout(() => {
+            button.textContent = "Copy Script"; // Reset after 2 seconds
+        }, 2000);
+    });
+}
+
+    </script>
 </body>
 </html>
