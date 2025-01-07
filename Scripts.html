@@ -41,9 +41,9 @@
             orb.style.width = `${size}px`;
             orb.style.height = `${size}px`;
 
-            // Random starting position on the screen
-            const startX = Math.random() * (window.innerWidth - size); // Ensure it starts inside the screen
-            const startY = Math.random() * (window.innerHeight - size); // Ensure it starts inside the screen
+            // Start position: Random horizontal and vertical position on the screen
+            const startX = Math.random() * (window.innerWidth - size); // Random X position within screen width
+            const startY = Math.random() * (window.innerHeight - size); // Random Y position within screen height
             orb.style.left = `${startX}px`;
             orb.style.top = `${startY}px`;
 
@@ -52,7 +52,7 @@
             const endY = Math.random() * (window.innerHeight - size * 2); // Random Y end position
 
             orb.style.setProperty('--endX', `${endX}px`);
-            orb.style.setProperty('--endY`, `${endY}px`);
+            orb.style.setProperty('--endY', `${endY}px`);
 
             // Set a random animation duration (between 8 and 12 seconds)
             const duration = Math.random() * 4 + 8;
