@@ -16,7 +16,7 @@
             border-radius: 50%;
             background-color: cyan;
             opacity: 0.8;
-            animation: float 10s infinite linear;
+            animation: float 60s infinite linear; /* Increased duration for very slow movement */
         }
 
         @keyframes float {
@@ -52,10 +52,10 @@
             const endY = Math.random() * (window.innerHeight - size); // Random Y end position within screen height
 
             orb.style.setProperty('--endX', `${endX - startX}px`);
-            orb.style.setProperty('--endY', `${endY - startY}px`);
+            orb.style.setProperty('--endY`, `${endY - startY}px`);
 
-            // Set a random animation duration (between 8 and 12 seconds)
-            const duration = Math.random() * 4 + 8;
+            // Set a very slow animation duration (between 60 and 80 seconds for extremely slow movement)
+            const duration = Math.random() * 20 + 60; // Now between 60 and 80 seconds
             orb.style.animationDuration = `${duration}s`;
 
             setTimeout(() => {
@@ -68,8 +68,8 @@
             createOrb(); // Create 50 orbs initially
         }
 
-        // Optional: Continuously create new orbs at intervals
-        setInterval(createOrb, 500); // Create a new orb every 500ms
+        // Optional: Continuously create new orbs at intervals (increased interval for slower spawning)
+        setInterval(createOrb, 1000); // Create a new orb every 1000ms (1 second)
     </script>
 </body>
 </html>
