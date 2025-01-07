@@ -16,15 +16,15 @@
             border-radius: 50%;
             background-color: cyan;
             opacity: 0.8;
-            animation: float 5s infinite ease-in-out;
+            animation: float 10s infinite linear;
         }
 
         @keyframes float {
             0% {
-                transform: translateY(0) translateX(0);
+                transform: translate(0, 0);
             }
             100% {
-                transform: translateY(-100vh) translateX(-100vw);
+                transform: translate(calc(100vw * 1), calc(100vh * 1));
             }
         }
     </style>
@@ -36,7 +36,7 @@
             orb.classList.add('orb');
             document.body.appendChild(orb);
 
-            const size = Math.random() * 30 + 10; // Random size between 10 and 40px
+            const size = Math.random() * 15 + 5; // Random size between 5 and 20px
             orb.style.width = `${size}px`;
             orb.style.height = `${size}px`;
 
@@ -45,15 +45,23 @@
             orb.style.left = `${startX}px`;
             orb.style.top = `${startY}px`;
 
-            const duration = Math.random() * 4 + 4; // Random animation duration between 4 and 8 seconds
+            // Set a random animation speed (duration) for each orb
+            const duration = Math.random() * 6 + 4; // Random animation duration between 4 and 10 seconds
             orb.style.animationDuration = `${duration}s`;
+
+            // Set a random floating path by adjusting the keyframes dynamically
+            const floatX = Math.random() * 200 - 100;  // Random horizontal offset
+            const floatY = Math.random() * 200 - 100;  // Random vertical offset
+
+            orb.style.animation = `float ${duration}s infinite linear`;
 
             setTimeout(() => {
                 orb.remove(); // Remove orb after animation
             }, duration * 1000);
         }
 
-        setInterval(createOrb, 300); // Create a new orb every 300ms
+        // Create orbs at intervals
+        setInterval(createOrb, 150); // Create a new orb every 150ms
     </script>
 </body>
 </html>
