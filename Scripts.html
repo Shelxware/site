@@ -42,14 +42,14 @@
             orb.style.height = `${size}px`;
 
             // Random starting position on the screen
-            const startX = Math.random() * window.innerWidth;
-            const startY = Math.random() * window.innerHeight;
+            const startX = Math.random() * (window.innerWidth - size); // Ensure it starts inside the screen
+            const startY = Math.random() * (window.innerHeight - size); // Ensure it starts inside the screen
             orb.style.left = `${startX}px`;
             orb.style.top = `${startY}px`;
 
             // Randomize movement path
-            const endX = Math.random() * window.innerWidth - window.innerWidth / 2; // Random X end position
-            const endY = Math.random() * window.innerHeight + window.innerHeight / 2; // Random Y end position
+            const endX = Math.random() * (window.innerWidth - size * 2); // Random X end position
+            const endY = Math.random() * (window.innerHeight - size * 2); // Random Y end position
 
             orb.style.setProperty('--endX', `${endX}px`);
             orb.style.setProperty('--endY`, `${endY}px`);
