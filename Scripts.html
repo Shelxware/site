@@ -1,75 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyan Orbs Floating</title>
-    <style>
-        body {
-            margin: 0;
-            overflow: hidden;
-            background-color: black;
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
-        .orb {
-            position: absolute;
-            border-radius: 50%;
-            background-color: cyan;
-            opacity: 0.8;
-            animation: float 50s infinite linear;
-        }
+  <title>Arc90.com</title>
+  <meta name="Description" content="Arc90 is a web shop that designs and builds web applications, services, and platforms from the ground up. We're also an idea incubator that has spawned our own products like Kindling and Readability." />
+  <meta name="Keywords" content="arc90, nyc, new, york, city, web, application, architectue, api, mobile, ios, development, server, rich, ziade, readability, kindling" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" type="text/css" href="//cloud.typography.com/6824232/802182/css/fonts.css" />
+  <link rel="icon" type="image/png" href="images/favicon.png">
 
-        @keyframes float {
-            0% {
-                transform: translate(0, 0);
-            }
-            100% {
-                transform: translate(var(--endX), var(--endY));
-            }
-        }
-    </style>
+  <!--[if lte IE 8]>
+    <link rel="stylesheet" href="css/ie.css" />
+    <script src="js/lib/respond.js"></script>
+    <script src="js/lib/html5shiv.js"></script>
+  <![endif]-->
 </head>
 <body>
-    <script>
-        // Function to create orbs at random positions
-        function createOrb() {
-            const orb = document.createElement('div');
-            orb.classList.add('orb');
-            document.body.appendChild(orb);
+  <header id="default-header">
+    <div id="background-effects">
+      <div class="orb-layer" id="orb-layer-1">
+        <span class="orb" id="orb-1"></span>
+        <span class="orb" id="orb-2"></span>
+        <span class="orb" id="orb-3"></span>
+      </div>
+      <div class="orb-layer" id="orb-layer-2">
+        <span class="orb" id="orb-4"></span>
+        <span class="orb" id="orb-5"></span>
+        <span class="orb" id="orb-6"></span>
+        <span class="orb" id="orb-7"></span>
+        <span class="orb" id="orb-8"></span>
+        <span class="orb" id="orb-9"></span>
+        <span class="orb" id="orb-10"></span>
+      </div>
+      <div class="orb-layer" id="orb-layer-3">
+        <span class="orb" id="orb-11"></span>
+        <span class="orb" id="orb-12"></span>
+        <span class="orb" id="orb-13"></span>
+        <span class="orb" id="orb-14"></span>
+        <span class="orb" id="orb-15"></span>
+        <span class="orb" id="orb-16"></span>
+        <span class="orb" id="orb-17"></span>
+        <span class="orb" id="orb-18"></span>
+        <span class="orb" id="orb-19"></span>
+        <span class="orb" id="orb-20"></span>
+      </div>
+      <div class="orb-layer" id="orb-layer-4">
+        <span class="orb" id="orb-21"></span>
+        <span class="orb" id="orb-22"></span>
+        <span class="orb" id="orb-23"></span>
+        <span class="orb" id="orb-24"></span>
+        <span class="orb" id="orb-25"></span>
+        <span class="orb" id="orb-26"></span>
+        <span class="orb" id="orb-27"></span>
+        <span class="orb" id="orb-28"></span>
+        <span class="orb" id="orb-29"></span>
+        <span class="orb" id="orb-30"></span>
+        <span class="orb" id="orb-31"></span>
+        <span class="orb" id="orb-32"></span>
+        <span class="orb" id="orb-33"></span>
+        <span class="orb" id="orb-34"></span>
+        <span class="orb" id="orb-35"></span>
+        <span class="orb" id="orb-36"></span>
+        <span class="orb" id="orb-37"></span>
+        <span class="orb" id="orb-38"></span>
+        <span class="orb" id="orb-39"></span>
+        <span class="orb" id="orb-40"></span>
+      </div>
+    </div>
 
-            const size = Math.random() * 5 + 5; // Random size between 5 and 10px
-            orb.style.width = ${size}px;
-            orb.style.height = ${size}px;
+    <nav id="main-nav">
+      <div class="wrapper">
+          <a href="/" class="back-to-home" title="Go back to the Arc90.com homepage">Arc90 Homepage</a>
 
-            // Start position: Random horizontal and vertical position on the screen
-            const startX = Math.random() * (window.innerWidth - size); // Random X position within screen width
-            const startY = Math.random() * (window.innerHeight - size); // Random Y position within screen height
-            orb.style.left = ${startX}px;
-            orb.style.top = ${startY}px;
+        <ul id="nav-links">
+          <li><a href="/work/reuters" title="View our work">Work</a></li>
+          <li><a href="/contact" title="Get in touch">Contact</a></li>
+          <li><a href="http://lab.arc90.com" title="View our ideas, tools, and experiments">Lab</a></li>
+          <li><a href="http://blog.arc90.com" title="Read our thoughts about design and technology">Blog</a></li>
+        </ul>
+      </div>
+    </nav>
 
-            // Randomize movement path, but ensure the end position stays within the screen
-            const endX = Math.random() * (window.innerWidth - size); // Random X end position within screen width
-            const endY = Math.random() * (window.innerHeight - size); // Random Y end position within screen height
+    <div class="wrapper">
+      <h1 id="arc90-intro-heading">
+        Build Your Next
+        <strong>Big Thing</strong>
+      </h1>
 
-            orb.style.setProperty('--endX', ${endX - startX}px);
-            orb.style.setProperty('--endY', ${endY - startY}px);
+      <a id="view-work-button" href="/work/reuters" title="View our work">
+        View Our Work
+        <span class="arrow-icon"></span>
+      </a>
+    </div>
+  </header>
 
-            // Set a random animation duration (between 8 and 12 seconds)
-            const duration = Math.random() * 4 + 8;
-            orb.style.animationDuration = ${duration}s;
+  <section id="our-clients">
+    <ul id="client-logos">
+      <li>
+        <a href="/work/reuters" title="View the Reuters project">
+          <img src="images/reuters_client_logo.png" alt="Reuters" />
+        </a>
+      </li>
+      <li>
+        <a href="/work/readability" title="View the Readability project">
+          <img src="images/readability_client_logo.png" alt="Readability" />
+        </a>
+      </li>
+      <li>
+        <a href="/work/cornelltech" title="View the Cornell Tech project">
+          <img src="images/cornell_tech_client_logo.png" alt="Cornell Tech" />
+        </a>
+      </li>
+      <li>
+        <a href="/work/knovel" title="View the Knovel project">
+          <img src="images/knovel_client_logo.png" alt="Knovel" />
+        </a>
+      </li>
+      <li>
+        <img src="images/insight_client_logo.png" alt="Insight" />
+      </li>
+    </ul>
+  </section>
 
-            setTimeout(() => {
-                orb.remove(); // Remove orb after animation ends
-            }, duration * 1000);
-        }
+  <section id="more-from-arc90">
+    <h2>New from the lab</h2>
+    <div id="featured-lab-project">
+      <div class="lab-project-intro">
+        <h3><a href="http://mustread.io" title="Go to Must Read">Must Read</a></h3>
+        <p>Must Read  lets you share and discover great, must-read articles, one at a time.</p>
 
-        // Create a fixed number of orbs on page load
-        for (let i = 0; i < 50; i++) {
-            createOrb(); // Create 50 orbs initially
-        }
+        <a class="arrow-link" href="http://lab.arc90.com" title="Go to the Arc90 lab">
+          More tools and experiments
+          <span class="arrow-icon"></span>
+        </a>
+      </div>
 
-        // Optional: Continuously create new orbs at intervals
-        setInterval(createOrb, 200); // Create a new orb every 500ms
-    </script>
+      <a class="featured-lab-project-image" href="http://mustread.io" title="Go to Must Read">
+        <img src="images/must_read_arc90_lab_screenshot.jpg" alt="Must Read Screenshot">
+      </a>
+    </div>
+
+    <h2>New from the blog</h2>
+    <ul id="new-blog-posts">
+      <li>
+        <span class="user-avatar"><img class="author-portrait" src="images/staff/avi-flax-portrait.jpg" alt="Avi Flax portrait"/></span>
+        <a class="post-title" href="http://blog.arc90.com/2013/08/03/teaching-gestures-to-users-of-touch-interfaces/" title="">Teaching Gestures to Users</a>
+        <span class="post-byline"><em>by</em> Avi Flax</span>
+      </li>
+      <li>
+        <span class="user-avatar"><img class="author-portrait" src="images/staff/jen-dary-portrait.jpg" alt="Jen Dary portrait"/></span>
+        <a class="post-title" href="http://blog.arc90.com/2013/06/13/sustainable-resourcing/" title="">Sustainable Resourcing</a>
+        <span class="post-byline"><em>by</em> Jen Dary</span>
+      </li>
+      <li>
+        <span class="user-avatar"><img class="author-portrait" src="images/staff/alec-munro-portrait.jpg" alt="Alec Munro portrait"/></span>
+        <a class="post-title" href="http://blog.arc90.com/2013/04/03/always-be-telecommuting/" title="">Always Be (tele) commuting</a>
+        <span class="post-byline"><em>by</em> Alec Munro</span>
+      </li>
+      <li>
+        <span class="user-avatar"><img class="author-portrait" src="images/staff/chris-losacco-portrait.jpg" alt="Chris LoSacco portrait"/></span>
+        <a class="post-title" href="http://blog.arc90.com/2013/01/24/the-first-arc90-hackathon/" title="">The First Arc90 Hackathon</a>
+        <span class="post-byline"><em>by</em> Chris LoSacco</span>
+      </li>
+    </ul>
+
+    <a id="more-blog-posts" class="arrow-link" href="http://blog.arc90.com" title="Go to the Arc90 blog">
+      Read more of our thoughts
+      <span class="arrow-icon"></span>
+    </a>
+  </section>
+
+  <footer>
+    <div class="wrapper">
+      <a href="/" class="back-to-home gray" title="Go back to the Arc90.com homepage">Arc90 Homepage</a>
+
+      <ul id="footer-links">
+        <li><a href="/work/reuters" title="View our work">Work</a></li>
+        <li><a href="/contact" title="Get in touch">Contact</a></li>
+        <li><a href="http://lab.arc90.com" title="View our ideas, tools, and experiments">Lab</a></li>
+        <li><a href="http://blog.arc90.com" title="Read our thoughts about design and technology">Blog</a></li>
+      </ul>
+    </div>
+  </footer>
+  <script src="js/lib/fastclick.js"></script>
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+
+    _gaq.push(['_setAccount', 'UA-6585641-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
 </body>
 </html>
